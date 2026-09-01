@@ -13,3 +13,4 @@
 
 # Legacy URLs (in case anyone bookmarked old paths)
 /projects/opencut/            /projects/opencut002.html         301
+/cv.pdf                       /assets/cv.pdf                  301
