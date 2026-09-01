@@ -14,7 +14,19 @@
 # Legacy URLs (in case anyone bookmarked old paths)
 /projects/opencut/            /projects/opencut002.html         301
 /cv.pdf                       /assets/cv.pdf                  301
-# /zh/* URLs serve the same page; i18n.js detects /zh/ and switches to Chinese
-# CF Pages _redirects supports * splat in path positions
-/zh/*             /:splat           200
-/zh               /        200
+
+# /zh/* URLs — explicit per-file mapping (CF Pages 200 with splat is
+# 308 chain, not direct rewrite, so we list every file we want to
+# route. Each /zh/<rest>.html rule proxies the same file in /<rest>.html
+# without touching /zh/* path semantics)
+/zh                           /index.html                      200
+/zh/                          /index.html                      200
+/zh/about.html                /about.html                      200
+/zh/projects/index.html       /projects/index.html             200
+/zh/projects/secsight.html    /projects/secsight.html          200
+/zh/projects/secopent.html    /projects/secopent.html          200
+/zh/projects/secopentagent.html /projects/secopentagent.html   200
+/zh/projects/strixoc.html     /projects/strixoc.html           200
+/zh/projects/netsage.html     /projects/netsage.html           200
+/zh/projects/vidslice.html    /projects/vidslice.html          200
+/zh/projects/opencut002.html  /projects/opencut002.html        200

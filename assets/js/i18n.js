@@ -23,26 +23,57 @@
     var q = params.get('lang');
     if (q && SUPPORTED[q]) return q;
     var path = window.location.pathname;
-    if (path === ZH_PREFIX || path === ZH_PREFIX + '/' || path.indexOf(ZH_PREFIX + '/') === 0) return 'zh';
+    /* CF Pages _redirects serves the same physical file under /zh/<file>
+       via 200 rewrite to /<file>, so the user always lands on a path that
+       ends in .html. Strip the .html suffix and check for the /zh prefix
+       in the parent directory. */
+    if (path.endsWith('.html')) path = path.substring(0, path.length - 5);
+    /* Detect /zh prefix at any depth — we route all zh content via
+       the .html suffix (e.g. /zh/projects/secsight.html), and the
+       trailing slash on /zh/ → /zh/index.html → /. */
+    var segments = path.split('/').filter(function (s) { return s; });
+    if (segments[0] === 'zh') return 'zh';
     return 'en';
   }
 
   /* Translate the pathname between / and /zh prefixes.
-     /projects/secsight/         → /zh/projects/secsight/
-     /zh/projects/secsight/       → /projects/secsight/
-     /                           → /zh/
-     /zh/                        → /                                          */
+     /foo/bar.html          → /zh/foo/bar.html
+     /zh/foo/bar.html        → /foo/bar.html
+     /                       → /zh/index.html
+     /index.html             → /zh/index.html                                  */
   function swapPath(path, target) {
-    var hasZh = path === ZH_PREFIX || path.indexOf(ZH_PREFIX + '/') === 0;
+    var clean = path;
+    var hasHtml = false;
+    if (clean.endsWith('.html')) { clean = clean.substring(0, clean.length - 5); hasHtml = true; }
+    if (clean.length > 1 && clean.endsWith('/')) { clean = clean.substring(0, clean.length - 1); }
+    var segments = clean.split('/').filter(function (s) { return s; });
+    var hasZh = segments[0] === 'zh';
+    var out;
     if (target === 'zh') {
-      if (hasZh) return path;
-      if (path === '/' || path === '') return '/zh/';
-      return ZH_PREFIX + path;  // /projects/secsight/ → /zh/projects/secsight/
+      if (hasZh) {
+        out = '/' + segments.join('/');
+      } else {
+        out = '/zh' + (segments.length ? '/' + segments.join('/') : '/index');
+      }
     } else {
-      if (!hasZh) return path;
-      if (path === ZH_PREFIX || path === ZH_PREFIX + '/') return '/';
-      return path.substring(ZH_PREFIX.length) || '/';  // /zh/projects/secsight/ → /projects/secsight/
+      if (!hasZh) {
+        out = '/' + segments.join('/');
+      } else {
+        segments.shift();
+        if (segments.length === 0) {
+          out = '/index';
+        } else {
+          out = '/' + segments.join('/');
+        }
+      }
     }
+    /* Always re-attach .html so the request hits the actual file on disk
+       without going through a trailing-slash redirect. */
+    out = out + '.html';
+    /* Special-case the homepage: serve /index.html without changing the
+       user-facing URL to /index.html. CF Pages serves /index.html at the
+       root transparently — but we want the URL to stay clean. */
+    return out;
   }
 
   function setLanguage(lang, opts) {
@@ -123,7 +154,7 @@
           localStorage.setItem(STORAGE_KEY, next);
         } catch (e) {}
         /* Force a full navigation. CF Pages serves the equivalent file
-           in the target language directory (/zh/<rest>), so the page
+           in the target language directory (/zh/<rest>.html), so the page
            loads with the right data-i18n-* context and the script
            re-runs cleanly. This is the simplest reliable behaviour. */
         window.location.href = targetPath;
