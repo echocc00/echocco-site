@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="Projects — echocc00 · Security &amp; Network Engineer" data-page-title-zh="项目 — echocc00 · 安全与网络工程师" data-page-desc-en="Seven open-source products from echocc00: SecSight (AI SOC), NetSage (AI network engineer), SecOpent (pentest), VidSlice (vector), OpenCut v3 (short video), SecOpentAgent, StrixOC." data-page-desc-zh="echocc00 的七个开源产品：SecSight（AI 安全运营）、NetSage（AI 网络工程师）、SecOpent（渗透测试）、VidSlice（向量索引）、OpenCut v3（短视频）、SecOpentAgent、StrixOC。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — echocc00 · echocc00</title>
-<meta name="description" content="Six open-source products from echocc00: SecSight (AI SOC), NetSage (AI network engineer), SecOpent (pentest), VidSlice (vector), OpenCut v3 (short video), Hydro OJ (fork).">
+<meta name="description" content="Seven open-source products from echocc00: SecSight (AI SOC), NetSage (AI network engineer), SecOpent (pentest), VidSlice (vector), OpenCut v3 (short video), SecOpentAgent, StrixOC.">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.echocco.com/projects/">
 <meta property="og:title" content="Projects · echocc00 · echocc00">
-<meta property="og:description" content="Six open-source products in production. Security, network, content. Apache-2.0 (one AGPL fork).">
+<meta property="og:description" content="Seven open-source products in production. Security, network, content. Apache-2.0.">
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,10 +24,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -42,98 +42,113 @@
     <div class="shell hero-inner">
       <div class="hero-status">
         <span class="status-dot"></span>
-        <span>6 products in production · 1,500+ tests · 22 SOAR playbooks</span>
+        <span data-i18n-en="7 products in production · 1,500+ tests · 22 SOAR playbooks" data-i18n-zh="7 款产品生产中 · 1,500+ 测试 · 22 个 SOAR 剧本">7 products in production · 1,500+ tests · 22 SOAR playbooks</span>
       </div>
-      <h1 class="hero-title">Projects.</h1>
+      <h1 class="hero-title" data-i18n-en="Projects." data-i18n-zh="项目。">Projects.</h1>
       <p class="hero-tagline">
-        Each ships as an Apache-2.0 project with a stable version, tests, and an honest README.
-        Click any for the full technical detail, architecture diagram, stack, and integrations.
+        <span data-i18n-en="Each ships as an Apache-2.0 project with a stable version, tests, and an honest README." data-i18n-zh="每款都是 Apache-2.0 项目，带有稳定版本、测试和诚实的 README。">Each ships as an Apache-2.0 project with a stable version, tests, and an honest README.</span>
+        <span data-i18n-en="Click any for the full technical detail, architecture diagram, stack, and integrations." data-i18n-zh="点击任意项目查看完整的技术细节、架构图、技术栈与集成。">Click any for the full technical detail, architecture diagram, stack, and integrations.</span>
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell">
-      <div class="filter-bar">
-        <span class="filter-label">Filter:</span>
-        <button class="filter-chip active">All</button>
-        <button class="filter-chip">Security</button>
-        <button class="filter-chip">Network</button>
-        <button class="filter-chip">Content</button>
-        <button class="filter-chip">Fork</button>
+      <div class="proj-toolbar">
+        <input class="search-input" type="search" id="projSearch"
+               data-i18n-en-placeholder="Search by name, tagline, or stack…"
+               data-i18n-zh-placeholder="按名称、标语或技术栈搜索…"
+               placeholder="Search by name, tagline, or stack…"
+               aria-label="Search projects">
+        <div class="chip-row" id="catChips">
+          <button class="chip active" data-cat="all" data-i18n-en="All" data-i18n-zh="全部">All</button>
+          <button class="chip" data-cat="security" data-i18n-en="Security" data-i18n-zh="安全">Security</button>
+          <button class="chip" data-cat="network" data-i18n-en="Network" data-i18n-zh="网络">Network</button>
+          <button class="chip" data-cat="content" data-i18n-en="Content" data-i18n-zh="内容">Content</button>
+        </div>
       </div>
 
-      <div class="grid grid-projects">
-        <a class="project-card" href="/projects/secsight/" data-tag="security">
+      <div class="grid" id="projGrid">
+        <a class="project-card" href="/projects/secsight/" data-cat="security">
           <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);"><span>🛡</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.5.1</span><span class="dot"></span><span class="project-tag">security</span></div>
             <h3 class="project-title">SecSight</h3>
-            <div class="project-tagline">AI-driven SOC platform</div>
-            <p class="project-desc">SecOps Copilot + auto-remediation SOAR engine for small-to-mid SOC teams.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="AI-driven SOC platform" data-i18n-zh="AI 驱动的安全运营平台">AI-driven SOC platform</div>
+            <p class="project-desc" data-i18n-en="22 production playbooks · 5 autonomy levels · 234 tests at 87.8% coverage." data-i18n-zh="22 个生产级剧本 · 5 级自主性 · 234 测试覆盖率达 87.8%。">22 production playbooks · 5 autonomy levels · 234 tests at 87.8% coverage.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/secopent/" data-tag="security">
+
+        <a class="project-card" href="/projects/secopent/" data-cat="security">
           <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);"><span>🔐</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v1.1.1-stable</span><span class="dot"></span><span class="project-tag">security</span></div>
             <h3 class="project-title">SecOpent</h3>
-            <div class="project-tagline">Authorized pentest workbench</div>
-            <p class="project-desc">Catalog-driven, agent-native authorized pentest workbench.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="Authorized pentest workbench" data-i18n-zh="授权渗透测试工作台">Authorized pentest workbench</div>
+            <p class="project-desc" data-i18n-en="Catalog-driven, agent-native authorized pentest workbench." data-i18n-zh="目录驱动的智能体渗透测试工作台。">Catalog-driven, agent-native authorized pentest workbench.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/netsage/" data-tag="network">
+
+        <a class="project-card" href="/projects/netsage/" data-cat="network">
           <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);"><span>🌐</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.1.1</span><span class="dot"></span><span class="project-tag">network</span></div>
             <h3 class="project-title">NetSage</h3>
-            <div class="project-tagline">AI network engineer</div>
-            <p class="project-desc">AI-driven design, config generation, troubleshooting, and audit.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="AI network engineer" data-i18n-zh="AI 网络工程师">AI network engineer</div>
+            <p class="project-desc" data-i18n-en="Multi-vendor config generation with Containerlab simulation, Batfish validation, and human approval + snapshot rollback." data-i18n-zh="多厂商配置生成、Containerlab 仿真、Batfish 校验，以及人工审批 + 快照回滚。">Multi-vendor config generation with Containerlab simulation.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/vidslice/" data-tag="content">
+
+        <a class="project-card" href="/projects/vidslice/" data-cat="content">
           <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);"><span>🎬</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.7.10</span><span class="dot"></span><span class="project-tag">content</span></div>
             <h3 class="project-title">VidSlice</h3>
-            <div class="project-tagline">OpenCut materials · vector index</div>
-            <p class="project-desc">Third-party material vector indexing + Ed25519 attestation.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="Material vector index for video pipelines" data-i18n-zh="视频流水线的素材向量索引">Material vector index for video pipelines</div>
+            <p class="project-desc" data-i18n-en="Third-party material vector indexing with Ed25519 attestation. 408 tests, LanceDB storage." data-i18n-zh="第三方素材向量索引 + Ed25519 签名验证。408 测试，LanceDB 存储。">Third-party material vector indexing with Ed25519 attestation.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/opencut002/" data-tag="content">
+
+        <a class="project-card" href="/projects/opencut002/" data-cat="content">
           <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);"><span>✂️</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.6.5</span><span class="dot"></span><span class="project-tag">content</span></div>
             <h3 class="project-title">OpenCut v3</h3>
-            <div class="project-tagline">Multi-domain short-video platform</div>
-            <p class="project-desc">AI short-video production from still inputs to 1080x1920 vertical.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="Multi-domain short-video platform" data-i18n-zh="多领域短视频平台">Multi-domain short-video platform</div>
+            <p class="project-desc" data-i18n-en="AI short-video production pipeline. 20 stages from input image to 1080×1920 vertical. CLI + SaaS modes." data-i18n-zh="AI 短视频生产流水线。从素材图到 1080×1920 竖屏共 20 个阶段，CLI + SaaS 双轨。">AI short-video production pipeline.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/secopentagent/" data-tag="security">
+
+        <a class="project-card" href="/projects/secopentagent/" data-cat="security">
           <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);"><span>🛰</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
             <h3 class="project-title">SecOpentAgent</h3>
-            <div class="project-tagline">Self-improving AI agent infrastructure</div>
-            <p class="project-desc">Agent runtime with closed-loop learning and multi-platform gateway.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="Self-improving AI agent infrastructure" data-i18n-zh="自进化 AI 智能体基础设施">Self-improving AI agent infrastructure</div>
+            <p class="project-desc" data-i18n-en="Agent runtime with closed-loop learning and multi-platform gateway." data-i18n-zh="具备闭环学习与多平台网关的智能体运行时。">Agent runtime with closed-loop learning.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
-        <a class="project-card" href="/projects/strixoc/" data-tag="security">
+
+        <a class="project-card" href="/projects/strixoc/" data-cat="security">
           <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);"><span>🎯</span></div>
           <div class="project-body">
             <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
             <h3 class="project-title">StrixOC</h3>
-            <div class="project-tagline">Autonomous AI penetration testing</div>
-            <p class="project-desc">AI pentest agents with real exploit validation and multi-agent orchestration.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
+            <div class="project-tagline" data-i18n-en="Autonomous AI penetration testing" data-i18n-zh="自主 AI 渗透测试">Autonomous AI penetration testing</div>
+            <p class="project-desc" data-i18n-en="AI pentest agents with real exploit validation and multi-agent orchestration." data-i18n-zh="具备真实 PoC 验证与多智能体协作的 AI 渗透测试代理。">AI pentest agents with real exploit validation.</p>
+            <span class="project-link" data-i18n-en="View project" data-i18n-zh="查看项目">View project <span class="arrow">→</span></span>
           </div>
         </a>
+      </div>
+      <div class="not-found" id="projEmpty" style="display:none;">
+        <h3 data-i18n-en="No projects matched." data-i18n-zh="没有匹配的项目。">No projects matched.</h3>
+        <p data-i18n-en="Try a different search term or category." data-i18n-zh="换个搜索词或分类试试。">Try a different search term or category.</p>
       </div>
     </div>
   </section>
@@ -141,33 +156,48 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
-      <span>Apache-2.0</span>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>
 
 <script>
-// Simple client-side filter
-const chips = document.querySelectorAll('.filter-chip');
-const cards = document.querySelectorAll('.project-card');
-chips.forEach(chip => chip.addEventListener('click', () => {
-  chips.forEach(c => c.classList.remove('active'));
-  chip.classList.add('active');
-  const tag = chip.textContent.trim().toLowerCase();
-  cards.forEach(card => {
-    const t = (card.dataset.tag || '').toLowerCase();
-    if (tag === 'all' || t === tag) {
-      card.style.display = '';
-    } else {
-      card.style.display = 'none';
-    }
+/* Tiny client-side filter — translates chip labels via i18n.js */
+(function () {
+  var chips = document.querySelectorAll('.chip[data-cat]');
+  var cards = document.querySelectorAll('.project-card');
+  var search = document.getElementById('projSearch');
+  var empty = document.getElementById('projEmpty');
+
+  function apply() {
+    var cat = (document.querySelector('.chip.active') || {}).dataset;
+    var catName = (cat.cat || 'all').toLowerCase();
+    var q = (search && search.value || '').trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function (c) {
+      var ok = (catName === 'all' || c.dataset.cat === catName);
+      if (q) ok = ok && c.textContent.toLowerCase().indexOf(q) !== -1;
+      c.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    });
+    if (empty) empty.style.display = visible === 0 ? '' : 'none';
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      apply();
+    });
   });
-}));
+  if (search) search.addEventListener('input', apply);
+})();
 </script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
