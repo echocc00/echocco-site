@@ -119,8 +119,14 @@
         var next = this.getAttribute('data-lang');
         var currentPath = window.location.pathname;
         var targetPath = swapPath(currentPath, next);
-        // Tag the swap with the new path so the URL stays in sync.
-        setLanguage(next, { newPath: targetPath });
+        try {
+          localStorage.setItem(STORAGE_KEY, next);
+        } catch (e) {}
+        /* Force a full navigation. CF Pages serves the equivalent file
+           in the target language directory (/zh/<rest>), so the page
+           loads with the right data-i18n-* context and the script
+           re-runs cleanly. This is the simplest reliable behaviour. */
+        window.location.href = targetPath;
       });
     }
   }
