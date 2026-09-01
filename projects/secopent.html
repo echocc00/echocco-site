@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="SecOpent — Authorized pentest workbench · echocc00" data-page-title-zh="SecOpent — 授权渗透测试工作台 · echocc00" data-page-desc-en="SecOpent is a catalog-driven, agent-native pentest workbench. 17 adapters across web/network/cloud, CoverageMatrix, YAML case DSL." data-page-desc-zh="SecOpent 是目录驱动、智能体优先的渗透测试工作台。17 个 web / network / cloud 适配器，CoverageMatrix，YAML case DSL。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SecOpent — echocc00 · echocc00</title>
-<meta name="description" content="SecOpent — Authorized pentest workbench. SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans de">
+<title>SecOpent — Authorized pentest workbench</title>
+<meta name="description" content="SecOpent — Authorized pentest workbench. Catalog-driven, agent-native. 17 adapters, CoverageMatrix, YAML case DSL.">
 <meta name="author" content="echocc00">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/secopent/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.echocco.com/projects/secopent/">
 <meta property="og:title" content="SecOpent — Authorized pentest workbench">
-<meta property="og:description" content="SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp s">
+<meta property="og:description" content="SecOpent — catalog-driven, agent-native pentest workbench.">
 <meta property="og:image" content="https://www.echocco.com/assets/og/secopent.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SecOpent">
@@ -40,10 +40,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00/SecOpent" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -56,11 +56,12 @@
 <main>
   <header class="proj-hero" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%); color: white;">
     <div class="shell">
-      <a class="proj-back" href="/projects/">← All projects</a>
+      <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
-        <span class="proj-cat">Security</span>
+        <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
         <h1 class="proj-title">SecOpent</h1>
-        <p class="proj-tagline">Authorized pentest workbench</p>
+        <p class="proj-tagline" data-i18n-en="Authorized pentest workbench" data-i18n-zh="授权渗透测试工作台">Authorized pentest workbench</p>
+
         <div class="proj-meta-bar">
           <span class="proj-ver">v1.1.1-stable</span>
           <span class="dot"></span>
@@ -75,159 +76,68 @@
   <section class="proj-body">
     <div class="shell proj-layout">
       <article class="proj-main">
-        <h2 class="proj-h2">Overview</h2>
-        <div class="proj-desc"><p>SecOpent is a catalog-driven, agent-native pentest workbench for <strong>authorized</strong> engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp sandbox, and validated by an oracle that does N/N re-runs to catch flaky tests.</p><p>17 adapters across asset/web/network/cloud/identity mean you can chain a real-world campaign without hand-coding glue. Three layers of evidence with redaction give you a clean report at the end.</p></div>
+        <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+        <div class="proj-desc">
+          <p data-i18n-en="SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp sandbox, and validated by an oracle that does N/N re-runs to catch flaky tests."
+             data-i18n-zh="SecOpent 是面向授权测试场景的目录驱动、智能体优先的渗透测试工作台。LLM 提议，确定性层 + 人来决策。Case 用 YAML 编写，运行时处于 seccomp 沙箱中，由 oracle 做 N/N 重跑验证以捕获 flaky 结果。">SecOpent is a catalog-driven, agent-native pentest workbench.</p>
+          <p data-i18n-en="17 adapters across asset/web/network/cloud/identity mean you can chain a real-world campaign without hand-coding glue. Three layers of evidence with redaction give you a clean report at the end."
+             data-i18n-zh="覆盖资产 / Web / 网络 / 云 / 身份的 17 个适配器，让你能拼起真实战役而无需写粘合代码。三层证据 + 脱敏处理，交付干净的报告。">17 adapters across asset/web/network/cloud/identity.</p>
+        </div>
 
-        <h2 class="proj-h2">Architecture</h2>
+        <h2 class="proj-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
         <figure class="proj-figure">
-          
-<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecOpent architecture" style="width:100%;height:auto;max-width:900px;display:block">
-  <defs>
-    <linearGradient id="secopent-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1c1917"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="380" fill="url(#secopent-bg)" rx="12"/>
-  <text x="32" y="40" fill="#fdba74" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECOPENT v1.1.1  /  AUTHORIZED PENTEST WORKBENCH</text>
-
-  <g font-family="system-ui" font-size="13" fill="#fef3c7">
-    <!-- Step 1: Catalog -->
-    <rect x="32" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
-    <text x="117" y="110" text-anchor="middle" font-weight="700">CATALOG</text>
-    <text x="117" y="130" text-anchor="middle" fill="#fdba74" font-size="11">17 adapters</text>
-    <g font-size="11" fill="#e7e5e4">
-      <text x="117" y="158" text-anchor="middle">asset</text>
-      <text x="117" y="178" text-anchor="middle">web</text>
-      <text x="117" y="198" text-anchor="middle">network</text>
-      <text x="117" y="218" text-anchor="middle">cloud</text>
-      <text x="117" y="238" text-anchor="middle">identity</text>
-      <text x="117" y="258" text-anchor="middle">+12 more</text>
-    </g>
-
-    <!-- Step 2: DSL -->
-    <rect x="222" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
-    <text x="307" y="110" text-anchor="middle" font-weight="700">YAML DSL</text>
-    <text x="307" y="130" text-anchor="middle" fill="#fdba74" font-size="11">deterministic case</text>
-    <g font-size="10" fill="#86efac" font-family="ui-monospace,monospace">
-      <text x="307" y="160" text-anchor="middle">case:</text>
-      <text x="307" y="178" text-anchor="middle">  scope: web</text>
-      <text x="307" y="196" text-anchor="middle">  steps:</text>
-      <text x="307" y="214" text-anchor="middle">    - recon</text>
-      <text x="307" y="232" text-anchor="middle">    - probe</text>
-      <text x="307" y="250" text-anchor="middle">    - oracle-check</text>
-    </g>
-
-    <!-- Step 3: Sandbox -->
-    <rect x="412" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
-    <text x="497" y="110" text-anchor="middle" font-weight="700">SANDBOX</text>
-    <text x="497" y="130" text-anchor="middle" fill="#fdba74" font-size="11">seccomp + Rust</text>
-    <g font-size="11" fill="#e7e5e4">
-      <text x="497" y="158" text-anchor="middle">process-isolated</text>
-      <text x="497" y="178" text-anchor="middle">read-only mounts</text>
-      <text x="497" y="198" text-anchor="middle">network namespace</text>
-      <text x="497" y="218" text-anchor="middle">timeout enforced</text>
-      <text x="497" y="238" text-anchor="middle">resource cap</text>
-    </g>
-
-    <!-- Step 4: Oracle -->
-    <rect x="602" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#22c55e" stroke-width="2"/>
-    <text x="687" y="110" text-anchor="middle" font-weight="700">ORACLE</text>
-    <text x="687" y="130" text-anchor="middle" fill="#86efac" font-size="11">N/N validation</text>
-    <g font-size="11" fill="#e7e5e4">
-      <text x="687" y="158" text-anchor="middle">CoverageMatrix</text>
-      <text x="687" y="178" text-anchor="middle">  per technique</text>
-      <text x="687" y="200" text-anchor="middle">deterministic</text>
-      <text x="687" y="220" text-anchor="middle">independent re-runs</text>
-      <text x="687" y="240" text-anchor="middle">flaky-test detection</text>
-    </g>
-
-    <!-- Step 5: Evidence -->
-    <rect x="792" y="80" width="80" height="200" rx="10" fill="#1c1917" stroke="#a855f7" stroke-width="2"/>
-    <text x="832" y="115" text-anchor="middle" font-weight="700">EVIDENCE</text>
-    <g font-size="11" fill="#e7e5e4">
-      <text x="832" y="140" text-anchor="middle">3 layers</text>
-      <text x="832" y="160" text-anchor="middle">+ redaction</text>
-    </g>
-  </g>
-
-  <!-- Arrows between steps -->
-  <g stroke="#fb923c" stroke-width="2" fill="none">
-    <path d="M202 180 L222 180" marker-end="url(#arrow-op)"/>
-    <path d="M392 180 L412 180" marker-end="url(#arrow-op)"/>
-    <path d="M582 180 L602 180" marker-end="url(#arrow-op)"/>
-    <path d="M772 180 L792 180" marker-end="url(#arrow-op)"/>
-  </g>
-  <defs><marker id="arrow-op" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker></defs>
-
-  <text x="32" y="320" fill="#a8a29e" font-family="ui-monospace,monospace" font-size="11">LLM only proposes.  Deterministic layer + humans decide.</text>
-  <text x="32" y="345" fill="#57534e" font-family="ui-monospace,monospace" font-size="11">agent-native  /  catalog-driven  /  oracle-validated</text>
-</svg>
-          <figcaption>SecOpent v1.1.1-stable — runtime architecture</figcaption>
+          <object type="image/svg+xml" data="/assets/diagrams/secopent.svg" style="width:100%;max-width:900px;display:block">
+            <img src="/assets/diagrams/secopent.svg" alt="SecOpent architecture" style="width:100%">
+          </object>
+          <figcaption data-i18n-en="SecOpent v1.1.1-stable — case-driven pentest runtime" data-i18n-zh="SecOpent v1.1.1-stable — Case 驱动的渗透测试运行时">SecOpent v1.1.1-stable — case-driven pentest runtime</figcaption>
         </figure>
 
-        <h2 class="proj-h2">Capabilities</h2>
+        <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
-          <div class="proj-feat"><div class="proj-feat-title">Catalog-driven</div><div class="proj-feat-desc">17 adapters · YAML case DSL · CoverageMatrix.</div></div><div class="proj-feat"><div class="proj-feat-title">Agent-native</div><div class="proj-feat-desc">LLM proposes; deterministic layer + humans decide.</div></div><div class="proj-feat"><div class="proj-feat-title">Oracle N/N validation</div><div class="proj-feat-desc">Independent re-runs to catch flaky tests.</div></div><div class="proj-feat"><div class="proj-feat-title">Hardened sandbox</div><div class="proj-feat-desc">seccomp · process-isolated · timeout + resource caps.</div></div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Catalog-driven" data-i18n-zh="目录驱动">Catalog-driven</div>
+            <div class="proj-feat-desc" data-i18n-en="17 adapters · YAML case DSL · CoverageMatrix." data-i18n-zh="17 个适配器 · YAML case DSL · CoverageMatrix。">17 adapters · YAML case DSL · CoverageMatrix.</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Agent-native" data-i18n-zh="智能体优先">Agent-native</div>
+            <div class="proj-feat-desc" data-i18n-en="LLM proposes; deterministic layer + humans decide." data-i18n-zh="LLM 提议，确定性层 + 人来决策。">LLM proposes; deterministic layer + humans decide.</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Oracle N/N validation" data-i18n-zh="Oracle N/N 验证">Oracle N/N validation</div>
+            <div class="proj-feat-desc" data-i18n-en="Independent re-runs to catch flaky tests." data-i18n-zh="独立重跑，捕获 flaky 测试。">Independent re-runs to catch flaky tests.</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Hardened sandbox" data-i18n-zh="加固沙箱">Hardened sandbox</div>
+            <div class="proj-feat-desc" data-i18n-en="seccomp · process-isolated · timeout + resource caps." data-i18n-zh="seccomp · 进程隔离 · 超时与资源限制。">seccomp · process-isolated · timeout + resource caps.</div>
+          </div>
         </div>
 
-        <h2 class="proj-h2">Screenshots</h2>
-        <div class="proj-screenshots">
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Dashboard">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Main dashboard / console</figcaption>
-          </figure>
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Detail view">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Detail / playbook execution view</figcaption>
-          </figure>
-        </div>
-
-        <h2 class="proj-h2">By the numbers</h2>
+        <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
         <ul class="proj-metrics">
-          <li>17 cross-domain adapters</li><li>YAML case DSL</li><li>Oracle N/N validation</li><li>seccomp sandbox</li><li>3-layer evidence + redaction</li><li>LLM only proposes — humans decide</li>
+          <li data-i18n-en="17 cross-domain adapters" data-i18n-zh="17 个跨域适配器">17 cross-domain adapters</li>
+          <li data-i18n-en="YAML case DSL" data-i18n-zh="YAML case DSL">YAML case DSL</li>
+          <li data-i18n-en="Oracle N/N validation" data-i18n-zh="Oracle N/N 验证">Oracle N/N validation</li>
+          <li data-i18n-en="seccomp sandbox" data-i18n-zh="seccomp 沙箱">seccomp sandbox</li>
+          <li data-i18n-en="3-layer evidence + redaction" data-i18n-zh="三层证据 + 脱敏">3-layer evidence + redaction</li>
         </ul>
       </article>
 
       <aside class="proj-side">
         <div class="side-block">
-          <div class="side-title">At a glance</div>
+          <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
           <dl>
-            <dt>Version</dt><dd>v1.1.1-stable</dd>
+            <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v1.1.1-stable</dd>
             <dt>License</dt><dd>Apache-2.0</dd>
-            <dt>Category</dt><dd>Security</dd>
-            <dt>Source</dt><dd><a href="https://github.com/echocc00/SecOpent" rel="noopener" target="_blank">SecOpent ↗</a></dd>
+            <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Security" data-i18n-zh="安全">Security</dd>
+            <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/SecOpent" rel="noopener" target="_blank">SecOpent ↗</a></dd>
           </dl>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Stack</div>
+          <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
           <div class="side-list">
-            <span class="pill">Python · FastAPI</span><span class="pill">React · Case Studio</span><span class="pill">Rust · sandbox</span><span class="pill">PostgreSQL</span>
+            <span class="pill">Python · Backend</span><span class="pill">TypeScript · Case Studio UI</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">Integrations</div>
-          <div class="side-list">
-            <span class="pill">17 adapters (asset/web/network/cloud/identity)</span>
-          </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">More from me</div>
-          <ul class="side-more">
-            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
-            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
-            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
-            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
-            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
-          </ul>
         </div>
       </aside>
     </div>
@@ -237,12 +147,12 @@
     <div class="shell">
       <div class="cta-row">
         <div>
-          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
-          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+          <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc"><span data-i18n-en="Source on GitHub · Apache-2.0 · questions to " data-i18n-zh="代码在 GitHub · Apache-2.0 · 邮件咨询：">Source on GitHub · Apache-2.0 · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="https://github.com/echocc00/SecOpent" rel="noopener" target="_blank">Open on GitHub ↗</a>
-          <a class="btn btn-outline" href="/projects/">See all projects</a>
+          <a class="btn btn-primary" href="https://github.com/echocc00/SecOpent" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
         </div>
       </div>
     </div>
@@ -251,12 +161,13 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="SecSight — AI-driven SOC platform · echocc00" data-page-title-zh="SecSight — AI 驱动的安全运营平台 · echocc00" data-page-desc-en="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams. 5 autonomy levels, 22 production playbooks, multi-agent SecOps Copilot." data-page-desc-zh="SecSight 是面向中小型 SOC 团队的 AI 驱动安全运营平台。5 级自主性、22 个生产级剧本、多智能体 SecOps 助手。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SecSight — echocc00 · echocc00</title>
-<meta name="description" content="SecSight — AI-driven SOC platform. SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detect">
+<title>SecSight — AI-driven SOC platform</title>
+<meta name="description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams. 5 autonomy levels, 22 production playbooks.">
 <meta name="author" content="echocc00">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/secsight/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.echocco.com/projects/secsight/">
 <meta property="og:title" content="SecSight — AI-driven SOC platform">
-<meta property="og:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detection and response function. It pairs a multi-agent SecOps Cop">
+<meta property="og:description" content="SecSight — AI-driven SOC platform. 22 production playbooks, 5 autonomy levels, multi-agent SecOps Copilot.">
 <meta property="og:image" content="https://www.echocco.com/assets/og/secsight.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SecSight">
@@ -40,10 +40,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -56,11 +56,12 @@
 <main>
   <header class="proj-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%); color: white;">
     <div class="shell">
-      <a class="proj-back" href="/projects/">← All projects</a>
+      <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
-        <span class="proj-cat">Security</span>
+        <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
         <h1 class="proj-title">SecSight</h1>
-        <p class="proj-tagline">AI-driven SOC platform</p>
+        <p class="proj-tagline" data-i18n-en="AI-driven SOC platform" data-i18n-zh="AI 驱动的安全运营平台">AI-driven SOC platform</p>
+
         <div class="proj-meta-bar">
           <span class="proj-ver">v0.5.1</span>
           <span class="dot"></span>
@@ -75,12 +76,17 @@
   <section class="proj-body">
     <div class="shell proj-layout">
       <article class="proj-main">
-        <h2 class="proj-h2">Overview</h2>
-        <div class="proj-desc"><p>SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detection and response function. It pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine so routine incidents — phishing triage, false-positive sweep, IOC enrichment — are handled automatically under well-defined autonomy levels, while the complex ones land in a human review queue.</p><p>The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites.</p></div>
+        <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+        <div class="proj-desc">
+          <p data-i18n-en="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detection and response function. It pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine so routine incidents — phishing triage, false-positive sweep, IOC enrichment — are handled automatically under well-defined autonomy levels, while the complex ones land in a human review queue."
+             data-i18n-zh="SecSight 是面向中小型 SOC 团队的 AI 驱动安全运营平台，让小团队也能覆盖 7×24 检测与响应。它把多智能体 SecOps 助手与自动响应 SOAR 引擎组合在一起——常规事件（钓鱼分流、误报清理、IOC 富化）在明确的自主级别下自动处理，复杂事件则进入人工审核队列。">SecSight is an AI-driven security operations platform.</p>
+          <p data-i18n-en="The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites."
+             data-i18n-zh="系统自带进程隔离部署模型并对齐等保 2.0 控制点，可在合规环境中直接落地，无需重构。">The system ships with a process-isolated deployment model and is aligned with MLPS 2.0.</p>
+        </div>
 
-        <h2 class="proj-h2">Architecture</h2>
+        <h2 class="proj-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
         <figure class="proj-figure">
-          
+
 <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecSight architecture" style="width:100%;height:auto;max-width:900px;display:block">
   <defs>
     <linearGradient id="secsight-bg" x1="0" y1="0" x2="1" y2="1">
@@ -91,10 +97,7 @@
     </linearGradient>
   </defs>
   <rect width="900" height="460" fill="url(#secsight-bg)" rx="12"/>
-  <!-- Title -->
   <text x="32" y="40" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECSIGHT v0.5.1  /  MULTI-AGENT SOC</text>
-
-  <!-- Layer 1: Detection sources -->
   <text x="32" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">DETECTION SOURCES</text>
   <g font-family="system-ui" font-size="13" fill="#e2e8f0">
     <rect x="32" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
@@ -106,15 +109,11 @@
     <rect x="452" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
     <text x="517" y="118" text-anchor="middle">DFIR-IRIS</text>
   </g>
-
-  <!-- Arrows from sources to bus -->
   <g stroke="#475569" stroke-width="1.5" fill="none">
     <path d="M97 142 L97 178"/><path d="M237 142 L237 178"/>
     <path d="M377 142 L377 178"/><path d="M517 142 L517 178"/>
     <path d="M97 178 L517 178 L517 178"/>
   </g>
-
-  <!-- Layer 2: SecOps Copilot -->
   <text x="32" y="190" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">SECOPS COPILOT  (LangGraph multi-agent)</text>
   <rect x="32" y="200" width="836" height="92" rx="10" fill="#0f172a" stroke="#2563eb" stroke-width="2"/>
   <g font-family="system-ui" font-size="13" fill="#e2e8f0">
@@ -134,100 +133,69 @@
     <text x="585" y="240" text-anchor="middle">KB RAG</text>
     <text x="585" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">Qdrant</text>
     <rect x="650" y="216" width="200" height="60" rx="6" fill="#1e293b" stroke="#a855f7"/>
-    <text x="750" y="240" text-anchor="middle">LLM (LiteLLM</text>
-    <text x="750" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">DeepSeek / Qwen / GPT)</text>
+    <text x="750" y="240" text-anchor="middle">LLM (LiteLLM)</text>
+    <text x="750" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">DeepSeek / Qwen / GPT</text>
   </g>
   <g stroke="#475569" stroke-width="1.5" fill="none">
-    <path d="M160 246 L170 246"/><path d="M280 246 L290 246"/>
-    <path d="M400 246 L410 246"/><path d="M520 246 L530 246"/>
-    <path d="M640 246 L650 246"/>
   </g>
-
-  <!-- Layer 3: SOAR with autonomy levels -->
-  <text x="32" y="320" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">SOAR ENGINE  (22 playbooks, 5 autonomy levels)</text>
-  <rect x="32" y="332" width="836" height="60" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
-  <g font-family="system-ui" font-size="12" fill="#e2e8f0">
-    <rect x="50" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
-    <text x="127" y="367" text-anchor="middle">L0 observe</text>
-    <rect x="215" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
-    <text x="292" y="367" text-anchor="middle">L1 suggest</text>
-    <rect x="380" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
-    <text x="457" y="367" text-anchor="middle">L2 confirm</text>
-    <rect x="545" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
-    <text x="622" y="367" text-anchor="middle">L3 auto-safe</text>
-    <rect x="710" y="346" width="140" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
-    <text x="780" y="367" text-anchor="middle">L4 gated</text>
-  </g>
-
-  <!-- Footer label -->
   <text x="32" y="430" fill="#475569" font-family="ui-monospace,monospace" font-size="11">22 production playbooks  /  MLPS 2.0 aligned  /  234 tests  /  87.8% coverage</text>
 </svg>
-          <figcaption>SecSight v0.5.1 — runtime architecture</figcaption>
+          <figcaption data-i18n-en="SecSight v0.5.1 — runtime architecture" data-i18n-zh="SecSight v0.5.1 — 运行时架构">SecSight v0.5.1 — runtime architecture</figcaption>
         </figure>
 
-        <h2 class="proj-h2">Capabilities</h2>
+        <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
-          <div class="proj-feat"><div class="proj-feat-title">AI SecOps Copilot</div><div class="proj-feat-desc">Multi-agent SOC assistant over SIEM/ticket/KB.</div></div><div class="proj-feat"><div class="proj-feat-title">Auto-remediation SOAR</div><div class="proj-feat-desc">22 production playbooks across 5 autonomy levels.</div></div><div class="proj-feat"><div class="proj-feat-title">Four-layer knowledge base</div><div class="proj-feat-desc">Process-isolated; aligned with MLPS 2.0 (等保 2.0).</div></div><div class="proj-feat"><div class="proj-feat-title">MCP & LiteLLM</div><div class="proj-feat-desc">Pluggable LLM backend, MCP tool bus, Qdrant RAG.</div></div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="AI SecOps Copilot" data-i18n-zh="AI SecOps 助手">AI SecOps Copilot</div>
+            <div class="proj-feat-desc" data-i18n-en="Multi-agent SOC assistant over SIEM/ticket/KB." data-i18n-zh="覆盖 SIEM / 工单 / 知识库的多智能体 SOC 助手。">Multi-agent SOC assistant over SIEM/ticket/KB.</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Auto-remediation SOAR" data-i18n-zh="自动响应 SOAR">Auto-remediation SOAR</div>
+            <div class="proj-feat-desc" data-i18n-en="22 production playbooks across 5 autonomy levels." data-i18n-zh="22 个生产级剧本，覆盖 5 级自主性。">22 production playbooks across 5 autonomy levels.</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Four-layer knowledge base" data-i18n-zh="四层知识库">Four-layer knowledge base</div>
+            <div class="proj-feat-desc" data-i18n-en="Process-isolated; aligned with MLPS 2.0 (等保 2.0)." data-i18n-zh="进程隔离，对齐等保 2.0 控制点。">Process-isolated; aligned with MLPS 2.0 (等保 2.0).</div>
+          </div>
+          <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="MCP &amp; LiteLLM" data-i18n-zh="MCP 与 LiteLLM">MCP &amp; LiteLLM</div>
+            <div class="proj-feat-desc" data-i18n-en="Pluggable LLM backend, MCP tool bus, Qdrant RAG." data-i18n-zh="可插拔 LLM 后端、MCP 工具总线、Qdrant RAG。">Pluggable LLM backend, MCP tool bus, Qdrant RAG.</div>
+          </div>
         </div>
 
-        <h2 class="proj-h2">Screenshots</h2>
-        <div class="proj-screenshots">
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Dashboard">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Main dashboard / console</figcaption>
-          </figure>
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Detail view">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Detail / playbook execution view</figcaption>
-          </figure>
-        </div>
-
-        <h2 class="proj-h2">By the numbers</h2>
+        <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
         <ul class="proj-metrics">
-          <li>22 production playbooks</li><li>5 autonomy levels (L0–L4)</li><li>234 tests · 87.8% coverage</li><li>4-layer knowledge base</li><li>Process-isolated deployment</li>
+          <li data-i18n-en="22 production playbooks" data-i18n-zh="22 个生产级剧本">22 production playbooks</li>
+          <li data-i18n-en="5 autonomy levels (L0–L4)" data-i18n-zh="5 级自主性 (L0–L4)">5 autonomy levels (L0–L4)</li>
+          <li data-i18n-en="234 tests · 87.8% coverage" data-i18n-zh="234 测试 · 87.8% 覆盖率">234 tests · 87.8% coverage</li>
+          <li data-i18n-en="4-layer knowledge base" data-i18n-zh="四层知识库">4-layer knowledge base</li>
+          <li data-i18n-en="Process-isolated deployment" data-i18n-zh="进程隔离部署">Process-isolated deployment</li>
         </ul>
       </article>
 
       <aside class="proj-side">
         <div class="side-block">
-          <div class="side-title">At a glance</div>
+          <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
           <dl>
-            <dt>Version</dt><dd>v0.5.1</dd>
+            <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.5.1</dd>
             <dt>License</dt><dd>Apache-2.0</dd>
-            <dt>Category</dt><dd>Security</dd>
-            <dt>Source</dt><dd><a href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">SecSight ↗</a></dd>
+            <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Security" data-i18n-zh="安全">Security</dd>
+            <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">SecSight ↗</a></dd>
           </dl>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Stack</div>
+          <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
           <div class="side-list">
             <span class="pill">Python · core service</span><span class="pill">TypeScript · Console SPA</span><span class="pill">Rust · process sandbox</span>
           </div>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Integrations</div>
+          <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
           <div class="side-list">
             <span class="pill">Wazuh</span><span class="pill">Suricata</span><span class="pill">Shuffle</span><span class="pill">OpenCTI</span><span class="pill">DFIR-IRIS</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">More from me</div>
-          <ul class="side-more">
-            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
-            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
-            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
-            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
-            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
-          </ul>
         </div>
       </aside>
     </div>
@@ -237,12 +205,12 @@
     <div class="shell">
       <div class="cta-row">
         <div>
-          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
-          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+          <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc"><span data-i18n-en="Source on GitHub · Apache-2.0 · questions to " data-i18n-zh="代码在 GitHub · Apache-2.0 · 邮件咨询：">Source on GitHub · Apache-2.0 · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">Open on GitHub ↗</a>
-          <a class="btn btn-outline" href="/projects/">See all projects</a>
+          <a class="btn btn-primary" href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
         </div>
       </div>
     </div>
@@ -251,12 +219,13 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>
