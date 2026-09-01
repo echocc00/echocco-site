@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="NetSage — AI network engineer · echocc00" data-page-title-zh="NetSage（AI 网络工程师）· echocc00" data-page-desc-en="NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-ga" data-page-desc-zh="NetSage 是一个 AI 驱动的平台，接管网络工程师日常：设计、配置生成、排障、部署、审计。8 个专业智能体协作于三道闸门的流水线中——每一次变更都要先过 Containerlab 仿真、Batfish 校验、人工审批与快照回滚，才允许触碰真实设备。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NetSage — echocc00 · echocc00</title>
-<meta name="description" content="NetSage — AI network engineer. NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and ">
+<title>NetSage — AI network engineer</title>
+<meta name="description" content="NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-ga">
 <meta name="author" content="echocc00">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/netsage/">
@@ -40,10 +40,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -56,11 +56,12 @@
 <main>
   <header class="proj-hero" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%); color: white;">
     <div class="shell">
-      <a class="proj-back" href="/projects/">← All projects</a>
+      <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
-        <span class="proj-cat">Network</span>
+        <span class="proj-cat" data-i18n-en="Network" data-i18n-zh="网络">Network</span>
         <h1 class="proj-title">NetSage</h1>
-        <p class="proj-tagline">AI network engineer</p>
+        <p class="proj-tagline" data-i18n-en="AI network engineer" data-i18n-zh="AI 网络工程师">AI network engineer</p>
+
         <div class="proj-meta-bar">
           <span class="proj-ver">v0.1.1</span>
           <span class="dot"></span>
@@ -75,152 +76,66 @@
   <section class="proj-body">
     <div class="shell proj-layout">
       <article class="proj-main">
-        <h2 class="proj-h2">Overview</h2>
-        <div class="proj-desc"><p>NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device.</p><p>It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically.</p></div>
+        <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+        <div class="proj-desc">
+          <p data-i18n-en="NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device." data-i18n-zh="NetSage 是一个 AI 驱动的平台，接管网络工程师日常：设计、配置生成、排障、部署、审计。8 个专业智能体协作于三道闸门的流水线中——每一次变更都要先过 Containerlab 仿真、Batfish 校验、人工审批与快照回滚，才允许触碰真实设备。">NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device.</p>
+          <p data-i18n-en="It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically." data-i18n-zh="跨厂商（华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista），从 NetBox 或 Nautobot 读取 Source of Truth。30 条基线规则（CIS + 厂商加固）自动拦下高危配置。">It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically.</p>
+        </div>
 
-        <h2 class="proj-h2">Architecture</h2>
-        <figure class="proj-figure">
-          
-<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NetSage architecture" style="width:100%;height:auto;max-width:900px;display:block">
-  <defs>
-    <linearGradient id="netsage-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#052e16"/><stop offset="1" stop-color="#0a0a0a"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="480" fill="url(#netsage-bg)" rx="12"/>
-  <text x="32" y="40" fill="#6ee7b7" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">NETSAGE v0.1.1  /  AI NETWORK ENGINEER</text>
-
-  <!-- Left: 8 agents -->
-  <text x="32" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">8 AGENTS</text>
-  <g font-family="system-ui" font-size="12" fill="#d1fae5">
-    <rect x="32" y="92" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="115" text-anchor="middle">planner</text>
-    <rect x="32" y="136" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="159" text-anchor="middle">config_engineer</text>
-    <rect x="32" y="180" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="203" text-anchor="middle">validator</text>
-    <rect x="32" y="224" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="247" text-anchor="middle">troubleshooter</text>
-    <rect x="32" y="268" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="291" text-anchor="middle">deploy</text>
-    <rect x="32" y="312" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="335" text-anchor="middle">observer</text>
-    <rect x="32" y="356" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="379" text-anchor="middle">security_auditor</text>
-    <rect x="32" y="400" width="170" height="36" rx="6" fill="#064e3b" stroke="#10b981"/>
-    <text x="117" y="423" text-anchor="middle">compliance</text>
-  </g>
-
-  <!-- Arrow to gates -->
-  <g stroke="#10b981" stroke-width="2" fill="none">
-    <path d="M202 268 L240 268" marker-end="url(#arrow-net)"/>
-  </g>
-  <defs><marker id="arrow-net" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#10b981"/></marker></defs>
-
-  <!-- Middle: 3 gates -->
-  <text x="250" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">3 GATES  (every change passes all 3)</text>
-  <g font-family="system-ui" font-size="13" fill="#fff">
-    <rect x="250" y="100" width="200" height="80" rx="8" fill="#022c22" stroke="#22c55e" stroke-width="2"/>
-    <text x="350" y="135" text-anchor="middle" font-weight="700">GATE 1  /  Containerlab</text>
-    <text x="350" y="158" text-anchor="middle" fill="#86efac" font-size="11">topology simulation</text>
-    <rect x="250" y="200" width="200" height="80" rx="8" fill="#022c22" stroke="#22c55e" stroke-width="2"/>
-    <text x="350" y="235" text-anchor="middle" font-weight="700">GATE 2  /  Batfish</text>
-    <text x="350" y="258" text-anchor="middle" fill="#86efac" font-size="11">config validation + ACL</text>
-    <rect x="250" y="300" width="200" height="80" rx="8" fill="#022c22" stroke="#22c55e" stroke-width="2"/>
-    <text x="350" y="335" text-anchor="middle" font-weight="700">GATE 3  /  Human + Snapshot</text>
-    <text x="350" y="358" text-anchor="middle" fill="#86efac" font-size="11">approval + rollback</text>
-  </g>
-
-  <!-- Arrow to outputs -->
-  <g stroke="#10b981" stroke-width="2" fill="none">
-    <path d="M450 240 L490 240" marker-end="url(#arrow-net)"/>
-  </g>
-
-  <!-- Right: vendors + SoT -->
-  <text x="500" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">MULTI-VENDOR  /  SOURCE OF TRUTH</text>
-  <g font-family="system-ui" font-size="13" fill="#d1fae5">
-    <rect x="500" y="100" width="370" height="60" rx="8" fill="#0f172a" stroke="#3b82f6"/>
-    <text x="685" y="125" text-anchor="middle" font-weight="700">Huawei VRP</text>
-    <text x="685" y="145" text-anchor="middle" fill="#94a3b8" font-size="11">Cisco IOS-XE  /  H3C  /  Juniper  /  Arista</text>
-    <rect x="500" y="180" width="370" height="60" rx="8" fill="#0f172a" stroke="#3b82f6"/>
-    <text x="685" y="205" text-anchor="middle" font-weight="700">NetBox  +  Nautobot</text>
-    <text x="685" y="225" text-anchor="middle" fill="#94a3b8" font-size="11">dual SourceOfTruth adapter</text>
-    <rect x="500" y="260" width="370" height="60" rx="8" fill="#0f172a" stroke="#22c55e"/>
-    <text x="685" y="285" text-anchor="middle" font-weight="700">30 baseline rules</text>
-    <text x="685" y="305" text-anchor="middle" fill="#94a3b8" font-size="11">CIS + vendor hardening</text>
-    <rect x="500" y="340" width="370" height="60" rx="8" fill="#0f172a" stroke="#22c55e"/>
-    <text x="685" y="365" text-anchor="middle" font-weight="700">RBAC 5 levels</text>
-    <text x="685" y="385" text-anchor="middle" fill="#94a3b8" font-size="11">viewer / operator / engineer / admin / auditor</text>
-  </g>
-
-  <text x="32" y="455" fill="#475569" font-family="ui-monospace,monospace" font-size="11">3-stage pipeline  /  agent-native  /  audit-first</text>
-</svg>
-          <figcaption>NetSage v0.1.1 — runtime architecture</figcaption>
-        </figure>
-
-        <h2 class="proj-h2">Capabilities</h2>
+        <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
-          <div class="proj-feat"><div class="proj-feat-title">8 specialized agents</div><div class="proj-feat-desc">planner / config_engineer / validator / troubleshooter / deploy / observer / security_auditor / compliance.</div></div><div class="proj-feat"><div class="proj-feat-title">Three-gate pipeline</div><div class="proj-feat-desc">Containerlab simulation → Batfish validation → human approval + snapshot rollback.</div></div><div class="proj-feat"><div class="proj-feat-title">Multi-vendor</div><div class="proj-feat-desc">Huawei VRP · Cisco IOS-XE · H3C · Juniper · Arista.</div></div><div class="proj-feat"><div class="proj-feat-title">Dual source-of-truth</div><div class="proj-feat-desc">NetBox + Nautobot adapters, switchable.</div></div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Three-gate engine" data-i18n-zh="三道闸门">Three-gate engine</div>
+            <div class="proj-feat-desc" data-i18n-en="Containerlab simulation → Batfish validation → human approval + snapshot rollback." data-i18n-zh="Containerlab 仿真 → Batfish 校验 → 人工审批 + 快照回滚。">Containerlab simulation → Batfish validation → human approval + snapshot rollback.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Multi-vendor" data-i18n-zh="多厂商">Multi-vendor</div>
+            <div class="proj-feat-desc" data-i18n-en="Huawei VRP / Cisco IOS-XE / H3C / Juniper / Arista." data-i18n-zh="华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista。">Huawei VRP / Cisco IOS-XE / H3C / Juniper / Arista.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Source of truth" data-i18n-zh="Source of Truth">Source of truth</div>
+            <div class="proj-feat-desc" data-i18n-en="NetBox + Nautobot dual adapters." data-i18n-zh="NetBox + Nautobot 双适配器。">NetBox + Nautobot dual adapters.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Compliance audit" data-i18n-zh="合规审计">Compliance audit</div>
+            <div class="proj-feat-desc" data-i18n-en="30 baseline rules (CIS + vendor hardening) + ACL analysis." data-i18n-zh="30 条基线规则（CIS + 厂商加固）+ ACL 分析。">30 baseline rules (CIS + vendor hardening) + ACL analysis.</div>
+          </div>
         </div>
 
-        <h2 class="proj-h2">Screenshots</h2>
-        <div class="proj-screenshots">
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Dashboard">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Main dashboard / console</figcaption>
-          </figure>
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Detail view">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Detail / playbook execution view</figcaption>
-          </figure>
-        </div>
-
-        <h2 class="proj-h2">By the numbers</h2>
+        <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
         <ul class="proj-metrics">
-          <li>8 agents</li><li>3-gate pipeline (simulate → validate → approve)</li><li>Multi-vendor: 5 OS families</li><li>30 baseline rules (CIS + vendor)</li><li>RBAC 5 levels (viewer/operator/engineer/admin/auditor)</li>
+          <li data-i18n-en="8 specialized agents" data-i18n-zh="8 个专业智能体">8 specialized agents</li>
+          <li data-i18n-en="30 baseline rules" data-i18n-zh="30 条基线规则">30 baseline rules</li>
+          <li data-i18n-en="5-level RBAC" data-i18n-zh="5 级 RBAC">5-level RBAC</li>
+          <li data-i18n-en="Containerlab + Batfish" data-i18n-zh="Containerlab + Batfish">Containerlab + Batfish</li>
+          <li data-i18n-en="NetBox + Nautobot" data-i18n-zh="NetBox + Nautobot">NetBox + Nautobot</li>
+          <li data-i18n-en="Multi-vendor (5 vendors)" data-i18n-zh="5 家厂商支持">Multi-vendor (5 vendors)</li>
         </ul>
       </article>
 
       <aside class="proj-side">
         <div class="side-block">
-          <div class="side-title">At a glance</div>
+          <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
           <dl>
-            <dt>Version</dt><dd>v0.1.1</dd>
+            <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.1.1</dd>
             <dt>License</dt><dd>Apache-2.0</dd>
-            <dt>Category</dt><dd>Network</dd>
-            <dt>Source</dt><dd><a href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">NetSage ↗</a></dd>
+            <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Network" data-i18n-zh="网络">Network</dd>
+            <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">NetSage ↗</a></dd>
           </dl>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Stack</div>
+          <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
           <div class="side-list">
-            <span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">React + Antd</span><span class="pill">NAPALM</span><span class="pill">NetBox API</span><span class="pill">Containerlab</span>
+            <span class="pill" data-i18n-en="Python · Backend" data-i18n-zh="Python · 后端">Python · Backend</span>
           </div>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Integrations</div>
+          <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
           <div class="side-list">
-            <span class="pill">Containerlab</span><span class="pill">Batfish</span><span class="pill">NetBox</span><span class="pill">Nautobot</span>
+            <span class="pill">Containerlab</span><span class="pill">Batfish</span><span class="pill">NetBox</span><span class="pill">Nautobot</span><span class="pill">Huawei VRP</span><span class="pill">Cisco IOS-XE</span><span class="pill">H3C</span><span class="pill">Juniper</span><span class="pill">Arista</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">More from me</div>
-          <ul class="side-more">
-            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
-            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
-            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
-            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
-            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
-          </ul>
         </div>
       </aside>
     </div>
@@ -230,12 +145,12 @@
     <div class="shell">
       <div class="cta-row">
         <div>
-          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
-          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+          <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc"><span data-i18n-en="Source on GitHub · {p['license']} · questions to " data-i18n-zh="代码在 GitHub · {p['license']} · 邮件咨询：">Source on GitHub · {p['license']} · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">Open on GitHub ↗</a>
-          <a class="btn btn-outline" href="/projects/">See all projects</a>
+          <a class="btn btn-primary" href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
         </div>
       </div>
     </div>
@@ -244,12 +159,13 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>

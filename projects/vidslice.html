@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="VidSlice — Material vector index for video pipelines · echocc00" data-page-title-zh="VidSlice（视频流水线素材向量索引）· echocc00" data-page-desc-en="VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into" data-page-desc-zh="VidSlice 把第三方视频素材（图片、片段、B-roll）索引进 LanceDB 向量库，每条都用 Ed25519 签名防止篡改，通过 HTTP API 提供查询。它专为 OpenCut 短视频流水线设计（HTTP API 与 OpenCut 的素材合约对齐）。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VidSlice — echocc00 · echocc00</title>
-<meta name="description" content="VidSlice — Material vector index for video pipelines. VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper">
+<title>VidSlice — Material vector index for video pipelines</title>
+<meta name="description" content="VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into">
 <meta name="author" content="echocc00">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/vidslice/">
@@ -40,10 +40,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -56,11 +56,12 @@
 <main>
   <header class="proj-hero" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%); color: white;">
     <div class="shell">
-      <a class="proj-back" href="/projects/">← All projects</a>
+      <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
-        <span class="proj-cat">Content</span>
+        <span class="proj-cat" data-i18n-en="Content" data-i18n-zh="内容">Content</span>
         <h1 class="proj-title">VidSlice</h1>
-        <p class="proj-tagline">Material vector index for video pipelines</p>
+        <p class="proj-tagline" data-i18n-en="Material vector index for video pipelines" data-i18n-zh="视频流水线的素材向量索引">Material vector index for video pipelines</p>
+
         <div class="proj-meta-bar">
           <span class="proj-ver">v0.7.10</span>
           <span class="dot"></span>
@@ -75,136 +76,66 @@
   <section class="proj-body">
     <div class="shell proj-layout">
       <article class="proj-main">
-        <h2 class="proj-h2">Overview</h2>
-        <div class="proj-desc"><p>VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract).</p><p>v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines.</p></div>
+        <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+        <div class="proj-desc">
+          <p data-i18n-en="VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract)." data-i18n-zh="VidSlice 把第三方视频素材（图片、片段、B-roll）索引进 LanceDB 向量库，每条都用 Ed25519 签名防止篡改，通过 HTTP API 提供查询。它专为 OpenCut 短视频流水线设计（HTTP API 与 OpenCut 的素材合约对齐）。">VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract).</p>
+          <p data-i18n-en="v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines." data-i18n-zh="v0.5 读兼容 / v0.6 写入通过 <code>--compat v0.5</code> 标志位可选开启。NDJSON 进度事件支持流式流水线。">v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines.</p>
+        </div>
 
-        <h2 class="proj-h2">Architecture</h2>
-        <figure class="proj-figure">
-          
-<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VidSlice architecture" style="width:100%;height:auto;max-width:900px;display:block">
-  <defs>
-    <linearGradient id="vidslice-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#0a0a0a"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="320" fill="url(#vidslice-bg)" rx="12"/>
-  <text x="32" y="40" fill="#c4b5fd" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">VIDSLICE v0.7.10  /  MATERIAL VECTOR INDEX</text>
-
-  <g font-family="system-ui" font-size="13" fill="#e9d5ff">
-    <!-- Ingest -->
-    <rect x="32" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
-    <text x="92" y="135" text-anchor="middle" font-weight="700">INGEST</text>
-    <text x="92" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">CLI / HTTP</text>
-    <text x="92" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">+ NDJSON events</text>
-
-    <!-- Extract -->
-    <rect x="172" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
-    <text x="232" y="135" text-anchor="middle" font-weight="700">EXTRACT</text>
-    <text x="232" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">3 frames</text>
-    <text x="232" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">parallel workers</text>
-
-    <!-- Embed -->
-    <rect x="312" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
-    <text x="372" y="135" text-anchor="middle" font-weight="700">EMBED</text>
-    <text x="372" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">CLIP / ViT</text>
-    <text x="372" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">+ perceptual hash</text>
-
-    <!-- Sign -->
-    <rect x="452" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#22c55e" stroke-width="2"/>
-    <text x="512" y="135" text-anchor="middle" font-weight="700">SIGN</text>
-    <text x="512" y="158" text-anchor="middle" fill="#86efac" font-size="11">Ed25519</text>
-    <text x="512" y="178" text-anchor="middle" fill="#86efac" font-size="11">attestation</text>
-
-    <!-- Store -->
-    <rect x="592" y="100" width="140" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
-    <text x="662" y="135" text-anchor="middle" font-weight="700">STORE</text>
-    <text x="662" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">LanceDB</text>
-    <text x="662" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">incremental updates</text>
-
-    <!-- Serve -->
-    <rect x="752" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#3b82f6" stroke-width="2"/>
-    <text x="812" y="135" text-anchor="middle" font-weight="700">SERVE</text>
-    <text x="812" y="158" text-anchor="middle" fill="#93c5fd" font-size="11">HTTP API</text>
-    <text x="812" y="178" text-anchor="middle" fill="#93c5fd" font-size="11">+ OpenCut compat</text>
-  </g>
-
-  <g stroke="#a855f7" stroke-width="2" fill="none">
-    <path d="M152 160 L172 160" marker-end="url(#arrow-vs)"/>
-    <path d="M292 160 L312 160" marker-end="url(#arrow-vs)"/>
-    <path d="M432 160 L452 160" marker-end="url(#arrow-vs)"/>
-    <path d="M572 160 L592 160" marker-end="url(#arrow-vs)"/>
-    <path d="M732 160 L752 160" marker-end="url(#arrow-vs)"/>
-  </g>
-  <defs><marker id="arrow-vs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a855f7"/></marker></defs>
-
-  <text x="32" y="260" fill="#a78bfa" font-family="ui-monospace,monospace" font-size="11">v0.5 read-compat  /  v0.6 write opt-in via --compat  /  408 tests</text>
-</svg>
-          <figcaption>VidSlice v0.7.10 — runtime architecture</figcaption>
-        </figure>
-
-        <h2 class="proj-h2">Capabilities</h2>
+        <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
-          <div class="proj-feat"><div class="proj-feat-title">Vector index</div><div class="proj-feat-desc">LanceDB-backed, 3-frame extraction, parallel workers.</div></div><div class="proj-feat"><div class="proj-feat-title">Ed25519 attestation</div><div class="proj-feat-desc">Every entry signed; tamper-evident.</div></div><div class="proj-feat"><div class="proj-feat-title">OpenCut compatibility</div><div class="proj-feat-desc">v0.5 read / v0.6 write opt-in.</div></div><div class="proj-feat"><div class="proj-feat-title">Streaming pipeline</div><div class="proj-feat-desc">NDJSON progress events · incremental updates.</div></div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Vector index" data-i18n-zh="向量索引">Vector index</div>
+            <div class="proj-feat-desc" data-i18n-en="LanceDB over multi-frame embeddings." data-i18n-zh="基于 LanceDB 的多帧 embedding。">LanceDB over multi-frame embeddings.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Ed25519 attestation" data-i18n-zh="Ed25519 签名">Ed25519 attestation</div>
+            <div class="proj-feat-desc" data-i18n-en="Signed material provenance at ingest." data-i18n-zh="入库即签名，素材来源可追溯。">Signed material provenance at ingest.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="NDJSON progress" data-i18n-zh="NDJSON 进度">NDJSON progress</div>
+            <div class="proj-feat-desc" data-i18n-en="Parallel ingestion with streamable events." data-i18n-zh="并行入库，进度事件可流式输出。">Parallel ingestion with streamable events.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="OpenCut-compatible API" data-i18n-zh="OpenCut 兼容 API">OpenCut-compatible API</div>
+            <div class="proj-feat-desc" data-i18n-en="Same HTTP contract as OpenCut's material index." data-i18n-zh="HTTP 合约与 OpenCut 素材索引一致。">Same HTTP contract as OpenCut's material index.</div>
+          </div>
         </div>
 
-        <h2 class="proj-h2">Screenshots</h2>
-        <div class="proj-screenshots">
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Dashboard">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Main dashboard / console</figcaption>
-          </figure>
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Detail view">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Detail / playbook execution view</figcaption>
-          </figure>
-        </div>
-
-        <h2 class="proj-h2">By the numbers</h2>
+        <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
         <ul class="proj-metrics">
-          <li>408 tests</li><li>3-frame extraction per clip</li><li>Parallel workers (configurable)</li><li>NDJSON progress events</li><li>v0.5 / v0.6 compat flags</li>
+          <li data-i18n-en="408 tests" data-i18n-zh="408 个测试">408 tests</li>
+          <li data-i18n-en="LanceDB storage" data-i18n-zh="LanceDB 存储">LanceDB storage</li>
+          <li data-i18n-en="3-frame extraction" data-i18n-zh="3 帧提取">3-frame extraction</li>
+          <li data-i18n-en="Ed25519 attestation" data-i18n-zh="Ed25519 签名">Ed25519 attestation</li>
+          <li data-i18n-en="HTTP + NDJSON streaming" data-i18n-zh="HTTP + NDJSON 流式">HTTP + NDJSON streaming</li>
+          <li data-i18n-en="v0.5 / v0.6 dual-versioned" data-i18n-zh="v0.5 / v0.6 双版本">v0.5 / v0.6 dual-versioned</li>
         </ul>
       </article>
 
       <aside class="proj-side">
         <div class="side-block">
-          <div class="side-title">At a glance</div>
+          <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
           <dl>
-            <dt>Version</dt><dd>v0.7.10</dd>
+            <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.7.10</dd>
             <dt>License</dt><dd>Apache-2.0</dd>
-            <dt>Category</dt><dd>Content</dd>
-            <dt>Source</dt><dd><a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">VidSlice ↗</a></dd>
+            <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Content" data-i18n-zh="内容">Content</dd>
+            <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">VidSlice ↗</a></dd>
           </dl>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Stack</div>
+          <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
           <div class="side-list">
-            <span class="pill">Python</span><span class="pill">LanceDB</span><span class="pill">OpenCV</span><span class="pill">Ed25519</span>
+            <span class="pill" data-i18n-en="Python · Indexer &amp; HTTP API" data-i18n-zh="Python · 索引器与 HTTP API">Python · Indexer &amp; HTTP API</span>
           </div>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Integrations</div>
+          <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
           <div class="side-list">
-            <span class="pill">OpenCut v3</span><span class="pill">HTTP API</span>
+            <span class="pill">LanceDB</span><span class="pill">OpenCut v3</span><span class="pill">HTTP / NDJSON</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">More from me</div>
-          <ul class="side-more">
-            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
-            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
-            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
-            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
-            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
-          </ul>
         </div>
       </aside>
     </div>
@@ -214,12 +145,12 @@
     <div class="shell">
       <div class="cta-row">
         <div>
-          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
-          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+          <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc"><span data-i18n-en="Source on GitHub · {p['license']} · questions to " data-i18n-zh="代码在 GitHub · {p['license']} · 邮件咨询：">Source on GitHub · {p['license']} · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">Open on GitHub ↗</a>
-          <a class="btn btn-outline" href="/projects/">See all projects</a>
+          <a class="btn btn-primary" href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
         </div>
       </div>
     </div>
@@ -228,12 +159,13 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-title-en="StrixOC — Autonomous AI penetration testing · echocc00" data-page-title-zh="StrixOC（自主 AI 渗透测试）· echocc00" data-page-desc-en="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna" data-page-desc-zh="StrixOC 动态运行你的代码，定位漏洞并通过真实 PoC 验证。多智能体编排让一组 AI 渗透测试员协同工作、可横向扩展。在内部作为 SecOpent 适配器路径的参考实现，也是新 case-DSL 原型落地前的快速反馈通道。">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StrixOC — Autonomous AI penetration testing · echocc00</title>
-<meta name="description" content="StrixOC — Autonomous AI penetration testing. StrixOC is autonomous AI penetration testing that runs code dynamically, validates through real proofs-of-concept, and orchestrates multi-agent teams.">
+<title>StrixOC — Autonomous AI penetration testing</title>
+<meta name="description" content="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna">
 <meta name="author" content="echocc00">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://www.echocco.com/projects/strixoc/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.echocco.com/projects/strixoc/">
 <meta property="og:title" content="StrixOC — Autonomous AI penetration testing">
-<meta property="og:description" content="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale.">
+<meta property="og:description" content="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna">
 <meta property="og:image" content="https://www.echocco.com/assets/og/strixoc.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="StrixOC">
@@ -26,11 +26,11 @@
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "StrixOC",
-  "version": "v1.1.1-stable",
+  "version": "v0.x",
   "codeRepository": "https://github.com/echocc00/strixoc",
   "programmingLanguage": "Python",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
-  "description": "Autonomous AI penetration testing agents with real exploit validation.",
+  "description": "Autonomous AI penetration testing",
   "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
 }
 </script>
@@ -40,10 +40,10 @@
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link active" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
       <a class="nav-cta" href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">GitHub ↗</a>
     </div>
         <div class="lang-toggle" aria-label="Language switcher">
@@ -54,13 +54,14 @@
 </nav>
 
 <main>
-  <header class="proj-hero" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%); color: white;">
+  <header class="proj-hero" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%); color: white;">
     <div class="shell">
-      <a class="proj-back" href="/projects/">← All projects</a>
+      <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
-        <span class="proj-cat">Security</span>
+        <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
         <h1 class="proj-title">StrixOC</h1>
-        <p class="proj-tagline">Autonomous AI penetration testing</p>
+        <p class="proj-tagline" data-i18n-en="Autonomous AI penetration testing" data-i18n-zh="自主 AI 渗透测试">Autonomous AI penetration testing</p>
+
         <div class="proj-meta-bar">
           <span class="proj-ver">v0.x</span>
           <span class="dot"></span>
@@ -75,88 +76,66 @@
   <section class="proj-body">
     <div class="shell proj-layout">
       <article class="proj-main">
-        <h2 class="proj-h2">Overview</h2>
-        <div class="proj-desc"><p>StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production.</p><p>GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in.</p></div>
+        <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+        <div class="proj-desc">
+          <p data-i18n-en="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production." data-i18n-zh="StrixOC 动态运行你的代码，定位漏洞并通过真实 PoC 验证。多智能体编排让一组 AI 渗透测试员协同工作、可横向扩展。在内部作为 SecOpent 适配器路径的参考实现，也是新 case-DSL 原型落地前的快速反馈通道。">StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production.</p>
+          <p data-i18n-en="GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in." data-i18n-zh="与 GitHub Actions / CI 集成，提供面向开发者的 CLI，反馈循环短。支持开源 LLM 提供商，无供应商锁定。">GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in.</p>
+        </div>
 
-        <h2 class="proj-h2">Architecture</h2>
-        <figure class="proj-figure">
-          
-<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StrixOC architecture coming soon" style="width:100%;height:auto;max-width:900px;display:block">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0a"/><stop offset="1" stop-color="#1c1917"/></linearGradient>
-  </defs>
-  <rect width="900" height="460" fill="url(#bg)" rx="12"/>
-  <text x="32" y="40" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">STRIXOC  /  AUTONOMOUS AI PENTESTING</text>
-  <text x="450" y="240" fill="#64748b" font-family="system-ui" font-size="20" text-anchor="middle">Architecture diagram coming soon</text>
-  <text x="450" y="270" fill="#475569" font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">recon · exploit · validate PoC · multi-agent orchestration</text>
-  <text x="32" y="430" fill="#475569" font-family="ui-monospace,monospace" font-size="11">github.com/echocc00/strixoc</text>
-</svg>
-          <figcaption>SecOpent v1.1.1-stable — runtime architecture</figcaption>
-        </figure>
-
-        <h2 class="proj-h2">Capabilities</h2>
+        <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
-          <div class="proj-feat"><div class="proj-feat-title">Real exploit validation</div><div class="proj-feat-desc">Real PoCs through dynamic execution, not the false positives of static analyzers.</div></div><div class="proj-feat"><div class="proj-feat-title">Multi-agent teams</div><div class="proj-feat-desc">Collaborative pentesters that scale the way real red teams do.</div></div><div class="proj-feat"><div class="proj-feat-title">Developer-first CLI</div><div class="proj-feat-desc">Actionable findings with remediation guidance, not 50-page PDFs.</div></div><div class="proj-feat"><div class="proj-feat-title">Auto-fix and reporting</div><div class="proj-feat-desc">Generates patches and compliance-ready pentest reports.</div></div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Real exploit validation" data-i18n-zh="真实漏洞验证">Real exploit validation</div>
+            <div class="proj-feat-desc" data-i18n-en="Real PoCs through dynamic execution, not the false positives of static analyzers." data-i18n-zh="通过动态执行产出真 PoC，而非静态扫描的高误报。">Real PoCs through dynamic execution, not the false positives of static analyzers.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Multi-agent teams" data-i18n-zh="多智能体团队">Multi-agent teams</div>
+            <div class="proj-feat-desc" data-i18n-en="Collaborative pentesters that scale the way real red teams do." data-i18n-zh="协同工作的渗透测试员，像真实红队一样横向扩展。">Collaborative pentesters that scale the way real red teams do.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Developer-first CLI" data-i18n-zh="面向开发者的 CLI">Developer-first CLI</div>
+            <div class="proj-feat-desc" data-i18n-en="Actionable findings with remediation guidance, not 50-page PDFs." data-i18n-zh="可执行的发现 + 修复建议，不是 50 页 PDF。">Actionable findings with remediation guidance, not 50-page PDFs.</div>
+          </div>
+        <div class="proj-feat">
+            <div class="proj-feat-title" data-i18n-en="Auto-fix and reporting" data-i18n-zh="自动修复与报告">Auto-fix and reporting</div>
+            <div class="proj-feat-desc" data-i18n-en="Generates patches and compliance-ready pentest reports." data-i18n-zh="自动生成补丁与合规级渗透测试报告。">Generates patches and compliance-ready pentest reports.</div>
+          </div>
         </div>
 
-        <h2 class="proj-h2">Screenshots</h2>
-        <div class="proj-screenshots">
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Dashboard">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Main dashboard / console</figcaption>
-          </figure>
-          <figure class="screenshot-placeholder">
-            <div class="screenshot-box" data-label="Screenshot: Detail view">
-              <div class="shot-placeholder-text">📸 Screenshot</div>
-              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
-            </div>
-            <figcaption>Detail / playbook execution view</figcaption>
-          </figure>
-        </div>
-
-        <h2 class="proj-h2">By the numbers</h2>
+        <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
         <ul class="proj-metrics">
-          <li>Real PoC validation</li><li>Multi-agent orchestration</li><li>Developer-first CLI</li><li>Auto-fix + reporting</li><li>GitHub Actions integration</li><li>Open-source LLM providers</li>
+          <li data-i18n-en="Real PoC validation" data-i18n-zh="真实 PoC 验证">Real PoC validation</li>
+          <li data-i18n-en="Multi-agent orchestration" data-i18n-zh="多智能体编排">Multi-agent orchestration</li>
+          <li data-i18n-en="Developer-first CLI" data-i18n-zh="面向开发者的 CLI">Developer-first CLI</li>
+          <li data-i18n-en="Auto-fix + reporting" data-i18n-zh="自动修复 + 报告">Auto-fix + reporting</li>
+          <li data-i18n-en="GitHub Actions integration" data-i18n-zh="GitHub Actions 集成">GitHub Actions integration</li>
+          <li data-i18n-en="Open-source LLM providers" data-i18n-zh="支持开源 LLM 提供商">Open-source LLM providers</li>
         </ul>
       </article>
 
       <aside class="proj-side">
         <div class="side-block">
-          <div class="side-title">At a glance</div>
+          <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
           <dl>
-            <dt>Version</dt><dd>v1.1.1-stable</dd>
+            <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.x</dd>
             <dt>License</dt><dd>Apache-2.0</dd>
-            <dt>Category</dt><dd>Security</dd>
-            <dt>Source</dt><dd><a href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">SecOpent ↗</a></dd>
+            <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Security" data-i18n-zh="安全">Security</dd>
+            <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">StrixOC ↗</a></dd>
           </dl>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Stack</div>
+          <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
           <div class="side-list">
-            <span class="pill">Python · FastAPI</span><span class="pill">React · Case Studio</span><span class="pill">Rust · sandbox</span><span class="pill">PostgreSQL</span>
+            <span class="pill" data-i18n-en="Python · Agent + toolkit" data-i18n-zh="Python · 智能体 + 工具集">Python · Agent + toolkit</span>
           </div>
         </div>
 
         <div class="side-block">
-          <div class="side-title">Integrations</div>
+          <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
           <div class="side-list">
-            <span class="pill">Multi-agent orchestration</span>
+            <span class="pill">GitHub Actions / CI</span><span class="pill">Open-source LLMs</span><span class="pill">Multiple vendors</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <div class="side-title">More from me</div>
-          <ul class="side-more">
-            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
-            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
-            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
-            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
-            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
-          </ul>
         </div>
       </aside>
     </div>
@@ -166,12 +145,12 @@
     <div class="shell">
       <div class="cta-row">
         <div>
-          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
-          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+          <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc"><span data-i18n-en="Source on GitHub · {p['license']} · questions to " data-i18n-zh="代码在 GitHub · {p['license']} · 邮件咨询：">Source on GitHub · {p['license']} · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">Open on GitHub ↗</a>
-          <a class="btn btn-outline" href="/projects/">See all projects</a>
+          <a class="btn btn-primary" href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
         </div>
       </div>
     </div>
@@ -180,12 +159,13 @@
 
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
-      <a href="/">Home</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
     </div>
   </div>
 </footer>
