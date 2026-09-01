@@ -1,337 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>echocc00 — Security & Network Engineer · Open Source · echocc00</title>
-<meta name="description" content="I'm echocc00, a security & network engineer in Shanghai with 9 years of cloud security and CCIE certification. Currently shipping SecSight (AI SOC), NetSage (AI network engineer), and 4 more production open-source products.">
-<meta name="author" content="echocc00">
-<meta name="theme-color" content="#000000">
-<link rel="canonical" href="https://www.echocco.com/">
+---
+permalink: /
+layout: default
+title: "echocc00 — Security & Network Engineer · Open Source"
+description: "AI-driven security infrastructure. Cloud security, network engineering, and AI-driven SecOps. Apache-2.0 open source."
+---
 
-<!-- PWA -->
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" type="image/svg+xml" href="/icon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="echocc00">
+<!--
+  Index.html — Linear-flavored hero + i18n helper attrs.
+  Every translatable text node has data-i18n-en + data-i18n-zh.
+  The i18n.js bundle detects URL → /zh/ vs / and swaps textContent.
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.echocco.com/">
-<meta property="og:title" content="echocc00 — Security & Network Engineer · 6 OSS Products in Production">
-<meta property="og:description" content="9 years in cloud security · CCIE · shipping AI-driven SOC and network automation tooling as open source. Looking for staff security engineer role or commercial pilots.">
-<meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="echocc00 portfolio — 6 open-source products in production">
-<meta property="og:site_name" content="echocc00 portfolio">
-<meta property="og:locale" content="en_US">
+  Note: this site is pure static HTML (no Jekyll liquid).
+  Project cards below are hand-written. Edit by hand when content changes.
+-->
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="echocc00 — Security & Network Engineer · echocc00">
-<meta name="twitter:description" content="9 years cloud security · CCIE · shipping SecSight + NetSage + 4 more as OSS.">
-<meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
-<meta name="twitter:creator" content="@echocc00">
-<meta name="twitter:site" content="@echocc00">
-
-<!-- LinkedIn / Slack / WeChat use OG fallback -->
-
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" as="image" href="/assets/og/home.png">
-
-<!-- JSON-LD: Person -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "echocc00",
-  "alternateName": "echocc00",
-  "url": "https://www.echocco.com/",
-  "image": "https://www.echocco.com/assets/avatar.png",
-  "jobTitle": "Security & Network Engineer",
-  "description": "Cloud security and network engineering practitioner. 9 years in cloud security, CCIE-certified, currently operating production AI-driven SOC and network automation tooling as open source.",
-  "knowsAbout": [
-    "Cloud Security", "SecOps", "SOAR", "SIEM", "Wazuh", "Suricata",
-    "Network Engineering", "Network Automation", "NetBox", "Containerlab", "Batfish",
-    "AI Security Operations", "LLM", "LangGraph", "Multi-Agent Systems",
-    "Python", "FastAPI", "MLPS 2.0 (等保 2.0)"
-  ],
-  "sameAs": [
-    "https://github.com/echocc00",
-    "https://github.com/echocc00/awesome-echocc00"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Shanghai",
-    "addressCountry": "CN"
-  },
-  "alumniOf": "TODO: add real education / certifications here"
-}
-</script>
-
-<!-- JSON-LD: WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "echocc00 portfolio",
-  "url": "https://www.echocco.com/",
-  "inLanguage": "en-US",
-  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/about/"}
-}
-</script>
-
-<!-- JSON-LD: ItemList of SoftwareSourceCode (6 products) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
-    {"@type": "SoftwareSourceCode", "name": "SecSight", "version": "v0.5.1", "codeRepository": "https://github.com/echocc00/SecSight", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI-driven SOC platform"},
-    {"@type": "SoftwareSourceCode", "name": "SecOpent", "version": "v1.1.1-stable", "codeRepository": "https://github.com/echocc00/SecOpent", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Authorized pentest workbench"},
-    {"@type": "SoftwareSourceCode", "name": "VidSlice", "version": "v0.7.10", "codeRepository": "https://github.com/echocc00/VidSlice", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Material vector index for video pipelines"},
-    {"@type": "SoftwareSourceCode", "name": "NetSage", "version": "v0.1.1", "codeRepository": "https://github.com/echocc00/NetSage", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI network engineer platform"},
-    {"@type": "SoftwareSourceCode", "name": "OpenCut v3", "version": "v0.6.5", "codeRepository": "https://github.com/echocc00/opencut002", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI short-video production pipeline"}, {"@type": "SoftwareSourceCode", "name": "SecOpentAgent", "version": "v0.x", "codeRepository": "https://github.com/echocc00/SecOpentAgent", "programmingLanguage": "Python", "license": "https://opensource.org/licenses/MIT", "description": "Self-improving AI agent infrastructure"}, {"@type": "SoftwareSourceCode", "name": "StrixOC", "version": "v0.x", "codeRepository": "https://github.com/echocc00/strixoc", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Autonomous AI penetration testing"}
-</script>
-</head>
-<body>
-<nav class="nav">
-  <div class="shell nav-inner">
-    <a class="nav-brand" href="/">
-      <span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span>
-    </a>
-    <div class="nav-menu">
-      <a class="nav-link active" href="/">Home</a>
-      <a class="nav-link" href="/projects/">Projects</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
-      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+<section class="hero">
+  <div class="shell hero-inner">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span data-i18n-en="Open to staff security engineer roles · AI SecOps consulting" data-i18n-zh="正在寻求安全工程师职位 · AI 安全运营咨询"></span>
     </div>
-    <a class="nav-mobile" href="https://github.com/echocc00" rel="noopener" target="_blank" aria-label="GitHub"><span></span></a>
-  </div>
-</nav>
-
-<main>
-  <section class="hero">
-    <div class="shell hero-inner">
-      <div class="hero-status">
-        <span class="status-dot"></span>
-        <span>Open to: <strong>staff security engineer</strong> · <strong>AI security infra consulting</strong> · <strong>SecSight / NetSage commercial pilots</strong></span>
-      </div>
-
-      <div class="hero-head">
-        <div class="hero-avatar">
-          <img src="/assets/avatar.png" alt="echocc00 — Shanghai" class="hero-avatar-img" width="96" height="96" loading="eager" decoding="async" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=&quot;avatar-placeholder&quot;>[photo]</div>';">
-        </div>
-        <div class="hero-head-text">
-          <h1 class="hero-title">
-            Hi, I'm <span class="accent">echocc00</span>.<br>
-            I build AI-driven security infrastructure<br>
-            <span class="accent-2">that ships to production.</span>
-          </h1>
-        </div>
-      </div>
-
-      <p class="hero-tagline">
-        Security &amp; network engineer in <strong>Shanghai</strong>. 9 years in cloud security,
-        CCIE-certified. Currently running six Apache-2.0 open-source products —
-        most recently <strong>SecSight v0.5.1</strong> (AI SOC, 22 SOAR playbooks, 87.8% test coverage).
-      </p>
-
-      <div class="hero-active">
-        <span class="active-label">Currently shipping</span>
-        <a class="active-chip" href="/projects/secsight/">🛡 SecSight <span class="chip-ver">v0.5.1</span></a>
-        <a class="active-chip" href="/projects/netsage/">🌐 NetSage <span class="chip-ver">v0.1.1</span></a>
-        <a class="active-chip" href="/projects/secopent/">🔐 SecOpent <span class="chip-ver">v1.1.1-stable</span></a>
-      </div>
-
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="/projects/">See my work <span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
-        <a class="btn btn-link"  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi%20from%20your%20portfolio">Email me ↗</a>
-      </div>
-
-      <ul class="hero-trust">
-        <li>📍 Shanghai</li>
-        <li>🎓 CCIE RS / Security (2017)</li>
-        <li>🛠 9 years production</li>
-        <li>📄 <a href="/assets/cv.pdf">CV available</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell">
-      <div class="metrics">
-        <div class="metric"><div class="metric-value">9+</div><div class="metric-label">years in cloud security</div></div>
-        <div class="metric"><div class="metric-value">22</div><div class="metric-label">SOAR playbooks</div></div>
-        <div class="metric"><div class="metric-value">6</div><div class="metric-label">open-source products</div></div>
-        <div class="metric"><div class="metric-value">1,500+</div><div class="metric-label">tests across projects</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow">Projects</div>
-        <h2 class="section-title">Six products in production.</h2>
-        <p class="section-desc">
-          Each ships as an Apache-2.0 project with a stable version, tests, and an honest README.
-          Click any for the full technical detail, stack, and integrations.
-        </p>
-      </div>
-      <div class="grid">
-        <a class="project-card" href="/projects/secsight/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);"><span>🛡</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.5.1</span><span class="dot"></span><span class="project-tag">security</span></div>
-            <h3 class="project-title">SecSight</h3>
-            <div class="project-tagline">AI-driven SOC platform</div>
-            <p class="project-desc">SecOps Copilot + auto-remediation SOAR engine for small-to-mid SOC teams.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/secopent/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);"><span>🔐</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v1.1.1-stable</span><span class="dot"></span><span class="project-tag">security</span></div>
-            <h3 class="project-title">SecOpent</h3>
-            <div class="project-tagline">Authorized pentest workbench</div>
-            <p class="project-desc">Catalog-driven, agent-native authorized pentest workbench.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/vidslice/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);"><span>🎬</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.7.10</span><span class="dot"></span><span class="project-tag">content</span></div>
-            <h3 class="project-title">VidSlice</h3>
-            <div class="project-tagline">OpenCut materials · vector index</div>
-            <p class="project-desc">Third-party material vector indexing + Ed25519 attestation.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/netsage/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);"><span>🌐</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.1.1</span><span class="dot"></span><span class="project-tag">network</span></div>
-            <h3 class="project-title">NetSage</h3>
-            <div class="project-tagline">AI network engineer</div>
-            <p class="project-desc">AI-driven design, config generation, troubleshooting, and audit.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/opencut002/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);"><span>✂️</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.6.5</span><span class="dot"></span><span class="project-tag">content</span></div>
-            <h3 class="project-title">OpenCut v3</h3>
-            <div class="project-tagline">Multi-domain short-video platform</div>
-            <p class="project-desc">AI short-video production from still inputs to 1080x1920 vertical.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/secopentagent/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);"><span>🛰</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
-            <h3 class="project-title">SecOpentAgent</h3>
-            <div class="project-tagline">Self-improving AI agent infrastructure</div>
-            <p class="project-desc">Agent runtime with closed-loop learning and multi-platform gateway.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-        <a class="project-card" href="/projects/strixoc/">
-          <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);"><span>🎯</span></div>
-          <div class="project-body">
-            <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
-            <h3 class="project-title">StrixOC</h3>
-            <div class="project-tagline">Autonomous AI penetration testing</div>
-            <p class="project-desc">AI pentest agents with real exploit validation and multi-agent orchestration.</p>
-            <span class="project-link">View project <span class="arrow">→</span></span>
-          </div>
-        </a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow">Where I focus</div>
-        <h2 class="section-title">Three engineering areas.</h2>
-      </div>
-      <div class="focus-grid">
-        <div class="focus-item">
-          <div class="focus-icon">🛡</div>
-          <div class="focus-title">Cloud Security & SecOps</div>
-          <div class="focus-desc">Production-grade detection, automation, and AI-assisted operations.</div>
-        </div>
-        <div class="focus-item">
-          <div class="focus-icon">🌐</div>
-          <div class="focus-title">Network Engineering & AI</div>
-          <div class="focus-desc">Multi-vendor config generation, simulation, and policy validation.</div>
-        </div>
-        <div class="focus-item">
-          <div class="focus-icon">🎬</div>
-          <div class="focus-title">Content & Creative AI</div>
-          <div class="focus-desc">Short-form video pipelines and creative tooling research.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow">Stack &amp; tooling</div>
-        <h2 class="section-title">Tools I work with across the products.</h2>
-        <p class="section-desc">A non-exhaustive list of the runtimes, frameworks, and security platforms that show up in production code or infra.</p>
-      </div>
-      <div class="pill-cloud">
-        <span class="pill dark">LangGraph</span><span class="pill dark">FastAPI</span><span class="pill dark">React</span>
-        <span class="pill dark">Antd</span><span class="pill dark">Wazuh</span><span class="pill dark">Suricata</span>
-        <span class="pill dark">Containerlab</span><span class="pill dark">Batfish</span><span class="pill dark">NetBox</span>
-        <span class="pill dark">Qdrant</span><span class="pill dark">MCP</span><span class="pill dark">LiteLLM</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="shell">
-      <div class="cta-card">
-        <div>
-          <h2 class="cta-title">Let's work together.</h2>
-          <p class="cta-desc">Open to staff security engineering roles, AI security infra consulting, and commercial pilots of SecSight / NetSage.</p>
-          <div class="cta-actions">
-            <a class="btn btn-primary"  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi%20from%20your%20portfolio">Email me ↗</a>
-            <a class="btn btn-outline" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
-            <a class="btn btn-ghost" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="shell footer-row">
-    <div>
-      <span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026
-    </div>
-    <div class="footer-meta">
-      <a href="/about/">About</a>
-      <a href="/projects/">Projects</a>
-      <a href="/assets/cv.pdf" target="_blank" rel="noopener">CV</a>
-      <a  data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
-      <a href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
-      <span>Apache-2.0</span>
+    <h1 class="hero-title">
+      <span data-i18n-en="Building AI-driven" data-i18n-zh="构建 AI 驱动的"></span><br>
+      <span class="accent" data-i18n-en="security infrastructure" data-i18n-zh="安全基础设施"></span><br>
+      <span data-i18n-en="that ships to production." data-i18n-zh="并投入生产环境。"></span>
+    </h1>
+    <p class="hero-tagline">
+      <span data-i18n-en="I'm" data-i18n-zh="我是"></span> <strong>echocc00</strong><span data-i18n-en=", a security &amp; network engineer in" data-i18n-zh="，一名常驻上海的安全与网络工程师。"></span>
+      <span data-i18n-en="9 years in cloud security and CCIE-certified." data-i18n-zh="九年云安全经验，CCIE 认证。"></span>
+      <span data-i18n-en="Currently operating AI-driven SOC and network automation tooling as open source." data-i18n-zh="目前以开源形式运行 AI 驱动的安全运营与网络自动化工具。"></span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="/projects/" data-i18n-en="See my work" data-i18n-zh="查看我的作品"><span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi from your portfolio" href="#"
+         data-i18n-en="Get in touch" data-i18n-zh="联系我"><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="btn btn-ghost" href="/assets/cv.pdf" target="_blank" rel="noopener"
+         data-i18n-en="Download CV" data-i18n-zh="下载简历"><span class="arrow" aria-hidden="true">↓</span></a>
     </div>
   </div>
-</footer>
-<script src="/assets/js/mailto.js" defer></script>
-</body>
-</html>
+</section>
+
+<!-- Metrics row -->
+<section class="section">
+  <div class="shell">
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-value">9+</div>
+        <div class="metric-label" data-i18n-en="years in cloud security" data-i18n-zh="年云安全经验"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">22</div>
+        <div class="metric-label" data-i18n-en="SOAR playbooks in production" data-i18n-zh="个生产级 SOAR 剧本"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">7</div>
+        <div class="metric-label" data-i18n-en="open-source products" data-i18n-zh="个开源产品"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">1,500+</div>
+        <div class="metric-label" data-i18n-en="tests across products" data-i18n-zh="单元/集成测试用例"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects grid (7 cards hand-written) -->
+<section class="section alt">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n-en="Projects" data-i18n-zh="项目"></div>
+      <h2 class="section-title" data-i18n-en="Seven products in production." data-i18n-zh="七款投入生产的产品。"></h2>
+      <p class="section-desc"
+         data-i18n-en="Each ships as an Apache-2.0 project with a stable version, tests, and an honest README. Click any of them for the full technical detail, stack, and integrations."
+         data-i18n-zh="每款都是 Apache-2.0 项目，带有稳定版本、测试和诚实的 README。点击任意项目查看完整的技术细节、技术栈与集成。"></p>
+    </div>
+    <div class="grid">
+      <!-- SecSight -->
+      <a class="project-card" href="/projects/secsight/" data-cat="security">
+        <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);">
+          <span style="font-size:36px;">🛡</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.5.1</span>
+            <span class="dot"></span>
+            <span class="project-tag">security</span>
+          </div>
+          <h3 class="project-title">SecSight</h3>
+          <div class="project-tagline"
+               data-i18n-en="AI-driven SOC platform"
+               data-i18n-zh="AI 驱动的安全运营平台"></div>
+          <p class="project-desc"
+             data-i18n-en="22 production playbooks · 5 autonomy levels · 234 tests at 87.8% coverage."
+             data-i18n-zh="22 个生产级剧本 · 5 级自主性 · 234 测试覆盖率达 87.8%。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- SecOpent -->
+      <a class="project-card" href="/projects/secopent/" data-cat="security">
+        <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);">
+          <span style="font-size:36px;">🔐</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v1.1.1-stable</span>
+            <span class="dot"></span>
+            <span class="project-tag">security</span>
+          </div>
+          <h3 class="project-title">SecOpent</h3>
+          <div class="project-tagline"
+               data-i18n-en="Authorized pentest workbench"
+               data-i18n-zh="授权渗透测试工作台"></div>
+          <p class="project-desc"
+             data-i18n-en="Catalog-driven, agent-native pentest workbench. LLM proposes, deterministic layer + humans decide."
+             data-i18n-zh="目录驱动的智能体渗透测试工作台。LLM 提议，确定性层 + 人来决策。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- VidSlice -->
+      <a class="project-card" href="/projects/vidslice/" data-cat="content">
+        <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);">
+          <span style="font-size:36px;">🎬</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.7.10</span>
+            <span class="dot"></span>
+            <span class="project-tag">content</span>
+          </div>
+          <h3 class="project-title">VidSlice</h3>
+          <div class="project-tagline"
+               data-i18n-en="Material vector index for video pipelines"
+               data-i18n-zh="视频流水线的素材向量索引"></div>
+          <p class="project-desc"
+             data-i18n-en="Third-party material vector indexing with Ed25519 attestation. 408 tests, LanceDB storage."
+             data-i18n-zh="第三方素材向量索引 + Ed25519 签名验证。408 测试，LanceDB 存储。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- NetSage -->
+      <a class="project-card" href="/projects/netsage/" data-cat="network">
+        <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);">
+          <span style="font-size:36px;">🌐</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.1.1</span>
+            <span class="dot"></span>
+            <span class="project-tag">network</span>
+          </div>
+          <h3 class="project-title">NetSage</h3>
+          <div class="project-tagline"
+               data-i18n-en="AI network engineer"
+               data-i18n-zh="AI 网络工程师"></div>
+          <p class="project-desc"
+             data-i18n-en="Multi-vendor config generation with Containerlab simulation, Batfish validation, and human approval + snapshot rollback."
+             data-i18n-zh="多厂商配置生成、Containerlab 仿真、Batfish 校验，以及人工审批 + 快照回滚。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- OpenCut v3 -->
+      <a class="project-card" href="/projects/opencut002/" data-cat="content">
+        <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);">
+          <span style="font-size:36px;">✂️</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.6.5</span>
+            <span class="dot"></span>
+            <span class="project-tag">content</span>
+          </div>
+          <h3 class="project-title">OpenCut v3</h3>
+          <div class="project-tagline"
+               data-i18n-en="Multi-domain short-video platform"
+               data-i18n-zh="多领域短视频平台"></div>
+          <p class="project-desc"
+             data-i18n-en="AI short-video production pipeline. 20 stages from input image to 1080×1920 vertical. CLI + SaaS modes."
+             data-i18n-zh="AI 短视频生产流水线。从素材图到 1080×1920 竖屏共 20 个阶段，CLI + SaaS 双轨。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- SecOpentAgent -->
+      <a class="project-card" href="/projects/secopentagent/" data-cat="security">
+        <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);">
+          <span style="font-size:36px;">🛰</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.x</span>
+            <span class="dot"></span>
+            <span class="project-tag">security</span>
+          </div>
+          <h3 class="project-title">SecOpentAgent</h3>
+          <div class="project-tagline"
+               data-i18n-en="Self-improving AI agent infrastructure"
+               data-i18n-zh="自进化 AI 智能体基础设施"></div>
+          <p class="project-desc"
+             data-i18n-en="Agent runtime with closed-loop learning and multi-platform gateway (Telegram, Discord, Slack, CLI)."
+             data-i18n-zh="具备闭环学习与多平台网关（Telegram / Discord / Slack / CLI）的智能体运行时。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- StrixOC -->
+      <a class="project-card" href="/projects/strixoc/" data-cat="security">
+        <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);">
+          <span style="font-size:36px;">🎯</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tag-row">
+            <span class="project-tag">v0.x</span>
+            <span class="dot"></span>
+            <span class="project-tag">security</span>
+          </div>
+          <h3 class="project-title">StrixOC</h3>
+          <div class="project-tagline"
+               data-i18n-en="Autonomous AI penetration testing"
+               data-i18n-zh="自主 AI 渗透测试"></div>
+          <p class="project-desc"
+             data-i18n-en="AI penetration testing agents with real PoC validation and multi-agent orchestration."
+             data-i18n-zh="具备真实 PoC 验证与多智能体协作的 AI 渗透测试代理。"></p>
+          <span class="project-link"
+                data-i18n-en="View project"
+                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Three engineering areas -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n-en="Where I focus" data-i18n-zh="专注领域"></div>
+      <h2 class="section-title" data-i18n-en="Three engineering areas, one stack." data-i18n-zh="三大工程领域，一套技术栈。"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;">
+      <div style="background:var(--bg);padding:var(--s-5);">
+        <div class="focus-icon">🛡</div>
+        <div class="focus-title" data-i18n-en="Cloud Security &amp; SecOps" data-i18n-zh="云安全与 SecOps"></div>
+        <div class="focus-desc" data-i18n-en="AI SecOps Copilot + auto-remediation SOAR for small-to-mid SOC teams." data-i18n-zh="面向中小型 SOC 团队的 AI 安全运营助手 + 自动化响应 SOAR 引擎。"></div>
+      </div>
+      <div style="background:var(--bg);padding:var(--s-5);">
+        <div class="focus-icon">🌐</div>
+        <div class="focus-title" data-i18n-en="Network Engineering &amp; AI" data-i18n-zh="网络工程与 AI"></div>
+        <div class="focus-desc" data-i18n-en="Multi-vendor config generation, simulation, and policy validation." data-i18n-zh="多厂商配置生成、网络仿真与策略验证。"></div>
+      </div>
+      <div style="background:var(--bg);padding:var(--s-5);">
+        <div class="focus-icon">🎬</div>
+        <div class="focus-title" data-i18n-en="Content &amp; Creative AI" data-i18n-zh="内容与创意 AI"></div>
+        <div class="focus-desc" data-i18n-en="Short-form video pipelines and creative tooling research." data-i18n-zh="短视频流水线与创意工具研究。"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stack -->
+<section class="section dark">
+  <div class="shell">
+    <div class="section-head">
+      <div class="section-eyebrow" data-i18n-en="Stack &amp; tooling" data-i18n-zh="技术栈"></div>
+      <h2 class="section-title" data-i18n-en="Tools I work with across the products." data-i18n-zh="我在产品中使用的工具。"></h2>
+      <p class="section-desc"
+         data-i18n-en="Not exhaustive, not aspirational — the ones that show up in real commits."
+         data-i18n-zh="不是穷尽，也不是愿景 — 而是真实代码里出现过的。"></p>
+    </div>
+    <div class="pill-cloud">
+      <span class="pill dark">LangGraph</span>
+      <span class="pill dark">FastAPI</span>
+      <span class="pill dark">React</span>
+      <span class="pill dark">Antd</span>
+      <span class="pill dark">Wazuh</span>
+      <span class="pill dark">Suricata</span>
+      <span class="pill dark">Containerlab</span>
+      <span class="pill dark">Batfish</span>
+      <span class="pill dark">NetBox</span>
+      <span class="pill dark">Qdrant</span>
+      <span class="pill dark">MCP</span>
+      <span class="pill dark">LiteLLM</span>
+      <span class="pill dark">TypeScript</span>
+      <span class="pill dark">Python</span>
+    </div>
+  </div>
+</section>
