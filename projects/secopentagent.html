@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecOpentAgent — Self-improving AI agent infrastructure · echocc00</title>
+<meta name="description" content="SecOpentAgent — Self-improving AI agent infrastructure for security operations. Closed-loop learning, multi-platform gateway, scheduled automations. MIT-licensed. Repo: github.com/echocc00/SecOpentAgent.">
+<meta name="author" content="echocc00">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.echocco.com/projects/secopentagent/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.echocco.com/projects/secopentagent/">
+<meta property="og:title" content="SecOpentAgent — Self-improving AI agent infrastructure">
+<meta property="og:description" content="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with closed-loop learning, multi-platform gateway, scheduled automations. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration.">
+<meta property="og:image" content="https://www.echocco.com/assets/og/secopentagent.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SecOpentAgent">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/secopentagent.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "SecOpentAgent",
+  "version": "v0.x",
+  "codeRepository": "https://github.com/echocc00/SecOpentAgent",
+  "programmingLanguage": "Python",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "description": "Self-improving AI agent infrastructure for security operations",
+  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <div class="nav-menu">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link active" href="/projects/">Projects</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="proj-hero" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%); color: white;">
+    <div class="shell">
+      <a class="proj-back" href="/projects/">← All projects</a>
+      <div class="proj-hero-content">
+        <span class="proj-cat">Security</span>
+        <h1 class="proj-title">SecOpentAgent</h1>
+        <p class="proj-tagline">Self-improving AI agent infrastructure</p>
+        <div class="proj-meta-bar">
+          <span class="proj-ver">v0.x</span>
+          <span class="dot"></span>
+          <span>MIT</span>
+          <span class="dot"></span>
+          <a href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">github.com/echocc00/SecOpentAgent ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proj-body">
+    <div class="shell proj-layout">
+      <article class="proj-main">
+        <h2 class="proj-h2">Overview</h2>
+        <div class="proj-desc"><p>SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across sessions. Deployed behind a single gateway process reaching Telegram, Discord, Slack, Signal, and CLI, with scheduled automations handled natively. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration.</p><p>Seven runtime backends including serverless persistence — runs on a $5 VPS, a GPU cluster, or serverless infrastructure that hibernates when idle and costs nearly nothing between sessions. Compatible with the open agentskills.io skill standard and the Honcho dialectic user-modeling dialect.</p></div>
+
+        <h2 class="proj-h2">Architecture</h2>
+        <figure class="proj-figure">
+          
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecOpentAgent architecture coming soon" style="width:100%;height:auto;max-width:900px;display:block">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0a"/><stop offset="1" stop-color="#1e1b4b"/></linearGradient>
+  </defs>
+  <rect width="900" height="460" fill="url(#bg)" rx="12"/>
+  <text x="32" y="40" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECOPENTAGENT  /  CLOSED-LOOP AI AGENT INFRASTRUCTURE</text>
+  <text x="450" y="240" fill="#64748b" font-family="system-ui" font-size="20" text-anchor="middle">Architecture diagram coming soon</text>
+  <text x="450" y="270" fill="#475569" font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">agent runtime · memory loop · gateway · scheduled automations</text>
+  <text x="32" y="430" fill="#475569" font-family="ui-monospace,monospace" font-size="11">github.com/echocc00/SecOpentAgent</text>
+</svg>
+          <figcaption>SecOpent v0.x — runtime architecture</figcaption>
+        </figure>
+
+        <h2 class="proj-h2">Capabilities</h2>
+        <div class="proj-features">
+          <div class="proj-feat"><div class="proj-feat-title">Closed-loop learning</div><div class="proj-feat-desc">Agent-curated memory and skill self-improvement across sessions.</div></div><div class="proj-feat"><div class="proj-feat-title">Multi-platform gateway</div><div class="proj-feat-desc">Single gateway process reaching Telegram, Discord, Slack, Signal, and CLI.</div></div><div class="proj-feat"><div class="proj-feat-title">Scheduled automations</div><div class="proj-feat-desc">Built-in cron — daily reports, nightly backups, weekly audits in natural language.</div></div><div class="proj-feat"><div class="proj-feat-title">Serverless-friendly runtime</div><div class="proj-feat-desc">7 backends incl. serverless persistence — hibernates when idle.</div></div>
+        </div>
+
+        <h2 class="proj-h2">Screenshots</h2>
+        <div class="proj-screenshots">
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Dashboard">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Main dashboard / console</figcaption>
+          </figure>
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Detail view">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Detail / playbook execution view</figcaption>
+          </figure>
+        </div>
+
+        <h2 class="proj-h2">By the numbers</h2>
+        <ul class="proj-metrics">
+          <li>Closed-loop learning</li><li>7 runtime backends</li><li>Multi-platform gateway</li><li>Scheduled automations</li><li>Honcho user modeling</li><li>agentskills.io compatible</li>
+        </ul>
+      </article>
+
+      <aside class="proj-side">
+        <div class="side-block">
+          <div class="side-title">At a glance</div>
+          <dl>
+            <dt>Version</dt><dd>v0.x</dd>
+            <dt>License</dt><dd>MIT</dd>
+            <dt>Category</dt><dd>Security</dd>
+            <dt>Source</dt><dd><a href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">SecOpent ↗</a></dd>
+          </dl>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Stack</div>
+          <div class="side-list">
+            <span class="pill">Python · FastAPI</span><span class="pill">React · Case Studio</span><span class="pill">Rust · sandbox</span><span class="pill">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Integrations</div>
+          <div class="side-list">
+            <span class="pill">7 runtime backends incl. serverless</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">More from me</div>
+          <ul class="side-more">
+            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
+            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
+            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
+            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
+            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="shell">
+      <div class="cta-row">
+        <div>
+          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc">Source on GitHub · MIT (or AGPL for forks of upstream) · questions to <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a></p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/">See all projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-row">
+    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div class="footer-meta">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VidSlice — echocc00 · echocc00</title>
+<meta name="description" content="VidSlice — Material vector index for video pipelines. VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper">
+<meta name="author" content="echocc00">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.echocco.com/projects/vidslice/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.echocco.com/projects/vidslice/">
+<meta property="og:title" content="VidSlice — Material vector index for video pipelines">
+<meta property="og:description" content="VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into">
+<meta property="og:image" content="https://www.echocco.com/assets/og/vidslice.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VidSlice">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/vidslice.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "VidSlice",
+  "version": "v0.7.10",
+  "codeRepository": "https://github.com/echocc00/VidSlice",
+  "programmingLanguage": "Python",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "description": "Material vector index for video pipelines",
+  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <div class="nav-menu">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link active" href="/projects/">Projects</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="proj-hero" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%); color: white;">
+    <div class="shell">
+      <a class="proj-back" href="/projects/">← All projects</a>
+      <div class="proj-hero-content">
+        <span class="proj-cat">Content</span>
+        <h1 class="proj-title">VidSlice</h1>
+        <p class="proj-tagline">Material vector index for video pipelines</p>
+        <div class="proj-meta-bar">
+          <span class="proj-ver">v0.7.10</span>
+          <span class="dot"></span>
+          <span>Apache-2.0</span>
+          <span class="dot"></span>
+          <a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">github.com/echocc00/VidSlice ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proj-body">
+    <div class="shell proj-layout">
+      <article class="proj-main">
+        <h2 class="proj-h2">Overview</h2>
+        <div class="proj-desc"><p>VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract).</p><p>v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines.</p></div>
+
+        <h2 class="proj-h2">Architecture</h2>
+        <figure class="proj-figure">
+          
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VidSlice architecture" style="width:100%;height:auto;max-width:900px;display:block">
+  <defs>
+    <linearGradient id="vidslice-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="320" fill="url(#vidslice-bg)" rx="12"/>
+  <text x="32" y="40" fill="#c4b5fd" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">VIDSLICE v0.7.10  /  MATERIAL VECTOR INDEX</text>
+
+  <g font-family="system-ui" font-size="13" fill="#e9d5ff">
+    <!-- Ingest -->
+    <rect x="32" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+    <text x="92" y="135" text-anchor="middle" font-weight="700">INGEST</text>
+    <text x="92" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">CLI / HTTP</text>
+    <text x="92" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">+ NDJSON events</text>
+
+    <!-- Extract -->
+    <rect x="172" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+    <text x="232" y="135" text-anchor="middle" font-weight="700">EXTRACT</text>
+    <text x="232" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">3 frames</text>
+    <text x="232" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">parallel workers</text>
+
+    <!-- Embed -->
+    <rect x="312" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+    <text x="372" y="135" text-anchor="middle" font-weight="700">EMBED</text>
+    <text x="372" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">CLIP / ViT</text>
+    <text x="372" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">+ perceptual hash</text>
+
+    <!-- Sign -->
+    <rect x="452" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#22c55e" stroke-width="2"/>
+    <text x="512" y="135" text-anchor="middle" font-weight="700">SIGN</text>
+    <text x="512" y="158" text-anchor="middle" fill="#86efac" font-size="11">Ed25519</text>
+    <text x="512" y="178" text-anchor="middle" fill="#86efac" font-size="11">attestation</text>
+
+    <!-- Store -->
+    <rect x="592" y="100" width="140" height="120" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+    <text x="662" y="135" text-anchor="middle" font-weight="700">STORE</text>
+    <text x="662" y="158" text-anchor="middle" fill="#c4b5fd" font-size="11">LanceDB</text>
+    <text x="662" y="178" text-anchor="middle" fill="#c4b5fd" font-size="11">incremental updates</text>
+
+    <!-- Serve -->
+    <rect x="752" y="100" width="120" height="120" rx="10" fill="#1e1b4b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="812" y="135" text-anchor="middle" font-weight="700">SERVE</text>
+    <text x="812" y="158" text-anchor="middle" fill="#93c5fd" font-size="11">HTTP API</text>
+    <text x="812" y="178" text-anchor="middle" fill="#93c5fd" font-size="11">+ OpenCut compat</text>
+  </g>
+
+  <g stroke="#a855f7" stroke-width="2" fill="none">
+    <path d="M152 160 L172 160" marker-end="url(#arrow-vs)"/>
+    <path d="M292 160 L312 160" marker-end="url(#arrow-vs)"/>
+    <path d="M432 160 L452 160" marker-end="url(#arrow-vs)"/>
+    <path d="M572 160 L592 160" marker-end="url(#arrow-vs)"/>
+    <path d="M732 160 L752 160" marker-end="url(#arrow-vs)"/>
+  </g>
+  <defs><marker id="arrow-vs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a855f7"/></marker></defs>
+
+  <text x="32" y="260" fill="#a78bfa" font-family="ui-monospace,monospace" font-size="11">v0.5 read-compat  /  v0.6 write opt-in via --compat  /  408 tests</text>
+</svg>
+          <figcaption>VidSlice v0.7.10 — runtime architecture</figcaption>
+        </figure>
+
+        <h2 class="proj-h2">Capabilities</h2>
+        <div class="proj-features">
+          <div class="proj-feat"><div class="proj-feat-title">Vector index</div><div class="proj-feat-desc">LanceDB-backed, 3-frame extraction, parallel workers.</div></div><div class="proj-feat"><div class="proj-feat-title">Ed25519 attestation</div><div class="proj-feat-desc">Every entry signed; tamper-evident.</div></div><div class="proj-feat"><div class="proj-feat-title">OpenCut compatibility</div><div class="proj-feat-desc">v0.5 read / v0.6 write opt-in.</div></div><div class="proj-feat"><div class="proj-feat-title">Streaming pipeline</div><div class="proj-feat-desc">NDJSON progress events · incremental updates.</div></div>
+        </div>
+
+        <h2 class="proj-h2">Screenshots</h2>
+        <div class="proj-screenshots">
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Dashboard">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Main dashboard / console</figcaption>
+          </figure>
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Detail view">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Detail / playbook execution view</figcaption>
+          </figure>
+        </div>
+
+        <h2 class="proj-h2">By the numbers</h2>
+        <ul class="proj-metrics">
+          <li>408 tests</li><li>3-frame extraction per clip</li><li>Parallel workers (configurable)</li><li>NDJSON progress events</li><li>v0.5 / v0.6 compat flags</li>
+        </ul>
+      </article>
+
+      <aside class="proj-side">
+        <div class="side-block">
+          <div class="side-title">At a glance</div>
+          <dl>
+            <dt>Version</dt><dd>v0.7.10</dd>
+            <dt>License</dt><dd>Apache-2.0</dd>
+            <dt>Category</dt><dd>Content</dd>
+            <dt>Source</dt><dd><a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">VidSlice ↗</a></dd>
+          </dl>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Stack</div>
+          <div class="side-list">
+            <span class="pill">Python</span><span class="pill">LanceDB</span><span class="pill">OpenCV</span><span class="pill">Ed25519</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Integrations</div>
+          <div class="side-list">
+            <span class="pill">OpenCut v3</span><span class="pill">HTTP API</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">More from me</div>
+          <ul class="side-more">
+            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
+            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
+            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
+            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
+            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="shell">
+      <div class="cta-row">
+        <div>
+          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a></p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/">See all projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-row">
+    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div class="footer-meta">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

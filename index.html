@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>echocc00 — Security & Network Engineer · Open Source · echocc00</title>
+<meta name="description" content="I'm echocc00, a security & network engineer in Shanghai with 9 years of cloud security and CCIE certification. Currently shipping SecSight (AI SOC), NetSage (AI network engineer), and 4 more production open-source products.">
+<meta name="author" content="echocc00">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.echocco.com/">
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="echocc00">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.echocco.com/">
+<meta property="og:title" content="echocc00 — Security & Network Engineer · 6 OSS Products in Production">
+<meta property="og:description" content="9 years in cloud security · CCIE · shipping AI-driven SOC and network automation tooling as open source. Looking for staff security engineer role or commercial pilots.">
+<meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="echocc00 portfolio — 6 open-source products in production">
+<meta property="og:site_name" content="echocc00 portfolio">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="echocc00 — Security & Network Engineer · echocc00">
+<meta name="twitter:description" content="9 years cloud security · CCIE · shipping SecSight + NetSage + 4 more as OSS.">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+<meta name="twitter:creator" content="@echocc00">
+<meta name="twitter:site" content="@echocc00">
+
+<!-- LinkedIn / Slack / WeChat use OG fallback -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" as="image" href="/assets/og/home.png">
+
+<!-- JSON-LD: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "echocc00",
+  "alternateName": "echocc00",
+  "url": "https://www.echocco.com/",
+  "image": "https://www.echocco.com/assets/avatar.png",
+  "jobTitle": "Security & Network Engineer",
+  "description": "Cloud security and network engineering practitioner. 9 years in cloud security, CCIE-certified, currently operating production AI-driven SOC and network automation tooling as open source.",
+  "knowsAbout": [
+    "Cloud Security", "SecOps", "SOAR", "SIEM", "Wazuh", "Suricata",
+    "Network Engineering", "Network Automation", "NetBox", "Containerlab", "Batfish",
+    "AI Security Operations", "LLM", "LangGraph", "Multi-Agent Systems",
+    "Python", "FastAPI", "MLPS 2.0 (等保 2.0)"
+  ],
+  "sameAs": [
+    "https://github.com/echocc00",
+    "https://github.com/echocc00/awesome-echocc00"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shanghai",
+    "addressCountry": "CN"
+  },
+  "alumniOf": "TODO: add real education / certifications here"
+}
+</script>
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "echocc00 portfolio",
+  "url": "https://www.echocco.com/",
+  "inLanguage": "en-US",
+  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/about/"}
+}
+</script>
+
+<!-- JSON-LD: ItemList of SoftwareSourceCode (6 products) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type": "SoftwareSourceCode", "name": "SecSight", "version": "v0.5.1", "codeRepository": "https://github.com/echocc00/SecSight", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI-driven SOC platform"},
+    {"@type": "SoftwareSourceCode", "name": "SecOpent", "version": "v1.1.1-stable", "codeRepository": "https://github.com/echocc00/SecOpent", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Authorized pentest workbench"},
+    {"@type": "SoftwareSourceCode", "name": "VidSlice", "version": "v0.7.10", "codeRepository": "https://github.com/echocc00/VidSlice", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Material vector index for video pipelines"},
+    {"@type": "SoftwareSourceCode", "name": "NetSage", "version": "v0.1.1", "codeRepository": "https://github.com/echocc00/NetSage", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI network engineer platform"},
+    {"@type": "SoftwareSourceCode", "name": "OpenCut v3", "version": "v0.6.5", "codeRepository": "https://github.com/echocc00/opencut002", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "AI short-video production pipeline"}, {"@type": "SoftwareSourceCode", "name": "SecOpentAgent", "version": "v0.x", "codeRepository": "https://github.com/echocc00/SecOpentAgent", "programmingLanguage": "Python", "license": "https://opensource.org/licenses/MIT", "description": "Self-improving AI agent infrastructure"}, {"@type": "SoftwareSourceCode", "name": "StrixOC", "version": "v0.x", "codeRepository": "https://github.com/echocc00/strixoc", "programmingLanguage": "Python", "license": "https://www.apache.org/licenses/LICENSE-2.0", "description": "Autonomous AI penetration testing"}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/">
+      <span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span>
+    </a>
+    <div class="nav-menu">
+      <a class="nav-link active" href="/">Home</a>
+      <a class="nav-link" href="/projects/">Projects</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+    </div>
+    <a class="nav-mobile" href="https://github.com/echocc00" rel="noopener" target="_blank" aria-label="GitHub"><span></span></a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="shell hero-inner">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span>Open to: <strong>staff security engineer</strong> · <strong>AI security infra consulting</strong> · <strong>SecSight / NetSage commercial pilots</strong></span>
+      </div>
+
+      <div class="hero-head">
+        <div class="hero-avatar">
+          <!-- TODO: replace with /assets/avatar.png (real photo, 256×256) -->
+          <div class="avatar-placeholder" aria-label="Avatar placeholder">[photo]</div>
+        </div>
+        <div class="hero-head-text">
+          <h1 class="hero-title">
+            Hi, I'm <span class="accent">echocc00</span>.<br>
+            I build AI-driven security infrastructure<br>
+            <span class="accent-2">that ships to production.</span>
+          </h1>
+        </div>
+      </div>
+
+      <p class="hero-tagline">
+        Security &amp; network engineer in <strong>Shanghai</strong>. 9 years in cloud security,
+        CCIE-certified. Currently running six Apache-2.0 open-source products —
+        most recently <strong>SecSight v0.5.1</strong> (AI SOC, 22 SOAR playbooks, 87.8% test coverage).
+      </p>
+
+      <div class="hero-active">
+        <span class="active-label">Currently shipping</span>
+        <a class="active-chip" href="/projects/secsight/">🛡 SecSight <span class="chip-ver">v0.5.1</span></a>
+        <a class="active-chip" href="/projects/netsage/">🌐 NetSage <span class="chip-ver">v0.1.1</span></a>
+        <a class="active-chip" href="/projects/secopent/">🔐 SecOpent <span class="chip-ver">v1.1.1-stable</span></a>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/projects/">See my work <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+        <a class="btn btn-link" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me ↗</a>
+      </div>
+
+      <ul class="hero-trust">
+        <li>📍 Shanghai</li>
+        <li>🎓 CCIE RS / Security (2017)</li>
+        <li>🛠 9 years production</li>
+        <li>📄 <a href="/assets/cv.pdf">CV available</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="metrics">
+        <div class="metric"><div class="metric-value">9+</div><div class="metric-label">years in cloud security</div></div>
+        <div class="metric"><div class="metric-value">22</div><div class="metric-label">SOAR playbooks</div></div>
+        <div class="metric"><div class="metric-value">6</div><div class="metric-label">open-source products</div></div>
+        <div class="metric"><div class="metric-value">1,500+</div><div class="metric-label">tests across projects</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="shell">
+      <div class="section-head">
+        <div class="section-eyebrow">Projects</div>
+        <h2 class="section-title">Six products in production.</h2>
+        <p class="section-desc">
+          Each ships as an Apache-2.0 project with a stable version, tests, and an honest README.
+          Click any for the full technical detail, stack, and integrations.
+        </p>
+      </div>
+      <div class="grid">
+        <a class="project-card" href="/projects/secsight/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);"><span>🛡</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.5.1</span><span class="dot"></span><span class="project-tag">security</span></div>
+            <h3 class="project-title">SecSight</h3>
+            <div class="project-tagline">AI-driven SOC platform</div>
+            <p class="project-desc">SecOps Copilot + auto-remediation SOAR engine for small-to-mid SOC teams.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/secopent/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);"><span>🔐</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v1.1.1-stable</span><span class="dot"></span><span class="project-tag">security</span></div>
+            <h3 class="project-title">SecOpent</h3>
+            <div class="project-tagline">Authorized pentest workbench</div>
+            <p class="project-desc">Catalog-driven, agent-native authorized pentest workbench.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/vidslice/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);"><span>🎬</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.7.10</span><span class="dot"></span><span class="project-tag">content</span></div>
+            <h3 class="project-title">VidSlice</h3>
+            <div class="project-tagline">OpenCut materials · vector index</div>
+            <p class="project-desc">Third-party material vector indexing + Ed25519 attestation.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/netsage/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);"><span>🌐</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.1.1</span><span class="dot"></span><span class="project-tag">network</span></div>
+            <h3 class="project-title">NetSage</h3>
+            <div class="project-tagline">AI network engineer</div>
+            <p class="project-desc">AI-driven design, config generation, troubleshooting, and audit.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/opencut002/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);"><span>✂️</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.6.5</span><span class="dot"></span><span class="project-tag">content</span></div>
+            <h3 class="project-title">OpenCut v3</h3>
+            <div class="project-tagline">Multi-domain short-video platform</div>
+            <p class="project-desc">AI short-video production from still inputs to 1080x1920 vertical.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/secopentagent/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);"><span>🛰</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
+            <h3 class="project-title">SecOpentAgent</h3>
+            <div class="project-tagline">Self-improving AI agent infrastructure</div>
+            <p class="project-desc">Agent runtime with closed-loop learning and multi-platform gateway.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+        <a class="project-card" href="/projects/strixoc/">
+          <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);"><span>🎯</span></div>
+          <div class="project-body">
+            <div class="project-tag-row"><span class="project-tag">v0.x</span><span class="dot"></span><span class="project-tag">security</span></div>
+            <h3 class="project-title">StrixOC</h3>
+            <div class="project-tagline">Autonomous AI penetration testing</div>
+            <p class="project-desc">AI pentest agents with real exploit validation and multi-agent orchestration.</p>
+            <span class="project-link">View project <span class="arrow">→</span></span>
+          </div>
+        </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div class="section-eyebrow">Where I focus</div>
+        <h2 class="section-title">Three engineering areas.</h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-item">
+          <div class="focus-icon">🛡</div>
+          <div class="focus-title">Cloud Security & SecOps</div>
+          <div class="focus-desc">Production-grade detection, automation, and AI-assisted operations.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">🌐</div>
+          <div class="focus-title">Network Engineering & AI</div>
+          <div class="focus-desc">Multi-vendor config generation, simulation, and policy validation.</div>
+        </div>
+        <div class="focus-item">
+          <div class="focus-icon">🎬</div>
+          <div class="focus-title">Content & Creative AI</div>
+          <div class="focus-desc">Short-form video pipelines and creative tooling research.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="shell">
+      <div class="section-head">
+        <div class="section-eyebrow">Stack &amp; tooling</div>
+        <h2 class="section-title">Tools I work with across the products.</h2>
+        <p class="section-desc">A non-exhaustive list of the runtimes, frameworks, and security platforms that show up in production code or infra.</p>
+      </div>
+      <div class="pill-cloud">
+        <span class="pill dark">LangGraph</span><span class="pill dark">FastAPI</span><span class="pill dark">React</span>
+        <span class="pill dark">Antd</span><span class="pill dark">Wazuh</span><span class="pill dark">Suricata</span>
+        <span class="pill dark">Containerlab</span><span class="pill dark">Batfish</span><span class="pill dark">NetBox</span>
+        <span class="pill dark">Qdrant</span><span class="pill dark">MCP</span><span class="pill dark">LiteLLM</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="shell">
+      <div class="cta-card">
+        <div>
+          <h2 class="cta-title">Let's work together.</h2>
+          <p class="cta-desc">Open to staff security engineering roles, AI security infra consulting, and commercial pilots of SecSight / NetSage.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me ↗</a>
+            <a class="btn btn-outline" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+            <a class="btn btn-ghost" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-row">
+    <div>
+      <span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026
+    </div>
+    <div class="footer-meta">
+      <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
+      <a href="/assets/cv.pdf" target="_blank" rel="noopener">CV</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+      <a href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+      <span>Apache-2.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

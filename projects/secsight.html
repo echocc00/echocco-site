@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecSight — echocc00 · echocc00</title>
+<meta name="description" content="SecSight — AI-driven SOC platform. SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detect">
+<meta name="author" content="echocc00">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.echocco.com/projects/secsight/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.echocco.com/projects/secsight/">
+<meta property="og:title" content="SecSight — AI-driven SOC platform">
+<meta property="og:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detection and response function. It pairs a multi-agent SecOps Cop">
+<meta property="og:image" content="https://www.echocco.com/assets/og/secsight.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SecSight">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/secsight.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "SecSight",
+  "version": "v0.5.1",
+  "codeRepository": "https://github.com/echocc00/SecSight",
+  "programmingLanguage": "Python",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "description": "AI-driven SOC platform",
+  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <div class="nav-menu">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link active" href="/projects/">Projects</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="proj-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%); color: white;">
+    <div class="shell">
+      <a class="proj-back" href="/projects/">← All projects</a>
+      <div class="proj-hero-content">
+        <span class="proj-cat">Security</span>
+        <h1 class="proj-title">SecSight</h1>
+        <p class="proj-tagline">AI-driven SOC platform</p>
+        <div class="proj-meta-bar">
+          <span class="proj-ver">v0.5.1</span>
+          <span class="dot"></span>
+          <span>Apache-2.0</span>
+          <span class="dot"></span>
+          <a href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">github.com/echocc00/SecSight ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proj-body">
+    <div class="shell proj-layout">
+      <article class="proj-main">
+        <h2 class="proj-h2">Overview</h2>
+        <div class="proj-desc"><p>SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24×7 detection and response function. It pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine so routine incidents — phishing triage, false-positive sweep, IOC enrichment — are handled automatically under well-defined autonomy levels, while the complex ones land in a human review queue.</p><p>The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites.</p></div>
+
+        <h2 class="proj-h2">Architecture</h2>
+        <figure class="proj-figure">
+          
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecSight architecture" style="width:100%;height:auto;max-width:900px;display:block">
+  <defs>
+    <linearGradient id="secsight-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/><stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="secsight-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="460" fill="url(#secsight-bg)" rx="12"/>
+  <!-- Title -->
+  <text x="32" y="40" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECSIGHT v0.5.1  /  MULTI-AGENT SOC</text>
+
+  <!-- Layer 1: Detection sources -->
+  <text x="32" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">DETECTION SOURCES</text>
+  <g font-family="system-ui" font-size="13" fill="#e2e8f0">
+    <rect x="32" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
+    <text x="97" y="118" text-anchor="middle">Wazuh SIEM</text>
+    <rect x="172" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
+    <text x="237" y="118" text-anchor="middle">Suricata NIDS</text>
+    <rect x="312" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
+    <text x="377" y="118" text-anchor="middle">OpenCTI</text>
+    <rect x="452" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
+    <text x="517" y="118" text-anchor="middle">DFIR-IRIS</text>
+  </g>
+
+  <!-- Arrows from sources to bus -->
+  <g stroke="#475569" stroke-width="1.5" fill="none">
+    <path d="M97 142 L97 178"/><path d="M237 142 L237 178"/>
+    <path d="M377 142 L377 178"/><path d="M517 142 L517 178"/>
+    <path d="M97 178 L517 178 L517 178"/>
+  </g>
+
+  <!-- Layer 2: SecOps Copilot -->
+  <text x="32" y="190" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">SECOPS COPILOT  (LangGraph multi-agent)</text>
+  <rect x="32" y="200" width="836" height="92" rx="10" fill="#0f172a" stroke="#2563eb" stroke-width="2"/>
+  <g font-family="system-ui" font-size="13" fill="#e2e8f0">
+    <rect x="50" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="105" y="240" text-anchor="middle">Triage</text>
+    <text x="105" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
+    <rect x="170" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="225" y="240" text-anchor="middle">Investigate</text>
+    <text x="225" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
+    <rect x="290" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="345" y="240" text-anchor="middle">Enrich</text>
+    <text x="345" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
+    <rect x="410" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="465" y="240" text-anchor="middle">Report</text>
+    <text x="465" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
+    <rect x="530" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
+    <text x="585" y="240" text-anchor="middle">KB RAG</text>
+    <text x="585" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">Qdrant</text>
+    <rect x="650" y="216" width="200" height="60" rx="6" fill="#1e293b" stroke="#a855f7"/>
+    <text x="750" y="240" text-anchor="middle">LLM (LiteLLM</text>
+    <text x="750" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">DeepSeek / Qwen / GPT)</text>
+  </g>
+  <g stroke="#475569" stroke-width="1.5" fill="none">
+    <path d="M160 246 L170 246"/><path d="M280 246 L290 246"/>
+    <path d="M400 246 L410 246"/><path d="M520 246 L530 246"/>
+    <path d="M640 246 L650 246"/>
+  </g>
+
+  <!-- Layer 3: SOAR with autonomy levels -->
+  <text x="32" y="320" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">SOAR ENGINE  (22 playbooks, 5 autonomy levels)</text>
+  <rect x="32" y="332" width="836" height="60" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+  <g font-family="system-ui" font-size="12" fill="#e2e8f0">
+    <rect x="50" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
+    <text x="127" y="367" text-anchor="middle">L0 observe</text>
+    <rect x="215" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
+    <text x="292" y="367" text-anchor="middle">L1 suggest</text>
+    <rect x="380" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
+    <text x="457" y="367" text-anchor="middle">L2 confirm</text>
+    <rect x="545" y="346" width="155" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
+    <text x="622" y="367" text-anchor="middle">L3 auto-safe</text>
+    <rect x="710" y="346" width="140" height="32" rx="6" fill="#0f172a" stroke="#22c55e"/>
+    <text x="780" y="367" text-anchor="middle">L4 gated</text>
+  </g>
+
+  <!-- Footer label -->
+  <text x="32" y="430" fill="#475569" font-family="ui-monospace,monospace" font-size="11">22 production playbooks  /  MLPS 2.0 aligned  /  234 tests  /  87.8% coverage</text>
+</svg>
+          <figcaption>SecSight v0.5.1 — runtime architecture</figcaption>
+        </figure>
+
+        <h2 class="proj-h2">Capabilities</h2>
+        <div class="proj-features">
+          <div class="proj-feat"><div class="proj-feat-title">AI SecOps Copilot</div><div class="proj-feat-desc">Multi-agent SOC assistant over SIEM/ticket/KB.</div></div><div class="proj-feat"><div class="proj-feat-title">Auto-remediation SOAR</div><div class="proj-feat-desc">22 production playbooks across 5 autonomy levels.</div></div><div class="proj-feat"><div class="proj-feat-title">Four-layer knowledge base</div><div class="proj-feat-desc">Process-isolated; aligned with MLPS 2.0 (等保 2.0).</div></div><div class="proj-feat"><div class="proj-feat-title">MCP & LiteLLM</div><div class="proj-feat-desc">Pluggable LLM backend, MCP tool bus, Qdrant RAG.</div></div>
+        </div>
+
+        <h2 class="proj-h2">Screenshots</h2>
+        <div class="proj-screenshots">
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Dashboard">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Main dashboard / console</figcaption>
+          </figure>
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Detail view">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Detail / playbook execution view</figcaption>
+          </figure>
+        </div>
+
+        <h2 class="proj-h2">By the numbers</h2>
+        <ul class="proj-metrics">
+          <li>22 production playbooks</li><li>5 autonomy levels (L0–L4)</li><li>234 tests · 87.8% coverage</li><li>4-layer knowledge base</li><li>Process-isolated deployment</li>
+        </ul>
+      </article>
+
+      <aside class="proj-side">
+        <div class="side-block">
+          <div class="side-title">At a glance</div>
+          <dl>
+            <dt>Version</dt><dd>v0.5.1</dd>
+            <dt>License</dt><dd>Apache-2.0</dd>
+            <dt>Category</dt><dd>Security</dd>
+            <dt>Source</dt><dd><a href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">SecSight ↗</a></dd>
+          </dl>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Stack</div>
+          <div class="side-list">
+            <span class="pill">Python · core service</span><span class="pill">TypeScript · Console SPA</span><span class="pill">Rust · process sandbox</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Integrations</div>
+          <div class="side-list">
+            <span class="pill">Wazuh</span><span class="pill">Suricata</span><span class="pill">Shuffle</span><span class="pill">OpenCTI</span><span class="pill">DFIR-IRIS</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">More from me</div>
+          <ul class="side-more">
+            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
+            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
+            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
+            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
+            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="shell">
+      <div class="cta-row">
+        <div>
+          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a></p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://github.com/echocc00/SecSight" rel="noopener" target="_blank">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/">See all projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-row">
+    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div class="footer-meta">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

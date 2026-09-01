@@ -1,0 +1,15 @@
+# Cloudflare Pages _redirects
+# Trailing-slash URLs → .html files (since we use flat-file structure)
+
+/about/                       /about.html                       200
+/projects/                    /projects/index.html              200
+/projects/secsight/           /projects/secsight.html           200
+/projects/secopent/           /projects/secopent.html           200
+/projects/netsage/            /projects/netsage.html            200
+/projects/vidslice/           /projects/vidslice.html           200
+/projects/opencut002/         /projects/opencut002.html         200
+/projects/secopentagent/      /projects/secopentagent.html   200
+/projects/strixoc/             /projects/strixoc.html          200
+
+# Legacy URLs (in case anyone bookmarked old paths)
+/projects/opencut/            /projects/opencut002.html         301

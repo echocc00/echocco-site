@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCut v3 — echocc00 · echocc00</title>
+<meta name="description" content="OpenCut v3 — AI short-video pipeline. OpenCut v3 turns still images into 1080×1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education,">
+<meta name="author" content="echocc00">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://www.echocco.com/projects/opencut002/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.echocco.com/projects/opencut002/">
+<meta property="og:title" content="OpenCut v3 — AI short-video pipeline">
+<meta property="og:description" content="OpenCut v3 turns still images into 1080×1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and sto">
+<meta property="og:image" content="https://www.echocco.com/assets/og/opencut002.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenCut v3">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/opencut002.png">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "OpenCut v3",
+  "version": "v0.6.5",
+  "codeRepository": "https://github.com/echocc00/opencut002",
+  "programmingLanguage": "Python",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "description": "AI short-video pipeline",
+  "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <div class="nav-menu">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link active" href="/projects/">Projects</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00/opencut002" rel="noopener" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="proj-hero" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%); color: white;">
+    <div class="shell">
+      <a class="proj-back" href="/projects/">← All projects</a>
+      <div class="proj-hero-content">
+        <span class="proj-cat">Content</span>
+        <h1 class="proj-title">OpenCut v3</h1>
+        <p class="proj-tagline">AI short-video pipeline</p>
+        <div class="proj-meta-bar">
+          <span class="proj-ver">v0.6.5</span>
+          <span class="dot"></span>
+          <span>Apache-2.0</span>
+          <span class="dot"></span>
+          <a href="https://github.com/echocc00/opencut002" rel="noopener" target="_blank">github.com/echocc00/opencut002 ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proj-body">
+    <div class="shell proj-layout">
+      <article class="proj-main">
+        <h2 class="proj-h2">Overview</h2>
+        <div class="proj-desc"><p>OpenCut v3 turns still images into 1080×1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and storyboards so each output feels native to its niche.</p><p>TTS + BGM matching + auto-captions + Remotion rendering, with CLI and SaaS dual-track distribution.</p></div>
+
+        <h2 class="proj-h2">Architecture</h2>
+        <figure class="proj-figure">
+          
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OpenCut v3 pipeline" style="width:100%;height:auto;max-width:900px;display:block">
+  <defs>
+    <linearGradient id="opencut-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1917"/><stop offset="1" stop-color="#431407"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="360" fill="url(#opencut-bg)" rx="12"/>
+  <text x="32" y="40" fill="#fdba74" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">OPENCUT v3 v0.6.5  /  20-STAGE PIPELINE</text>
+
+  <!-- Domains on the left -->
+  <g font-family="ui-monospace,monospace" font-size="11" fill="#a8a29e">
+    <rect x="32" y="80" width="160" height="240" rx="10" fill="#292524" stroke="#78716c"/>
+    <text x="112" y="105" text-anchor="middle" font-weight="700" fill="#fdba74" font-size="13">DOMAINS</text>
+    <text x="112" y="135" text-anchor="middle">education</text>
+    <text x="112" y="155" text-anchor="middle">travel</text>
+    <text x="112" y="175" text-anchor="middle">knowledge_paid</text>
+    <text x="112" y="195" text-anchor="middle">custom</text>
+    <text x="112" y="240" text-anchor="middle" fill="#78716c" font-size="10">configurable</text>
+    <text x="112" y="258" text-anchor="middle" fill="#78716c" font-size="10">prompt pack</text>
+    <text x="112" y="276" text-anchor="middle" fill="#78716c" font-size="10">+ per-domain</text>
+    <text x="112" y="294" text-anchor="middle" fill="#78716c" font-size="10">storyboard</text>
+  </g>
+
+  <!-- Stages on the right (linear flow) -->
+  <g font-family="ui-monospace,monospace" font-size="11" fill="#fafaf9">
+    <text x="210" y="105" fill="#a8a29e">INPUT</text>
+    <rect x="210" y="115" width="100" height="40" rx="6" fill="#292524" stroke="#a8a29e"/>
+    <text x="260" y="140" text-anchor="middle">image(s)</text>
+
+    <text x="210" y="180" fill="#a8a29e">PROCESS</text>
+    <rect x="210" y="190" width="100" height="40" rx="6" fill="#7c2d12" stroke="#fb923c"/>
+    <text x="260" y="215" text-anchor="middle">TTS / script</text>
+
+    <rect x="325" y="190" width="100" height="40" rx="6" fill="#7c2d12" stroke="#fb923c"/>
+    <text x="375" y="215" text-anchor="middle">BGM match</text>
+
+    <rect x="440" y="190" width="100" height="40" rx="6" fill="#7c2d12" stroke="#fb923c"/>
+    <text x="490" y="215" text-anchor="middle">captions</text>
+
+    <text x="565" y="180" fill="#a8a29e">RENDER</text>
+    <rect x="565" y="190" width="120" height="40" rx="6" fill="#1c1917" stroke="#22c55e" stroke-width="2"/>
+    <text x="625" y="215" text-anchor="middle" fill="#86efac">Remotion</text>
+
+    <rect x="700" y="190" width="170" height="40" rx="6" fill="#0a0a0a" stroke="#fbbf24" stroke-width="2"/>
+    <text x="785" y="215" text-anchor="middle" fill="#fbbf24" font-weight="700">1080x1920 vertical</text>
+
+    <text x="210" y="260" fill="#a8a29e">DISTRIBUTE</text>
+    <rect x="210" y="270" width="140" height="40" rx="6" fill="#292524" stroke="#a8a29e"/>
+    <text x="280" y="295" text-anchor="middle">CLI</text>
+    <rect x="365" y="270" width="140" height="40" rx="6" fill="#292524" stroke="#a8a29e"/>
+    <text x="435" y="295" text-anchor="middle">SaaS</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#a8a29e" stroke-width="1.5" fill="none">
+    <path d="M310 210 L325 210" marker-end="url(#arrow-oc)"/>
+    <path d="M425 210 L440 210" marker-end="url(#arrow-oc)"/>
+    <path d="M540 210 L565 210" marker-end="url(#arrow-oc)"/>
+    <path d="M685 210 L700 210" marker-end="url(#arrow-oc)"/>
+  </g>
+  <defs><marker id="arrow-oc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a8a29e"/></marker></defs>
+
+  <text x="32" y="345" fill="#78716c" font-family="ui-monospace,monospace" font-size="11">AI-assisted authoring  /  CLI + SaaS dual-track  /  multi-domain</text>
+</svg>
+          <figcaption>OpenCut v3 v0.6.5 — runtime architecture</figcaption>
+        </figure>
+
+        <h2 class="proj-h2">Capabilities</h2>
+        <div class="proj-features">
+          <div class="proj-feat"><div class="proj-feat-title">20-stage pipeline</div><div class="proj-feat-desc">Still input → 1080×1920 vertical output.</div></div><div class="proj-feat"><div class="proj-feat-title">Domain-aware</div><div class="proj-feat-desc">education · travel · knowledge_paid · custom storyboards.</div></div><div class="proj-feat"><div class="proj-feat-title">Audio stack</div><div class="proj-feat-desc">TTS + BGM matching + auto-captions.</div></div><div class="proj-feat"><div class="proj-feat-title">Dual-track distribution</div><div class="proj-feat-desc">CLI (v0.6.5-cli) + SaaS (v0.6.5-saas).</div></div>
+        </div>
+
+        <h2 class="proj-h2">Screenshots</h2>
+        <div class="proj-screenshots">
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Dashboard">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Main dashboard / console</figcaption>
+          </figure>
+          <figure class="screenshot-placeholder">
+            <div class="screenshot-box" data-label="Screenshot: Detail view">
+              <div class="shot-placeholder-text">📸 Screenshot</div>
+              <div class="shot-placeholder-sub">TODO: replace with real UI screenshot</div>
+            </div>
+            <figcaption>Detail / playbook execution view</figcaption>
+          </figure>
+        </div>
+
+        <h2 class="proj-h2">By the numbers</h2>
+        <ul class="proj-metrics">
+          <li>20-stage pipeline</li><li>4 built-in domains (+ custom)</li><li>1080×1920 vertical output</li><li>CLI + SaaS dual-track</li><li>Auto captions + BGM match</li>
+        </ul>
+      </article>
+
+      <aside class="proj-side">
+        <div class="side-block">
+          <div class="side-title">At a glance</div>
+          <dl>
+            <dt>Version</dt><dd>v0.6.5</dd>
+            <dt>License</dt><dd>Apache-2.0</dd>
+            <dt>Category</dt><dd>Content</dd>
+            <dt>Source</dt><dd><a href="https://github.com/echocc00/opencut002" rel="noopener" target="_blank">opencut002 ↗</a></dd>
+          </dl>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Stack</div>
+          <div class="side-list">
+            <span class="pill">Python · orchestration</span><span class="pill">Remotion · render</span><span class="pill">TTS providers</span><span class="pill">CLI (Typer)</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">Integrations</div>
+          <div class="side-list">
+            <span class="pill">VidSlice (vector material)</span><span class="pill">TTS providers</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <div class="side-title">More from me</div>
+          <ul class="side-more">
+            <li><a href="/projects/secsight/">→ SecSight (AI SOC)</a></li>
+            <li><a href="/projects/netsage/">→ NetSage (network)</a></li>
+            <li><a href="/projects/secopent/">→ SecOpent (pentest)</a></li>
+            <li><a href="/projects/vidslice/">→ VidSlice (vector)</a></li>
+            <li><a href="/projects/opencut002/">→ OpenCut v3 (video)</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="shell">
+      <div class="cta-row">
+        <div>
+          <h2 class="cta-title">Try it, fork it, or hire me to extend it.</h2>
+          <p class="cta-desc">Source on GitHub · Apache-2.0 (or AGPL for forks of upstream) · questions to <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a></p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://github.com/echocc00/opencut002" rel="noopener" target="_blank">Open on GitHub ↗</a>
+          <a class="btn btn-outline" href="/projects/">See all projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-row">
+    <div><span class="footer-brand">echocc00</span> · echocc00 · Shanghai · 2026</div>
+    <div class="footer-meta">
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

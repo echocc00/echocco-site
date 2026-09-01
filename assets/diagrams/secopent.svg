@@ -1,0 +1,82 @@
+
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecOpent architecture" style="width:100%;height:auto;max-width:900px;display:block">
+  <defs>
+    <linearGradient id="secopent-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1c1917"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="380" fill="url(#secopent-bg)" rx="12"/>
+  <text x="32" y="40" fill="#fdba74" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECOPENT v1.1.1  /  AUTHORIZED PENTEST WORKBENCH</text>
+
+  <g font-family="system-ui" font-size="13" fill="#fef3c7">
+    <!-- Step 1: Catalog -->
+    <rect x="32" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
+    <text x="117" y="110" text-anchor="middle" font-weight="700">CATALOG</text>
+    <text x="117" y="130" text-anchor="middle" fill="#fdba74" font-size="11">17 adapters</text>
+    <g font-size="11" fill="#e7e5e4">
+      <text x="117" y="158" text-anchor="middle">asset</text>
+      <text x="117" y="178" text-anchor="middle">web</text>
+      <text x="117" y="198" text-anchor="middle">network</text>
+      <text x="117" y="218" text-anchor="middle">cloud</text>
+      <text x="117" y="238" text-anchor="middle">identity</text>
+      <text x="117" y="258" text-anchor="middle">+12 more</text>
+    </g>
+
+    <!-- Step 2: DSL -->
+    <rect x="222" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
+    <text x="307" y="110" text-anchor="middle" font-weight="700">YAML DSL</text>
+    <text x="307" y="130" text-anchor="middle" fill="#fdba74" font-size="11">deterministic case</text>
+    <g font-size="10" fill="#86efac" font-family="ui-monospace,monospace">
+      <text x="307" y="160" text-anchor="middle">case:</text>
+      <text x="307" y="178" text-anchor="middle">  scope: web</text>
+      <text x="307" y="196" text-anchor="middle">  steps:</text>
+      <text x="307" y="214" text-anchor="middle">    - recon</text>
+      <text x="307" y="232" text-anchor="middle">    - probe</text>
+      <text x="307" y="250" text-anchor="middle">    - oracle-check</text>
+    </g>
+
+    <!-- Step 3: Sandbox -->
+    <rect x="412" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2"/>
+    <text x="497" y="110" text-anchor="middle" font-weight="700">SANDBOX</text>
+    <text x="497" y="130" text-anchor="middle" fill="#fdba74" font-size="11">seccomp + Rust</text>
+    <g font-size="11" fill="#e7e5e4">
+      <text x="497" y="158" text-anchor="middle">process-isolated</text>
+      <text x="497" y="178" text-anchor="middle">read-only mounts</text>
+      <text x="497" y="198" text-anchor="middle">network namespace</text>
+      <text x="497" y="218" text-anchor="middle">timeout enforced</text>
+      <text x="497" y="238" text-anchor="middle">resource cap</text>
+    </g>
+
+    <!-- Step 4: Oracle -->
+    <rect x="602" y="80" width="170" height="200" rx="10" fill="#1c1917" stroke="#22c55e" stroke-width="2"/>
+    <text x="687" y="110" text-anchor="middle" font-weight="700">ORACLE</text>
+    <text x="687" y="130" text-anchor="middle" fill="#86efac" font-size="11">N/N validation</text>
+    <g font-size="11" fill="#e7e5e4">
+      <text x="687" y="158" text-anchor="middle">CoverageMatrix</text>
+      <text x="687" y="178" text-anchor="middle">  per technique</text>
+      <text x="687" y="200" text-anchor="middle">deterministic</text>
+      <text x="687" y="220" text-anchor="middle">independent re-runs</text>
+      <text x="687" y="240" text-anchor="middle">flaky-test detection</text>
+    </g>
+
+    <!-- Step 5: Evidence -->
+    <rect x="792" y="80" width="80" height="200" rx="10" fill="#1c1917" stroke="#a855f7" stroke-width="2"/>
+    <text x="832" y="115" text-anchor="middle" font-weight="700">EVIDENCE</text>
+    <g font-size="11" fill="#e7e5e4">
+      <text x="832" y="140" text-anchor="middle">3 layers</text>
+      <text x="832" y="160" text-anchor="middle">+ redaction</text>
+    </g>
+  </g>
+
+  <!-- Arrows between steps -->
+  <g stroke="#fb923c" stroke-width="2" fill="none">
+    <path d="M202 180 L222 180" marker-end="url(#arrow-op)"/>
+    <path d="M392 180 L412 180" marker-end="url(#arrow-op)"/>
+    <path d="M582 180 L602 180" marker-end="url(#arrow-op)"/>
+    <path d="M772 180 L792 180" marker-end="url(#arrow-op)"/>
+  </g>
+  <defs><marker id="arrow-op" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker></defs>
+
+  <text x="32" y="320" fill="#a8a29e" font-family="ui-monospace,monospace" font-size="11">LLM only proposes.  Deterministic layer + humans decide.</text>
+  <text x="32" y="345" fill="#57534e" font-family="ui-monospace,monospace" font-size="11">agent-native  /  catalog-driven  /  oracle-validated</text>
+</svg>
