@@ -82,53 +82,228 @@
              data-i18n-zh="SecSight 是面向中小型 SOC 团队的 AI 驱动安全运营平台，让小团队也能覆盖 7×24 检测与响应。它把多智能体 SecOps 助手与自动响应 SOAR 引擎组合在一起——常规事件（钓鱼分流、误报清理、IOC 富化）在明确的自主级别下自动处理，复杂事件则进入人工审核队列。">SecSight is an AI-driven security operations platform.</p>
           <p data-i18n-en="The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites."
              data-i18n-zh="系统自带进程隔离部署模型并对齐等保 2.0 控制点，可在合规环境中直接落地，无需重构。">The system ships with a process-isolated deployment model and is aligned with MLPS 2.0.</p>
-        </div><!-- ============ SECTION 1: Pain → Solution → Impact ============ -->
-<section class="impact-section">
-  <h2 class="proj-h2"
-      data-i18n-en="Pain → Solution → Impact"
-      data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
-  <p class="proj-desc"
-     data-i18n-en="Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage. SecSight compresses that loop into three stages — what hurts today, what the platform does about it, and what changes for the team."
-     data-i18n-zh="大多数中小型 SOC 团队只有两三名分析师、一套会在凌晨三点告警的 SIEM，以及永远清不完的工单积压。SecSight 把这条链路压缩成三段——今天的痛点、平台做了什么、以及团队会发生什么变化。">Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage.</p>
+        <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+        <section class="impact-section">
+          <header class="impact-head">
+            <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+            <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+            <p data-i18n-en="Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage. SecSight compresses that loop into three stages — what hurts today, what the platform does about it, and what changes for the team."
+               data-i18n-zh="大多数中小型 SOC 团队只有两三名分析师、一套会在凌晨三点告警的 SIEM，以及永远清不完的工单积压。SecSight 把这条链路压缩成三段——今天的痛点、平台做了什么、以及团队会发生什么变化。">Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage.</p>
+          </header>
 
-  <div class="impact-grid">
-    <div class="impact-card">
-      <span class="impact-tag"
-            data-i18n-en="Pain"
-            data-i18n-zh="痛点">Pain</span>
-      <h3 class="impact-card-title"
-          data-i18n-en="The alert backlog nobody closes"
-          data-i18n-zh="没人能清完的告警积压">The alert backlog nobody closes</h3>
-      <p class="impact-card-body"
-         data-i18n-en="Phishing reports, brute-force spikes, and noisy EDR signals flood the queue. Analysts spend the day triaging low-value alerts instead of hunting real intrusions — and the ones that matter sit open until a customer reports them."
-         data-i18n-zh="钓鱼上报、暴力破解尖峰、嘈杂的 EDR 信号把队列塞满。分析师把时间花在低价值告警分流上，真正重要的入侵反而要等客户主动反馈才能被发现。">Phishing reports, brute-force spikes, and noisy EDR signals flood the queue.</p>
-    </div>
+          <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+          <div class="impact-rows" role="list">
 
-    <div class="impact-card">
-      <span class="impact-tag"
-            data-i18n-en="Solution"
-            data-i18n-zh="方案">Solution</span>
-      <h3 class="impact-card-title"
-          data-i18n-en="A copilot that closes the routine work"
-          data-i18n-zh="一个能闭环常规工作的助手">A copilot that closes the routine work</h3>
-      <p class="impact-card-body"
-         data-i18n-en="SecSight pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine. Phishing triage, false-positive sweep, and IOC enrichment are handled under well-defined autonomy levels — L0 advisory up to L4 closed-loop — and every action is replayable in a human review queue."
-         data-i18n-zh="SecSight 把多智能体 SecOps 助手与自动响应 SOAR 引擎组合在一起。钓鱼分流、误报清理、IOC 富化都在明确的自主级别下处理——从 L0 建议到 L4 闭环——每一步动作都可在人工审核队列中回放。">SecSight pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine.</p>
-    </div>
+            <!-- Row 1 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7M9 11v5M15 11v5M9 7V4h6v3"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Alert backlog nobody closes" data-i18n-zh="永远清不完的告警积压">Alert backlog nobody closes</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Multi-agent SecOps copilot" data-i18n-zh="多智能体 SecOps 助手">Multi-agent SecOps copilot</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-metric">
+                <div class="impact-metric-value"><span class="arrow-down">↓</span>80%</div>
+                <div class="impact-metric-label" data-i18n-en="L0–L2 triage time" data-i18n-zh="L0–L2 分流时间">L0–L2 triage time</div>
+              </div>
+            </div>
 
-    <div class="impact-card">
-      <span class="impact-tag"
-            data-i18n-en="Impact"
-            data-i18n-zh="价值">Impact</span>
-      <h3 class="impact-card-title"
-          data-i18n-en="Analysts back on the work that matters"
-          data-i18n-zh="让分析师回到真正重要的工作上">Analysts back on the work that matters</h3>
-      <p class="impact-card-body"
-         data-i18n-en="22 production playbooks ship ready to run. The two-person team keeps coverage on nights and weekends without growing headcount, and senior time shifts from queue-watching to threat hunting, detection engineering, and customer-facing incident review."
-         data-i18n-zh="22 个生产级剧本开箱即用。两三人的团队在不增加人力的前提下守住夜间与周末覆盖，高级分析师的时间从盯队列转向威胁狩猎、检测工程与面向客户的事件复盘。">22 production playbooks ship ready to run.</p>
-    </div>
-  </div>
-</section>
+            <!-- Row 2 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="False positives drown signal" data-i18n-zh="误报把真正的信号淹没">False positives drown signal</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M10 13a3 3 0 0 0 4.2 0l3-3a3 3 0 0 0-4.2-4.2l-1.5 1.5"/><path d="M14 11a3 3 0 0 0-4.2 0l-3 3a3 3 0 0 0 4.2 4.2l1.5-1.5"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Verdict + evidence chain" data-i18n-zh="判定 + 证据链">Verdict + evidence chain</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-metric">
+                <div class="impact-metric-value"><span class="arrow-down">↓</span>60%</div>
+                <div class="impact-metric-label" data-i18n-en="Noise-to-signal ratio" data-i18n-zh="噪声信号比">Noise-to-signal ratio</div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Out-of-hours staffing gaps" data-i18n-zh="夜班和节假日人手短缺">Out-of-hours staffing gaps</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="L0–L3 autonomous execution" data-i18n-zh="L0–L3 自主执行">L0–L3 autonomous execution</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-metric">
+                <div class="impact-metric-value">24/7</div>
+                <div class="impact-metric-label" data-i18n-en="Coverage without headcount" data-i18n-zh="不增人也能全天候覆盖">Coverage without headcount</div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Compliance evidence trail" data-i18n-zh="合规取证链路不清">Compliance evidence trail</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M9 15l2 2 4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Signed playbooks + audit log" data-i18n-zh="签名剧本 + 审计日志">Signed playbooks + audit log</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="MLPS 2.0 / 等保 2.0" data-i18n-zh="MLPS 2.0 / 等保 2.0">MLPS 2.0</div>
+                <div class="impact-metric-label" data-i18n-en="Ready out of the box" data-i18n-zh="开箱即合规">Ready out of the box</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B. Impact Columns (large visual cards) ============ -->
+          <div class="impact-columns-head">
+            <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+            <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+               data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及分析师体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+          </div>
+
+          <div class="impact-grid">
+            <!-- Pain card -->
+            <div class="impact-card impact-card--pain">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-pain"
+                   data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="The SOC alert backlog nobody closes"
+                  data-i18n-zh="没人能清完的 SOC 告警积压">The SOC alert backlog nobody closes</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Phishing reports, brute-force spikes, and noisy EDR signals flood the queue."
+                    data-i18n-zh="钓鱼上报、暴力破解尖峰、嘈杂的 EDR 信号把队列塞满。">Phishing reports, brute-force spikes, and noisy EDR signals flood the queue.</li>
+                <li data-i18n-en="Two analysts spend the day triaging low-value alerts instead of hunting real intrusions."
+                    data-i18n-zh="两三名分析师把时间花在低价值告警分流上，无法去做威胁狩猎。">Two analysts spend the day triaging low-value alerts instead of hunting real intrusions.</li>
+                <li data-i18n-en="The incidents that actually matter sit open until a customer reports them."
+                    data-i18n-zh="真正重要的事件反而要等客户主动反馈才能被发现。">The incidents that actually matter sit open until a customer reports them.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">8h+</div>
+                <div class="impact-card-metric-label" data-i18n-en="Daily triage time per analyst" data-i18n-zh="每位分析师日均分流耗时">Daily triage time per analyst</div>
+              </div>
+            </div>
+
+            <!-- Solution card -->
+            <div class="impact-card impact-card--solution">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-solution"
+                   data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="A copilot that closes the routine work"
+                  data-i18n-zh="一个能闭环常规工作的助手">A copilot that closes the routine work</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Multi-agent SecOps Copilot handles phishing triage, FP sweep, and IOC enrichment under explicit autonomy levels."
+                    data-i18n-zh="多智能体 SecOps 助手在明确的自主级别下处理钓鱼分流、误报清理、IOC 富化。">Multi-agent SecOps Copilot handles phishing triage, FP sweep, and IOC enrichment under explicit autonomy levels.</li>
+                <li data-i18n-en="22 production playbooks ship ready to run — from L0 advisory up to L4 closed-loop."
+                    data-i18n-zh="22 个生产级剧本开箱即用，覆盖从 L0 建议到 L4 闭环。">22 production playbooks ship ready to run — from L0 advisory up to L4 closed-loop.</li>
+                <li data-i18n-en="Every action is replayable in a human review queue with verdict + evidence chain."
+                    data-i18n-zh="每一步动作都带判定 + 证据链，可在人工审核队列中回放。">Every action is replayable in a human review queue with verdict + evidence chain.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">22</div>
+                <div class="impact-card-metric-label" data-i18n-en="Production playbooks ready to run" data-i18n-zh="个生产级剧本可直接运行">Production playbooks ready to run</div>
+              </div>
+            </div>
+
+            <!-- Value card -->
+            <div class="impact-card impact-card--value">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-7"/><path d="M14 9h6v6"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-impact"
+                   data-i18n-en="Impact" data-i18n-zh="价值">Impact</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Analysts back on the work that matters"
+                  data-i18n-zh="让分析师回到真正重要的工作上">Analysts back on the work that matters</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Two-person team keeps coverage on nights and weekends without growing headcount."
+                    data-i18n-zh="两三人团队在不增加人力的前提下守住夜间与周末覆盖。">Two-person team keeps coverage on nights and weekends without growing headcount.</li>
+                <li data-i18n-en="Senior time shifts from queue-watching to threat hunting and detection engineering."
+                    data-i18n-zh="高级分析师的时间从盯队列转向威胁狩猎与检测工程。">Senior time shifts from queue-watching to threat hunting and detection engineering.</li>
+                <li data-i18n-en="MLPS 2.0 / 等保 2.0 aligned out of the box — no audit re-architecture."
+                    data-i18n-zh="原生对齐等保 2.0 / MLPS 2.0，无需为合规重构。">MLPS 2.0 / 等保 2.0 aligned out of the box — no audit re-architecture.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">5</div>
+                <div class="impact-card-metric-label" data-i18n-en="Autonomy levels (L0–L4)" data-i18n-zh="级自主性 (L0–L4)">Autonomy levels (L0–L4)</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
 <!-- ============ SECTION 2: Product architecture (4-stage flow) ============ -->
 <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
