@@ -131,150 +131,21 @@
 </section>
 
 <!-- ============ SECTION 2: How it works (4-stage flow) ============ -->
-<section class="how-section">
-  <h2 class="proj-h2"
-      data-i18n-en="How it works"
-      data-i18n-zh="工作原理">How it works</h2>
-  <p class="proj-desc"
-     data-i18n-en="Every alert moves through the same four stages. What changes per incident is which agent picks it up, what playbook runs, and how much autonomy the platform is allowed to take. The architecture below shows which systems back each stage."
-     data-i18n-zh="每一条告警都经过同样的四个阶段。不同事件之间变化的是哪个智能体接手、哪个剧本执行、以及平台被允许的自主级别。下方架构图展示了每个阶段由哪些系统支撑。">Every alert moves through the same four stages.</p>
-
-  <!-- Architecture-style diagram (replaces the simple grid) -->
-      <div class="how-grid">
-    <div class="how-stage">
-      <span class="how-stage-num">01</span>
-      <h3 class="how-stage-title" data-i18n-en="Ingest" data-i18n-zh="接入">Ingest</h3>
-      <p class="how-stage-desc" data-i18n-en="Detection signals flow in from SIEM, NIDS, and threat-intel platforms in near real time. Each event is normalized, deduped, and stamped with source, severity, and tenant context before anything downstream sees it." data-i18n-zh="来自 SIEM、NIDS 与威胁情报平台的检测信号近实时流入。每一条事件在交给下游之前都会被归一化、去重，并打上来源、严重度与租户上下文标签。">Detection signals flow in from SIEM, NIDS, and threat-intel platforms.</p>
-    </div>
-
-    <div class="how-stage">
-      <span class="how-stage-num">02</span>
-      <h3 class="how-stage-title" data-i18n-en="Analyze" data-i18n-zh="分析">Analyze</h3>
-      <p class="how-stage-desc" data-i18n-en="A team of specialized agents — triage, investigation, and enrichment — reads the event, pulls context from the knowledge base, and assembles a verdict with evidence attached. False positives get folded back into the model so they don't reappear tomorrow." data-i18n-zh="一组专职智能体——分流、调查、富化——读取事件、从知识库拉取上下文，并产出一份带证据的判定结论。误报会被回灌到模型中，避免明天再次出现。">Specialized agents read the event and assemble a verdict with evidence.</p>
-    </div>
-
-    <div class="how-stage">
-      <span class="how-stage-num">03</span>
-      <h3 class="how-stage-title" data-i18n-en="Decide &amp; act" data-i18n-zh="决策与执行">Decide &amp; act</h3>
-      <p class="how-stage-desc" data-i18n-en="The SOAR engine matches the verdict to one of 22 production playbooks and executes it within the autonomy budget the playbook declares. Anything outside that budget is parked in a human review queue with the full reasoning trail." data-i18n-zh="SOAR 引擎把判定结果匹配到 22 个生产级剧本之一，并在剧本声明的自主预算内执行。超出预算的动作会带着完整推理链进入人工审核队列。">The SOAR engine matches the verdict to a playbook and executes it.</p>
-    </div>
-
-    <div class="how-stage">
-      <span class="how-stage-num">04</span>
-      <h3 class="how-stage-title" data-i18n-en="Learn" data-i18n-zh="复盘学习">Learn</h3>
-      <p class="how-stage-desc" data-i18n-en="Every incident — automated or human-handled — writes a structured postmortem back to the knowledge base. Detection rules get tuned, playbook thresholds get adjusted, and the next cycle starts with a slightly sharper system." data-i18n-zh="每一次事件——无论自动处理还是人工处置——都会写回一份结构化复盘到知识库。检测规则得到调优，剧本阈值被校准，下一轮从一个稍微更敏锐的系统开始。">Every incident writes a structured postmortem back to the knowledge base.</p>
-    </div>
-  </div>
-
-  <p class="how-footnote" data-i18n-en="See the architecture below for which systems back each stage." data-i18n-zh="下方架构图展示各阶段由哪些系统支撑。">See the architecture below for which systems back each stage.</p>
-
-<div class="how-lane-track">
-            <!-- node: SIEM -->
-            <div class="how-node how-node-cloud">
-              <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 14a4 4 0 0 1 4-4 5 5 0 0 1 9.6-1.5A4 4 0 0 1 21 12a4 4 0 0 1-3 6H8a4 4 0 0 1-4-4z"/>
-              </svg>
-              <div class="how-node-body">
-                <div class="how-node-title" data-i18n-en="SIEM / NIDS feeds" data-i18n-zh="SIEM / NIDS 接入">SIEM / NIDS feeds</div>
-                <div class="how-node-sub" data-i18n-en="Wazuh · Suricata · OpenCTI" data-i18n-zh="Wazuh · Suricata · OpenCTI">Wazuh · Suricata · OpenCTI</div>
-              </div>
-            </div>
-            <!-- arrow -->
-            <div class="how-arrow how-arrow-data" aria-hidden="true">
-              <svg viewBox="0 0 60 24" preserveAspectRatio="none"><path d="M2 12 L52 12 M44 6 L52 12 L44 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="how-arrow-label" data-i18n-en="events" data-i18n-zh="事件">events</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="how-swimlane">
-          <div class="how-lane-label">
-            <span class="how-lane-num">02</span>
-            <span class="how-lane-name" data-i18n-en="Analyze" data-i18n-zh="分析">Analyze</span>
-          </div>
-          <div class="how-lane-track">
-            <div class="how-node how-node-ai">
-              <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M9 10h.01M15 10h.01M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5"/>
-              </svg>
-              <div class="how-node-body">
-                <div class="how-node-title" data-i18n-en="Multi-agent Copilot" data-i18n-zh="多智能体助手">Multi-agent Copilot</div>
-                <div class="how-node-sub" data-i18n-en="Triage · Investigate · Enrich · Report" data-i18n-zh="分流 · 调查 · 富化 · 报告">Triage · Investigate · Enrich · Report</div>
-              </div>
-            </div>
-            <div class="how-arrow how-arrow-data" aria-hidden="true">
-              <svg viewBox="0 0 60 24" preserveAspectRatio="none"><path d="M2 12 L52 12 M44 6 L52 12 L44 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="how-arrow-label" data-i18n-en="verdict" data-i18n-zh="判定">verdict</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="how-swimlane">
-          <div class="how-lane-label">
-            <span class="how-lane-num">03</span>
-            <span class="how-lane-name" data-i18n-en="Decide &amp; act" data-i18n-zh="决策与执行">Decide &amp; act</span>
-          </div>
-          <div class="how-lane-track">
-            <div class="how-node how-node-backend">
-              <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-              <div class="how-node-body">
-                <div class="how-node-title" data-i18n-en="SOAR engine" data-i18n-zh="SOAR 引擎">SOAR engine</div>
-                <div class="how-node-sub" data-i18n-en="22 playbooks · 5 autonomy levels" data-i18n-zh="22 个剧本 · 5 级自主性">22 playbooks · 5 autonomy levels</div>
-              </div>
-            </div>
-            <div class="how-arrow how-arrow-async" aria-hidden="true">
-              <svg viewBox="0 0 60 24" preserveAspectRatio="none"><path d="M2 12 L52 12 M44 6 L52 12 L44 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="how-arrow-label" data-i18n-en="executed" data-i18n-zh="执行">executed</span>
-            </div>
-            <div class="how-node how-node-security">
-              <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="4" y="10" width="16" height="10" rx="1.5"/>
-                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-              </svg>
-              <div class="how-node-body">
-                <div class="how-node-title" data-i18n-en="Human review queue" data-i18n-zh="人工审核队列">Human review queue</div>
-                <div class="how-node-sub" data-i18n-en="L4 closed-loop · full trail" data-i18n-zh="L4 闭环 · 完整轨迹">L4 closed-loop · full trail</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="how-swimlane">
-          <div class="how-lane-label">
-            <span class="how-lane-num">04</span>
-            <span class="how-lane-name" data-i18n-en="Learn" data-i18n-zh="复盘学习">Learn</span>
-          </div>
-          <div class="how-lane-track">
-            <div class="how-node how-node-data">
-              <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <ellipse cx="12" cy="5" rx="8" ry="3"/>
-                <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
-                <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
-              </svg>
-              <div class="how-node-body">
-                <div class="how-node-title" data-i18n-en="Knowledge base (RAG)" data-i18n-zh="知识库 (RAG)">Knowledge base (RAG)</div>
-                <div class="how-node-sub" data-i18n-en="Qdrant · postmortems · tuned rules" data-i18n-zh="Qdrant · 复盘 · 规则调优">Qdrant · postmortems · tuned rules</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- bottom legend -->
-        <div class="how-legend" aria-hidden="true">
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-data"></span><span data-i18n-en="primary data" data-i18n-zh="主数据">primary data</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-async"></span><span data-i18n-en="async batch" data-i18n-zh="异步批处理">async batch</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-ai"></span><span data-i18n-en="AI agent" data-i18n-zh="AI 智能体">AI agent</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-cloud"></span><span data-i18n-en="external source" data-i18n-zh="外部来源">external source</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-backend"></span><span data-i18n-en="deterministic engine" data-i18n-zh="确定性引擎">deterministic engine</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-data-store"></span><span data-i18n-en="data store" data-i18n-zh="数据存储">data store</span></span>
-          <span class="how-legend-item"><span class="how-legend-swatch swatch-security"></span><span data-i18n-en="human / security gate" data-i18n-zh="人工 / 安全门控">human / security gate</span></span>
-        </div>
-      </div>
-    </section>
+<section class="how-section"><h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
+    <p class="proj-desc"
+       data-i18n-en="Every alert moves through the same four participants. Detection arrives at the ingest pipeline, gets normalized and routed to the multi-agent Copilot, the Copilot matches a verdict to a playbook on the SOAR engine, and any L4 over-budget action lands in a human review queue. Click any participant or message for details."
+       data-i18n-zh="每一条告警都经过同样的四个参与者。检测信号到达接入流水线后被归一化并路由到多智能体助手；助手把判定结果匹配到 SOAR 引擎上的剧本；任何超出 L4 自主预算的动作都会落入人工审核队列。点击任意参与者或消息查看详情。">Every alert moves through the same four participants.</p>
+    <div class="arch-embed-frame-wrap">
+      <iframe src="/assets/archify/secsight-sequence?theme=light"
+              class="archify-frame"
+              title="SecSight alert lifecycle sequence diagram"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+        <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+           data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+      </iframe>
+    </div></section>
 
 
           <!-- Architecture embed - placed between Overview and Capabilities -->
