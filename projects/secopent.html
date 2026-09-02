@@ -102,36 +102,21 @@
           </div>
         </div>
 
-        <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
-        <div class="how-grid">
-          <div class="how-stage">
-            <div class="how-num">01</div>
-            <div class="how-title" data-i18n-en="Catalog scope" data-i18n-zh="目录化范围">Catalog scope</div>
-            <p class="how-desc" data-i18n-en="Define what to test, what NOT to test, and which techniques are pre-approved. Scope is encoded as data, not free-text in a PDF — so it can be enforced by the deterministic layer."
-               data-i18n-zh="明确要测试什么、不测试什么、哪些技术是预先批准的。范围以数据形式编码，而非 PDF 里的自由文本——这样确定性层才能真正执行。">Scope as data, not PDF prose.</p>
-          </div>
-          <span class="how-arrow" aria-hidden="true">→</span>
-          <div class="how-stage">
-            <div class="how-num">02</div>
-            <div class="how-title" data-i18n-en="Agent proposes" data-i18n-zh="智能体提议">Agent proposes</div>
-            <p class="how-desc" data-i18n-en="The LLM suggests the next action — what technique, what target, what payload — based on the current case state. It never executes autonomously; every suggestion is a proposal, nothing more."
-               data-i18n-zh="LLM 根据当前 case 状态给出下一步建议——什么技术、什么目标、什么 payload。它从不自主执行；每一条建议都是提议，仅此而已。">Suggest, never execute.</p>
-          </div>
-          <span class="how-arrow" aria-hidden="true">→</span>
-          <div class="how-stage">
-            <div class="how-num">03</div>
-            <div class="how-title" data-i18n-en="Human decides" data-i18n-zh="人做决策">Human decides</div>
-            <p class="how-desc" data-i18n-en="The operator reviews each proposal in the Case Studio — approves it, modifies it, or rejects it. Approval is required before the deterministic layer dispatches the action; nothing reaches the target without a human on the record."
-               data-i18n-zh="操作员在 Case Studio 中复核每一条提议——批准、修改或驳回。在确定性层下发动作之前，必须获得批准；任何动作触达目标前都要有经手人在案。">Approve, modify, or reject — nothing runs without a human.</p>
-          </div>
-          <span class="how-arrow" aria-hidden="true">→</span>
-          <div class="how-stage">
-            <div class="how-num">04</div>
-            <div class="how-title" data-i18n-en="Sign and publish" data-i18n-zh="签名与发布">Sign and publish</div>
-            <p class="how-desc" data-i18n-en="Findings are cryptographically signed before they leave the workbench. Every step is recorded in an immutable audit trail — proposal, approval, action, evidence — so reports ship with a chain of custody regulators can verify."
-               data-i18n-zh="发现项在离开工作台前被加密签名。每一步——提议、批准、动作、证据——都被记录在不可篡改的审计轨迹中，让报告附带一条监管机构可验证的保管链。">Signed findings, full chain of custody.</p>
-          </div>
-        </div>
+        <section class="how-section"><h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
+            <p class="proj-desc"
+               data-i18n-en="Every authorized engagement moves through the same five participants. The operator opens the workbench with credentials, the catalog hands back scope and pre-approved techniques, the agent proposes the next action without ever executing it, the operator approves or rejects, the deterministic sandbox runs the approved action with provenance, and signed findings publish back to the catalog and downstream pipeline. Click any participant or message for details."
+               data-i18n-zh="每一次授权测试都经过同样的五个参与者：操作员凭据打开工作台，目录返回范围与预先批准的技术，智能体只提议下一步动作而不执行，操作员批准或驳回，确定性沙箱以可追溯的方式执行批准动作，加签后的发现项回写到目录与下游流水线。点击任意参与者或消息查看详情。">Every authorized engagement moves through the same five participants.</p>
+            <div class="arch-embed-frame-wrap">
+              <iframe src="/assets/archify/secopent-sequence?theme=light"
+                      class="archify-frame"
+                      title="SecOpent authorized pentest flow sequence diagram"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+                   data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+              </iframe>
+            </div></section>
 
           <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-secopent">

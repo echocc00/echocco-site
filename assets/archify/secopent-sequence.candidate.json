@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SecOpent authorized pentest flow",
+    "subtitle": "Catalog scope → agent proposes → human decides → sign and publish",
+    "output": "secopent-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      920
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "scope-and-propose",
+        "label": "Scope and propose",
+        "focus": [
+          "operator",
+          "catalog",
+          "agent"
+        ],
+        "note": "Operator opens the workbench with catalog-defined scope, then the agent proposes the next action inside that boundary."
+      },
+      {
+        "id": "decide-execute-sign",
+        "label": "Decide, execute, sign",
+        "focus": [
+          "agent",
+          "operator",
+          "sandbox",
+          "findings"
+        ],
+        "note": "Operator approves the proposal, the deterministic sandbox runs the action, and the signed finding publishes to the catalog."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Operator",
+      "sublabel": "human · on the record"
+    },
+    {
+      "id": "catalog",
+      "type": "backend",
+      "label": "Catalog",
+      "sublabel": "scope · approvals"
+    },
+    {
+      "id": "agent",
+      "type": "cloud",
+      "label": "Agent",
+      "sublabel": "LLM · proposes only"
+    },
+    {
+      "id": "sandbox",
+      "type": "security",
+      "label": "Sandbox",
+      "sublabel": "seccomp · oracle"
+    },
+    {
+      "id": "findings",
+      "type": "database",
+      "label": "Findings store",
+      "sublabel": "signed · immutable"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "operator",
+      "to": "catalog",
+      "y": 180,
+      "label": "open workbench with credentials",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2",
+      "from": "catalog",
+      "to": "operator",
+      "y": 260,
+      "label": "scope: in · out · pre-approved techniques",
+      "variant": "return"
+    },
+    {
+      "id": "m3",
+      "from": "operator",
+      "to": "agent",
+      "y": 360,
+      "label": "case state → propose next action",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m4",
+      "from": "agent",
+      "to": "operator",
+      "y": 460,
+      "label": "proposal: technique · target · payload",
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "operator",
+      "to": "sandbox",
+      "y": 560,
+      "label": "approve · dispatch within scope",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6",
+      "from": "sandbox",
+      "to": "operator",
+      "y": 660,
+      "label": "evidence · provenance · N/N oracle",
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "operator",
+      "to": "findings",
+      "y": 760,
+      "label": "sign finding (op · tool · ts)",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m8",
+      "from": "findings",
+      "to": "catalog",
+      "y": 820,
+      "label": "publish signed finding to catalog",
+      "variant": "return"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Scope",
+      "items": [
+        "Operator opens workbench with credentials",
+        "Catalog returns in-scope / out-of-scope / pre-approved techniques"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Propose",
+      "items": [
+        "Agent suggests next technique + target + payload",
+        "Never executes autonomously — every move is a proposal"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Sign & publish",
+      "items": [
+        "Operator approves; sandbox runs deterministically with provenance",
+        "Finding cryptographically signed and published to catalog + pipeline"
+      ]
+    }
+  ]
+}
