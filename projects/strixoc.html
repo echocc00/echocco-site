@@ -82,24 +82,214 @@
           <p data-i18n-en="GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in." data-i18n-zh="与 GitHub Actions / CI 集成，提供面向开发者的 CLI，反馈循环短。支持开源 LLM 提供商，无供应商锁定。">GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in.</p>
         </div>
 
-        <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
-        <div class="impact-grid">
-          <div class="impact-card">
-            <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
-            <p class="impact-text" data-i18n-en="A penetration test is a snapshot bought once or twice a year. It is expensive, slow to schedule, and entirely dependent on how much manual time a senior tester can spend on your attack surface. Between engagements the application keeps shipping — new endpoints, new dependencies, new auth paths — and none of it is tested. Security teams end up with coverage measured in weeks per year, while vulnerabilities sit undiscovered for months. Static scanners fill the gap with noise: thousands of unvalidated alerts nobody has time to triage."
-               data-i18n-zh="渗透测试是一年买一两次的快照：贵、排期慢，且完全取决于资深测试员能在你的攻击面上投入多少人工时间。两次测试之间应用仍在持续上线——新接口、新依赖、新认证路径——这些都没有被测过。安全团队一年能拿到的覆盖度以「周」计，而漏洞则在数月之内无人发现。静态扫描器只能用噪声填补空档：成千上万条未验证告警，没人有时间分诊。">Pentests are annual snapshots; the app ships weekly.</p>
+                <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+        <section class="impact-section">
+          <header class="impact-head">
+            <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+            <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+            <p data-i18n-en="Penetration testing is sold as a once-a-year snapshot — expensive, slow to schedule, and stale the moment the application ships. StrixOC replaces the annual engagement with an autonomous agent team that runs per release, exploits what it finds, and outputs Pydantic-validated, signed findings."
+               data-i18n-zh="渗透测试通常被当作一年一次的快照出售——昂贵、排期慢、应用一上线就过时。StrixOC 用一支自主智能体团队替代年度委托：每次发布触发，真实利用漏洞，输出经 Pydantic 校验、签名化的发现项。">Penetration testing is sold as a once-a-year snapshot — expensive, slow to schedule, and stale the moment the application ships. StrixOC replaces the annual engagement with an autonomous agent team that runs per release, exploits what it finds, and outputs Pydantic-validated, signed findings.</p>
+          </header>
+
+          <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+          <div class="impact-rows" role="list">
+            <!-- Row 1 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Annual pentest = snapshot in time" data-i18n-zh="年度渗透测试=一次快照">Annual pentest = snapshot in time</div>
+                  <div class="impact-cell-sub" data-i18n-en="App ships weekly; coverage is yearly." data-i18n-zh="应用周更，覆盖度按年计。">App ships weekly; coverage is yearly.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="AI agent runs per release" data-i18n-zh="AI 智能体按发布运行">AI agent runs per release</div>
+                  <div class="impact-cell-sub" data-i18n-en="Nightly in CI, on every deploy." data-i18n-zh="每晚在 CI 中、每次部署触发。">Nightly in CI, on every deploy.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="24/7" data-i18n-zh="24/7">24/7</div>
+                <div class="impact-metric-label" data-i18n-en="Continuous vs 1× / year" data-i18n-zh="持续 vs 一年一次">Continuous vs 1× / year</div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 12h6M9 12v0M9 12c0-1 1-2 2-2M21 12h-6M15 12c0-1-1-2-2-2M12 3v6M12 15v6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Static-scanner noise" data-i18n-zh="静态扫描器噪声">Static-scanner noise</div>
+                  <div class="impact-cell-sub" data-i18n-en="Thousands of unvalidated alerts." data-i18n-zh="成千上万条未验证告警。">Thousands of unvalidated alerts.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Dynamic real exploitation" data-i18n-zh="动态真实利用">Dynamic real exploitation</div>
+                  <div class="impact-cell-sub" data-i18n-en="Agent proves the vuln before reporting." data-i18n-zh="智能体先验证漏洞再上报。">Agent proves the vuln before reporting.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>" data-i18n-zh="<span class="arrow-down">↓</span>"><span class="arrow-down">↓</span></div>
+                <div class="impact-metric-label" data-i18n-en="False-positive cleanup" data-i18n-zh="误报清理工作量">False-positive cleanup</div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3v18M16 7H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H8"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Expensive manual labor" data-i18n-zh="昂贵的人工成本">Expensive manual labor</div>
+                  <div class="impact-cell-sub" data-i18n-en="Senior hours × weeks per run." data-i18n-zh="资深小时 × 数周每次。">Senior hours × weeks per run.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Token-cost agent" data-i18n-zh="按 token 计费的智能体">Token-cost agent</div>
+                  <div class="impact-cell-sub" data-i18n-en="Minutes + tokens, not consulting." data-i18n-zh="几分钟 + token，不是咨询合同。">Minutes + tokens, not consulting.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>" data-i18n-zh="<span class="arrow-down">↓</span>"><span class="arrow-down">↓</span></div>
+                <div class="impact-metric-label" data-i18n-en="$ per finding" data-i18n-zh="每条发现成本">$ per finding</div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M3 3l18 18"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Findings not actionable" data-i18n-zh="发现项难以落地">Findings not actionable</div>
+                  <div class="impact-cell-sub" data-i18n-en="Reports with no fixes attached." data-i18n-zh="只报问题，不附修复。">Reports with no fixes attached.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Pydantic-validated + signed" data-i18n-zh="Pydantic 校验 + 签名">Pydantic-validated + signed</div>
+                  <div class="impact-cell-sub" data-i18n-en="Structurally sound, signed + fix proposed." data-i18n-zh="结构合规、签名化、并附修复建议。">Structurally sound, signed + fix proposed.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>100%" data-i18n-zh="<span class="arrow-up">↑</span>100%"><span class="arrow-up">↑</span>100%</div>
+                <div class="impact-metric-label" data-i18n-en="Actionable output" data-i18n-zh="可落地输出">Actionable output</div>
+              </div>
+            </div>
+
           </div>
-          <div class="impact-card">
-            <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
-            <p class="impact-text" data-i18n-en="StrixOC puts autonomous AI hackers on the target instead of a calendar slot. A team of agents — built on the openai-agents SDK with LiteLLM for multi-LLM routing — collaborates the way a real red team does: one maps the attack surface, others attempt exploitation, and results are consolidated into findings. Everything happens inside an operator-defined scope, and every step is validated against Pydantic models, so an agent cannot drift outside the engagement or emit a finding that isn't structurally sound. Vulnerabilities are not just reported; the agents propose and generate fixes."
-               data-i18n-zh="StrixOC 把自主 AI 黑客直接放到目标上，而不是排进日程表。一组智能体——基于 openai-agents SDK，用 LiteLLM 做多 LLM 路由——像真实红队那样协作：一个绘制攻击面，其他尝试利用，结果被汇总为发现项。全部动作都发生在操作员定义的范围内，每一步都经 Pydantic 模型校验，因此智能体既不会越出委托范围，也无法产出结构不合规的发现。漏洞不只是被报告——智能体还会提出并生成修复。">Agent teams run recon, exploit, and report inside scope.</p>
+
+          <!-- ============ B. Impact Columns (large visual cards) ============ -->
+          <div class="impact-columns-head">
+            <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+            <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+               data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
-          <div class="impact-card">
-            <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
-            <p class="impact-text" data-i18n-en="Pentesting becomes continuous rather than annual: a run costs LLM tokens and minutes, not a consulting engagement, so it can fire on every release or nightly in CI. Time-to-discovery drops from months to the length of a single run, and because each finding is backed by a real exploit attempt rather than a pattern match, triage time collapses too. Apache-2.0 and self-hostable, with no single-vendor LLM dependency — the cost curve stays under your control."
-               data-i18n-zh="渗透测试从「一年一次」变为持续进行：一次运行的成本是 LLM token 与几分钟时间，而不是一笔咨询合同，因此可以在每次发布时触发，或每晚跑在 CI 里。发现漏洞的时间从数月缩短到一次运行的长度；又因为每条发现都由真实的利用尝试支撑而非模式匹配，分诊时间也随之坍缩。Apache-2.0、可自托管、不绑定单一 LLM 供应商——成本曲线始终在你手里。">Continuous coverage, lower cost, faster discovery.</p>
+
+          <div class="impact-grid">
+            <!-- Pain card -->
+            <div class="impact-card impact-card--pain">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-pain"
+                   data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Annual pentest is stale on arrival"
+                  data-i18n-zh="年度渗透测试一上线就已过时">Annual pentest is stale on arrival</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Expensive, slow to schedule, dependent on senior-tester time on your attack surface." data-i18n-zh="昂贵、排期慢、完全依赖资深测试员在攻击面上投入的时间。">Expensive, slow to schedule, dependent on senior-tester time on your attack surface.</li>
+                <li data-i18n-en="Between engagements the app keeps shipping — new endpoints, deps, auth paths — none tested." data-i18n-zh="两次测试之间应用持续上线——新接口、新依赖、新认证路径——都没被覆盖。">Between engagements the app keeps shipping — new endpoints, deps, auth paths — none tested.</li>
+                <li data-i18n-en="Static scanners fill the gap with noise: thousands of unvalidated alerts." data-i18n-zh="静态扫描器只能用噪声填补空档：成千上万条未验证告警。">Static scanners fill the gap with noise: thousands of unvalidated alerts.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">12 mo</div>
+                <div class="impact-card-metric-label" data-i18n-en="Gap between pentests" data-i18n-zh="两次测试之间的空档">Gap between pentests</div>
+              </div>
+            </div>
+
+            <!-- Solution card -->
+            <div class="impact-card impact-card--solution">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-solution"
+                   data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Autonomous red team on tap"
+                  data-i18n-zh="随时可调用的自主红队">Autonomous red team on tap</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Agent teams (openai-agents SDK + LiteLLM) collaborate like a real red team — recon, exploit, report." data-i18n-zh="智能体团队（openai-agents SDK + LiteLLM）像真实红队一样协作——侦察、利用、报告。">Agent teams (openai-agents SDK + LiteLLM) collaborate like a real red team — recon, exploit, report.</li>
+                <li data-i18n-en="Operator-defined scope; every step validated against Pydantic — agents cannot drift." data-i18n-zh="操作员定义范围；每一步经 Pydantic 校验——智能体无法越界。">Operator-defined scope; every step validated against Pydantic — agents cannot drift.</li>
+                <li data-i18n-en="Agents propose and generate fixes — not just findings." data-i18n-zh="智能体会主动提出并生成修复——不只是发现问题。">Agents propose and generate fixes — not just findings.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">100%</div>
+                <div class="impact-card-metric-label" data-i18n-en="Findings structurally sound" data-i18n-zh="发现项结构合规">Findings structurally sound</div>
+              </div>
+            </div>
+
+            <!-- Value card -->
+            <div class="impact-card impact-card--value">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-7"/><path d="M14 9h6v6"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-value"
+                   data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Continuous coverage, lower cost curve"
+                  data-i18n-zh="持续覆盖，成本曲线下行">Continuous coverage, lower cost curve</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Pentesting becomes continuous: a run costs LLM tokens + minutes, not a consulting engagement." data-i18n-zh="渗透测试变为持续——一次运行只花 LLM token 与几分钟，而非一笔咨询合同。">Pentesting becomes continuous: a run costs LLM tokens + minutes, not a consulting engagement.</li>
+                <li data-i18n-en="Time-to-discovery drops from months to the length of a single run." data-i18n-zh="发现漏洞的时间从数月缩短到一次运行的长度。">Time-to-discovery drops from months to the length of a single run.</li>
+                <li data-i18n-en="Apache-2.0, self-hostable, no single-vendor LLM dependency — cost curve under your control." data-i18n-zh="Apache-2.0、可自托管、不绑定单一 LLM 供应商——成本曲线始终归你掌控。">Apache-2.0, self-hostable, no single-vendor LLM dependency — cost curve under your control.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">1× / release</div>
+                <div class="impact-card-metric-label" data-i18n-en="vs 1× / year engagement" data-i18n-zh="vs 一年一次的委托">vs 1× / year engagement</div>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </section>
+
+
 
         <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
                 <div class="how-grid">
