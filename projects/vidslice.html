@@ -82,25 +82,214 @@
           <p data-i18n-en="v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines." data-i18n-zh="v0.5 读兼容 / v0.6 写入通过 <code>--compat v0.5</code> 标志位可选开启。NDJSON 进度事件支持流式流水线。">v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines.</p>
                   </div>
 
-                  <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 成效">Pain → Solution → Impact</h2>
-                  <p class="proj-desc" data-i18n-en="Why a separate indexing tool exists, and what it changes for teams handing off material between vendors and the OpenCut pipeline." data-i18n-zh="为什么需要独立的索引工具，以及它对"外包素材 → OpenCut 流水线"这条链路带来的实际改变。">Why a separate indexing tool exists, and what it changes for teams handing off material between vendors and the OpenCut pipeline.</p>
-                  <div class="impact-grid">
-                    <article class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
-                      <h3 data-i18n-en="Material processing for video search is fragmented" data-i18n-zh="视频检索的素材处理链路支离破碎">Material processing for video search is fragmented</h3>
-                      <p data-i18n-en="Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. Index formats drift across teams, so a clip indexed by group A rarely loads cleanly in group B's pipeline." data-i18n-zh="每个团队都各自实现一套抽帧和 embedding 流水线。生产环境里的原始素材不能交给外部厂商，但索引又必须在某处完成。索引格式在团队之间各走各路，A 组索引过的素材在 B 组的流水线里几乎跑不起来。">Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. Index formats drift across teams, so a clip indexed by group A rarely loads cleanly in group B's pipeline.</p>
-                    </article>
-                    <article class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
-                      <h3 data-i18n-en="A standalone CLI that signs a standardized index" data-i18n-zh="一个独立的 CLI，输出签名化的标准索引">A standalone CLI that signs a standardized index</h3>
-                      <p data-i18n-en="VidSlice is a single CLI: hand it raw materials, it walks the directory, extracts frames, computes embeddings, and writes a signed index that OpenCut consumes directly. One tool, one output format, one signing scheme — every team's index looks the same on the wire." data-i18n-zh="VidSlice 是一个独立的 CLI：把原始素材丢给它，它会遍历目录、抽帧、计算 embedding，并写出一个 OpenCut 直接能消费的签名索引。一个工具，一种输出格式，一套签名机制——所有团队在线上看到的索引格式完全一致。">VidSlice is a single CLI: hand it raw materials, it walks the directory, extracts frames, computes embeddings, and writes a signed index that OpenCut consumes directly. One tool, one output format, one signing scheme — every team's index looks the same on the wire.</p>
-                    </article>
-                    <article class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="成效">Impact</span>
-                      <h3 data-i18n-en="Third parties index without seeing production secrets" data-i18n-zh="第三方可以索引，但看不到生产环境的秘密">Third parties index without seeing production secrets</h3>
-                      <p data-i18n-en="Outsourced teams run VidSlice on the materials they're given; the signed index flows back to OpenCut without ever exposing production credentials, source repositories, or downstream services. Index format is consistent across vendors. The test suite reports 408 tests passing on every release." data-i18n-zh="外包团队在自己拿到的素材上跑 VidSlice，签名化的索引再回流到 OpenCut，整条链路不暴露任何生产凭证、源代码仓库或下游服务。索引格式在所有外部供应商之间保持一致。每次发布时测试套件报告 408 个用例全部通过。">Outsourced teams run VidSlice on the materials they're given; the signed index flows back to OpenCut without ever exposing production credentials, source repositories, or downstream services. Index format is consistent across vendors. The test suite reports 408 tests passing on every release.</p>
-                    </article>
-                  </div>
+                          <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+        <section class="impact-section">
+          <header class="impact-head">
+            <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+            <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+            <p data-i18n-en="Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. VidSlice gives the outsourced team a standalone CLI: hand it materials, get back a signed standard index that OpenCut consumes directly."
+               data-i18n-zh="每个团队都各自实现一套抽帧和 embedding 流水线。原始素材不能交给外部供应商，但索引又必须在某处完成。VidSlice 给外包团队一个独立的 CLI：把素材丢进去，拿回 OpenCut 直接能消费的签名标准索引。">Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. VidSlice gives the outsourced team a standalone CLI: hand it materials, get back a signed standard index that OpenCut consumes directly.</p>
+          </header>
+
+          <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+          <div class="impact-rows" role="list">
+            <!-- Row 1 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Material processing fragmented" data-i18n-zh="素材处理链路支离破碎">Material processing fragmented</div>
+                  <div class="impact-cell-sub" data-i18n-en="Every team rolls its own." data-i18n-zh="每个团队都各自实现。">Every team rolls its own.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Standalone CLI + LanceDB index" data-i18n-zh="独立 CLI + LanceDB 索引">Standalone CLI + LanceDB index</div>
+                  <div class="impact-cell-sub" data-i18n-en="One tool, one output format." data-i18n-zh="一个工具，一种输出格式。">One tool, one output format.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+                <div class="impact-metric-label" data-i18n-en="Tool, 408 tests" data-i18n-zh="1 个工具，408 个测试">Tool, 408 tests</div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Vendors can't be trusted with raw assets" data-i18n-zh="原始素材不能交给外部供应商">Vendors can't be trusted with raw assets</div>
+                  <div class="impact-cell-sub" data-i18n-en="Production credentials at risk." data-i18n-zh="生产凭证存在风险。">Production credentials at risk.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Indexed output, no raw access" data-i18n-zh="只输出索引，不接触原片">Indexed output, no raw access</div>
+                  <div class="impact-cell-sub" data-i18n-en="Signed index flows back, raw stays." data-i18n-zh="签名索引回流，原始素材留本地。">Signed index flows back, raw stays.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>100%" data-i18n-zh="<span class="arrow-up">↑</span>100%"><span class="arrow-up">↑</span>100%</div>
+                <div class="impact-metric-label" data-i18n-en="Raw-asset isolation" data-i18n-zh="原始素材隔离">Raw-asset isolation</div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 12h6M9 12v0M9 12c0-1 1-2 2-2M21 12h-6M15 12c0-1-1-2-2-2M12 3v6M12 15v6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Index format inconsistent" data-i18n-zh="索引格式各走各路">Index format inconsistent</div>
+                  <div class="impact-cell-sub" data-i18n-en="Group A's index doesn't load in B." data-i18n-zh="A 组的索引在 B 组跑不起来。">Group A's index doesn't load in B.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Signed standard index" data-i18n-zh="签名化的标准索引">Signed standard index</div>
+                  <div class="impact-cell-sub" data-i18n-en="Every team's index looks the same." data-i18n-zh="所有团队的索引格式完全一致。">Every team's index looks the same.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+                <div class="impact-metric-label" data-i18n-en="Deterministic OpenCut input" data-i18n-zh="OpenCut 输入确定化">Deterministic OpenCut input</div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v4a4 4 0 0 0 4 4h2a4 4 0 0 0 4-4V7M18 7v10"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Pipeline reinvents vector store" data-i18n-zh="流水线各自重新造轮子向量库">Pipeline reinvents vector store</div>
+                  <div class="impact-cell-sub" data-i18n-en="Each partner reinvents ingestion." data-i18n-zh="每个合作伙伴都重造摄取。">Each partner reinvents ingestion.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1-1"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Signed LanceDB output" data-i18n-zh="签名化的 LanceDB 输出">Signed LanceDB output</div>
+                  <div class="impact-cell-sub" data-i18n-en="One integration per partner." data-i18n-zh="每方只需一次集成。">One integration per partner.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>1" data-i18n-zh="<span class="arrow-down">↓</span>1"><span class="arrow-down">↓</span>1</div>
+                <div class="impact-metric-label" data-i18n-en="Integration per partner, forever" data-i18n-zh="每方只集成一次">Integration per partner, forever</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ============ B. Impact Columns (large visual cards) ============ -->
+          <div class="impact-columns-head">
+            <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+            <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+               data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+          </div>
+
+          <div class="impact-grid">
+            <!-- Pain card -->
+            <div class="impact-card impact-card--pain">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-pain"
+                   data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Outsourced indexing without leaking secrets"
+                  data-i18n-zh="外包索引又不能泄露生产秘密">Outsourced indexing without leaking secrets</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Every team rolls its own frame extractor and embedding pipeline — formats drift across groups." data-i18n-zh="每个团队都各自实现抽帧与 embedding——格式在团队之间漂移。">Every team rolls its own frame extractor and embedding pipeline — formats drift across groups.</li>
+                <li data-i18n-en="Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere." data-i18n-zh="原始生产素材不能交给外部供应商，但索引又必须在某处完成。">Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere.</li>
+                <li data-i18n-en="A clip indexed by group A rarely loads cleanly in group B's pipeline." data-i18n-zh="A 组索引过的素材在 B 组的流水线里几乎跑不起来。">A clip indexed by group A rarely loads cleanly in group B's pipeline.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">0</div>
+                <div class="impact-card-metric-label" data-i18n-en="Standard index format across teams" data-i18n-zh="跨团队统一索引格式">Standard index format across teams</div>
+              </div>
+            </div>
+
+            <!-- Solution card -->
+            <div class="impact-card impact-card--solution">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-solution"
+                   data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="One CLI, one signed LanceDB output"
+                  data-i18n-zh="一个 CLI，一份签名化的 LanceDB 输出">One CLI, one signed LanceDB output</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Hand it raw materials — VidSlice walks the directory, extracts frames, computes embeddings." data-i18n-zh="把原始素材丢给 VidSlice——它会遍历目录、抽帧、计算 embedding。">Hand it raw materials — VidSlice walks the directory, extracts frames, computes embeddings.</li>
+                <li data-i18n-en="Writes a signed LanceDB index that OpenCut consumes directly." data-i18n-zh="写出一个 OpenCut 直接能消费的签名化 LanceDB 索引。">Writes a signed LanceDB index that OpenCut consumes directly.</li>
+                <li data-i18n-en="Outsourced teams never touch production credentials, repos, or downstream services." data-i18n-zh="外包团队永远接触不到生产凭证、源码仓库或下游服务。">Outsourced teams never touch production credentials, repos, or downstream services.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">408</div>
+                <div class="impact-card-metric-label" data-i18n-en="Tests passing on every release" data-i18n-zh="个测试每次发布通过">Tests passing on every release</div>
+              </div>
+            </div>
+
+            <!-- Value card -->
+            <div class="impact-card impact-card--value">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-value"
+                   data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Third parties index, secrets stay home"
+                  data-i18n-zh="第三方可以索引，生产秘密留在自家">Third parties index, secrets stay home</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Outsourced teams run VidSlice on materials they're given; signed index flows back to OpenCut." data-i18n-zh="外包团队在拿到的素材上跑 VidSlice；签名索引回流到 OpenCut。">Outsourced teams run VidSlice on materials they're given; signed index flows back to OpenCut.</li>
+                <li data-i18n-en="Index format consistent across vendors — no per-partner normalization layer." data-i18n-zh="所有外部供应商的索引格式一致——无需为每个合作伙伴写一层归一化。">Index format consistent across vendors — no per-partner normalization layer.</li>
+                <li data-i18n-en="Production credentials, source repositories, and downstream services stay inside the perimeter." data-i18n-zh="生产凭证、源码仓库、下游服务始终留在内部边界。">Production credentials, source repositories, and downstream services stay inside the perimeter.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">1</div>
+                <div class="impact-card-metric-label" data-i18n-en="Integration per partner, forever" data-i18n-zh="每方只集成一次">Integration per partner, forever</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
 
                   <h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
                   <p class="proj-desc" data-i18n-en="Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest." data-i18n-zh="CLI 的四个阶段把一个装着原始素材的目录变成一个 OpenCut 可以直接接入的签名向量索引。">Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest.</p>
