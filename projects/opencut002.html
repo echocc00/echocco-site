@@ -101,9 +101,20 @@
                     </div>
                   </div>
 
-                  <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
-                  <p class="proj-desc" data-i18n-en="A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render." data-i18n-zh="五阶段流水线把图像素材与领域配置转换成 1080×1920 竖屏成片。每个阶段职责单一，连线标记从原始素材到最终渲染的数据流。">A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render.</p>
-                  <div class="how-grid">
+                  <section class="how-section"><h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
+                                    <p class="proj-desc" data-i18n-en="A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render." data-i18n-zh="五阶段流水线把图像素材与领域配置转换成 1080×1920 竖屏成片。每个阶段职责单一，连线标记从原始素材到最终渲染的数据流。">A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render.</p>
+                                    <div class="arch-embed-frame-wrap">
+                                      <iframe src="/assets/archify/opencut002-sequence?theme=light"
+                                              class="archify-frame"
+                                              title="OpenCut v3 production pipeline sequence diagram"
+                                              loading="lazy"
+                                              referrerpolicy="no-referrer"
+                                              sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                                        <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+                                           data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+                                      </iframe>
+                                    </div>
+                                    <div class="how-grid">
                     <div class="how-stage">
                       <div class="how-stage-num">1</div>
                       <h3 class="how-stage-title" data-i18n-en="Script" data-i18n-zh="脚本">Script</h3>
@@ -138,7 +149,7 @@
                       <p class="proj-desc" data-i18n-en="The final renderer lays BGM underneath, burns auto-generated subtitles over the voiceover, and writes the finished 1080×1920 vertical video to disk — ready to publish." data-i18n-zh="最终渲染器把 BGM 混入底层、把自动字幕压在配音之上，输出 1080×1920 竖屏成片到磁盘，可直接发布。">The final renderer lays BGM underneath, burns auto-generated subtitles over the voiceover, and writes the finished 1080×1920 vertical video to disk — ready to publish.</p>
                       <span class="impact-tag" data-i18n-en="BGM + subtitles" data-i18n-zh="BGM + 字幕">BGM + subtitles</span>
                     </div>
-                  </div>
+                  </div></section>
 
                     <!-- Architecture embed - placed between Overview and Capabilities -->
                     <section class="arch-embed" aria-labelledby="arch-title-opencut002">

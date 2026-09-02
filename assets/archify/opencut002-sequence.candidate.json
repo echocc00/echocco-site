@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "OpenCut v3 — production pipeline · 生产流水线",
+    "subtitle": "From still images + domain config to finished 1080×1920 mp4 · 从静态图与领域配置到成片",
+    "output": "opencut002-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [1080, 980],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "ingest-and-draft",
+        "label": "Ingest and draft · 接入与撰写",
+        "focus": ["operator", "writer", "voice"],
+        "note": "Operator uploads assets, the LLM script writer drafts the narration, and edge-tts renders the voiceover."
+      },
+      {
+        "id": "align-and-detect",
+        "label": "Align and detect · 对齐与检测",
+        "focus": ["aligner", "composer"],
+        "note": "The aligner scores stills against the audio timeline; the composer adds face-detected cut markers."
+      },
+      {
+        "id": "compose-and-deliver",
+        "label": "Compose and deliver · 合成与交付",
+        "focus": ["composer", "renderer", "operator"],
+        "note": "BGM and subtitles are laid in, the renderer writes the 1080×1920 mp4, and the operator receives the finished video."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Operator · 运营者",
+      "sublabel": "uploads assets · 上传素材"
+    },
+    {
+      "id": "writer",
+      "type": "cloud",
+      "label": "Script · 脚本",
+      "sublabel": "LLM · OpenAI SDK"
+    },
+    {
+      "id": "voice",
+      "type": "backend",
+      "label": "Voice · 语音",
+      "sublabel": "edge-tts"
+    },
+    {
+      "id": "aligner",
+      "type": "backend",
+      "label": "Aligner · 对齐器",
+      "sublabel": "PyTorch + Transformers"
+    },
+    {
+      "id": "composer",
+      "type": "backend",
+      "label": "Composer · 合成器",
+      "sublabel": "BGM + subtitles · BGM + 字幕"
+    },
+    {
+      "id": "renderer",
+      "type": "backend",
+      "label": "Renderer · 渲染器",
+      "sublabel": "ffmpeg · 1080×1920"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "operator",
+      "to": "writer",
+      "y": 180,
+      "label": "images + domain config · 图像 + 领域配置",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2",
+      "from": "writer",
+      "to": "voice",
+      "y": 250,
+      "label": "narration script · 旁白脚本",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m3",
+      "from": "voice",
+      "to": "aligner",
+      "y": 320,
+      "label": "voiceover track · 配音轨",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m4",
+      "from": "aligner",
+      "to": "composer",
+      "y": 410,
+      "label": "shot list + cut plan · 分镜 + 切换方案",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m5",
+      "from": "composer",
+      "to": "renderer",
+      "y": 500,
+      "label": "visual timeline ready · 视觉时间线就绪",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6",
+      "from": "renderer",
+      "to": "composer",
+      "y": 580,
+      "label": "pass-1 frames · 首轮画面",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m7",
+      "from": "composer",
+      "to": "renderer",
+      "y": 660,
+      "label": "BGM + subtitles muxed · 混音字幕",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m8",
+      "from": "renderer",
+      "to": "operator",
+      "y": 760,
+      "label": "1080×1920 mp4 ready · 成片交付",
+      "variant": "emphasis"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest · 接入",
+      "items": [
+        "Operator drops still images and a domain config · 运营者上传静态图与领域配置",
+        "Domain preset (education / travel / knowledge_paid / custom) drives prompts · 领域预设驱动 prompt",
+        "One bounded job per upload · 一次上传对应一次闭环任务"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Analyze · 分析",
+      "items": [
+        "LLM script writer drafts narration + shot list · LLM 撰写旁白与分镜",
+        "edge-tts renders the voiceover track · edge-tts 输出配音轨",
+        "Aligner scores stills against the audio beat · 对齐器按节拍匹配图像"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Act · 执行",
+      "items": [
+        "OpenCV face detection places camera cuts · 人脸检测决定切换点",
+        "Composer layers BGM and subtitles · 合成器叠加 BGM 与字幕",
+        "Renderer writes the 1080×1920 mp4 back to the operator · 渲染器回写成片"
+      ]
+    }
+  ]
+}
