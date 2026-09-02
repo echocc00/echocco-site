@@ -873,54 +873,53 @@ img, svg { max-width: 100%; height: auto; display: block; }
 }
 
 
-/* === Pain → Solution → Value section (Linear / Stripe-style) === */
-/* Replaces the prior implementation that had oversized h2 + light-theme soft
-   colors that don't read on the dark page background.
-
-   Design tokens:
-   - Single accent per column (red / violet / emerald) — Stripe principle
-   - Soft tints use rgba transparency so they read on both light AND dark
-   - Type scale tightened: h2 22-28px, metric 20-24px, label 11px mono */
+/* === Pain → Solution → Value section (8-point grid, Stripe type scale) === */
+/* Design tokens follow Stripe / Linear convention:
+   - 8px spacing grid (4, 8, 12, 16, 24, 32, 48, 64)
+   - Type scale (13, 14, 16, 20, 28) with tight line-heights (1.4-1.55)
+   - Single accent per column (Stripe principle), low-opacity tints
+     so they read on both light and dark backgrounds                    */
 
 :root {
-  --impact-pain:        #f87171;   /* red-400 (lighter for dark theme contrast) */
-  --impact-pain-soft:   rgba(248, 113, 113, 0.08);
-  --impact-pain-line:   rgba(248, 113, 113, 0.20);
+  /* Accent colors — slightly lighter shades for dark-theme contrast */
+  --impact-pain:         #f87171;   /* red-400  */
+  --impact-pain-soft:    rgba(248, 113, 113, 0.10);
+  --impact-pain-line:    rgba(248, 113, 113, 0.25);
 
-  --impact-solution:    #a78bfa;   /* violet-400 */
-  --impact-solution-soft: rgba(167, 139, 250, 0.08);
-  --impact-solution-line: rgba(167, 139, 250, 0.20);
+  --impact-solution:      #a78bfa;   /* violet-400 */
+  --impact-solution-soft: rgba(167, 139, 250, 0.10);
+  --impact-solution-line: rgba(167, 139, 250, 0.25);
 
-  --impact-value:       #34d399;   /* emerald-400 */
-  --impact-value-soft:  rgba(52, 211, 153, 0.08);
-  --impact-value-line:  rgba(52, 211, 153, 0.20);
+  --impact-value:         #34d399;   /* emerald-400 */
+  --impact-value-soft:    rgba(52, 211, 153, 0.10);
+  --impact-value-line:    rgba(52, 211, 153, 0.25);
 }
 
 /* ---------------- Section heading ---------------- */
 .impact-head {
-  margin-bottom: 28px;
-  max-width: 680px;
+  margin: 0 0 24px;     /* 8px grid */
+  max-width: 640px;
 }
 .impact-eyebrow {
   display: inline-block;
   font-family: var(--font-mono, ui-monospace, monospace);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-3, #94a3b8);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .impact-head h2 {
-  font-size: 22px;
+  font-size: 28px;       /* Display */
   font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--ink, #f1f5f9);
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
 }
 .impact-head p {
-  font-size: 14.5px;
+  font-size: 16px;       /* Subhead */
   line-height: 1.55;
   color: var(--ink-2, #cbd5e1);
   margin: 0;
@@ -932,15 +931,15 @@ img, svg { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--bg, #0b1020);
 }
 .impact-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 16px 18px;
+  gap: 12px;
+  padding: 16px 20px;
   border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.06));
   align-items: center;
   transition: background 160ms ease;
@@ -950,9 +949,9 @@ img, svg { max-width: 100%; height: auto; display: block; }
 }
 @media (min-width: 900px) {
   .impact-row {
-    grid-template-columns: 1fr 18px 1fr 18px 200px;
-    gap: 16px;
-    padding: 14px 20px;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 220px);
+    gap: 24px;
+    padding: 16px 24px;
   }
 }
 .impact-row:hover { background: var(--bg-alt, #0f172a); }
@@ -966,9 +965,9 @@ img, svg { max-width: 100%; height: auto; display: block; }
 }
 .impact-cell-icon {
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -976,8 +975,8 @@ img, svg { max-width: 100%; height: auto; display: block; }
   border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
 }
 .impact-cell-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke-width: 1.6;
   fill: none;
   stroke-linecap: round;
@@ -993,19 +992,19 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .impact-cell-body { min-width: 0; flex: 1; }
 .impact-cell-label {
   font-family: var(--font-mono, ui-monospace, monospace);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-3, #94a3b8);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .impact-cell--pain     .impact-cell-label { color: var(--impact-pain); }
 .impact-cell--solution .impact-cell-label { color: var(--impact-solution); }
 .impact-cell--value    .impact-cell-label { color: var(--impact-value); }
 .impact-cell-text {
-  font-size: 13.5px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.45;
   color: var(--ink, #f1f5f9);
   font-weight: 500;
   letter-spacing: -0.005em;
@@ -1014,7 +1013,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   font-size: 12px;
   line-height: 1.4;
   color: var(--ink-2, #cbd5e1);
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* Arrow between row cells */
@@ -1025,7 +1024,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   color: var(--ink-4, #64748b);
   user-select: none;
 }
-.impact-row-arrow svg { width: 14px; height: 14px; stroke-width: 1.5; }
+.impact-row-arrow svg { width: 16px; height: 16px; stroke-width: 1.5; }
 @media (min-width: 900px) {
   .impact-row-arrow { display: flex; }
 }
@@ -1034,18 +1033,21 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .impact-metric {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
   padding-left: 0;
   border-left: none;
+  margin-top: 4px;
 }
 @media (min-width: 900px) {
   .impact-metric {
-    padding-left: 18px;
+    padding-left: 20px;
     border-left: 1px solid var(--line, rgba(255, 255, 255, 0.06));
+    margin-top: 0;
   }
 }
 .impact-metric-value {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -1061,32 +1063,31 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .impact-metric-value .arrow-down { color: var(--impact-value); }
 .impact-metric-value .arrow-up   { color: var(--impact-value); }
 .impact-metric-label {
-  font-size: 11.5px;
-  color: var(--ink-3, #94a3b8);
+  font-size: 12px;
+  color: var(--ink-2, #cbd5e1);
   line-height: 1.4;
+  flex: 1;
+  min-width: 0;
 }
 
 /* ---------------- B. Impact Columns (large visual cards) ---------------- */
 .impact-columns-head {
-  margin: 40px 0 16px;
-  max-width: 680px;
+  margin: 48px 0 16px;   /* 8px grid */
+  max-width: 640px;
 }
 .impact-columns-head h3 {
-  font-size: 18px;
+  font-size: 20px;        /* Headline */
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--ink, #f1f5f9);
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
 }
 .impact-columns-head p {
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.55;
   color: var(--ink-2, #cbd5e1);
   margin: 0;
 }
-
-/* Override the existing .impact-card to make it work for both the new
-   "card" layout AND keep the older tag-pill-based 3-card block. */
 
 .impact-grid {
   display: grid;
@@ -1094,7 +1095,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   gap: 1px;
   background: var(--line, rgba(255, 255, 255, 0.08));
   border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
 }
 @media (min-width: 720px) {
@@ -1106,10 +1107,10 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .impact-card {
   background: var(--bg, #0b1020);
   border-radius: 0;
-  padding: 20px 18px 18px;
+  padding: 24px 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   border: 0;
   transition: background 160ms ease;
 }
@@ -1120,17 +1121,17 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 /* Large line-art SVG icon at top of each card */
 .impact-card-art {
-  width: 40px;
-  height: 40px;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
 }
 .impact-card-art svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   stroke-width: 1.6;
   fill: none;
   stroke-linecap: round;
@@ -1145,15 +1146,15 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 /* Card body */
 .impact-card-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   line-height: 1.3;
   color: var(--ink, #f1f5f9);
   margin: 0;
 }
 .impact-card-body {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.55;
   color: var(--ink-2, #cbd5e1);
   margin: 0;
@@ -1166,7 +1167,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   flex-direction: column;
   gap: 6px;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink-2, #cbd5e1);
 }
 .impact-card-list li {
@@ -1190,14 +1191,14 @@ img, svg { max-width: 100%; height: auto; display: block; }
 /* Metric chip at bottom of each card */
 .impact-card-metric {
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 16px;
   border-top: 1px solid var(--line, rgba(255, 255, 255, 0.06));
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 .impact-card-metric-value {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -1208,6 +1209,7 @@ img, svg { max-width: 100%; height: auto; display: block; }
   font-size: 11px;
   color: var(--ink-3, #94a3b8);
   line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 /* === How it works (4-stage flow) === */
