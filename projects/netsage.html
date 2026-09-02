@@ -81,6 +81,27 @@
           <p data-i18n-en="NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device." data-i18n-zh="NetSage 是一个 AI 驱动的平台，接管网络工程师日常：设计、配置生成、排障、部署、审计。8 个专业智能体协作于三道闸门的流水线中——每一次变更都要先过 Containerlab 仿真、Batfish 校验、人工审批与快照回滚，才允许触碰真实设备。">NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device.</p>
           <p data-i18n-en="It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically." data-i18n-zh="跨厂商（华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista），从 NetBox 或 Nautobot 读取 Source of Truth。30 条基线规则（CIS + 厂商加固）自动拦下高危配置。">It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically.</p>
         </div>
+          <!-- Architecture embed - placed between Overview and Capabilities -->
+          <section class="arch-embed" aria-labelledby="arch-title-netsage">
+            <header class="arch-embed-head">
+              <h2 class="proj-h2" id="arch-title-netsage" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
+              <p class="arch-embed-sub"
+                 data-i18n-en="AI network engineer. Click any node or relationship for details."
+                 data-i18n-zh="AI 网络工程师。点击任意节点或连线查看详情。">AI network engineer. Click any node or relationship for details.</p>
+            </header>
+            <div class="arch-embed-frame-wrap">
+              <iframe src="/assets/archify/netsage?theme=light"
+                      class="archify-frame"
+                      title="netsage interactive architecture"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+                   data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+              </iframe>
+            </div>
+          </section>
+
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
@@ -155,26 +176,7 @@
         </div>
       </div>
     </div>
-  </section>
-      <!-- Architecture: Archify interactive iframe, light theme -->
-      <section class="arch-section">
-        <header class="arch-section-head">
-          <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
-          <p class="arch-sub"
-             data-i18n-en="AI network engineer. Click any node or relationship for details."
-             data-i18n-zh="AI 网络工程师。点击任意节点或连线查看详情。">AI network engineer. Click any node or relationship for details.</p>
-        </header>
-        <iframe src="/assets/archify/netsage?theme=light"
-                class="archify-frame"
-                title="netsage interactive architecture"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
-          <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
-             data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
-        </iframe>
-      </section>
-</main>
+  </section></main>
 
       <footer class="footer">
   <div class="shell footer-row">
