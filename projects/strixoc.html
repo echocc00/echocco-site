@@ -101,8 +101,8 @@
           </div>
         </div>
 
-        <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
-        <div class="how-grid">
+        <section class="how-section"><h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
+                <div class="how-grid">
           <div class="how-stage">
             <div class="how-num">01</div>
             <div class="how-title" data-i18n-en="Scope" data-i18n-zh="界定范围">Scope</div>
@@ -130,10 +130,26 @@
             <p class="how-desc" data-i18n-en="Confirmed findings are emitted as Pydantic-validated structures — reproducible PoC, affected path, severity, remediation guidance — so they drop straight into CI output, a ticket, or a compliance-ready report without hand-editing."
                data-i18n-zh="已确认的发现以 Pydantic 校验过的结构输出——可复现的 PoC、受影响路径、严重级别、修复建议——可直接落入 CI 输出、工单或合规级报告，无需手工整理。">Pydantic-validated findings, ready for CI or tickets.</p>
           </div>
-        </div>
+                  </div>
 
-          <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-strixoc">
+                  <p class="proj-desc"
+                     data-i18n-en="Every run moves through the same five participants. Operator declares scope, recon maps the surface, exploit runs inside safety rails, every finding passes Pydantic before the aggregated report ships to CI, ticketing, and compliance. Click any participant or message for details."
+                     data-i18n-zh="每一次运行都经过同样的五个参与者：操作员声明范围、侦察代理盘点攻击面、利用代理在安全边界内动态执行、每条发现经 Pydantic 校验后聚合，结构化报告再下发到 CI、工单与合规系统。点击任意参与者或消息查看详情。">Every run moves through the same five participants.</p>
+                  <div class="arch-embed-frame-wrap">
+                    <iframe src="/assets/archify/strixoc-sequence?theme=light"
+                            class="archify-frame"
+                            title="strixoc runtime sequence diagram"
+                            loading="lazy"
+                            referrerpolicy="no-referrer"
+                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                      <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+                         data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+                    </iframe>
+                  </div>
+                  </section>
+
+                  <!-- Architecture embed - placed between Overview and Capabilities -->
+                  <section class="arch-embed" aria-labelledby="arch-title-strixoc">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-strixoc" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
               <p class="arch-embed-sub"

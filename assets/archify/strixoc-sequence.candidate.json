@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "strixoc penetration test flow",
+    "subtitle": "Scope declaration to signed findings, via recon + exploit agents under Pydantic validation",
+    "output": "strixoc-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      920
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "scope-and-recon",
+        "label": "Scope and recon",
+        "focus": [
+          "operator",
+          "recon",
+          "exploit"
+        ],
+        "note": "Operator declares scope via CLI, recon agent maps the attack surface."
+      },
+      {
+        "id": "exploit-and-validate",
+        "label": "Exploit and validate",
+        "focus": [
+          "exploit",
+          "validator"
+        ],
+        "note": "Exploit agent runs within safety rails, every finding passes Pydantic before logging."
+      },
+      {
+        "id": "report-and-dispatch",
+        "label": "Report and dispatch",
+        "focus": [
+          "validator",
+          "destination",
+          "operator"
+        ],
+        "note": "Findings pipeline aggregates and dedupes; structured report ships to CI, ticketing, and compliance."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Operator / 操作员",
+      "sublabel": "CLI · scope · 范围声明"
+    },
+    {
+      "id": "recon",
+      "type": "backend",
+      "label": "Recon agent / 侦察代理",
+      "sublabel": "attack surface · 攻击面"
+    },
+    {
+      "id": "exploit",
+      "type": "cloud",
+      "label": "Exploit agent / 利用代理",
+      "sublabel": "dynamic · safety rails · 动态受控"
+    },
+    {
+      "id": "validator",
+      "type": "security",
+      "label": "Validator / 校验器",
+      "sublabel": "Pydantic 2.11 · structured"
+    },
+    {
+      "id": "destination",
+      "type": "messagebus",
+      "label": "Reports / 报告目标",
+      "sublabel": "CI · ticket · compliance"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1-scope",
+      "from": "operator",
+      "to": "recon",
+      "y": 180,
+      "label": "declare scope · CLI targets + rules / 声明范围 · 规则与目标",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2-scope-ack",
+      "from": "recon",
+      "to": "operator",
+      "y": 280,
+      "label": "scope acknowledged · recon started / 范围已确认 · 侦察启动",
+      "variant": "return"
+    },
+    {
+      "id": "m3-surface",
+      "from": "recon",
+      "to": "exploit",
+      "y": 380,
+      "label": "routes · params · auth · deps mapped / 路由 · 参数 · 鉴权 · 依赖 已盘点",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m4-exploit-rails",
+      "from": "exploit",
+      "to": "operator",
+      "y": 480,
+      "label": "dynamic exploit within safety rails / 安全边界内动态利用",
+      "variant": "security"
+    },
+    {
+      "id": "m5-raw-finding",
+      "from": "exploit",
+      "to": "validator",
+      "y": 580,
+      "label": "raw finding + evidence payload / 原始发现 + 证据载荷",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6-pydantic",
+      "from": "validator",
+      "to": "exploit",
+      "y": 660,
+      "label": "Pydantic validates · structured record returned / Pydantic 校验 · 结构化结果回传",
+      "variant": "return"
+    },
+    {
+      "id": "m7-aggregate",
+      "from": "validator",
+      "to": "destination",
+      "y": 760,
+      "label": "aggregate + dedupe + emit report / 聚合 · 去重 · 生成报告",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m8-dispatch",
+      "from": "destination",
+      "to": "operator",
+      "y": 820,
+      "label": "deliver to CI · ticket · compliance / 下发 CI · 工单 · 合规",
+      "variant": "return"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest · 接入",
+      "items": [
+        "Operator declares scope via CLI · targets, rules, allowlist",
+        "操作员通过 CLI 声明测试目标、规则与允许名单",
+        "Recon agent reads scope and starts mapping the target",
+        "侦察代理读取范围并开始绘制目标拓扑"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Analyze · 分析",
+      "items": [
+        "Attack surface: routes, params, auth flows, dependencies",
+        "攻击面包含路由、参数、鉴权流程与依赖组件",
+        "Exploit agent runs dynamic tests inside the safety rails",
+        "利用代理在安全边界内执行动态真实利用"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Act · 处置",
+      "items": [
+        "Pydantic validates every finding before logging",
+        "Pydantic 对每条发现做结构化校验后再入库",
+        "Findings pipeline aggregates + dedupes; report ships to CI, ticket, compliance",
+        "聚合管线去重后生成报告，下发 CI、工单与合规系统"
+      ]
+    }
+  ]
+}
