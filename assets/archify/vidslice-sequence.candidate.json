@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "VidSlice indexing pipeline",
+    "subtitle": "From raw materials directory to signed LanceDB index · 从原始素材目录到签名化的 LanceDB 索引",
+    "output": "vidslice-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      900
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "ingest-and-extract",
+        "label": "Ingest & extract",
+        "focus": [
+          "operator",
+          "scanner",
+          "extractor"
+        ],
+        "note": "Operator launches the CLI, the scanner enumerates raw materials, and the extractor pulls keyframes with Pillow."
+      },
+      {
+        "id": "embed-sign-deliver",
+        "label": "Embed, sign & deliver",
+        "focus": [
+          "embedder",
+          "writer",
+          "operator"
+        ],
+        "note": "Embedder vectors + enriches; writer signs LanceDB; ships back to operator or OpenCut pipeline."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Operator · 操作员",
+      "sublabel": "CLI · materials dir"
+    },
+    {
+      "id": "scanner",
+      "type": "backend",
+      "label": "Scanner · 扫描器",
+      "sublabel": "walk · hash · dedupe"
+    },
+    {
+      "id": "extractor",
+      "type": "backend",
+      "label": "Extractor · 抽帧器",
+      "sublabel": "Pillow · keyframes"
+    },
+    {
+      "id": "embedder",
+      "type": "cloud",
+      "label": "Embedder · 向量化",
+      "sublabel": "NumPy · vectors + tags"
+    },
+    {
+      "id": "writer",
+      "type": "database",
+      "label": "Writer · 索引输出",
+      "sublabel": "LanceDB · Ed25519 sign"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "operator",
+      "to": "scanner",
+      "y": 170,
+      "label": "vidslice build ./materials --out index.lance · 启动 CLI",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2",
+      "from": "scanner",
+      "to": "operator",
+      "y": 260,
+      "label": "file list + sha256 manifest · 返回文件清单与哈希",
+      "variant": "return"
+    },
+    {
+      "id": "m3",
+      "from": "scanner",
+      "to": "extractor",
+      "y": 370,
+      "label": "video + image paths ready · 待抽帧路径就绪",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m4",
+      "from": "extractor",
+      "to": "embedder",
+      "y": 480,
+      "label": "N keyframes + codec/duration/px · N 帧关键帧与元数据",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m5",
+      "from": "embedder",
+      "to": "writer",
+      "y": 590,
+      "label": "vectors + tags + provenance · 向量 + 标签 + 来源",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6",
+      "from": "writer",
+      "to": "operator",
+      "y": 700,
+      "label": "signed index.lance + Ed25519 sig · 已签名索引 + 签名",
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "operator",
+      "to": "extractor",
+      "y": 810,
+      "label": "publish to OpenCut pipeline · 推送 OpenCut 流水线",
+      "variant": "emphasis"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest",
+      "items": [
+        "Operator points CLI at a materials directory · 操作员指定素材目录",
+        "Scanner walks files, hashes them, deduplicates · 扫描器遍历、去重并记录哈希"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Analyze",
+      "items": [
+        "Extractor pulls keyframes with Pillow · 抽帧器用 Pillow 提取关键帧",
+        "Embedder computes vectors (NumPy) and attaches tags / provenance · 向量化用 NumPy 计算向量并附带标签与来源"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Act",
+      "items": [
+        "Writer produces a LanceDB index signed with Ed25519 · 输出器写入 LanceDB 并用 Ed25519 签名",
+        "Operator delivers the signed index to OpenCut (or its HTTP pipeline) · 操作员把签名索引交付给 OpenCut"
+      ]
+    }
+  ]
+}
