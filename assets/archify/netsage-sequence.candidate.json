@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "NetSage change pipeline",
+    "subtitle": "Intent → plan → simulate → validate → approve → snapshot → apply → observe · 意图 → 规划 → 仿真 → 校验 → 审批 → 快照 → 执行 → 观测",
+    "output": "netsage-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      920
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "design-and-simulate",
+        "label": "Design & simulate",
+        "focus": [
+          "operator",
+          "planner",
+          "simulator",
+          "validator"
+        ],
+        "note": "Operator states intent; planner designs config; simulator runs it in a virtual twin; validator confirms semantics match."
+      },
+      {
+        "id": "approve-and-apply",
+        "label": "Approve, snapshot, apply",
+        "focus": [
+          "validator",
+          "approver",
+          "device",
+          "planner"
+        ],
+        "note": "Human approves the validated plan; a snapshot is taken; the change is applied to real devices; observer watches for drift."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "Operator · 运维人员",
+      "sublabel": "intent · 意图"
+    },
+    {
+      "id": "planner",
+      "type": "cloud",
+      "label": "Planner · 规划智能体",
+      "sublabel": "config · 配置"
+    },
+    {
+      "id": "simulator",
+      "type": "backend",
+      "label": "Simulator · 仿真器",
+      "sublabel": "twin · 孪生"
+    },
+    {
+      "id": "validator",
+      "type": "security",
+      "label": "Validator · 校验器",
+      "sublabel": "semantics · 语义"
+    },
+    {
+      "id": "approver",
+      "type": "external",
+      "label": "Approver · 审批人",
+      "sublabel": "human · 人工"
+    },
+    {
+      "id": "device",
+      "type": "backend",
+      "label": "Device · 网络设备",
+      "sublabel": "real · 真实"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "operator",
+      "to": "planner",
+      "y": 170,
+      "label": "intent: 'isolate guest VLAN from finance' · 提交变更意图",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2",
+      "from": "planner",
+      "to": "simulator",
+      "y": 250,
+      "label": "candidate config + NetBox diff · 下发候选配置",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m3",
+      "from": "simulator",
+      "to": "validator",
+      "y": 330,
+      "label": "twin probe: reachability + BGP state · 孪生探针结果",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m4",
+      "from": "validator",
+      "to": "simulator",
+      "y": 410,
+      "label": "intent ↔ semantics match + 0 rule hits · 语义一致，零规则命中",
+      "variant": "return"
+    },
+    {
+      "id": "m5",
+      "from": "validator",
+      "to": "approver",
+      "y": 490,
+      "label": "validated plan + evidence chain · 校验通过的方案与证据",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6",
+      "from": "approver",
+      "to": "planner",
+      "y": 570,
+      "label": "approve (signed) · 审批通过（已签名）",
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "planner",
+      "to": "device",
+      "y": 660,
+      "label": "snapshot + apply via Netmiko / Ansible · 快照后下发配置",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m8",
+      "from": "device",
+      "to": "planner",
+      "y": 740,
+      "label": "applied + telemetry stream · 已应用并回传遥测",
+      "variant": "return"
+    },
+    {
+      "id": "m9",
+      "from": "planner",
+      "to": "operator",
+      "y": 820,
+      "label": "observer: no drift / compliance clean · 观测无漂移，合规通过",
+      "variant": "emphasis"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest · 接入",
+      "items": [
+        "Operator states intent in plain language or a target spec · 运维人员以自然语言或目标规格提交意图",
+        "Planner consults NetBox / Nautobot as source of truth · 规划智能体以 NetBox / Nautobot 为 Source of Truth"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Analyze · 分析",
+      "items": [
+        "Simulator spins up a Containerlab virtual twin and probes the change · 仿真器拉起虚拟孪生并探测变更",
+        "Validator (Batfish + 30-rule baseline) confirms intent ↔ semantics · 校验器确认意图与语义一致"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Act · 执行",
+      "items": [
+        "Approver signs off; snapshot captured for one-click rollback · 审批人签字并落快照，确保一键回滚",
+        "Netmiko / Ansible applies to real devices; observer watches for drift · 下发到真实设备，观测智能体持续监视"
+      ]
+    }
+  ]
+}
