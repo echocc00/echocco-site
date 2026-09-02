@@ -120,45 +120,26 @@
                     </div>
                   </div>
 
-                  <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
-                  <div class="proj-desc">
-                    <p data-i18n-en="Every request follows the same Sense → Reason → Act → Remember loop. The "Remember" step is what makes SecOpentAgent different: the loop closes, and the agent carries the lesson forward."
-                       data-i18n-zh="每个请求都遵循 Sense → Reason → Act → Remember 的循环。"Remember"是 SecOpentAgent 与众不同之处——回路闭合，智能体把教训带进下一次。">Every request follows Sense → Reason → Act → Remember.</p>
-                  </div>
-                  <div class="how-grid">
-                    <div class="how-stage how-stage-sense">
-                      <div class="how-stage-num" aria-hidden="true">1</div>
-                      <div class="how-stage-name" data-i18n-en="Sense" data-i18n-zh="感知">Sense</div>
-                      <div class="how-stage-title" data-i18n-en="You message the agent on any platform" data-i18n-zh="你在任意平台上向智能体发消息">You message the agent on any platform</div>
-                      <p class="how-stage-desc" data-i18n-en="A Telegram DM, a Slack thread, a Discord ping, a Signal message, a WhatsApp note, or a CLI invocation all land in the same gateway process. The gateway normalizes the channel, attaches your user identity, and hands the request to the agent." data-i18n-zh="Telegram 私信、Slack 话题、Discord 消息、Signal 消息、WhatsApp 笔记或 CLI 调用，全部汇集到同一个网关进程。网关统一通道格式、附加用户身份，再把请求交给智能体。">Any channel → unified gateway.</p>
-                    </div>
-                    <div class="how-arrow" aria-hidden="true">→</div>
-                    <div class="how-stage how-stage-reason">
-                      <div class="how-stage-num" aria-hidden="true">2</div>
-                      <div class="how-stage-name" data-i18n-en="Reason" data-i18n-zh="推理">Reason</div>
-                      <div class="how-stage-title" data-i18n-en="The LLM plans a tool sequence" data-i18n-zh="LLM 规划工具调用序列">The LLM plans a tool sequence</div>
-                      <p class="how-stage-desc" data-i18n-en="LiteLLM routes to the configured provider (Anthropic, OpenAI, local). The model draws on the agent's memory, retrieved past conversations, and available skills to pick the right sequence of tool calls." data-i18n-zh="LiteLLM 路由到配置好的供应商（Anthropic / OpenAI / 本地）。模型结合智能体的记忆、检索到的过往会话与可用技能，规划出合适的工具调用序列。">LLM picks the tool sequence.</p>
-                    </div>
-                    <div class="how-arrow" aria-hidden="true">→</div>
-                    <div class="how-stage how-stage-act">
-                      <div class="how-stage-num" aria-hidden="true">3</div>
-                      <div class="how-stage-name" data-i18n-en="Act" data-i18n-zh="执行">Act</div>
-                      <div class="how-stage-title" data-i18n-en="Tools execute, results flow back" data-i18n-zh="工具执行，结果回流">Tools execute, results flow back</div>
-                      <p class="how-stage-desc" data-i18n-en="Each tool runs in the runtime (file system, shell, MCP servers, Honcho for user modeling). Results stream back to the model so it can decide whether to call another tool, ask for clarification, or reply." data-i18n-zh="每个工具在运行时中执行——文件系统、Shell、MCP 服务器、Honcho 用户建模。结果回到模型，由它决定继续调用工具、追问还是给出答复。">Tools run, results return.</p>
-                    </div>
-                    <div class="how-arrow" aria-hidden="true">→</div>
-                    <div class="how-stage how-stage-remember">
-                      <div class="how-stage-num" aria-hidden="true">4</div>
-                      <div class="how-stage-name" data-i18n-en="Remember" data-i18n-zh="记忆">Remember</div>
-                      <div class="how-stage-title" data-i18n-en="Skill created or improved, memory persisted, user model updated" data-i18n-zh="新建或改进技能、记忆落库、用户模型更新">Skill created or improved, memory persisted, user model updated</div>
-                      <p class="how-stage-desc" data-i18n-en="The loop closes: a new skill is authored (or an existing one patched), relevant facts are committed to long-term memory, and Honcho refines its dialectic model of you. Next session starts ahead — not from zero." data-i18n-zh="回路闭合：写入新技能（或改进旧技能），把相关事实落进长期记忆，Honcho 更新对你的对话式建模。下一次会话不是从零开始，而是领先一步。">The loop closes — next session starts ahead.</p>
-                    </div>
-                  </div>
+        <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+            <p class="proj-desc"
+               data-i18n-en="Every request threads through five participants. The user message arrives on any channel, the gateway normalizes it and forwards to the agent core, the agent calls LiteLLM to plan a tool sequence with the chosen provider, the tools execute and stream observations back, and the reply (plus a newly authored or improved skill) returns through the same gateway. Click any participant or message for details."
+               data-i18n-zh="每一次请求都流经五个参与者：用户消息到达任意通道，网关统一通道格式后转发到智能体核心，智能体通过 LiteLLM 选定供应商来规划工具调用序列，工具执行并将观察结果回流，最终答复与新写入或改进的技能一起沿原通道返回。点击任意参与者或消息查看详情。">Every request threads through five participants.</p>
+            <div class="arch-embed-frame-wrap">
+              <iframe src="/assets/archify/secopentagent-sequence?theme=light"
+                      class="archify-frame"
+                      title="SecOpentAgent runtime loop sequence diagram"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                      sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+                <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+                   data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+              </iframe>
+            </div></section>
 
                     <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-secopentagent">
             <header class="arch-embed-head">
-              <h2 class="proj-h2" id="arch-title-secopentagent" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
+              <h2 class="proj-h2" id="arch-title-secopentagent" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
                  data-i18n-en="AI agent · NousResearch/hermes-agent fork. Click any node or relationship for details."
                  data-i18n-zh="AI 智能体 · NousResearch/hermes-agent fork。点击任意节点或连线查看详情。">AI agent · NousResearch/hermes-agent fork. Click any node or relationship for details.</p>
