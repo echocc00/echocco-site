@@ -82,24 +82,214 @@
           <p data-i18n-en="TTS + BGM matching + auto-captions + Remotion rendering, with CLI and SaaS dual-track distribution." data-i18n-zh="TTS + BGM 智能匹配 + 自动字幕 + Remotion 渲染，CLI 与 SaaS 双轨分发。">TTS + BGM matching + auto-captions + Remotion rendering, with CLI and SaaS dual-track distribution.</p>
                   </div>
 
-                  <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
-                  <div class="impact-grid">
-                    <div class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
-                      <h3 class="impact-card-title" data-i18n-en="Short-form video production is fragmented" data-i18n-zh="短视频制作流程碎片化">Short-form video production is fragmented</h3>
-                      <p class="proj-desc" data-i18n-en="Script writing, voice synthesis, audio–visual alignment, face-aware camera cuts, and BGM matching each live in a different tool. Operators stitch outputs manually, the round-trip is slow, and quality drifts every time the domain changes (education vs. travel vs. knowledge_paid)." data-i18n-zh="脚本撰写、语音合成、音画对齐、人脸镜头切换、BGM 匹配——每个环节都分散在不同工具里。运营人员要手动拼装多端输出，迭代慢，且一旦切换领域（教育 / 旅行 / 知识付费），质量就开始漂移。">Script writing, voice synthesis, audio–visual alignment, face-aware camera cuts, and BGM matching each live in a different tool. Operators stitch outputs manually, the round-trip is slow, and quality drifts every time the domain changes (education vs. travel vs. knowledge_paid).</p>
-                    </div>
-                    <div class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
-                      <h3 class="impact-card-title" data-i18n-en="One pipeline, image assets in — finished video out" data-i18n-zh="一条流水线：丢图进去，成片出来">One pipeline, image assets in — finished video out</h3>
-                      <p class="proj-desc" data-i18n-en="Drop in a folder of still images plus a domain config; OpenCut v3 produces a finished 1080×1920 vertical video — voiceover, subtitles, and BGM already composed — in a single pass. No manual stitching, no per-tool context switching." data-i18n-zh="把一组静态图加上一份领域配置丢进去，OpenCut v3 一次性产出 1080×1920 竖屏成片——配音、字幕、BGM 已在内部合成完毕。无需手动拼装，也无需在多工具间反复切换。">Drop in a folder of still images plus a domain config; OpenCut v3 produces a finished 1080×1920 vertical video — voiceover, subtitles, and BGM already composed — in a single pass. No manual stitching, no per-tool context switching.</p>
-                    </div>
-                    <div class="impact-card">
-                      <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
-                      <h3 class="impact-card-title" data-i18n-en="Faster production, consistent quality across domains" data-i18n-zh="更快出片，跨领域品质一致">Faster production, consistent quality across domains</h3>
-                      <p class="proj-desc" data-i18n-en="Content teams ship short-form videos in hours instead of days. Domain presets lock in tone, pacing, and visual style so every output feels native to its niche — and zero manual stitching means zero dropped frames between cuts." data-i18n-zh="内容团队把短视频生产周期从天级压缩到小时级。领域预设把语气、节奏、视觉风格一次性锁定，每个产出都贴合所在垂类；并且由于全程无人工拼接，切点之间不再出现丢帧或音画错位。">Content teams ship short-form videos in hours instead of days. Domain presets lock in tone, pacing, and visual style so every output feels native to its niche — and zero manual stitching means zero dropped frames between cuts.</p>
-                    </div>
-                  </div>
+                          <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+        <section class="impact-section">
+          <header class="impact-head">
+            <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+            <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+            <p data-i18n-en="Short-form video production is stitched together from five different tools — script, voice, audio–visual alignment, face-aware cuts, BGM. OpenCut v3 collapses that pipeline into a single pass: image assets in, finished 1080×1920 vertical video out, with the right domain config to keep quality consistent across niches."
+               data-i18n-zh="短视频生产流程由五种不同工具拼装而成——脚本、配音、音画对齐、人脸镜头切换、BGM。OpenCut v3 把这条流水线压缩成一次过：图丢进去，1080×1920 竖屏成片出来，配套领域配置让跨垂类品质保持一致。">Short-form video production is stitched together from five different tools — script, voice, audio–visual alignment, face-aware cuts, BGM. OpenCut v3 collapses that pipeline into a single pass: image assets in, finished 1080×1920 vertical video out, with the right domain config to keep quality consistent across niches.</p>
+          </header>
+
+          <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+          <div class="impact-rows" role="list">
+            <!-- Row 1 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M2 13l10 5 10-5M2 18l10 5 10-5"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="5 tools, 1 video" data-i18n-zh="5 个工具，1 条视频">5 tools, 1 video</div>
+                  <div class="impact-cell-sub" data-i18n-en="Script, voice, align, face, BGM." data-i18n-zh="脚本 / 配音 / 对齐 / 人脸 / BGM。">Script, voice, align, face, BGM.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Single pipeline" data-i18n-zh="一条流水线">Single pipeline</div>
+                  <div class="impact-cell-sub" data-i18n-en="One pass, one output." data-i18n-zh="一次过，一份输出。">One pass, one output.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="5 → 1" data-i18n-zh="5 → 1">5 → 1</div>
+                <div class="impact-metric-label" data-i18n-en="Tools → 1 pipeline" data-i18n-zh="工具→1 条流水线">Tools → 1 pipeline</div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M6 3v3a6 6 0 0 0 12 0V3M6 21v-3a6 6 0 0 1 12 0v3"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Manual stitching slow" data-i18n-zh="手动拼装慢">Manual stitching slow</div>
+                  <div class="impact-cell-sub" data-i18n-en="Round-trip across 5 apps." data-i18n-zh="5 个 App 来回切换。">Round-trip across 5 apps.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="End-to-end automation" data-i18n-zh="端到端自动化">End-to-end automation</div>
+                  <div class="impact-cell-sub" data-i18n-en="Image folder in, video out." data-i18n-zh="图片文件夹进，成片出。">Image folder in, video out.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+                <div class="impact-metric-label" data-i18n-en="Pipeline, 1080×1920 output" data-i18n-zh="流水线，1080×1920 输出">Pipeline, 1080×1920 output</div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 12h6M9 12v0M9 12c0-1 1-2 2-2M21 12h-6M15 12c0-1-1-2-2-2M12 3v6M12 15v6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Domain-specific quality varies" data-i18n-zh="不同领域品质参差不齐">Domain-specific quality varies</div>
+                  <div class="impact-cell-sub" data-i18n-en="Education ≠ travel ≠ knowledge_paid." data-i18n-zh="教育 ≠ 旅行 ≠ 知识付费。">Education ≠ travel ≠ knowledge_paid.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4-2v-4L3 5z"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Domain-config-driven" data-i18n-zh="领域配置驱动">Domain-config-driven</div>
+                  <div class="impact-cell-sub" data-i18n-en="Tone, pacing, visual style locked." data-i18n-zh="语气、节奏、视觉风格锁定。">Tone, pacing, visual style locked.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+                <div class="impact-metric-label" data-i18n-en="Config per vertical" data-i18n-zh="每垂类一份配置">Config per vertical</div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="impact-row" role="listitem">
+              <div class="impact-cell impact-cell--pain">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+                  <div class="impact-cell-text" data-i18n-en="Subtitle + voice + BGM separate" data-i18n-zh="字幕 / 配音 / BGM 各自为政">Subtitle + voice + BGM separate</div>
+                  <div class="impact-cell-sub" data-i18n-en="Dropped frames, audio drift." data-i18n-zh="丢帧、音画错位。">Dropped frames, audio drift.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-cell impact-cell--solution">
+                <div class="impact-cell-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6M9 18h6M6 9v6M18 9v6"/></svg>
+                </div>
+                <div class="impact-cell-body">
+                  <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+                  <div class="impact-cell-text" data-i18n-en="Integrated compose step" data-i18n-zh="集成合成步骤">Integrated compose step</div>
+                  <div class="impact-cell-sub" data-i18n-en="Subtitle, voice, BGM aligned in one pass." data-i18n-zh="字幕、配音、BGM 一次对齐。">Subtitle, voice, BGM aligned in one pass.</div>
+                </div>
+              </div>
+              <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="impact-metric">
+                <div class="impact-metric-value" data-i18n-en="0" data-i18n-zh="0">0</div>
+                <div class="impact-metric-label" data-i18n-en="Manual steps" data-i18n-zh="人工步骤">Manual steps</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ============ B. Impact Columns (large visual cards) ============ -->
+          <div class="impact-columns-head">
+            <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+            <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+               data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+          </div>
+
+          <div class="impact-grid">
+            <!-- Pain card -->
+            <div class="impact-card impact-card--pain">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-pain"
+                   data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Short-form production is stitched, not made"
+                  data-i18n-zh="短视频是被拼出来的，不是被做出来的">Short-form production is stitched, not made</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM — five separate tools." data-i18n-zh="脚本撰写、语音合成、音画对齐、人脸镜头切换、BGM——五套独立工具。">Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM — five separate tools.</li>
+                <li data-i18n-en="Operators stitch outputs manually; the round-trip is slow and error-prone." data-i18n-zh="运营人员手动拼装多端输出；迭代慢且容易出错。">Operators stitch outputs manually; the round-trip is slow and error-prone.</li>
+                <li data-i18n-en="Quality drifts every time the domain changes — education vs. travel vs. knowledge_paid." data-i18n-zh="一旦切换领域，品质就开始漂移——教育 / 旅行 / 知识付费。">Quality drifts every time the domain changes — education vs. travel vs. knowledge_paid.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">5</div>
+                <div class="impact-card-metric-label" data-i18n-en="Separate tools per output" data-i18n-zh="种工具产出一条视频">Separate tools per output</div>
+              </div>
+            </div>
+
+            <!-- Solution card -->
+            <div class="impact-card impact-card--solution">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-solution"
+                   data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Drop images in, ship 1080×1920 out"
+                  data-i18n-zh="图丢进去，1080×1920 成片出来">Drop images in, ship 1080×1920 out</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Drop in a folder of still images + a domain config — OpenCut v3 produces a finished vertical video in one pass." data-i18n-zh="把一组静态图 + 一份领域配置丢进去，OpenCut v3 一次性产出竖屏成片。">Drop in a folder of still images + a domain config — OpenCut v3 produces a finished vertical video in one pass.</li>
+                <li data-i18n-en="Voiceover, subtitles, BGM already composed — no manual stitching, no per-tool context switching." data-i18n-zh="配音、字幕、BGM 已在内部合成——无需手动拼装，无需在多工具间反复切换。">Voiceover, subtitles, BGM already composed — no manual stitching, no per-tool context switching.</li>
+                <li data-i18n-en="Domain presets lock tone, pacing, and visual style for every niche." data-i18n-zh="领域预设锁定语气、节奏、视觉风格，贴合所在垂类。">Domain presets lock tone, pacing, and visual style for every niche.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">1080×1920</div>
+                <div class="impact-card-metric-label" data-i18n-en="Vertical output, one pass" data-i18n-zh="竖屏输出，一次过">Vertical output, one pass</div>
+              </div>
+            </div>
+
+            <!-- Value card -->
+            <div class="impact-card impact-card--value">
+              <div class="impact-card-art" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-7"/><path d="M14 9h6v6"/></svg>
+              </div>
+              <div class="impact-card-tag impact-tag impact-tag-value"
+                   data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+              <h3 class="impact-card-title"
+                  data-i18n-en="Ship in hours, quality stays native per niche"
+                  data-i18n-zh="小时级出片，跨垂类品质依旧原生">Ship in hours, quality stays native per niche</h3>
+              <ul class="impact-card-list">
+                <li data-i18n-en="Content teams ship short-form videos in hours instead of days." data-i18n-zh="内容团队把短视频生产周期从天级压缩到小时级。">Content teams ship short-form videos in hours instead of days.</li>
+                <li data-i18n-en="Domain presets lock tone, pacing, and visual style so every output feels native." data-i18n-zh="领域预设锁定语气、节奏、视觉风格，每个产出都贴合所在垂类。">Domain presets lock tone, pacing, and visual style so every output feels native.</li>
+                <li data-i18n-en="Zero manual stitching means zero dropped frames between cuts." data-i18n-zh="全程无人工拼接，切点之间不再出现丢帧或音画错位。">Zero manual stitching means zero dropped frames between cuts.</li>
+              </ul>
+              <div class="impact-card-metric">
+                <div class="impact-card-metric-value">0</div>
+                <div class="impact-card-metric-label" data-i18n-en="Manual stitching steps" data-i18n-zh="个手动拼接步骤">Manual stitching steps</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
 
                   <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
                                     <p class="proj-desc" data-i18n-en="A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render." data-i18n-zh="五阶段流水线把图像素材与领域配置转换成 1080×1920 竖屏成片。每个阶段职责单一，连线标记从原始素材到最终渲染的数据流。">A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render.</p>
