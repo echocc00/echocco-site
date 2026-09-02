@@ -82,7 +82,111 @@
              data-i18n-zh="SecSight 是面向中小型 SOC 团队的 AI 驱动安全运营平台，让小团队也能覆盖 7×24 检测与响应。它把多智能体 SecOps 助手与自动响应 SOAR 引擎组合在一起——常规事件（钓鱼分流、误报清理、IOC 富化）在明确的自主级别下自动处理，复杂事件则进入人工审核队列。">SecSight is an AI-driven security operations platform.</p>
           <p data-i18n-en="The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites."
              data-i18n-zh="系统自带进程隔离部署模型并对齐等保 2.0 控制点，可在合规环境中直接落地，无需重构。">The system ships with a process-isolated deployment model and is aligned with MLPS 2.0.</p>
-        </div>
+        </div><!-- ============ SECTION 1: Pain → Solution → Impact ============ -->
+<section class="impact-section">
+  <h2 class="proj-h2"
+      data-i18n-en="Pain → Solution → Impact"
+      data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+  <p class="proj-desc"
+     data-i18n-en="Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage. SecSight compresses that loop into three stages — what hurts today, what the platform does about it, and what changes for the team."
+     data-i18n-zh="大多数中小型 SOC 团队只有两三名分析师、一套会在凌晨三点告警的 SIEM，以及永远清不完的工单积压。SecSight 把这条链路压缩成三段——今天的痛点、平台做了什么、以及团队会发生什么变化。">Most small and mid SOC teams run on two analysts, a SIEM that pages them at 3 a.m., and a backlog of tickets nobody has time to triage.</p>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <span class="impact-tag"
+            data-i18n-en="Pain"
+            data-i18n-zh="痛点">Pain</span>
+      <h3 class="impact-card-title"
+          data-i18n-en="The alert backlog nobody closes"
+          data-i18n-zh="没人能清完的告警积压">The alert backlog nobody closes</h3>
+      <p class="impact-card-body"
+         data-i18n-en="Phishing reports, brute-force spikes, and noisy EDR signals flood the queue. Analysts spend the day triaging low-value alerts instead of hunting real intrusions — and the ones that matter sit open until a customer reports them."
+         data-i18n-zh="钓鱼上报、暴力破解尖峰、嘈杂的 EDR 信号把队列塞满。分析师把时间花在低价值告警分流上，真正重要的入侵反而要等客户主动反馈才能被发现。">Phishing reports, brute-force spikes, and noisy EDR signals flood the queue.</p>
+    </div>
+
+    <div class="impact-card">
+      <span class="impact-tag"
+            data-i18n-en="Solution"
+            data-i18n-zh="方案">Solution</span>
+      <h3 class="impact-card-title"
+          data-i18n-en="A copilot that closes the routine work"
+          data-i18n-zh="一个能闭环常规工作的助手">A copilot that closes the routine work</h3>
+      <p class="impact-card-body"
+         data-i18n-en="SecSight pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine. Phishing triage, false-positive sweep, and IOC enrichment are handled under well-defined autonomy levels — L0 advisory up to L4 closed-loop — and every action is replayable in a human review queue."
+         data-i18n-zh="SecSight 把多智能体 SecOps 助手与自动响应 SOAR 引擎组合在一起。钓鱼分流、误报清理、IOC 富化都在明确的自主级别下处理——从 L0 建议到 L4 闭环——每一步动作都可在人工审核队列中回放。">SecSight pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine.</p>
+    </div>
+
+    <div class="impact-card">
+      <span class="impact-tag"
+            data-i18n-en="Impact"
+            data-i18n-zh="价值">Impact</span>
+      <h3 class="impact-card-title"
+          data-i18n-en="Analysts back on the work that matters"
+          data-i18n-zh="让分析师回到真正重要的工作上">Analysts back on the work that matters</h3>
+      <p class="impact-card-body"
+         data-i18n-en="22 production playbooks ship ready to run. The two-person team keeps coverage on nights and weekends without growing headcount, and senior time shifts from queue-watching to threat hunting, detection engineering, and customer-facing incident review."
+         data-i18n-zh="22 个生产级剧本开箱即用。两三人的团队在不增加人力的前提下守住夜间与周末覆盖，高级分析师的时间从盯队列转向威胁狩猎、检测工程与面向客户的事件复盘。">22 production playbooks ship ready to run.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: How it works (4-stage flow) ============ -->
+<section class="how-section">
+  <h2 class="proj-h2"
+      data-i18n-en="How it works"
+      data-i18n-zh="工作原理">How it works</h2>
+  <p class="proj-desc"
+     data-i18n-en="Every alert moves through the same four stages. What changes per incident is which agent picks it up, what playbook runs, and how much autonomy the platform is allowed to take. The architecture below shows which systems back each stage."
+     data-i18n-zh="每一条告警都经过同样的四个阶段。不同事件之间变化的是哪个智能体接手、哪个剧本执行、以及平台被允许的自主级别。下方架构图展示了每个阶段由哪些系统支撑。">Every alert moves through the same four stages.</p>
+
+  <div class="how-grid">
+    <div class="how-stage">
+      <span class="how-stage-num">01</span>
+      <h3 class="how-stage-title"
+          data-i18n-en="Ingest"
+          data-i18n-zh="接入">Ingest</h3>
+      <p class="how-stage-desc"
+         data-i18n-en="Detection signals flow in from SIEM, NIDS, and threat-intel platforms in near real time. Each event is normalized, deduped, and stamped with source, severity, and tenant context before anything downstream sees it."
+         data-i18n-zh="来自 SIEM、NIDS 与威胁情报平台的检测信号近实时流入。每一条事件在交给下游之前都会被归一化、去重，并打上来源、严重度与租户上下文标签。">Detection signals flow in from SIEM, NIDS, and threat-intel platforms in near real time.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">02</span>
+      <h3 class="how-stage-title"
+          data-i18n-en="Analyze"
+          data-i18n-zh="分析">Analyze</h3>
+      <p class="how-stage-desc"
+         data-i18n-en="A team of specialized agents — triage, investigation, and enrichment — reads the event, pulls context from the knowledge base, and assembles a verdict with evidence attached. False positives get folded back into the model so they don't reappear tomorrow."
+         data-i18n-zh="一组专职智能体——分流、调查、富化——读取事件、从知识库拉取上下文，并产出一份带证据的判定结论。误报会被回灌到模型中，避免明天再次出现。">A team of specialized agents reads the event and assembles a verdict with evidence attached.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">03</span>
+      <h3 class="how-stage-title"
+          data-i18n-en="Decide &amp; act"
+          data-i18n-zh="决策与执行">Decide &amp; act</h3>
+      <p class="how-stage-desc"
+         data-i18n-en="The SOAR engine matches the verdict to one of 22 production playbooks and executes it within the autonomy budget the playbook declares. Anything outside that budget is parked in a human review queue with the full reasoning trail."
+         data-i18n-zh="SOAR 引擎把判定结果匹配到 22 个生产级剧本之一，并在剧本声明的自主预算内执行。超出预算的动作会带着完整推理链进入人工审核队列。">The SOAR engine matches the verdict to a playbook and executes it within its autonomy budget.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">04</span>
+      <h3 class="how-stage-title"
+          data-i18n-en="Learn"
+          data-i18n-zh="复盘学习">Learn</h3>
+      <p class="how-stage-desc"
+         data-i18n-en="Every incident — automated or human-handled — writes a structured postmortem back to the knowledge base. Detection rules get tuned, playbook thresholds get adjusted, and the next cycle starts with a slightly sharper system."
+         data-i18n-zh="每一次事件——无论自动处理还是人工处置——都会写回一份结构化复盘到知识库。检测规则得到调优，剧本阈值被校准，下一轮从一个稍微更敏锐的系统开始。">Every incident writes a structured postmortem back to the knowledge base.</p>
+    </div>
+  </div>
+
+  <p class="how-footnote"
+     data-i18n-en="See the architecture below for which systems back each stage."
+     data-i18n-zh="下方架构图展示各阶段由哪些系统支撑。">See the architecture below for which systems back each stage.</p>
+</section>
+
+
           <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-secsight">
             <header class="arch-embed-head">

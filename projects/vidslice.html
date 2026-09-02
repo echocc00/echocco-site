@@ -80,8 +80,57 @@
         <div class="proj-desc">
           <p data-i18n-en="VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract)." data-i18n-zh="VidSlice 把第三方视频素材（图片、片段、B-roll）索引进 LanceDB 向量库，每条都用 Ed25519 签名防止篡改，通过 HTTP API 提供查询。它专为 OpenCut 短视频流水线设计（HTTP API 与 OpenCut 的素材合约对齐）。">VidSlice indexes third-party video material — photos, clips, B-roll — into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline (which is why the HTTP API matches OpenCut's material contract).</p>
           <p data-i18n-en="v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines." data-i18n-zh="v0.5 读兼容 / v0.6 写入通过 <code>--compat v0.5</code> 标志位可选开启。NDJSON 进度事件支持流式流水线。">v0.5 read-compat / v0.6 write opt-in via <code>--compat v0.5</code> flag. NDJSON progress events for streaming pipelines.</p>
-        </div>
-          <!-- Architecture embed - placed between Overview and Capabilities -->
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 成效">Pain → Solution → Impact</h2>
+                  <p class="proj-desc" data-i18n-en="Why a separate indexing tool exists, and what it changes for teams handing off material between vendors and the OpenCut pipeline." data-i18n-zh="为什么需要独立的索引工具，以及它对"外包素材 → OpenCut 流水线"这条链路带来的实际改变。">Why a separate indexing tool exists, and what it changes for teams handing off material between vendors and the OpenCut pipeline.</p>
+                  <div class="impact-grid">
+                    <article class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+                      <h3 data-i18n-en="Material processing for video search is fragmented" data-i18n-zh="视频检索的素材处理链路支离破碎">Material processing for video search is fragmented</h3>
+                      <p data-i18n-en="Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. Index formats drift across teams, so a clip indexed by group A rarely loads cleanly in group B's pipeline." data-i18n-zh="每个团队都各自实现一套抽帧和 embedding 流水线。生产环境里的原始素材不能交给外部厂商，但索引又必须在某处完成。索引格式在团队之间各走各路，A 组索引过的素材在 B 组的流水线里几乎跑不起来。">Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. Index formats drift across teams, so a clip indexed by group A rarely loads cleanly in group B's pipeline.</p>
+                    </article>
+                    <article class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+                      <h3 data-i18n-en="A standalone CLI that signs a standardized index" data-i18n-zh="一个独立的 CLI，输出签名化的标准索引">A standalone CLI that signs a standardized index</h3>
+                      <p data-i18n-en="VidSlice is a single CLI: hand it raw materials, it walks the directory, extracts frames, computes embeddings, and writes a signed index that OpenCut consumes directly. One tool, one output format, one signing scheme — every team's index looks the same on the wire." data-i18n-zh="VidSlice 是一个独立的 CLI：把原始素材丢给它，它会遍历目录、抽帧、计算 embedding，并写出一个 OpenCut 直接能消费的签名索引。一个工具，一种输出格式，一套签名机制——所有团队在线上看到的索引格式完全一致。">VidSlice is a single CLI: hand it raw materials, it walks the directory, extracts frames, computes embeddings, and writes a signed index that OpenCut consumes directly. One tool, one output format, one signing scheme — every team's index looks the same on the wire.</p>
+                    </article>
+                    <article class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="成效">Impact</span>
+                      <h3 data-i18n-en="Third parties index without seeing production secrets" data-i18n-zh="第三方可以索引，但看不到生产环境的秘密">Third parties index without seeing production secrets</h3>
+                      <p data-i18n-en="Outsourced teams run VidSlice on the materials they're given; the signed index flows back to OpenCut without ever exposing production credentials, source repositories, or downstream services. Index format is consistent across vendors. The test suite reports 408 tests passing on every release." data-i18n-zh="外包团队在自己拿到的素材上跑 VidSlice，签名化的索引再回流到 OpenCut，整条链路不暴露任何生产凭证、源代码仓库或下游服务。索引格式在所有外部供应商之间保持一致。每次发布时测试套件报告 408 个用例全部通过。">Outsourced teams run VidSlice on the materials they're given; the signed index flows back to OpenCut without ever exposing production credentials, source repositories, or downstream services. Index format is consistent across vendors. The test suite reports 408 tests passing on every release.</p>
+                    </article>
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
+                  <p class="proj-desc" data-i18n-en="Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest." data-i18n-zh="CLI 的四个阶段把一个装着原始素材的目录变成一个 OpenCut 可以直接接入的签名向量索引。">Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest.</p>
+                  <ol class="how-grid" role="list">
+                    <li class="how-stage">
+                      <span class="how-stage-num">01</span>
+                      <h3 data-i18n-en="Discover" data-i18n-zh="扫描">Discover</h3>
+                      <p data-i18n-en="The CLI scans the materials directory, enumerating supported video and image files and recording their paths and hashes for downstream stages." data-i18n-zh="CLI 扫描素材目录，枚举所有受支持的视频和图片文件，并记录它们的路径和哈希，供后续阶段使用。">The CLI scans the materials directory, enumerating supported video and image files and recording their paths and hashes for downstream stages.</p>
+                    </li>
+                    <li class="how-arrow" aria-hidden="true" data-i18n-en="→" data-i18n-zh="→">→</li>
+                    <li class="how-stage">
+                      <span class="how-stage-num">02</span>
+                      <h3 data-i18n-en="Extract" data-i18n-zh="提取">Extract</h3>
+                      <p data-i18n-en="Frames are pulled from each video and structured metadata (codec, duration, dimensions, source hash) is captured alongside them." data-i18n-zh="从每个视频中抽取帧，并同时抓取结构化元数据——编码格式、时长、分辨率、源文件哈希。">Frames are pulled from each video and structured metadata (codec, duration, dimensions, source hash) is captured alongside them.</p>
+                    </li>
+                    <li class="how-arrow" aria-hidden="true" data-i18n-en="→" data-i18n-zh="→">→</li>
+                    <li class="how-stage">
+                      <span class="how-stage-num">03</span>
+                      <h3 data-i18n-en="Embed" data-i18n-zh="向量化">Embed</h3>
+                      <p data-i18n-en="A model computes per-frame vectors representing the searchable content; vectors and their metadata are written into the LanceDB store." data-i18n-zh="模型为每一帧计算表示可搜索内容的向量；向量及其元数据一起写入 LanceDB 存储。">A model computes per-frame vectors representing the searchable content; vectors and their metadata are written into the LanceDB store.</p>
+                    </li>
+                    <li class="how-arrow" aria-hidden="true" data-i18n-en="→" data-i18n-zh="→">→</li>
+                    <li class="how-stage">
+                      <span class="how-stage-num">04</span>
+                      <h3 data-i18n-en="Sign" data-i18n-zh="签名">Sign</h3>
+                      <p data-i18n-en="The output index is signed with Ed25519, producing the standardized artifact OpenCut consumes directly — tamper-evident, version-pinned, and ready for the HTTP API." data-i18n-zh="输出索引使用 Ed25519 签名，生成 OpenCut 直接能消费的标准制品——可验真、版本固定、可被 HTTP API 直接读取。">The output index is signed with Ed25519, producing the standardized artifact OpenCut consumes directly — tamper-evident, version-pinned, and ready for the HTTP API.</p>
+                    </li>
+                  </ol>
+
+                    <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-vidslice">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-vidslice" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>

@@ -80,9 +80,68 @@
         <div class="proj-desc">
           <p data-i18n-en="OpenCut v3 turns still images into 1080×1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and storyboards so each output feels native to its niche." data-i18n-zh="OpenCut v3 通过 20 阶段 AI 流水线把静态图变成 1080×1920 竖屏短视频。领域配置（教育 / 旅行 / 知识付费 / 自定义）驱动 prompt 与分镜脚本，让每个产出都贴合所在垂类。">OpenCut v3 turns still images into 1080×1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and storyboards so each output feels native to its niche.</p>
           <p data-i18n-en="TTS + BGM matching + auto-captions + Remotion rendering, with CLI and SaaS dual-track distribution." data-i18n-zh="TTS + BGM 智能匹配 + 自动字幕 + Remotion 渲染，CLI 与 SaaS 双轨分发。">TTS + BGM matching + auto-captions + Remotion rendering, with CLI and SaaS dual-track distribution.</p>
-        </div>
-          <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-opencut002">
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+                  <div class="impact-grid">
+                    <div class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+                      <h3 class="impact-card-title" data-i18n-en="Short-form video production is fragmented" data-i18n-zh="短视频制作流程碎片化">Short-form video production is fragmented</h3>
+                      <p class="proj-desc" data-i18n-en="Script writing, voice synthesis, audio–visual alignment, face-aware camera cuts, and BGM matching each live in a different tool. Operators stitch outputs manually, the round-trip is slow, and quality drifts every time the domain changes (education vs. travel vs. knowledge_paid)." data-i18n-zh="脚本撰写、语音合成、音画对齐、人脸镜头切换、BGM 匹配——每个环节都分散在不同工具里。运营人员要手动拼装多端输出，迭代慢，且一旦切换领域（教育 / 旅行 / 知识付费），质量就开始漂移。">Script writing, voice synthesis, audio–visual alignment, face-aware camera cuts, and BGM matching each live in a different tool. Operators stitch outputs manually, the round-trip is slow, and quality drifts every time the domain changes (education vs. travel vs. knowledge_paid).</p>
+                    </div>
+                    <div class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+                      <h3 class="impact-card-title" data-i18n-en="One pipeline, image assets in — finished video out" data-i18n-zh="一条流水线：丢图进去，成片出来">One pipeline, image assets in — finished video out</h3>
+                      <p class="proj-desc" data-i18n-en="Drop in a folder of still images plus a domain config; OpenCut v3 produces a finished 1080×1920 vertical video — voiceover, subtitles, and BGM already composed — in a single pass. No manual stitching, no per-tool context switching." data-i18n-zh="把一组静态图加上一份领域配置丢进去，OpenCut v3 一次性产出 1080×1920 竖屏成片——配音、字幕、BGM 已在内部合成完毕。无需手动拼装，也无需在多工具间反复切换。">Drop in a folder of still images plus a domain config; OpenCut v3 produces a finished 1080×1920 vertical video — voiceover, subtitles, and BGM already composed — in a single pass. No manual stitching, no per-tool context switching.</p>
+                    </div>
+                    <div class="impact-card">
+                      <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
+                      <h3 class="impact-card-title" data-i18n-en="Faster production, consistent quality across domains" data-i18n-zh="更快出片，跨领域品质一致">Faster production, consistent quality across domains</h3>
+                      <p class="proj-desc" data-i18n-en="Content teams ship short-form videos in hours instead of days. Domain presets lock in tone, pacing, and visual style so every output feels native to its niche — and zero manual stitching means zero dropped frames between cuts." data-i18n-zh="内容团队把短视频生产周期从天级压缩到小时级。领域预设把语气、节奏、视觉风格一次性锁定，每个产出都贴合所在垂类；并且由于全程无人工拼接，切点之间不再出现丢帧或音画错位。">Content teams ship short-form videos in hours instead of days. Domain presets lock in tone, pacing, and visual style so every output feels native to its niche — and zero manual stitching means zero dropped frames between cuts.</p>
+                    </div>
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
+                  <p class="proj-desc" data-i18n-en="A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render." data-i18n-zh="五阶段流水线把图像素材与领域配置转换成 1080×1920 竖屏成片。每个阶段职责单一，连线标记从原始素材到最终渲染的数据流。">A five-stage pipeline turns image assets and a domain config into a finished 1080×1920 short video. Each stage has a single, well-defined responsibility; arrows mark data flow from raw assets to final render.</p>
+                  <div class="how-grid">
+                    <div class="how-stage">
+                      <div class="how-stage-num">1</div>
+                      <h3 class="how-stage-title" data-i18n-en="Script" data-i18n-zh="脚本">Script</h3>
+                      <p class="proj-desc" data-i18n-en="An LLM ingests the domain config (education / travel / knowledge_paid / custom) plus the image set, then writes a narration script and a shot-by-shot storyboard tuned to that niche." data-i18n-zh="LLM 读取领域配置（教育 / 旅行 / 知识付费 / 自定义）与图像集，生成贴合该垂类的旁白脚本与逐镜头分镜表。">An LLM ingests the domain config (education / travel / knowledge_paid / custom) plus the image set, then writes a narration script and a shot-by-shot storyboard tuned to that niche.</p>
+                      <span class="impact-tag" data-i18n-en="LLM · domain config" data-i18n-zh="LLM · 领域配置">LLM · domain config</span>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage">
+                      <div class="how-stage-num">2</div>
+                      <h3 class="how-stage-title" data-i18n-en="Voice" data-i18n-zh="语音">Voice</h3>
+                      <p class="proj-desc" data-i18n-en="edge-tts synthesizes the narration into a clean voiceover track with the chosen language and voice profile, ready for downstream alignment." data-i18n-zh="edge-tts 将旁白脚本合成为干净的配音轨，支持按需选择语言与声音配置，供下游对齐使用。">edge-tts synthesizes the narration into a clean voiceover track with the chosen language and voice profile, ready for downstream alignment.</p>
+                      <span class="impact-tag" data-i18n-en="edge-tts" data-i18n-zh="edge-tts">edge-tts</span>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage">
+                      <div class="how-stage-num">3</div>
+                      <h3 class="how-stage-title" data-i18n-en="Align" data-i18n-zh="对齐">Align</h3>
+                      <p class="proj-desc" data-i18n-en="PyTorch + Transformers score each still image against the audio track and pick the shot that best matches the current beat, producing a tightly cut visual timeline." data-i18n-zh="PyTorch + Transformers 对静态图与音频逐节打分，挑出最贴合当前节拍的镜头，生成视觉时间线。">PyTorch + Transformers score each still image against the audio track and pick the shot that best matches the current beat, producing a tightly cut visual timeline.</p>
+                      <span class="impact-tag" data-i18n-en="PyTorch · Transformers" data-i18n-zh="PyTorch · Transformers">PyTorch · Transformers</span>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage">
+                      <div class="how-stage-num">4</div>
+                      <h3 class="how-stage-title" data-i18n-en="Detect" data-i18n-zh="检测">Detect</h3>
+                      <p class="proj-desc" data-i18n-en="OpenCV runs face detection on each frame to find faces, then places camera cuts and framing so the subject stays centered and well-composed." data-i18n-zh="OpenCV 对每帧做人脸检测，定位人脸位置后自动安排镜头切换与构图，保证主体始终居中、画面舒适。">OpenCV runs face detection on each frame to find faces, then places camera cuts and framing so the subject stays centered and well-composed.</p>
+                      <span class="impact-tag" data-i18n-en="OpenCV" data-i18n-zh="OpenCV">OpenCV</span>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage">
+                      <div class="how-stage-num">5</div>
+                      <h3 class="how-stage-title" data-i18n-en="Compose" data-i18n-zh="合成">Compose</h3>
+                      <p class="proj-desc" data-i18n-en="The final renderer lays BGM underneath, burns auto-generated subtitles over the voiceover, and writes the finished 1080×1920 vertical video to disk — ready to publish." data-i18n-zh="最终渲染器把 BGM 混入底层、把自动字幕压在配音之上，输出 1080×1920 竖屏成片到磁盘，可直接发布。">The final renderer lays BGM underneath, burns auto-generated subtitles over the voiceover, and writes the finished 1080×1920 vertical video to disk — ready to publish.</p>
+                      <span class="impact-tag" data-i18n-en="BGM + subtitles" data-i18n-zh="BGM + 字幕">BGM + subtitles</span>
+                    </div>
+                  </div>
+
+                    <!-- Architecture embed - placed between Overview and Capabilities -->
+                    <section class="arch-embed" aria-labelledby="arch-title-opencut002">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-opencut002" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
               <p class="arch-embed-sub"

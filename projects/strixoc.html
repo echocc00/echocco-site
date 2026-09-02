@@ -81,6 +81,57 @@
           <p data-i18n-en="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production." data-i18n-zh="StrixOC 动态运行你的代码，定位漏洞并通过真实 PoC 验证。多智能体编排让一组 AI 渗透测试员协同工作、可横向扩展。在内部作为 SecOpent 适配器路径的参考实现，也是新 case-DSL 原型落地前的快速反馈通道。">StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production.</p>
           <p data-i18n-en="GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in." data-i18n-zh="与 GitHub Actions / CI 集成，提供面向开发者的 CLI，反馈循环短。支持开源 LLM 提供商，无供应商锁定。">GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in.</p>
         </div>
+
+        <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+            <p class="impact-text" data-i18n-en="A penetration test is a snapshot bought once or twice a year. It is expensive, slow to schedule, and entirely dependent on how much manual time a senior tester can spend on your attack surface. Between engagements the application keeps shipping — new endpoints, new dependencies, new auth paths — and none of it is tested. Security teams end up with coverage measured in weeks per year, while vulnerabilities sit undiscovered for months. Static scanners fill the gap with noise: thousands of unvalidated alerts nobody has time to triage."
+               data-i18n-zh="渗透测试是一年买一两次的快照：贵、排期慢，且完全取决于资深测试员能在你的攻击面上投入多少人工时间。两次测试之间应用仍在持续上线——新接口、新依赖、新认证路径——这些都没有被测过。安全团队一年能拿到的覆盖度以「周」计，而漏洞则在数月之内无人发现。静态扫描器只能用噪声填补空档：成千上万条未验证告警，没人有时间分诊。">Pentests are annual snapshots; the app ships weekly.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+            <p class="impact-text" data-i18n-en="StrixOC puts autonomous AI hackers on the target instead of a calendar slot. A team of agents — built on the openai-agents SDK with LiteLLM for multi-LLM routing — collaborates the way a real red team does: one maps the attack surface, others attempt exploitation, and results are consolidated into findings. Everything happens inside an operator-defined scope, and every step is validated against Pydantic models, so an agent cannot drift outside the engagement or emit a finding that isn't structurally sound. Vulnerabilities are not just reported; the agents propose and generate fixes."
+               data-i18n-zh="StrixOC 把自主 AI 黑客直接放到目标上，而不是排进日程表。一组智能体——基于 openai-agents SDK，用 LiteLLM 做多 LLM 路由——像真实红队那样协作：一个绘制攻击面，其他尝试利用，结果被汇总为发现项。全部动作都发生在操作员定义的范围内，每一步都经 Pydantic 模型校验，因此智能体既不会越出委托范围，也无法产出结构不合规的发现。漏洞不只是被报告——智能体还会提出并生成修复。">Agent teams run recon, exploit, and report inside scope.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
+            <p class="impact-text" data-i18n-en="Pentesting becomes continuous rather than annual: a run costs LLM tokens and minutes, not a consulting engagement, so it can fire on every release or nightly in CI. Time-to-discovery drops from months to the length of a single run, and because each finding is backed by a real exploit attempt rather than a pattern match, triage time collapses too. Apache-2.0 and self-hostable, with no single-vendor LLM dependency — the cost curve stays under your control."
+               data-i18n-zh="渗透测试从「一年一次」变为持续进行：一次运行的成本是 LLM token 与几分钟时间，而不是一笔咨询合同，因此可以在每次发布时触发，或每晚跑在 CI 里。发现漏洞的时间从数月缩短到一次运行的长度；又因为每条发现都由真实的利用尝试支撑而非模式匹配，分诊时间也随之坍缩。Apache-2.0、可自托管、不绑定单一 LLM 供应商——成本曲线始终在你手里。">Continuous coverage, lower cost, faster discovery.</p>
+          </div>
+        </div>
+
+        <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
+        <div class="how-grid">
+          <div class="how-stage">
+            <div class="how-num">01</div>
+            <div class="how-title" data-i18n-en="Scope" data-i18n-zh="界定范围">Scope</div>
+            <p class="how-desc" data-i18n-en="The operator declares the target from the CLI: which hosts, repositories, and endpoints are in play, and which are explicitly off-limits. Scope is the hard boundary for every agent that follows — not a suggestion in a prompt."
+               data-i18n-zh="操作员在 CLI 中声明目标：哪些主机、仓库、接口在范围内，哪些明确禁止。范围是后续所有智能体的硬边界——不是 prompt 里的一句建议。">Operator declares the boundary from the CLI.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">02</div>
+            <div class="how-title" data-i18n-en="Recon" data-i18n-zh="侦察">Recon</div>
+            <p class="how-desc" data-i18n-en="An agent maps the attack surface inside that boundary — routes, parameters, auth flows, dependencies, and the code paths behind them — and builds the working picture the rest of the team reasons over."
+               data-i18n-zh="智能体在边界内绘制攻击面——路由、参数、认证流、依赖以及其背后的代码路径——并构建出团队后续推理所依赖的工作视图。">Agent maps routes, params, auth flows, dependencies.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">03</div>
+            <div class="how-title" data-i18n-en="Exploit" data-i18n-zh="利用">Exploit</div>
+            <p class="how-desc" data-i18n-en="Agents attempt real exploitation against the mapped surface, running the code dynamically to prove a vulnerability rather than infer it. Safety rails hold: actions stay in scope, and each step is Pydantic-validated before it executes."
+               data-i18n-zh="智能体针对已绘制的攻击面进行真实利用尝试，通过动态运行代码来证明漏洞而非推断漏洞。安全护栏始终生效：动作不出范围，每一步执行前都经 Pydantic 校验。">Real exploitation attempts, inside safety rails.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">04</div>
+            <div class="how-title" data-i18n-en="Report" data-i18n-zh="报告">Report</div>
+            <p class="how-desc" data-i18n-en="Confirmed findings are emitted as Pydantic-validated structures — reproducible PoC, affected path, severity, remediation guidance — so they drop straight into CI output, a ticket, or a compliance-ready report without hand-editing."
+               data-i18n-zh="已确认的发现以 Pydantic 校验过的结构输出——可复现的 PoC、受影响路径、严重级别、修复建议——可直接落入 CI 输出、工单或合规级报告，无需手工整理。">Pydantic-validated findings, ready for CI or tickets.</p>
+          </div>
+        </div>
+
           <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-strixoc">
             <header class="arch-embed-head">

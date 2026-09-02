@@ -80,8 +80,82 @@
         <div class="proj-desc">
           <p data-i18n-en="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across sessions. Deployed behind a single gateway process reaching Telegram, Discord, Slack, Signal, and CLI, with scheduled automations handled natively. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration." data-i18n-zh="SecOpentAgent 是自进化的 AI 智能体基础设施——具备闭环学习回路，能从经验中提炼技能、在使用中不断改进、跨会话持久化记忆。部署为一个网关进程，可同时触达 Telegram / Discord / Slack / Signal / CLI，并原生支持定时自动化任务。在 SOC 侧为 SecSight 提供后端，在 SecOpent 上驱动 case-DSL 探索。">SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across sessions. Deployed behind a single gateway process reaching Telegram, Discord, Slack, Signal, and CLI, with scheduled automations handled natively. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration.</p>
           <p data-i18n-en="Seven runtime backends including serverless persistence — runs on a $5 VPS, a GPU cluster, or serverless infrastructure that hibernates when idle and costs nearly nothing between sessions. Compatible with the open agentskills.io skill standard and the Honcho dialectic user-modeling dialect." data-i18n-zh="7 种运行时后端，包括 serverless 持久化——既能在 5 美元的 VPS 上跑，也能在 GPU 集群或 serverless 基础设施上跑，空闲时自动休眠，几乎不花钱。兼容开源 agentskills.io 技能规范与 Honcho 对话式用户建模。">Seven runtime backends including serverless persistence — runs on a $5 VPS, a GPU cluster, or serverless infrastructure that hibernates when idle and costs nearly nothing between sessions. Compatible with the open agentskills.io skill standard and the Honcho dialectic user-modeling dialect.</p>
-        </div>
-          <!-- Architecture embed - placed between Overview and Capabilities -->
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+                  <div class="proj-desc">
+                    <p data-i18n-en="Every existing AI chat session is a blank slate. SecOpentAgent is the agent that turns that blank slate into a compounding asset — one that gets sharper every time you use it, on any model, from any device, even while you're asleep."
+                       data-i18n-zh="现有的每一次 AI 对话都从零开始。SecOpentAgent 让这块白板变成复利资产——每一次使用都更聪明，任意模型、任意设备、甚至在你睡觉时也能继续工作。">Every existing AI chat session is a blank slate. SecOpentAgent is the agent that turns that blank slate into a compounding asset.</p>
+                  </div>
+                  <div class="impact-grid">
+                    <div class="impact-card impact-card-pain">
+                      <span class="impact-tag impact-tag-pain" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+                      <div class="impact-card-title" data-i18n-en="Every chat starts from zero" data-i18n-zh="每次对话都从零开始">Every chat starts from zero</div>
+                      <ul class="impact-card-list">
+                        <li data-i18n-en="Skills you teach today are forgotten tomorrow — the next session has no idea who you are or what you figured out last time." data-i18n-zh="今天教会的技能明天就忘了——下一次会话完全不知道你是谁、上次解决了什么。">Skills taught today are forgotten tomorrow.</li>
+                        <li data-i18n-en="Vendor lock-in traps your conversations, context, and tooling inside one closed garden." data-i18n-zh="供应商锁定把对话、上下文、工具全部锁在封闭花园里。">Vendor lock-in traps conversations and context.</li>
+                        <li data-i18n-en="You're chained to a desktop — no way to drive the agent from your phone while you're out." data-i18n-zh="被绑死在桌面端——出门时没法用手机驱动智能体。">Chained to a desktop — no mobile control.</li>
+                        <li data-i18n-en="No persistent memory of who you are: your role, your stack, your preferences, your history." data-i18n-zh="没有关于"你是谁"的持久记忆：角色、技术栈、偏好、历史。">No persistent memory of who you are.</li>
+                      </ul>
+                    </div>
+                    <div class="impact-card impact-card-solution">
+                      <span class="impact-tag impact-tag-solution" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+                      <div class="impact-card-title" data-i18n-en="An agent with a closed learning loop" data-i18n-zh="具备闭环学习回路的智能体">An agent with a closed learning loop</div>
+                      <ul class="impact-card-list">
+                        <li data-i18n-en="Closed learning loop: skill creation + skill improvement + memory + cross-session search + user modeling — every conversation makes the next one better." data-i18n-zh="闭环学习回路：技能创建 + 技能改进 + 记忆 + 跨会话检索 + 用户建模——每一次对话都让下一次更好。">Closed learning loop across five mechanisms.</li>
+                        <li data-i18n-en="Any model, any provider: LiteLLM routes Anthropic, OpenAI, local models, and self-hosted weights behind one interface." data-i18n-zh="任意模型、任意供应商：LiteLLM 在同一接口下路由 Anthropic、OpenAI、本地模型与自托管权重。">Any model via LiteLLM routing.</li>
+                        <li data-i18n-en="Gateway-style messaging: reach the same agent from Telegram, Discord, Slack, WhatsApp, Signal, or CLI." data-i18n-zh="网关式消息：从 Telegram / Discord / Slack / WhatsApp / Signal / CLI 触达同一个智能体。">Gateway messaging across 6 surfaces.</li>
+                        <li data-i18n-en="Scheduled automations: cron-driven tasks run unattended — daily reports, nightly backups, weekly audits, all in natural language." data-i18n-zh="定时自动化：cron 驱动任务无人值守——日报、备份、周报，全部用自然语言写。">Cron-driven unattended tasks in natural language.</li>
+                      </ul>
+                    </div>
+                    <div class="impact-card impact-card-impact">
+                      <span class="impact-tag impact-tag-impact" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
+                      <div class="impact-card-title" data-i18n-en="Smarter every session. Yours, forever." data-i18n-zh="每次会话都更聪明。永远属于你。">Smarter every session. Yours, forever.</div>
+                      <ul class="impact-card-list">
+                        <li data-i18n-en="The agent gets sharper with every session — accumulated skills and memory compound like interest." data-i18n-zh="智能体每次会话都更敏锐——技能与记忆像复利一样积累。">Compounding sharpness across sessions.</li>
+                        <li data-i18n-en="No vendor lock-in: swap models, self-host, or take the whole thing offline — your data stays yours." data-i18n-zh="无供应商锁定：换模型、自托管、甚至离线运行——数据始终是你的。">No vendor lock-in. Data is yours.</li>
+                        <li data-i18n-en="Control from anywhere: message the agent from your phone, your laptop, or a chat thread; it's the same brain." data-i18n-zh="随时随地控制：用手机、笔记本或聊天线程——背后是同一个大脑。">Control from any device.</li>
+                        <li data-i18n-en="Runs unattended: schedules fire while you sleep, deliver to where you already are." data-i18n-zh="无人值守：定时任务在你睡觉时触发，结果送到你已经在的地方。">Unattended tasks delivered where you live.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作原理">How it works</h2>
+                  <div class="proj-desc">
+                    <p data-i18n-en="Every request follows the same Sense → Reason → Act → Remember loop. The "Remember" step is what makes SecOpentAgent different: the loop closes, and the agent carries the lesson forward."
+                       data-i18n-zh="每个请求都遵循 Sense → Reason → Act → Remember 的循环。"Remember"是 SecOpentAgent 与众不同之处——回路闭合，智能体把教训带进下一次。">Every request follows Sense → Reason → Act → Remember.</p>
+                  </div>
+                  <div class="how-grid">
+                    <div class="how-stage how-stage-sense">
+                      <div class="how-stage-num" aria-hidden="true">1</div>
+                      <div class="how-stage-name" data-i18n-en="Sense" data-i18n-zh="感知">Sense</div>
+                      <div class="how-stage-title" data-i18n-en="You message the agent on any platform" data-i18n-zh="你在任意平台上向智能体发消息">You message the agent on any platform</div>
+                      <p class="how-stage-desc" data-i18n-en="A Telegram DM, a Slack thread, a Discord ping, a Signal message, a WhatsApp note, or a CLI invocation all land in the same gateway process. The gateway normalizes the channel, attaches your user identity, and hands the request to the agent." data-i18n-zh="Telegram 私信、Slack 话题、Discord 消息、Signal 消息、WhatsApp 笔记或 CLI 调用，全部汇集到同一个网关进程。网关统一通道格式、附加用户身份，再把请求交给智能体。">Any channel → unified gateway.</p>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage how-stage-reason">
+                      <div class="how-stage-num" aria-hidden="true">2</div>
+                      <div class="how-stage-name" data-i18n-en="Reason" data-i18n-zh="推理">Reason</div>
+                      <div class="how-stage-title" data-i18n-en="The LLM plans a tool sequence" data-i18n-zh="LLM 规划工具调用序列">The LLM plans a tool sequence</div>
+                      <p class="how-stage-desc" data-i18n-en="LiteLLM routes to the configured provider (Anthropic, OpenAI, local). The model draws on the agent's memory, retrieved past conversations, and available skills to pick the right sequence of tool calls." data-i18n-zh="LiteLLM 路由到配置好的供应商（Anthropic / OpenAI / 本地）。模型结合智能体的记忆、检索到的过往会话与可用技能，规划出合适的工具调用序列。">LLM picks the tool sequence.</p>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage how-stage-act">
+                      <div class="how-stage-num" aria-hidden="true">3</div>
+                      <div class="how-stage-name" data-i18n-en="Act" data-i18n-zh="执行">Act</div>
+                      <div class="how-stage-title" data-i18n-en="Tools execute, results flow back" data-i18n-zh="工具执行，结果回流">Tools execute, results flow back</div>
+                      <p class="how-stage-desc" data-i18n-en="Each tool runs in the runtime (file system, shell, MCP servers, Honcho for user modeling). Results stream back to the model so it can decide whether to call another tool, ask for clarification, or reply." data-i18n-zh="每个工具在运行时中执行——文件系统、Shell、MCP 服务器、Honcho 用户建模。结果回到模型，由它决定继续调用工具、追问还是给出答复。">Tools run, results return.</p>
+                    </div>
+                    <div class="how-arrow" aria-hidden="true">→</div>
+                    <div class="how-stage how-stage-remember">
+                      <div class="how-stage-num" aria-hidden="true">4</div>
+                      <div class="how-stage-name" data-i18n-en="Remember" data-i18n-zh="记忆">Remember</div>
+                      <div class="how-stage-title" data-i18n-en="Skill created or improved, memory persisted, user model updated" data-i18n-zh="新建或改进技能、记忆落库、用户模型更新">Skill created or improved, memory persisted, user model updated</div>
+                      <p class="how-stage-desc" data-i18n-en="The loop closes: a new skill is authored (or an existing one patched), relevant facts are committed to long-term memory, and Honcho refines its dialectic model of you. Next session starts ahead — not from zero." data-i18n-zh="回路闭合：写入新技能（或改进旧技能），把相关事实落进长期记忆，Honcho 更新对你的对话式建模。下一次会话不是从零开始，而是领先一步。">The loop closes — next session starts ahead.</p>
+                    </div>
+                  </div>
+
+                    <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-secopentagent">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-secopentagent" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>

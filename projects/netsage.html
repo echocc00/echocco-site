@@ -81,6 +81,56 @@
           <p data-i18n-en="NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device." data-i18n-zh="NetSage 是一个 AI 驱动的平台，接管网络工程师日常：设计、配置生成、排障、部署、审计。8 个专业智能体协作于三道闸门的流水线中——每一次变更都要先过 Containerlab 仿真、Batfish 校验、人工审批与快照回滚，才允许触碰真实设备。">NetSage is an AI-driven platform that takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline — every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device.</p>
           <p data-i18n-en="It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically." data-i18n-zh="跨厂商（华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista），从 NetBox 或 Nautobot 读取 Source of Truth。30 条基线规则（CIS + 厂商加固）自动拦下高危配置。">It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically.</p>
         </div>
+          <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+            <p class="impact-text" data-i18n-en="Network operations run on deep, vendor-specific knowledge that few engineers actually hold. A single typo in an ACL or BGP config can take down a region; CCIE-level engineers are scarce and expensive; changes ship without safety rails; when something breaks, troubleshooting is slow and tribal."
+               data-i18n-zh="网络运维依赖深厚且高度厂商特定的知识储备，真正掌握这些知识的工程师凤毛麟角。ACL 或 BGP 配置里一个错字就可能让一个区域宕机；具备 CCIE 水平的工程师稀缺且昂贵；变更往往没有任何安全护栏就上线；故障发生后，排障过程缓慢且依赖口口相传的经验。">Network ops depend on deep vendor-specific knowledge — and a single typo can take down a region.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+            <p class="impact-text" data-i18n-en="NetSage fields 10 specialized AI agents — planner, config_engineer, validator, troubleshooter, deploy, observer, security_auditor, compliance, rdm_agent, wireless_agent — coordinating under a three-gate engine: Containerlab simulation, Batfish validation, then human approval with snapshot rollback. Multi-vendor out of the box: Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista."
+               data-i18n-zh="NetSage 内置 10 个专业 AI 智能体——planner、config_engineer、validator、troubleshooter、deploy、observer、security_auditor、compliance、rdm_agent、wireless_agent——在三道闸门引擎的调度下协作：Containerlab 仿真、Batfish 校验、然后人工审批并落快照回滚。开箱即支持多厂商：华为 VRP、Cisco IOS-XE、H3C、Juniper、Arista。">10 agents + three-gate engine, multi-vendor from day one.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
+            <p class="impact-text" data-i18n-en="Deploys that took days ship in hours. Every change is simulated and validated before it touches a device, so misconfig-driven incidents drop sharply. One platform runs the whole multi-vendor network — no tribal knowledge required. Outages caused by bad config become rare, recoverable events instead of career-defining incidents."
+               data-i18n-zh="原本需要数天的部署如今数小时即可上线。每次变更在触达真实设备前都已完成仿真与校验，因此由配置错误引发的事故显著下降。一个平台就能跑通整个多厂商网络——无需依赖个人经验。因配置错误导致的宕机从「职业生涯级别」的事件，变成罕见且可回滚的小插曲。">Deploys in hours, not days. Outages become rare and recoverable.</p>
+          </div>
+        </div>
+
+        <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
+        <div class="how-grid">
+          <div class="how-stage">
+            <div class="how-num">01</div>
+            <div class="how-title" data-i18n-en="Plan" data-i18n-zh="规划">Plan</div>
+            <p class="how-desc" data-i18n-en="The planner agent reads the operator's intent — expressed in plain language or as a target spec — and designs the configuration that satisfies it. It picks the right vendor syntax, consults NetBox / Nautobot as source of truth, and produces a change plan a human can review."
+               data-i18n-zh="planner 智能体读取运维人员的意图（自然语言描述或目标规格均可），并设计出满足该意图的配置。它选择对应厂商的语法，以 NetBox / Nautobot 为 Source of Truth，产出一份可由人工复核的变更方案。">Intent in, change plan out.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">02</div>
+            <div class="how-title" data-i18n-en="Simulate" data-i18n-zh="仿真">Simulate</div>
+            <p class="how-desc" data-i18n-en="Containerlab spins up a virtual twin of the affected topology — same vendor images, same routing domain — and applies the candidate change inside it. The agents then probe the twin to see what would actually happen: reachability, convergence, protocol state, traffic paths."
+               data-i18n-zh="Containerlab 拉起受影响拓扑的虚拟孪生——同厂商镜像、同路由域——并在孪生内部应用候选变更。随后智能体对孪生进行探测，观察真实会发生什么：可达性、收敛过程、协议状态、流量路径。">A virtual twin takes the risk.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">03</div>
+            <div class="how-title" data-i18n-en="Validate" data-i18n-zh="校验">Validate</div>
+            <p class="how-desc" data-i18n-en="Batfish verifies that the resulting configuration actually expresses the stated intent — semantic equivalence between what the operator asked for and what the device would do. The 30-rule baseline (CIS + vendor hardening) flags dangerous patterns: missing auth, weak ACLs, exposed mgmt, etc."
+               data-i18n-zh="Batfish 校验最终生成的配置是否真正表达了既定意图——即运维人员诉求与设备实际行为之间的语义等价性。30 条基线规则（CIS + 厂商加固）会标记危险模式：缺失鉴权、ACL 薄弱、管理面暴露等。">Intent ↔ config semantics, plus 30-rule safety net.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">04</div>
+            <div class="how-title" data-i18n-en="Approve + apply" data-i18n-zh="审批 + 执行">Approve + apply</div>
+            <p class="how-desc" data-i18n-en="A human reviews the plan and the simulation evidence, then approves. A pre-change snapshot is captured so any rollback is one click. Only then does the change touch the real device — and the observer agent watches the result, ready to trigger rollback if reality drifts from the simulation."
+               data-i18n-zh="人工复核方案与仿真证据后批准。变更前先落快照，确保任意时刻一键回滚。只有在此之后，变更才触达真实设备——observer 智能体会持续监视结果，一旦现实偏离仿真，即刻触发回滚。">Human approves, snapshot taken, then apply — with rollback ready.</p>
+          </div>
+        </div>
+
           <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-netsage">
             <header class="arch-embed-head">

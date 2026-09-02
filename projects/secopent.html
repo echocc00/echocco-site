@@ -83,6 +83,56 @@
           <p data-i18n-en="17 adapters across asset/web/network/cloud/identity mean you can chain a real-world campaign without hand-coding glue. Three layers of evidence with redaction give you a clean report at the end."
              data-i18n-zh="覆盖资产 / Web / 网络 / 云 / 身份的 17 个适配器，让你能拼起真实战役而无需写粘合代码。三层证据 + 脱敏处理，交付干净的报告。">17 adapters across asset/web/network/cloud/identity.</p>
         </div>
+        <h2 class="proj-h2" data-i18n-en="Pain → Solution → Impact" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Impact</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</span>
+            <p class="impact-text" data-i18n-en="Traditional pentests fail the moment AI enters the loop. An LLM-driven tool makes dangerous decisions autonomously — probing production systems without consent, drifting past the rules of engagement, signing off on findings the operator never reviewed. Scope creep, unsigned findings, and unauditable results are the defaults. Manual scoping eats days before a single test runs."
+               data-i18n-zh="传统渗透测试在 AI 加入的那一刻就开始失灵。LLM 驱动的工具自主做出危险决策——未经授权探测生产系统、越权脱离测试规则、对未经复核的发现签字背书。范围蔓延、发现未签名、结果不可审计成了默认状态。仅是人工界定范围就要耗费数天。">Traditional pentests fail the moment AI enters the loop.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Solution" data-i18n-zh="方案">Solution</span>
+            <p class="impact-text" data-i18n-en="SecOpent is a catalog-driven workbench where the LLM only proposes — a deterministic layer plus a human operator decides every step. Scope, approval, signing, and publish are all gated. Findings are cryptographically signed, every action lands in an immutable audit trail, and the catalog itself encodes what's testable, what isn't, and which techniques are pre-approved."
+               data-i18n-zh="SecOpent 是一款目录驱动的工作台：LLM 只负责提议，确定性层加人工操作员来决策每一步。范围、审批、签名、发布都被关卡化。发现项通过加密签名，每一项操作落入不可篡改的审计轨迹，而目录本身就编码了可测范围、不可测范围以及预先批准的技术。">LLM proposes; a deterministic layer + humans decide.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-tag" data-i18n-en="Impact" data-i18n-zh="价值">Impact</span>
+            <p class="impact-text" data-i18n-en="Pentest cycles shrink from weeks to days because scope and approval are pre-encoded in the catalog. AI is used safely inside a defined boundary, not bolted onto the perimeter. Reports ship with cryptographic evidence that satisfies MLPS 2.0 (等保 2.0) and most regulatory auditors — no rebuild required."
+               data-i18n-zh="由于范围和审批已在目录中预先编码，渗透测试周期从数周压缩到数天。AI 在划定边界内被安全使用，而非外挂在外围。报告附带加密证据，可满足等保 2.0 与大多数监管机构要求，无需重构。">Pentest cycles shrink from weeks to days.</p>
+          </div>
+        </div>
+
+        <h2 class="proj-h2" data-i18n-en="How it works" data-i18n-zh="工作流程">How it works</h2>
+        <div class="how-grid">
+          <div class="how-stage">
+            <div class="how-num">01</div>
+            <div class="how-title" data-i18n-en="Catalog scope" data-i18n-zh="目录化范围">Catalog scope</div>
+            <p class="how-desc" data-i18n-en="Define what to test, what NOT to test, and which techniques are pre-approved. Scope is encoded as data, not free-text in a PDF — so it can be enforced by the deterministic layer."
+               data-i18n-zh="明确要测试什么、不测试什么、哪些技术是预先批准的。范围以数据形式编码，而非 PDF 里的自由文本——这样确定性层才能真正执行。">Scope as data, not PDF prose.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">02</div>
+            <div class="how-title" data-i18n-en="Agent proposes" data-i18n-zh="智能体提议">Agent proposes</div>
+            <p class="how-desc" data-i18n-en="The LLM suggests the next action — what technique, what target, what payload — based on the current case state. It never executes autonomously; every suggestion is a proposal, nothing more."
+               data-i18n-zh="LLM 根据当前 case 状态给出下一步建议——什么技术、什么目标、什么 payload。它从不自主执行；每一条建议都是提议，仅此而已。">Suggest, never execute.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">03</div>
+            <div class="how-title" data-i18n-en="Human decides" data-i18n-zh="人做决策">Human decides</div>
+            <p class="how-desc" data-i18n-en="The operator reviews each proposal in the Case Studio — approves it, modifies it, or rejects it. Approval is required before the deterministic layer dispatches the action; nothing reaches the target without a human on the record."
+               data-i18n-zh="操作员在 Case Studio 中复核每一条提议——批准、修改或驳回。在确定性层下发动作之前，必须获得批准；任何动作触达目标前都要有经手人在案。">Approve, modify, or reject — nothing runs without a human.</p>
+          </div>
+          <span class="how-arrow" aria-hidden="true">→</span>
+          <div class="how-stage">
+            <div class="how-num">04</div>
+            <div class="how-title" data-i18n-en="Sign and publish" data-i18n-zh="签名与发布">Sign and publish</div>
+            <p class="how-desc" data-i18n-en="Findings are cryptographically signed before they leave the workbench. Every step is recorded in an immutable audit trail — proposal, approval, action, evidence — so reports ship with a chain of custody regulators can verify."
+               data-i18n-zh="发现项在离开工作台前被加密签名。每一步——提议、批准、动作、证据——都被记录在不可篡改的审计轨迹中，让报告附带一条监管机构可验证的保管链。">Signed findings, full chain of custody.</p>
+          </div>
+        </div>
+
           <!-- Architecture embed - placed between Overview and Capabilities -->
           <section class="arch-embed" aria-labelledby="arch-title-secopent">
             <header class="arch-embed-head">
@@ -154,7 +204,7 @@
         </div>
       </aside>
     </div>
-  
+
     </section>
 
   <section class="section dark">
