@@ -873,212 +873,148 @@ img, svg { max-width: 100%; height: auto; display: block; }
 }
 
 
-/* === Pain → Solution → Impact (3-column grid) === */
-.impact-section {
-  margin: 48px 0 56px;
-}
-.impact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 24px;
-}
-@media (min-width: 720px) {
-  .impact-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-}
-.impact-card {
-  background: var(--bg, #0b1020);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: border-color 200ms ease, transform 200ms ease;
-}
-.impact-card:hover {
-  border-color: rgba(94, 106, 210, 0.4);
-  transform: translateY(-2px);
-}
-.impact-tag {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: 600;
-  font-family: var(--font-mono, ui-monospace, monospace);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.impact-tag[data-i18n-en="Pain"],
-.impact-tag[data-i18n-en="痛点"] {
-  background: rgba(239, 68, 68, 0.12);
-  color: #fca5a5;
-}
-.impact-tag[data-i18n-en="Solution"],
-.impact-tag[data-i18n-en="方案"] {
-  background: rgba(94, 106, 210, 0.15);
-  color: #c7d2fe;
-}
-.impact-tag[data-i18n-en="Impact"],
-.impact-tag[data-i18n-en="价值"] {
-  background: rgba(34, 197, 94, 0.15);
-  color: #86efac;
-}
-.impact-card-title {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 0;
-  color: var(--ink, #f1f5f9);
-  line-height: 1.3;
-}
-.impact-card-body {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--ink-2, #cbd5e1);
-  margin: 0;
-}
+/* === Pain → Solution → Value section (Linear / Stripe-style) === */
+/* Replaces the prior implementation that had oversized h2 + light-theme soft
+   colors that don't read on the dark page background.
 
-/* ============================================================
-   Impact section — redesigned (Linear / Stripe / Vercel flavor)
-   Adds Impact Rows (compact horizontal flow) + Impact Columns
-   (large visual cards with line-art SVG icons) inside
-   <section class="impact-section">.
-   ============================================================ */
+   Design tokens:
+   - Single accent per column (red / violet / emerald) — Stripe principle
+   - Soft tints use rgba transparency so they read on both light AND dark
+   - Type scale tightened: h2 22-28px, metric 20-24px, label 11px mono */
 
 :root {
-  /* Per-column accent colors (one accent per column — Stripe principle).
-     Tones chosen to read on white without screaming. */
-  --impact-pain:        #ef4444;   /* red-500    */
-  --impact-pain-soft:   #fef2f2;   /* red-50     */
-  --impact-pain-line:   #fecaca;   /* red-200    */
-  --impact-solution:    #7c3aed;   /* violet-600 */
-  --impact-solution-soft: #f5f3ff; /* violet-50  */
-  --impact-solution-line: #ddd6fe; /* violet-200 */
-  --impact-value:       #10b981;   /* emerald-500 */
-  --impact-value-soft:  #ecfdf5;   /* emerald-50  */
-  --impact-value-line:  #a7f3d0;   /* emerald-200 */
+  --impact-pain:        #f87171;   /* red-400 (lighter for dark theme contrast) */
+  --impact-pain-soft:   rgba(248, 113, 113, 0.08);
+  --impact-pain-line:   rgba(248, 113, 113, 0.20);
+
+  --impact-solution:    #a78bfa;   /* violet-400 */
+  --impact-solution-soft: rgba(167, 139, 250, 0.08);
+  --impact-solution-line: rgba(167, 139, 250, 0.20);
+
+  --impact-value:       #34d399;   /* emerald-400 */
+  --impact-value-soft:  rgba(52, 211, 153, 0.08);
+  --impact-value-line:  rgba(52, 211, 153, 0.20);
 }
 
-/* ---------------- Section heading (Linear style) ---------------- */
+/* ---------------- Section heading ---------------- */
 .impact-head {
-  margin-bottom: var(--s-7);
-  max-width: 760px;
+  margin-bottom: 28px;
+  max-width: 680px;
 }
 .impact-eyebrow {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: var(--s-3);
+  color: var(--ink-3, #94a3b8);
+  margin-bottom: 10px;
 }
 .impact-head h2 {
-  font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.12;
-  color: var(--ink);
-  margin: 0 0 var(--s-3) 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--ink, #f1f5f9);
+  margin: 0 0 10px 0;
 }
 .impact-head p {
-  font-size: 16.5px;
-  line-height: 1.65;
-  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2, #cbd5e1);
   margin: 0;
-  max-width: 680px;
+  max-width: 640px;
 }
 
 /* ---------------- A. Impact Rows (compact horizontal flow) ---------------- */
 .impact-rows {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--line);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg, #0b1020);
 }
 .impact-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--s-3);
-  padding: var(--s-5) var(--s-2);
-  border-bottom: 1px solid var(--line);
+  gap: 10px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.06));
   align-items: center;
   transition: background 160ms ease;
 }
+.impact-row:last-child {
+  border-bottom: 0;
+}
 @media (min-width: 900px) {
   .impact-row {
-    grid-template-columns: 1.1fr 24px 1.2fr 24px 220px;
-    gap: var(--s-4);
-    padding: var(--s-5) var(--s-4);
+    grid-template-columns: 1fr 18px 1fr 18px 200px;
+    gap: 16px;
+    padding: 14px 20px;
   }
 }
-.impact-row:hover { background: var(--bg-alt); }
+.impact-row:hover { background: var(--bg-alt, #0f172a); }
 
-/* Row cells (Pain / Solution / Value inside a row) */
+/* Row cells */
 .impact-cell {
   display: flex;
   align-items: flex-start;
-  gap: var(--s-3);
+  gap: 12px;
   min-width: 0;
 }
 .impact-cell-icon {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
+  background: var(--bg-elevated, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
 }
 .impact-cell-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke-width: 1.5;
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.6;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.impact-cell--pain      .impact-cell-icon { background: var(--impact-pain-soft);      border-color: var(--impact-pain-line); }
+.impact-cell--pain      .impact-cell-icon { background: var(--impact-pain-soft);     border-color: var(--impact-pain-line); }
 .impact-cell--pain      .impact-cell-icon svg { stroke: var(--impact-pain); }
-.impact-cell--solution  .impact-cell-icon { background: var(--impact-solution-soft);  border-color: var(--impact-solution-line); }
+.impact-cell--solution  .impact-cell-icon { background: var(--impact-solution-soft); border-color: var(--impact-solution-line); }
 .impact-cell--solution  .impact-cell-icon svg { stroke: var(--impact-solution); }
-.impact-cell--value     .impact-cell-icon { background: var(--impact-value-soft);     border-color: var(--impact-value-line); }
+.impact-cell--value     .impact-cell-icon { background: var(--impact-value-soft);    border-color: var(--impact-value-line); }
 .impact-cell--value     .impact-cell-icon svg { stroke: var(--impact-value); }
 
-.impact-cell-body { min-width: 0; }
+.impact-cell-body { min-width: 0; flex: 1; }
 .impact-cell-label {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-3);
-  margin-bottom: 2px;
+  letter-spacing: 0.1em;
+  color: var(--ink-3, #94a3b8);
+  margin-bottom: 3px;
 }
 .impact-cell--pain     .impact-cell-label { color: var(--impact-pain); }
 .impact-cell--solution .impact-cell-label { color: var(--impact-solution); }
 .impact-cell--value    .impact-cell-label { color: var(--impact-value); }
 .impact-cell-text {
-  font-size: 14.5px;
-  line-height: 1.45;
-  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--ink, #f1f5f9);
   font-weight: 500;
   letter-spacing: -0.005em;
 }
 .impact-cell-sub {
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.4;
-  color: var(--ink-2);
-  margin-top: 2px;
-  letter-spacing: -0.003em;
+  color: var(--ink-2, #cbd5e1);
+  margin-top: 3px;
 }
 
 /* Arrow between row cells */
@@ -1086,11 +1022,10 @@ img, svg { max-width: 100%; height: auto; display: block; }
   display: none;
   align-items: center;
   justify-content: center;
-  color: var(--ink-4);
-  font-size: 14px;
+  color: var(--ink-4, #64748b);
   user-select: none;
 }
-.impact-row-arrow svg { width: 14px; height: 14px; }
+.impact-row-arrow svg { width: 14px; height: 14px; stroke-width: 1.5; }
 @media (min-width: 900px) {
   .impact-row-arrow { display: flex; }
 }
@@ -1099,69 +1034,67 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .impact-metric {
   display: flex;
   align-items: baseline;
-  gap: 8px;
-  padding-left: var(--s-3);
-  border-left: 1px solid var(--line);
+  gap: 6px;
+  padding-left: 0;
+  border-left: none;
 }
-@media (max-width: 899px) {
+@media (min-width: 900px) {
   .impact-metric {
-    padding-left: 0;
-    border-left: none;
-    margin-left: 44px;
-    margin-top: 4px;
+    padding-left: 18px;
+    border-left: 1px solid var(--line, rgba(255, 255, 255, 0.06));
   }
 }
 .impact-metric-value {
-  font-size: clamp(22px, 2.4vw, 28px);
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--ink);
+  color: var(--ink, #f1f5f9);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.impact-metric-value .arrow-down {
-  color: var(--impact-value);
-  margin-right: 2px;
-  font-weight: 700;
-}
+.impact-metric-value .arrow-down,
 .impact-metric-value .arrow-up {
-  color: var(--impact-value);
   margin-right: 2px;
   font-weight: 700;
 }
+.impact-metric-value .arrow-down { color: var(--impact-value); }
+.impact-metric-value .arrow-up   { color: var(--impact-value); }
 .impact-metric-label {
-  font-size: 12.5px;
-  color: var(--ink-2);
-  line-height: 1.35;
+  font-size: 11.5px;
+  color: var(--ink-3, #94a3b8);
+  line-height: 1.4;
 }
 
 /* ---------------- B. Impact Columns (large visual cards) ---------------- */
 .impact-columns-head {
-  margin: var(--s-9) 0 var(--s-6);
-  max-width: 720px;
+  margin: 40px 0 16px;
+  max-width: 680px;
 }
 .impact-columns-head h3 {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.015em;
-  color: var(--ink);
-  margin: 0 0 var(--s-2) 0;
+  color: var(--ink, #f1f5f9);
+  margin: 0 0 6px 0;
 }
 .impact-columns-head p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink-2);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-2, #cbd5e1);
   margin: 0;
 }
+
+/* Override the existing .impact-card to make it work for both the new
+   "card" layout AND keep the older tag-pill-based 3-card block. */
 
 .impact-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
+  background: var(--line, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
   overflow: hidden;
 }
 @media (min-width: 720px) {
@@ -1170,37 +1103,35 @@ img, svg { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* Override the existing .impact-card padding so the new art area fits */
 .impact-card {
-  background: var(--bg);
-  border-radius: 0;          /* the grid handles the rounded outer edge */
-  padding: var(--s-6) var(--s-5) var(--s-5);
+  background: var(--bg, #0b1020);
+  border-radius: 0;
+  padding: 20px 18px 18px;
   display: flex;
   flex-direction: column;
-  gap: var(--s-4);
+  gap: 12px;
   border: 0;
   transition: background 160ms ease;
 }
 .impact-card:hover {
-  background: var(--bg-alt);
-  transform: none;           /* strip the old hover-lift */
+  background: var(--bg-alt, #0f172a);
+  transform: none;
 }
 
 /* Large line-art SVG icon at top of each card */
 .impact-card-art {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--line);
-  margin-bottom: var(--s-2);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
 }
 .impact-card-art svg {
-  width: 28px;
-  height: 28px;
-  stroke-width: 1.5;
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.6;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1214,17 +1145,17 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 /* Card body */
 .impact-card-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: 1.3;
-  color: var(--ink);
+  color: var(--ink, #f1f5f9);
   margin: 0;
 }
 .impact-card-body {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-2);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2, #cbd5e1);
   margin: 0;
 }
 .impact-card-list {
@@ -1233,24 +1164,24 @@ img, svg { max-width: 100%; height: auto; display: block; }
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--ink-2);
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2, #cbd5e1);
 }
 .impact-card-list li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 16px;
 }
 .impact-card-list li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--ink-4);
+  background: var(--ink-4, #64748b);
 }
 .impact-card--pain     .impact-card-list li::before { background: var(--impact-pain); }
 .impact-card--solution .impact-card-list li::before { background: var(--impact-solution); }
@@ -1259,33 +1190,24 @@ img, svg { max-width: 100%; height: auto; display: block; }
 /* Metric chip at bottom of each card */
 .impact-card-metric {
   margin-top: auto;
-  padding-top: var(--s-4);
-  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  border-top: 1px solid var(--line, rgba(255, 255, 255, 0.06));
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 .impact-card-metric-value {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--ink);
+  color: var(--ink, #f1f5f9);
   font-variant-numeric: tabular-nums;
 }
 .impact-card-metric-label {
-  font-size: 12.5px;
-  color: var(--ink-3);
+  font-size: 11px;
+  color: var(--ink-3, #94a3b8);
   line-height: 1.4;
-}
-
-/* ---------------- Mobile fallback ---------------- */
-@media (max-width: 899px) {
-  .impact-row { padding: var(--s-4) var(--s-2); }
-  .impact-cell-text { font-size: 14px; }
-  .impact-card { padding: var(--s-5) var(--s-4); }
-  .impact-card-art { width: 48px; height: 48px; }
-  .impact-card-art svg { width: 24px; height: 24px; }
 }
 
 /* === How it works (4-stage flow) === */
