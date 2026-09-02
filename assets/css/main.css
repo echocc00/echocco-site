@@ -870,3 +870,90 @@ img, svg { max-width: 100%; height: auto; display: block; }
   margin-top: 12px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* === Architecture block (project detail pages) === */
+.arch-block {
+  max-width: 1280px;
+  margin: 32px auto 48px;
+  padding: 0 24px;
+}
+.arch-block-head { margin-bottom: 20px; }
+.arch-h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+  color: var(--ink, #f1f5f9);
+}
+.arch-sub {
+  font-size: 16px;
+  color: var(--muted, #94a3b8);
+  margin: 0;
+  max-width: 720px;
+}
+.arch-card {
+  background: #0b1020;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.arch-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.arch-card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(94, 106, 210, 0.15);
+  color: #c7d2fe;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.arch-card-meta {
+  font-size: 12px;
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.arch-card-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  background: #ffffff08;
+  border-radius: 8px;
+}
+.arch-card-stack {
+  margin: 12px 0 0 0;
+  font-size: 13px;
+  color: var(--muted, #94a3b8);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height: 1.6;
+}
+.arch-card-desc {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--muted, #94a3b8);
+}
+.archify-frame {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: #0b1020;
+}
+.arch-fallback {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  text-align: right;
+}
+.arch-fallback a { color: #94a3b8; }

@@ -84,65 +84,6 @@
              data-i18n-zh="系统自带进程隔离部署模型并对齐等保 2.0 控制点，可在合规环境中直接落地，无需重构。">The system ships with a process-isolated deployment model and is aligned with MLPS 2.0.</p>
         </div>
 
-        <h2 class="proj-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
-        <figure class="proj-figure">
-
-<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SecSight architecture" style="width:100%;height:auto;max-width:900px;display:block">
-  <defs>
-    <linearGradient id="secsight-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a0a0a"/><stop offset="1" stop-color="#1e1b4b"/>
-    </linearGradient>
-    <linearGradient id="secsight-card" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#0f172a"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="460" fill="url(#secsight-bg)" rx="12"/>
-  <text x="32" y="40" fill="#94a3b8" font-family="ui-monospace,monospace" font-size="12" letter-spacing="0.08em">SECSIGHT v0.5.1  /  MULTI-AGENT SOC</text>
-  <text x="32" y="80" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">DETECTION SOURCES</text>
-  <g font-family="system-ui" font-size="13" fill="#e2e8f0">
-    <rect x="32" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
-    <text x="97" y="118" text-anchor="middle">Wazuh SIEM</text>
-    <rect x="172" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
-    <text x="237" y="118" text-anchor="middle">Suricata NIDS</text>
-    <rect x="312" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
-    <text x="377" y="118" text-anchor="middle">OpenCTI</text>
-    <rect x="452" y="92" width="130" height="50" rx="8" fill="url(#secsight-card)" stroke="#334155"/>
-    <text x="517" y="118" text-anchor="middle">DFIR-IRIS</text>
-  </g>
-  <g stroke="#475569" stroke-width="1.5" fill="none">
-    <path d="M97 142 L97 178"/><path d="M237 142 L237 178"/>
-    <path d="M377 142 L377 178"/><path d="M517 142 L517 178"/>
-    <path d="M97 178 L517 178 L517 178"/>
-  </g>
-  <text x="32" y="190" fill="#64748b" font-family="ui-monospace,monospace" font-size="11">SECOPS COPILOT  (LangGraph multi-agent)</text>
-  <rect x="32" y="200" width="836" height="92" rx="10" fill="#0f172a" stroke="#2563eb" stroke-width="2"/>
-  <g font-family="system-ui" font-size="13" fill="#e2e8f0">
-    <rect x="50" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-    <text x="105" y="240" text-anchor="middle">Triage</text>
-    <text x="105" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
-    <rect x="170" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-    <text x="225" y="240" text-anchor="middle">Investigate</text>
-    <text x="225" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
-    <rect x="290" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-    <text x="345" y="240" text-anchor="middle">Enrich</text>
-    <text x="345" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
-    <rect x="410" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-    <text x="465" y="240" text-anchor="middle">Report</text>
-    <text x="465" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">agent</text>
-    <rect x="530" y="216" width="110" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-    <text x="585" y="240" text-anchor="middle">KB RAG</text>
-    <text x="585" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">Qdrant</text>
-    <rect x="650" y="216" width="200" height="60" rx="6" fill="#1e293b" stroke="#a855f7"/>
-    <text x="750" y="240" text-anchor="middle">LLM (LiteLLM)</text>
-    <text x="750" y="258" text-anchor="middle" fill="#94a3b8" font-size="11">DeepSeek / Qwen / GPT</text>
-  </g>
-  <g stroke="#475569" stroke-width="1.5" fill="none">
-  </g>
-  <text x="32" y="430" fill="#475569" font-family="ui-monospace,monospace" font-size="11">22 production playbooks  /  MLPS 2.0 aligned  /  234 tests  /  87.8% coverage</text>
-</svg>
-          <figcaption data-i18n-en="SecSight v0.5.1 — runtime architecture" data-i18n-zh="SecSight v0.5.1 — 运行时架构">SecSight v0.5.1 — runtime architecture</figcaption>
-        </figure>
-
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
         <div class="proj-features">
           <div class="proj-feat">
@@ -199,7 +140,8 @@
         </div>
       </aside>
     </div>
-  </section>
+  
+    </section>
 
   <section class="section dark">
     <div class="shell">
@@ -215,47 +157,62 @@
       </div>
     </div>
   </section>
+<!-- Architecture: D2 SVG + Archify iframe (replaces the old hand-drawn SVG) -->
+<section class="arch-block">
+  <div class="arch-block-head">
+    <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
+    <p class="arch-sub"
+       data-i18n-en="Self-hosted AI SOC platform · v0.5.1"
+       data-i18n-zh="自托管 AI SOC 平台 · v0.5.1">Self-hosted AI SOC platform · v0.5.1</p>
+  </div>
+
+  <div class="arch-card">
+    <div class="arch-card-head">
+      <span class="arch-card-tag" data-i18n-en="Tech stack" data-i18n-zh="技术栈">Tech stack</span>
+      <span class="arch-card-meta"
+            data-i18n-en="D2 · ~50 KB · loads instantly"
+            data-i18n-zh="D2 · 约 50 KB · 即时加载">D2 · ~50 KB · loads instantly</span>
+    </div>
+    <img src="/assets/diagrams/secsight.svg"
+         alt="secsight tech stack diagram"
+         class="arch-card-svg"
+         loading="lazy"
+         decoding="async"
+         width="1280" height="640" />
+    <p class="arch-card-stack"
+       data-i18n-en="Stack: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus"
+       data-i18n-zh="技术栈: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus">Stack: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus</p>
+  </div>
+
+  <div class="arch-card">
+    <div class="arch-card-head">
+      <span class="arch-card-tag" data-i18n-en="Interactive runtime map" data-i18n-zh="交互式运行时架构">Interactive runtime map</span>
+      <span class="arch-card-meta"
+            data-i18n-en="Archify · ~700 KB · lazy-loaded"
+            data-i18n-zh="Archify · 约 700 KB · 懒加载">Archify · ~700 KB · lazy-loaded</span>
+    </div>
+    <p class="arch-card-desc"
+       data-i18n-en="Click any node or relationship for details. Loaded on demand (~700 KB)."
+       data-i18n-zh="点击任意节点或连线查看详情。按需加载（约 700 KB）。">Click any node or relationship for details. Loaded on demand (~700 KB).</p>
+    <iframe src="/assets/archify/secsight"
+            class="archify-frame"
+            title="secsight interactive architecture"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-popups">
+      <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+         data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+    </iframe>
+    <p class="arch-fallback">
+      <a href="/assets/archify/secsight.html"
+         target="_blank"
+         rel="noopener"
+         data-i18n-en="Open the full interactive map in a new tab →"
+         data-i18n-zh="在新标签页打开完整交互式架构图 →">Open the full interactive map in a new tab →</a>
+    </p>
+  </div>
+</section>
 </main>
-
-      <!-- Architecture: D2 SVG (lightweight, embedded) -->
-      <section class="arch-section">
-        <header class="arch-section-header">
-          <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
-          <p class="arch-sub"
-             data-i18n-en="Self-hosted AI SOC platform · v0.5.1"
-             data-i18n-zh="自托管 AI SOC 平台 · v0.5.1">Tech stack overview — sourced from secsight/pyproject.toml.</p>
-        </header>
-        <div class="arch-svg-wrap">
-          <img src="/assets/diagrams/secsight.svg"
-               alt="secsight tech stack diagram"
-               class="arch-svg"
-               loading="lazy"
-               decoding="async"
-               width="1280" height="640" />
-        </div>
-        <p class="arch-meta"
-           data-i18n-en="Stack: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus"
-           data-i18n-zh="技术栈: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus">Stack: Python 3.12 · FastAPI · SQLAlchemy 2 (async) · PostgreSQL 16 · Redis 7 · RabbitMQ · Celery · FastMCP · Ollama · Prometheus</p>
-      </section>
-
-      <!-- Architecture: Archify interactive (lazy) -->
-      <section class="arch-section">
-        <header class="arch-section-header">
-          <h2 class="arch-h2" data-i18n-en="Interactive map" data-i18n-zh="交互式架构图">Interactive map</h2>
-          <p class="arch-sub"
-             data-i18n-en="Click any node or relationship for details. Loaded on demand (~700 KB)."
-             data-i18n-zh="点击任意节点或连线查看详情。按需加载（约 700 KB）。">Click any node or relationship for details. Loaded on demand.</p>
-        </header>
-        <iframe src="/assets/archify/secsight"
-                class="archify-frame"
-                title="secsight interactive architecture"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin allow-popups">
-          <p data-i18n-en="Your browser cannot display iframes. View the diagram directly at /assets/archify/secsight"
-             data-i18n-zh="浏览器不支持 iframe。直接查看 /assets/archify/secsight">Your browser cannot display iframes.</p>
-        </iframe>
-      </section>
 
       <footer class="footer">
   <div class="shell footer-row">

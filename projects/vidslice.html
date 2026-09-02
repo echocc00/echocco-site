@@ -139,7 +139,8 @@
         </div>
       </aside>
     </div>
-  </section>
+  
+    </section>
 
   <section class="section dark">
     <div class="shell">
@@ -155,47 +156,62 @@
       </div>
     </div>
   </section>
+<!-- Architecture: D2 SVG + Archify iframe (replaces the old hand-drawn SVG) -->
+<section class="arch-block">
+  <div class="arch-block-head">
+    <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
+    <p class="arch-sub"
+       data-i18n-en="Vector index builder for OpenCut · v0.7.10"
+       data-i18n-zh="OpenCut 向量索引构建器 · v0.7.10">Vector index builder for OpenCut · v0.7.10</p>
+  </div>
+
+  <div class="arch-card">
+    <div class="arch-card-head">
+      <span class="arch-card-tag" data-i18n-en="Tech stack" data-i18n-zh="技术栈">Tech stack</span>
+      <span class="arch-card-meta"
+            data-i18n-en="D2 · ~50 KB · loads instantly"
+            data-i18n-zh="D2 · 约 50 KB · 即时加载">D2 · ~50 KB · loads instantly</span>
+    </div>
+    <img src="/assets/diagrams/vidslice.svg"
+         alt="vidslice tech stack diagram"
+         class="arch-card-svg"
+         loading="lazy"
+         decoding="async"
+         width="1280" height="640" />
+    <p class="arch-card-stack"
+       data-i18n-en="Stack: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML"
+       data-i18n-zh="技术栈: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML">Stack: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML</p>
+  </div>
+
+  <div class="arch-card">
+    <div class="arch-card-head">
+      <span class="arch-card-tag" data-i18n-en="Interactive runtime map" data-i18n-zh="交互式运行时架构">Interactive runtime map</span>
+      <span class="arch-card-meta"
+            data-i18n-en="Archify · ~700 KB · lazy-loaded"
+            data-i18n-zh="Archify · 约 700 KB · 懒加载">Archify · ~700 KB · lazy-loaded</span>
+    </div>
+    <p class="arch-card-desc"
+       data-i18n-en="Click any node or relationship for details. Loaded on demand (~700 KB)."
+       data-i18n-zh="点击任意节点或连线查看详情。按需加载（约 700 KB）。">Click any node or relationship for details. Loaded on demand (~700 KB).</p>
+    <iframe src="/assets/archify/vidslice"
+            class="archify-frame"
+            title="vidslice interactive architecture"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-popups">
+      <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+         data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+    </iframe>
+    <p class="arch-fallback">
+      <a href="/assets/archify/vidslice.html"
+         target="_blank"
+         rel="noopener"
+         data-i18n-en="Open the full interactive map in a new tab →"
+         data-i18n-zh="在新标签页打开完整交互式架构图 →">Open the full interactive map in a new tab →</a>
+    </p>
+  </div>
+</section>
 </main>
-
-      <!-- Architecture: D2 SVG (lightweight, embedded) -->
-      <section class="arch-section">
-        <header class="arch-section-header">
-          <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
-          <p class="arch-sub"
-             data-i18n-en="Vector index builder for OpenCut · v0.7.10"
-             data-i18n-zh="OpenCut 向量索引构建器 · v0.7.10">Tech stack overview — sourced from vidslice/pyproject.toml.</p>
-        </header>
-        <div class="arch-svg-wrap">
-          <img src="/assets/diagrams/vidslice.svg"
-               alt="vidslice tech stack diagram"
-               class="arch-svg"
-               loading="lazy"
-               decoding="async"
-               width="1280" height="640" />
-        </div>
-        <p class="arch-meta"
-           data-i18n-en="Stack: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML"
-           data-i18n-zh="技术栈: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML">Stack: Python 3.10+ · NumPy · Pillow · LanceDB · PyYAML</p>
-      </section>
-
-      <!-- Architecture: Archify interactive (lazy) -->
-      <section class="arch-section">
-        <header class="arch-section-header">
-          <h2 class="arch-h2" data-i18n-en="Interactive map" data-i18n-zh="交互式架构图">Interactive map</h2>
-          <p class="arch-sub"
-             data-i18n-en="Click any node or relationship for details. Loaded on demand (~700 KB)."
-             data-i18n-zh="点击任意节点或连线查看详情。按需加载（约 700 KB）。">Click any node or relationship for details. Loaded on demand.</p>
-        </header>
-        <iframe src="/assets/archify/vidslice"
-                class="archify-frame"
-                title="vidslice interactive architecture"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin allow-popups">
-          <p data-i18n-en="Your browser cannot display iframes. View the diagram directly at /assets/archify/vidslice"
-             data-i18n-zh="浏览器不支持 iframe。直接查看 /assets/archify/vidslice">Your browser cannot display iframes.</p>
-        </iframe>
-      </section>
 
       <footer class="footer">
   <div class="shell footer-row">
