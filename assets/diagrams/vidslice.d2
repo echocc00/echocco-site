@@ -1,0 +1,75 @@
+title: |md
+  # VidSlice
+  Vector index builder for OpenCut · CLI
+|
+
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: dagre
+    pad: 30
+  }
+}
+
+# Linear-inspired palette
+classes: {
+  lang: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#5E6AD2"
+    style.stroke-width: 2
+    style.border-radius: 8
+  }
+  runtime: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#22C55E"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  data: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#F59E0B"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  ai: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#EF4444"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  obs: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#8B5CF6"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+}
+
+  python: "Python 3.10+" {
+    class: lang
+    style.fill: "#3776AB"
+  }
+  numpy: "NumPy" {
+    class: runtime
+    style.fill: "#013243"
+  }
+  pillow: "Pillow" {
+    class: runtime
+    style.fill: "#869198"
+  }
+  lancedb: "LanceDB" {
+    class: data
+    style.fill: "#FF6B6B"
+  shape: cylinder
+  }
+  yaml: "PyYAML 6" {
+    class: runtime
+    style.fill: "#CB171E"
+  }
+
+  python -> numpy
+  python -> pillow
+  pillow -> lancedb: "frames"
+  numpy -> lancedb: "embeddings"
+  yaml -> python: "config"

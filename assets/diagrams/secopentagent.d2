@@ -1,0 +1,93 @@
+title: |md
+  # SecOpentAgent
+  Self-improving AI agent · Hermes fork
+|
+
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: dagre
+    pad: 30
+  }
+}
+
+# Linear-inspired palette
+classes: {
+  lang: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#5E6AD2"
+    style.stroke-width: 2
+    style.border-radius: 8
+  }
+  runtime: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#22C55E"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  data: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#F59E0B"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  ai: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#EF4444"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  obs: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#8B5CF6"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+}
+
+  python: "Python 3.11-3.13" {
+    class: lang
+    style.fill: "#3776AB"
+  }
+  fastapi: "FastAPI + Starlette" {
+    class: lang
+    style.fill: "#009688"
+  }
+  openai: "OpenAI Agents SDK" {
+    class: ai
+    style.fill: "#10A37F"
+  }
+  litellm: "LiteLLM (multi-LLM)" {
+    class: ai
+    style.fill: "#FF6B35"
+  }
+  pydantic: "Pydantic v2" {
+    class: runtime
+    style.fill: "#DC2626"
+  }
+  matrix: "matrix-encrypted transport" {
+    class: runtime
+    style.fill: "#000000"
+  }
+  mcp: "MCP 1.28" {
+    class: ai
+    style.fill: "#0EA5E9"
+  }
+  browser: "browser CDP" {
+    class: runtime
+    style.fill: "#4285F4"
+  }
+  otel: "OpenTelemetry SDK" {
+    class: obs
+    style.fill: "#F46800"
+  }
+
+  python -> fastapi
+  fastapi -> openai: "plan"
+  openai -> litellm: "route"
+  openai -> mcp: "tool"
+  fastapi -> pydantic: "validate"
+  openai -> browser: "observe"
+  matrix -> fastapi: "encrypted"
+  fastapi -> otel: "traces"

@@ -1,0 +1,83 @@
+title: |md
+  # NetSage
+  AI network engineer · 9-year CCIE knowledge
+|
+
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: dagre
+    pad: 30
+  }
+}
+
+# Linear-inspired palette
+classes: {
+  lang: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#5E6AD2"
+    style.stroke-width: 2
+    style.border-radius: 8
+  }
+  runtime: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#22C55E"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  data: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#F59E0B"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  ai: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#EF4444"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  obs: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#8B5CF6"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+}
+
+  python: "Python 3.11+" {
+    class: lang
+    style.fill: "#3776AB"
+  }
+  llm: "LLM (multi-vendor)" {
+    class: ai
+    style.fill: "#10A37F"
+  shape: cloud
+  }
+  jinja: "Jinja2 templates" {
+    class: runtime
+    style.fill: "#B41742"
+  }
+  nornir: "Nornir (network ops)" {
+    class: runtime
+    style.fill: "#16A34A"
+  }
+  netmiko: "Netmiko + NAPALM" {
+    class: runtime
+    style.fill: "#FF6600"
+  }
+  ansible: "Ansible config gen" {
+    class: runtime
+    style.fill: "#EE0000"
+  }
+  rdma: "RDMA tuning toolkit" {
+    class: runtime
+    style.fill: "#9333EA"
+  }
+
+  python -> llm: "reasoning"
+  llm -> nornir: "instruct"
+  nornir -> netmiko: "connect"
+  netmiko -> ansible: "configure"
+  llm -> rdma: "optimize"

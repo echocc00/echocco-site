@@ -1,0 +1,101 @@
+title: |md
+  # SecSight
+  AI-driven SOC platform · Self-hosted
+|
+
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: dagre
+    pad: 30
+  }
+}
+
+# Linear-inspired palette
+classes: {
+  lang: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#5E6AD2"
+    style.stroke-width: 2
+    style.border-radius: 8
+  }
+  runtime: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#22C55E"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  data: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#F59E0B"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  ai: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#EF4444"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  obs: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#8B5CF6"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+}
+
+  python: "Python 3.12" {
+    class: lang
+    style.fill: "#3776AB"
+  }
+  fastapi: "FastAPI + Pydantic v2" {
+    class: lang
+    style.fill: "#009688"
+  }
+  sqlalchemy: "SQLAlchemy 2 (async)" {
+    class: runtime
+    style.fill: "#D71E00"
+  }
+  postgres: "PostgreSQL 16" {
+    class: data
+    style.fill: "#336791"
+  shape: cylinder
+  }
+  redis: "Redis 7" {
+    class: data
+    style.fill: "#DC382D"
+  shape: cylinder
+  }
+  rabbitmq: "RabbitMQ" {
+    class: data
+    style.fill: "#FF6600"
+  shape: queue
+  }
+  celery: "Celery worker" {
+    class: runtime
+    style.fill: "#16A34A"
+  }
+  mcp: "MCP server" {
+    class: runtime
+    style.fill: "#0EA5E9"
+  }
+  ollama: "Ollama (local LLM)" {
+    class: ai
+    style.fill: "#1A1A1A"
+  shape: cloud
+  }
+  prom: "Prometheus + Grafana" {
+    class: obs
+    style.fill: "#F46800"
+  }
+
+  python -> fastapi
+  fastapi -> postgres: "SQL"
+  fastapi -> redis: "cache"
+  fastapi -> rabbitmq: "enqueue"
+  rabbitmq -> celery
+  celery -> ollama: "infer"
+  fastapi -> mcp: "tool calls"
+  fastapi -> prom: "metrics"

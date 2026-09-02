@@ -1,0 +1,93 @@
+title: |md
+  # opencut v3
+  AI-driven multi-domain video production · FastAPI
+|
+
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: dagre
+    pad: 30
+  }
+}
+
+# Linear-inspired palette
+classes: {
+  lang: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#5E6AD2"
+    style.stroke-width: 2
+    style.border-radius: 8
+  }
+  runtime: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#22C55E"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  data: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#F59E0B"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  ai: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#EF4444"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+  obs: {
+    style.font-color: "#FFFFFF"
+    style.stroke: "#8B5CF6"
+    style.stroke-width: 1
+    style.border-radius: 8
+  }
+}
+
+  python: "Python 3.10+" {
+    class: lang
+    style.fill: "#3776AB"
+  }
+  fastapi: "FastAPI + Uvicorn" {
+    class: lang
+    style.fill: "#009688"
+  }
+  pydantic: "Pydantic v2" {
+    class: runtime
+    style.fill: "#DC2626"
+  }
+  httpx: "httpx async" {
+    class: runtime
+    style.fill: "#0098C3"
+  }
+  edge_tts: "edge-tts" {
+    class: ai
+    style.fill: "#0078D4"
+  }
+  openai: "OpenAI SDK" {
+    class: ai
+    style.fill: "#10A37F"
+  }
+  torch: "PyTorch (align)" {
+    class: ai
+    style.fill: "#EE4C2C"
+  }
+  opencv: "OpenCV (face)" {
+    class: runtime
+    style.fill: "#5C3EE8"
+  }
+  transformers: "Transformers (align)" {
+    class: ai
+    style.fill: "#FFD21E"
+  }
+
+  python -> fastapi
+  fastapi -> pydantic: "validate"
+  fastapi -> httpx: "http"
+  fastapi -> edge_tts: "synthesize"
+  fastapi -> openai: "LLM"
+  fastapi -> torch: "align"
+  fastapi -> opencv: "face detect"
+  torch -> transformers: "models"
