@@ -805,3 +805,68 @@ img, svg { max-width: 100%; height: auto; display: block; }
   .hero { padding: 64px 0 56px; }
   .section { padding: 64px 0; }
 }
+
+/* D2 SVG cover image in project cards */
+.project-cover-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #0b1020;
+  transition: transform 240ms ease;
+}
+.project-card:hover .project-cover-img {
+  transform: scale(1.02);
+}
+
+/* Archify iframe lazy load on project detail pages */
+.archify-frame {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: #0b1020;
+}
+
+/* Architecture sections on project detail pages */
+.arch-section {
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+.arch-section-header { margin-bottom: 16px; }
+.arch-h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+.arch-sub {
+  font-size: 16px;
+  color: var(--muted, #94a3b8);
+  margin: 0 0 20px 0;
+  max-width: 720px;
+}
+.arch-svg-wrap {
+  background: #0b1020;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+.arch-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: contain;
+}
+.arch-meta {
+  font-size: 14px;
+  color: var(--muted, #94a3b8);
+  margin-top: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}

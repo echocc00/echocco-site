@@ -157,7 +157,47 @@
   </section>
 </main>
 
-<footer class="footer">
+      <!-- Architecture: D2 SVG (lightweight, embedded) -->
+      <section class="arch-section">
+        <header class="arch-section-header">
+          <h2 class="arch-h2" data-i18n-en="Architecture" data-i18n-zh="架构">Architecture</h2>
+          <p class="arch-sub"
+             data-i18n-en="AI penetration testing · fork of usestrix/strix · Apache-2.0"
+             data-i18n-zh="AI 渗透测试 · usestrix/strix fork · Apache-2.0">Tech stack overview — sourced from strixoc/pyproject.toml.</p>
+        </header>
+        <div class="arch-svg-wrap">
+          <img src="/assets/diagrams/strixoc.svg"
+               alt="strixoc tech stack diagram"
+               class="arch-svg"
+               loading="lazy"
+               decoding="async"
+               width="1280" height="640" />
+        </div>
+        <p class="arch-meta"
+           data-i18n-en="Stack: Python 3.12+ · openai-agents[litellm] · LiteLLM · OpenAI SDK · Pydantic 2.11+ · pydantic-settings"
+           data-i18n-zh="技术栈: Python 3.12+ · openai-agents[litellm] · LiteLLM · OpenAI SDK · Pydantic 2.11+ · pydantic-settings">Stack: Python 3.12+ · openai-agents[litellm] · LiteLLM · OpenAI SDK · Pydantic 2.11+ · pydantic-settings</p>
+      </section>
+
+      <!-- Architecture: Archify interactive (lazy) -->
+      <section class="arch-section">
+        <header class="arch-section-header">
+          <h2 class="arch-h2" data-i18n-en="Interactive map" data-i18n-zh="交互式架构图">Interactive map</h2>
+          <p class="arch-sub"
+             data-i18n-en="Click any node or relationship for details. Loaded on demand (~700 KB)."
+             data-i18n-zh="点击任意节点或连线查看详情。按需加载（约 700 KB）。">Click any node or relationship for details. Loaded on demand.</p>
+        </header>
+        <iframe src="/assets/archify/strixoc"
+                class="archify-frame"
+                title="strixoc interactive architecture"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                sandbox="allow-scripts allow-same-origin allow-popups">
+          <p data-i18n-en="Your browser cannot display iframes. View the diagram directly at /assets/archify/strixoc"
+             data-i18n-zh="浏览器不支持 iframe。直接查看 /assets/archify/strixoc">Your browser cannot display iframes.</p>
+        </iframe>
+      </section>
+
+      <footer class="footer">
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
