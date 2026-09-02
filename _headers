@@ -12,9 +12,6 @@
 /assets/og/*
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/diagrams/*
-  Cache-Control: public, max-age=31536000, immutable
-
 /icon.svg
   Cache-Control: public, max-age=86400
 
