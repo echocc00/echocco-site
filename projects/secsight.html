@@ -140,14 +140,35 @@
      data-i18n-zh="每一条告警都经过同样的四个阶段。不同事件之间变化的是哪个智能体接手、哪个剧本执行、以及平台被允许的自主级别。下方架构图展示了每个阶段由哪些系统支撑。">Every alert moves through the same four stages.</p>
 
   <!-- Architecture-style diagram (replaces the simple grid) -->
-      <div class="how-diagram" role="img" aria-label="SecSight runtime flow: Ingest, Analyze, Decide &amp; act, Learn">
-        <!-- 4 swimlanes -->
-        <div class="how-swimlane">
-          <div class="how-lane-label">
-            <span class="how-lane-num">01</span>
-            <span class="how-lane-name" data-i18n-en="Ingest" data-i18n-zh="接入">Ingest</span>
-          </div>
-          <div class="how-lane-track">
+      <div class="how-grid">
+    <div class="how-stage">
+      <span class="how-stage-num">01</span>
+      <h3 class="how-stage-title" data-i18n-en="Ingest" data-i18n-zh="接入">Ingest</h3>
+      <p class="how-stage-desc" data-i18n-en="Detection signals flow in from SIEM, NIDS, and threat-intel platforms in near real time. Each event is normalized, deduped, and stamped with source, severity, and tenant context before anything downstream sees it." data-i18n-zh="来自 SIEM、NIDS 与威胁情报平台的检测信号近实时流入。每一条事件在交给下游之前都会被归一化、去重，并打上来源、严重度与租户上下文标签。">Detection signals flow in from SIEM, NIDS, and threat-intel platforms.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">02</span>
+      <h3 class="how-stage-title" data-i18n-en="Analyze" data-i18n-zh="分析">Analyze</h3>
+      <p class="how-stage-desc" data-i18n-en="A team of specialized agents — triage, investigation, and enrichment — reads the event, pulls context from the knowledge base, and assembles a verdict with evidence attached. False positives get folded back into the model so they don't reappear tomorrow." data-i18n-zh="一组专职智能体——分流、调查、富化——读取事件、从知识库拉取上下文，并产出一份带证据的判定结论。误报会被回灌到模型中，避免明天再次出现。">Specialized agents read the event and assemble a verdict with evidence.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">03</span>
+      <h3 class="how-stage-title" data-i18n-en="Decide &amp; act" data-i18n-zh="决策与执行">Decide &amp; act</h3>
+      <p class="how-stage-desc" data-i18n-en="The SOAR engine matches the verdict to one of 22 production playbooks and executes it within the autonomy budget the playbook declares. Anything outside that budget is parked in a human review queue with the full reasoning trail." data-i18n-zh="SOAR 引擎把判定结果匹配到 22 个生产级剧本之一，并在剧本声明的自主预算内执行。超出预算的动作会带着完整推理链进入人工审核队列。">The SOAR engine matches the verdict to a playbook and executes it.</p>
+    </div>
+
+    <div class="how-stage">
+      <span class="how-stage-num">04</span>
+      <h3 class="how-stage-title" data-i18n-en="Learn" data-i18n-zh="复盘学习">Learn</h3>
+      <p class="how-stage-desc" data-i18n-en="Every incident — automated or human-handled — writes a structured postmortem back to the knowledge base. Detection rules get tuned, playbook thresholds get adjusted, and the next cycle starts with a slightly sharper system." data-i18n-zh="每一次事件——无论自动处理还是人工处置——都会写回一份结构化复盘到知识库。检测规则得到调优，剧本阈值被校准，下一轮从一个稍微更敏锐的系统开始。">Every incident writes a structured postmortem back to the knowledge base.</p>
+    </div>
+  </div>
+
+  <p class="how-footnote" data-i18n-en="See the architecture below for which systems back each stage." data-i18n-zh="下方架构图展示各阶段由哪些系统支撑。">See the architecture below for which systems back each stage.</p>
+
+<div class="how-lane-track">
             <!-- node: SIEM -->
             <div class="how-node how-node-cloud">
               <svg class="how-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
