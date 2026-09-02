@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "strixoc",
+    "subtitle": "Open-source AI penetration testing",
+    "output": "strixoc-architecture.html"
+  },
+  "components": [
+    {
+      "id": "cli",
+      "type": "external",
+      "label": "Operator",
+      "sublabel": "CLI",
+      "pos": [
+        60,
+        60
+      ],
+      "size": [
+        140,
+        60
+      ]
+    },
+    {
+      "id": "agents",
+      "type": "cloud",
+      "label": "openai-agents[litellm]",
+      "sublabel": "Python 3.12+",
+      "pos": [
+        280,
+        60
+      ],
+      "size": [
+        200,
+        60
+      ],
+      "tag": "Pydantic 2.11 + pydantic-settings"
+    },
+    {
+      "id": "litellm",
+      "type": "cloud",
+      "label": "LiteLLM",
+      "sublabel": "multi-LLM router",
+      "pos": [
+        550,
+        60
+      ],
+      "size": [
+        170,
+        60
+      ]
+    },
+    {
+      "id": "openai",
+      "type": "cloud",
+      "label": "OpenAI 2.45+",
+      "sublabel": "LLM provider",
+      "pos": [
+        790,
+        60
+      ],
+      "size": [
+        170,
+        60
+      ]
+    },
+    {
+      "id": "tools",
+      "type": "backend",
+      "label": "Pentest Tools",
+      "sublabel": "recon + exploit",
+      "pos": [
+        550,
+        220
+      ],
+      "size": [
+        170,
+        60
+      ],
+      "tag": "scanner"
+    }
+  ],
+  "connections": [
+    {
+      "id": "cli-agents",
+      "from": "cli",
+      "to": "agents",
+      "label": "scope"
+    },
+    {
+      "id": "agents-litellm",
+      "from": "agents",
+      "to": "litellm",
+      "label": "route",
+      "variant": "emphasis"
+    },
+    {
+      "id": "litellm-openai",
+      "from": "litellm",
+      "to": "openai",
+      "label": "call"
+    },
+    {
+      "id": "agents-tools",
+      "from": "agents",
+      "to": "tools",
+      "label": "use",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Operator",
+      "items": [
+        "CLI drives the agent",
+        "Operator owns scope"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Reasoning",
+      "items": [
+        "LiteLLM routes to OpenAI",
+        "Pydantic validates every step"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Action",
+      "items": [
+        "Tools fire recon + exploit",
+        "Findings return to the operator"
+      ]
+    }
+  ]
+}

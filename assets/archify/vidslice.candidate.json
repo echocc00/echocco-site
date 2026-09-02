@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "VidSlice",
+    "subtitle": "Vector index builder for OpenCut",
+    "output": "vidslice-architecture.html"
+  },
+  "components": [
+    {
+      "id": "cli",
+      "type": "external",
+      "label": "Operator",
+      "sublabel": "CLI",
+      "pos": [60, 60],
+      "size": [140, 60]
+    },
+    {
+      "id": "python",
+      "type": "backend",
+      "label": "Python 3.10+",
+      "sublabel": "pipeline",
+      "pos": [310, 60],
+      "size": [150, 60],
+      "tag": "Pillow + NumPy"
+    },
+    {
+      "id": "pillow",
+      "type": "cloud",
+      "label": "Pillow",
+      "sublabel": "frame extract",
+      "pos": [560, 0],
+      "size": [150, 60]
+    },
+    {
+      "id": "numpy",
+      "type": "cloud",
+      "label": "NumPy",
+      "sublabel": "embeddings",
+      "pos": [560, 220],
+      "size": [150, 60]
+    },
+    {
+      "id": "yaml",
+      "type": "cloud",
+      "label": "PyYAML 6",
+      "sublabel": "config",
+      "pos": [560, 100],
+      "size": [150, 60]
+    },
+    {
+      "id": "lancedb",
+      "type": "database",
+      "label": "LanceDB",
+      "sublabel": "vector store",
+      "pos": [810, 60],
+      "size": [170, 60],
+      "tag": "per-frame index"
+    }
+  ],
+  "connections": [
+    {
+      "id": "cli-python",
+      "from": "cli",
+      "to": "python",
+      "label": "index"
+    },
+    {
+      "id": "python-pillow",
+      "from": "python",
+      "to": "pillow",
+      "label": "frames"
+    },
+    {
+      "id": "python-numpy",
+      "from": "python",
+      "to": "numpy",
+      "label": "embed"
+    },
+    {
+      "id": "python-yaml",
+      "from": "python",
+      "to": "yaml",
+      "label": "config",
+      "labelAt": [485, 120]
+    },
+    {
+      "id": "pillow-lancedb",
+      "from": "pillow",
+      "to": "lancedb",
+      "label": "store"
+    },
+    {
+      "id": "numpy-lancedb",
+      "from": "numpy",
+      "to": "lancedb",
+      "label": "store"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest",
+      "items": [
+        "CLI drives the pipeline",
+        "Pillow extracts frames"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Embed",
+      "items": [
+        "NumPy computes embeddings",
+        "PyYAML carries config"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Store",
+      "items": [
+        "LanceDB holds the per-frame index",
+        "Validates OpenCut material"
+      ]
+    }
+  ]
+}

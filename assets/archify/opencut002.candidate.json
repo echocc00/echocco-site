@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "opencut v3",
+    "subtitle": "AI-driven multi-domain video production",
+    "output": "opencut002-architecture.html",
+    "viewBox": [1140, 600]
+  },
+  "components": [
+    {
+      "id": "client",
+      "type": "external",
+      "label": "Client",
+      "sublabel": "web / mobile",
+      "pos": [60, 270],
+      "size": [140, 60]
+    },
+    {
+      "id": "fastapi",
+      "type": "backend",
+      "label": "FastAPI + Uvicorn",
+      "sublabel": "Python 3.10+",
+      "pos": [240, 270],
+      "size": [160, 60],
+      "tag": "Pydantic v2"
+    },
+    {
+      "id": "edge_tts",
+      "type": "cloud",
+      "label": "edge-tts",
+      "sublabel": "voice synthesis",
+      "pos": [480, 80],
+      "size": [150, 60]
+    },
+    {
+      "id": "openai",
+      "type": "cloud",
+      "label": "OpenAI SDK",
+      "sublabel": "LLM script",
+      "pos": [480, 270],
+      "size": [150, 60]
+    },
+    {
+      "id": "torch",
+      "type": "cloud",
+      "label": "PyTorch",
+      "sublabel": "align extra",
+      "pos": [480, 460],
+      "size": [150, 60]
+    },
+    {
+      "id": "opencv",
+      "type": "cloud",
+      "label": "OpenCV",
+      "sublabel": "face detect extra",
+      "pos": [720, 80],
+      "size": [150, 60]
+    },
+    {
+      "id": "transformers",
+      "type": "cloud",
+      "label": "Transformers",
+      "sublabel": "align extra",
+      "pos": [720, 270],
+      "size": [150, 60]
+    },
+    {
+      "id": "httpx",
+      "type": "cloud",
+      "label": "httpx async",
+      "sublabel": "external APIs",
+      "pos": [720, 460],
+      "size": [150, 60]
+    },
+    {
+      "id": "render",
+      "type": "cloud",
+      "label": "Render Pipeline",
+      "sublabel": "ffmpeg + compose",
+      "pos": [910, 270],
+      "size": [180, 60]
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-fastapi",
+      "from": "client",
+      "to": "fastapi",
+      "label": "REST",
+      "labelAt": [220, 300]
+    },
+    {
+      "id": "fastapi-edge",
+      "from": "fastapi",
+      "to": "edge_tts",
+      "label": "speak",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "via": [[320, 200], [555, 200]],
+      "labelAt": [437, 215]
+    },
+    {
+      "id": "fastapi-openai",
+      "from": "fastapi",
+      "to": "openai",
+      "label": "script",
+      "labelAt": [440, 300]
+    },
+    {
+      "id": "fastapi-torch",
+      "from": "fastapi",
+      "to": "torch",
+      "label": "align",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[320, 400], [555, 400]],
+      "labelAt": [437, 400]
+    },
+    {
+      "id": "fastapi-opencv",
+      "from": "fastapi",
+      "to": "opencv",
+      "label": "detect",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "via": [[320, 170], [795, 170]],
+      "labelAt": [600, 160]
+    },
+    {
+      "id": "fastapi-httpx",
+      "from": "fastapi",
+      "to": "httpx",
+      "label": "fetch",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[320, 420], [795, 420]],
+      "labelAt": [600, 440]
+    },
+    {
+      "id": "torch-transformers",
+      "from": "torch",
+      "to": "transformers",
+      "label": "models",
+      "fromSide": "bottom",
+      "toSide": "right",
+      "via": [[555, 520], [555, 540], [900, 540], [900, 300], [870, 300]],
+      "labelAt": [680, 530]
+    },
+    {
+      "id": "fastapi-render",
+      "from": "fastapi",
+      "to": "render",
+      "label": "compose",
+      "variant": "emphasis",
+      "fromSide": "top",
+      "toSide": "top",
+      "via": [[320, 190], [1000, 190]],
+      "labelAt": [660, 205]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Plan",
+      "items": [
+        "FastAPI receives request",
+        "OpenAI SDK scripts the cut"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Synthesize",
+      "items": [
+        "edge-tts voices",
+        "PyTorch + Transformers align"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Render",
+      "items": [
+        "OpenCV face detect",
+        "httpx fetches external media",
+        "Render pipeline composes final cut"
+      ]
+    }
+  ]
+}

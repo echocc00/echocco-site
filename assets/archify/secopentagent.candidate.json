@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "SecOpentAgent",
+    "subtitle": "Self-improving AI agent · Hermes fork",
+    "output": "secopentagent-architecture.html",
+    "viewBox": [1280, 480]
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "User",
+      "sublabel": "chat / CLI",
+      "pos": [60, 160],
+      "size": [140, 60]
+    },
+    {
+      "id": "fastapi",
+      "type": "backend",
+      "label": "FastAPI + Starlette",
+      "sublabel": "Python 3.11-3.13",
+      "pos": [310, 160],
+      "size": [160, 60],
+      "tag": "Pydantic v2"
+    },
+    {
+      "id": "agents",
+      "type": "cloud",
+      "label": "openai-agents SDK",
+      "sublabel": "planner + tools",
+      "pos": [560, 160],
+      "size": [170, 60]
+    },
+    {
+      "id": "litellm",
+      "type": "cloud",
+      "label": "LiteLLM router",
+      "sublabel": "multi-LLM",
+      "pos": [810, 0],
+      "size": [170, 60],
+      "tag": "Anthropic / OpenAI / local"
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP 1.28",
+      "sublabel": "tool bridge",
+      "pos": [810, 160],
+      "size": [170, 60]
+    },
+    {
+      "id": "matrix",
+      "type": "security",
+      "label": "matrix-encrypted",
+      "sublabel": "transport",
+      "pos": [560, 320],
+      "size": [170, 60]
+    },
+    {
+      "id": "browser",
+      "type": "cloud",
+      "label": "browser CDP",
+      "sublabel": "observe + act",
+      "pos": [810, 320],
+      "size": [170, 60]
+    },
+    {
+      "id": "otel",
+      "type": "cloud",
+      "label": "OpenTelemetry SDK",
+      "sublabel": "traces + spans",
+      "pos": [1060, 320],
+      "size": [180, 60]
+    }
+  ],
+  "connections": [
+    {
+      "id": "user-fastapi",
+      "from": "user",
+      "to": "fastapi",
+      "label": "chat"
+    },
+    {
+      "id": "fastapi-agents",
+      "from": "fastapi",
+      "to": "agents",
+      "label": "plan"
+    },
+    {
+      "id": "agents-litellm",
+      "from": "agents",
+      "to": "litellm",
+      "label": "route",
+      "variant": "emphasis",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "agents-mcp",
+      "from": "agents",
+      "to": "mcp",
+      "label": "tools",
+      "variant": "security"
+    },
+    {
+      "id": "matrix-fastapi",
+      "from": "matrix",
+      "to": "fastapi",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "agents-browser",
+      "from": "agents",
+      "to": "browser",
+      "label": "act",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "agents-otel",
+      "from": "agents",
+      "to": "otel",
+      "label": "traces",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Plan",
+      "items": [
+        "FastAPI receives user request",
+        "openai-agents plans tool sequence"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Execute",
+      "items": [
+        "LiteLLM routes to Anthropic / OpenAI / local",
+        "MCP exposes tools, browser CDP acts"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Secure",
+      "items": [
+        "matrix-encrypted transport",
+        "OpenTelemetry spans every step"
+      ]
+    }
+  ]
+}

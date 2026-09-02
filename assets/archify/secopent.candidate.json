@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "SecOpent",
+    "subtitle": "Authorized pentest workbench",
+    "output": "secopent-architecture.html",
+    "viewBox": [1040, 360]
+  },
+  "components": [
+    {
+      "id": "op",
+      "type": "external",
+      "label": "Operator",
+      "sublabel": "CLI / Web",
+      "pos": [60, 60],
+      "size": [140, 60]
+    },
+    {
+      "id": "fastapi",
+      "type": "backend",
+      "label": "FastAPI",
+      "sublabel": "Python 3.11",
+      "pos": [310, 60],
+      "size": [150, 60],
+      "tag": "SQLAlchemy 2 + Jinja2"
+    },
+    {
+      "id": "crypto",
+      "type": "security",
+      "label": "cryptography 42",
+      "sublabel": "signing + secrets",
+      "pos": [820, 60],
+      "size": [160, 60]
+    },
+    {
+      "id": "structlog",
+      "type": "cloud",
+      "label": "structlog 24",
+      "sublabel": "JSON logs",
+      "pos": [60, 230],
+      "size": [150, 60]
+    },
+    {
+      "id": "pg",
+      "type": "database",
+      "label": "PostgreSQL",
+      "sublabel": "findings + catalog",
+      "pos": [300, 230],
+      "size": [170, 60]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "FastMCP",
+      "sublabel": "stdio + HTTP",
+      "pos": [560, 230],
+      "size": [170, 60],
+      "tag": "MCP 1.9"
+    },
+    {
+      "id": "otel",
+      "type": "cloud",
+      "label": "OpenTelemetry + Prometheus",
+      "sublabel": "traces + metrics",
+      "pos": [820, 230],
+      "size": [200, 60]
+    }
+  ],
+  "connections": [
+    {
+      "id": "op-fastapi",
+      "from": "op",
+      "to": "fastapi",
+      "label": "REST",
+      "labelAt": [255, 50]
+    },
+    {
+      "id": "fastapi-crypto",
+      "from": "fastapi",
+      "to": "crypto",
+      "label": "sign",
+      "labelAt": [645, 50]
+    },
+    {
+      "id": "fastapi-structlog",
+      "from": "fastapi",
+      "to": "structlog",
+      "label": "log",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 175], [135, 175]],
+      "labelAt": [135, 210]
+    },
+    {
+      "id": "fastapi-pg",
+      "from": "fastapi",
+      "to": "pg",
+      "label": "SQLAlchemy",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 175]],
+      "labelAt": [385, 210]
+    },
+    {
+      "id": "fastapi-mcp",
+      "from": "fastapi",
+      "to": "mcp",
+      "label": "tools",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 175], [645, 175]],
+      "labelAt": [645, 210]
+    },
+    {
+      "id": "fastapi-otel",
+      "from": "fastapi",
+      "to": "otel",
+      "label": "traces",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 175], [920, 175]],
+      "labelAt": [920, 210]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Catalog",
+      "items": [
+        "Operator drives FastAPI",
+        "Postgres holds findings + catalog"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Tools",
+      "items": [
+        "FastMCP exposes deterministic tools",
+        "cryptography signs every finding"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Audit",
+      "items": [
+        "OpenTelemetry traces every action",
+        "structlog JSON audit trail"
+      ]
+    }
+  ]
+}

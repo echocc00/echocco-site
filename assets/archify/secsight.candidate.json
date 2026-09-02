@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "SecSight",
+    "subtitle": "Self-hosted AI SOC platform",
+    "output": "secsight-architecture.html",
+    "viewBox": [1200, 380]
+  },
+  "components": [
+    {
+      "id": "analyst",
+      "type": "external",
+      "label": "SOC Analyst",
+      "sublabel": "Web UI",
+      "pos": [60, 40],
+      "size": [140, 60]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI",
+      "sublabel": "Python 3.12",
+      "pos": [310, 40],
+      "size": [150, 60],
+      "tag": "async + Pydantic v2"
+    },
+    {
+      "id": "rabbit",
+      "type": "messagebus",
+      "label": "RabbitMQ",
+      "sublabel": "job queue",
+      "pos": [510, 40],
+      "size": [170, 60]
+    },
+    {
+      "id": "celery",
+      "type": "backend",
+      "label": "Celery Worker",
+      "sublabel": "Python 3.12",
+      "pos": [730, 40],
+      "size": [150, 60],
+      "tag": "AI inference jobs"
+    },
+    {
+      "id": "ollama",
+      "type": "cloud",
+      "label": "Ollama",
+      "sublabel": "local LLM",
+      "pos": [930, 40],
+      "size": [150, 60]
+    },
+    {
+      "id": "prom",
+      "type": "cloud",
+      "label": "Prometheus + Grafana",
+      "sublabel": "metrics",
+      "pos": [60, 220],
+      "size": [160, 60]
+    },
+    {
+      "id": "postgres",
+      "type": "database",
+      "label": "PostgreSQL 16",
+      "sublabel": "events + alerts",
+      "pos": [310, 220],
+      "size": [170, 60]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP Server",
+      "sublabel": "tool surface",
+      "pos": [540, 220],
+      "size": [150, 60],
+      "tag": "FastMCP stdio + HTTP"
+    },
+    {
+      "id": "redis",
+      "type": "database",
+      "label": "Redis 7",
+      "sublabel": "session + cache",
+      "pos": [740, 220],
+      "size": [150, 60]
+    }
+  ],
+  "connections": [
+    {
+      "id": "analyst-api",
+      "from": "analyst",
+      "to": "api",
+      "label": "REST"
+    },
+    {
+      "id": "api-pg",
+      "from": "api",
+      "to": "postgres",
+      "label": "SQLAlchemy",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDx": 60
+    },
+    {
+      "id": "api-redis",
+      "from": "api",
+      "to": "redis",
+      "label": "cache",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 200], [815, 200]],
+            "labelAt": [555, 190]
+    },
+    {
+      "id": "api-rabbit",
+      "from": "api",
+      "to": "rabbit",
+      "label": "enqueue",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left",
+      "labelDy": -18
+    },
+    {
+      "id": "rabbit-celery",
+      "from": "rabbit",
+      "to": "celery",
+      "label": "consume"
+    },
+    {
+      "id": "celery-ollama",
+      "from": "celery",
+      "to": "ollama",
+      "label": "infer",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-mcp",
+      "from": "api",
+      "to": "mcp",
+      "label": "tools",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 160], [615, 160]],
+      "labelAt": [450, 150]
+    },
+    {
+      "id": "api-prom",
+      "from": "api",
+      "to": "prom",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [[385, 210], [140, 210]],
+      "labelDx": 40
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest",
+      "items": [
+        "Analyst UI drives FastAPI",
+        "RabbitMQ buffers AI work"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Inference",
+      "items": [
+        "Celery worker pulls Ollama for triage",
+        "FastMCP exposes tools"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Observability",
+      "items": [
+        "Prometheus metrics from API + worker",
+        "OpenTelemetry traces pipeline-wide"
+      ]
+    }
+  ]
+}
