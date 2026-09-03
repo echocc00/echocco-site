@@ -1,8 +1,8 @@
 # Cloudflare Pages _redirects
-# Index pages: trailing-slash to .html (200 = serve file)
-# DO NOT redirect individual project pages (causes 308 loop)
-# CF Pages auto-rewrites /projects/secsight → projects/secsight.html
+# CF Pages auto-rewrites URLs to remove .html trailing extension.
+# We just need to handle index pages and clean URLs.
 
+# Index pages — use 200 to serve the file directly (CF will rewrite URL)
 /                           /index.html                       200
 /about/                     /about.html                       200
 /now/                       /now.html                         200
@@ -10,17 +10,7 @@
 /colophon/                  /colophon.html                    200
 /projects/                  /projects/index.html              200
 
-# Individual project pages - let CF Pages auto-handle
-# /projects/secsight       → projects/secsight.html  (CF auto)
-/projects/secsight.html    → /projects/secsight       301
-/projects/secopent.html    → /projects/secopent       301
-/projects/netsage.html     → /projects/netsage        301
-/projects/vidslice.html    → /projects/vidslice       301
-/projects/opencut002.html  → /projects/opencut002     301
-/projects/hydro-fork.html  → /projects/hydro-fork     301
-/projects/opencut.html     → /projects/opencut002.html 301
-
-# Chinese mirror
+# Chinese mirror - same pattern
 /zh                         /zh/index.html                   200
 /zh/about/                  /zh/about.html                   200
 /zh/now/                    /zh/now.html                     200
@@ -28,18 +18,11 @@
 /zh/colophon/               /zh/colophon.html                200
 /zh/projects/               /zh/projects/index.html          200
 
-/zh/projects/secsight.html  /zh/projects/secsight            301
-/zh/projects/secopent.html  /zh/projects/secopent            301
-/zh/projects/netsage.html   /zh/projects/netsage             301
-/zh/projects/vidslice.html  /zh/projects/vidslice            301
-/zh/projects/opencut002.html → /zh/projects/opencut002        301
-/zh/projects/hydro-fork.html → /zh/projects/hydro-fork        301
-
-# Legacy URLs
-/projects/opencut/          /projects/opencut002.html        301
-
 # Allow direct access to special files
 /sw.js                      /sw.js                           200
 /rss.xml                    /rss.xml                         200
 /zh/rss.xml                 /zh/rss.xml                      200
 /uses.json                  /uses.json                       200
+
+# Legacy URL
+/projects/opencut/          /projects/opencut002.html        301
