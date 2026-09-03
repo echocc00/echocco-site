@@ -30,3 +30,19 @@
 
 /assets/js/*
   Cache-Control: public, max-age=3600, must-revalidate
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /
+
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/zh/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/uses.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=86400

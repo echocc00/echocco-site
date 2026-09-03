@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SecSight · AI-driven SOC platform · echocc00</title>
-<meta name="description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
+<title>SecSight · AI 驱动的 SOC 平台 · echocc00</title>
+<meta name="description" content="SecSight 是一个面向中小型 SOC 团队的 AI 驱动安全运营平台,这些团队无法维持 7x24 的检测与响应能力。它把多代理 SecOps Copilot 与自动处置 SOAR 引擎结合,让常规事件(钓鱼分诊、误报清理、IOC 富化)按预设的自主性等级自动处理,复杂的才进入人工审核队列。">
 <meta name="theme-color" content="#08090a">
-<link rel="canonical" href="https://www.echocco.com/projects/secsight/">
+<link rel="canonical" href="https://www.echocco.com/zh/projects/secsight/">
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secsight/">
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secsight/">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.echocco.com/projects/secsight/">
-<meta property="og:title" content="SecSight · AI-driven SOC platform · echocc00">
-<meta property="og:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
+<meta property="og:url" content="https://www.echocco.com/zh/projects/secsight/">
+<meta property="og:title" content="SecSight · AI 驱动的 SOC 平台 · echocc00">
+<meta property="og:description" content="SecSight 是一个面向中小型 SOC 团队的 AI 驱动安全运营平台,这些团队无法维持 7x24 的检测与响应能力。它把多代理 SecOps Copilot 与自动处置 SOAR 引擎结合,让常规事件(钓鱼分诊、误报清理、IOC 富化)按预设的自主性等级自动处理,复杂的才进入人工审核队列。">
 <meta property="og:image" content="https://www.echocco.com/assets/og/secsight.png">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SecSight · AI-driven SOC platform · echocc00">
-<meta name="twitter:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
+<meta name="twitter:title" content="SecSight · AI 驱动的 SOC 平台 · echocc00">
+<meta name="twitter:description" content="SecSight 是一个面向中小型 SOC 团队的 AI 驱动安全运营平台,这些团队无法维持 7x24 的检测与响应能力。它把多代理 SecOps Copilot 与自动处置 SOAR 引擎结合,让常规事件(钓鱼分诊、误报清理、IOC 富化)按预设的自主性等级自动处理,复杂的才进入人工审核队列。">
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/secsight.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
 <body>
 <nav class="nav glass">
   <div class="shell nav-inner">
-    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+    <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
     <div class="nav-menu">
-      <a class="nav-link " href="/">home</a>
-      <a class="nav-link active" href="/projects/">projects</a>
-      <a class="nav-link " href="/about/">about</a>
-      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <a class="nav-link " href="/zh/">首页</a>
+      <a class="nav-link active" href="/zh/projects/">项目</a>
+      <a class="nav-link " href="/zh/about/">关于</a>
+      <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
       <span class="lang-switch">
-        <a href="/zh/projects/secsight/" class="active" hreflang="zh-CN">中文</a>
+        <a href="/projects/secsight/" class="" hreflang="en">EN</a>
       </span>
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
     </div>
@@ -46,9 +46,9 @@
 <header class="proj-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%); color: white;">
   <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="shell">
-    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /projects/secsight/</span></div>
+    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /zh/projects/secsight/</span></div>
     <h1 class="proj-title">SecSight</h1>
-    <p class="proj-tagline">AI-driven SOC platform</p>
+    <p class="proj-tagline">AI 驱动的 SOC 平台</p>
     <div class="proj-meta-bar">
       <span class="proj-ver">v0.5.1</span>
       <span class="dot"></span>
@@ -62,8 +62,8 @@
 <section class="proj-body">
   <div class="shell proj-layout">
     <article class="proj-main" data-reveal="rise">
-      <h2 class="proj-h2" data-reveal="curtain">## overview</h2>
-      <div class="proj-desc"><p>SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Copilot with an auto-remediation SOAR engine so routine incidents (phishing triage, false-positive sweep, IOC enrichment) are handled automatically under well-defined autonomy levels, while the complex ones land in a human review queue.</p></div>
+      <h2 class="proj-h2" data-reveal="curtain">## 概览</h2>
+      <div class="proj-desc"><p>SecSight 是一个面向中小型 SOC 团队的 AI 驱动安全运营平台,这些团队无法维持 7x24 的检测与响应能力。它把多代理 SecOps Copilot 与自动处置 SOAR 引擎结合,让常规事件(钓鱼分诊、误报清理、IOC 富化)按预设的自主性等级自动处理,复杂的才进入人工审核队列。</p></div>
 
         <section class="impact-section" data-reveal>
           <header class="impact-head">
@@ -288,25 +288,25 @@
         </section>
 
 
-      <h2 class="proj-h2" data-reveal="curtain">## technical architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 技术架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/secsight.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/secsight.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## product architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 产品架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/secsight-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/secsight-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## capabilities</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 能力</h2>
       <div class="proj-features">
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">AI SecOps Copilot</div><div class="proj-feat-desc">Multi-agent SOC assistant over SIEM/ticket/KB.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Auto-remediation SOAR</div><div class="proj-feat-desc">22 production playbooks across 5 autonomy levels.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">4-layer knowledge base</div><div class="proj-feat-desc">Process-isolated; aligned with 等保 2.0.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">MCP & LiteLLM</div><div class="proj-feat-desc">Pluggable LLM backend, MCP tool bus, Qdrant RAG.</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">AI SecOps Copilot</div><div class="proj-feat-desc">多代理 SOC 助手,覆盖 SIEM / 工单 / 知识库。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">自动处置 SOAR</div><div class="proj-feat-desc">22 个生产剧本,横跨 5 级自主性。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">4 层知识库</div><div class="proj-feat-desc">进程隔离,对齐等保 2.0。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">MCP & LiteLLM</div><div class="proj-feat-desc">可插拔 LLM 后端, MCP 工具总线, Qdrant RAG。</div></div>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## screenshots</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 截图</h2>
       <div class="proj-screenshots">
         <figure class="demo-frame" data-reveal="image" data-parallax="0.08">
           <picture>
@@ -317,19 +317,19 @@
         </figure>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## metrics</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 数据</h2>
       <ul class="proj-metrics">
-        <li data-reveal="rise" style="--i:0;">22 production SOAR playbooks</li>
-        <li data-reveal="rise" style="--i:1;">5 autonomy levels (L0-L4)</li>
-        <li data-reveal="rise" style="--i:2;">234 tests · 87.8% coverage</li>
-        <li data-reveal="rise" style="--i:3;">4-layer knowledge base</li>
-        <li data-reveal="rise" style="--i:4;">Process-isolated deployment</li>
+        <li data-reveal="rise" style="--i:0;">22 个生产 SOAR 剧本</li>
+        <li data-reveal="rise" style="--i:1;">5 级自主性 (L0-L4)</li>
+        <li data-reveal="rise" style="--i:2;">234 个测试 · 87.8% 覆盖率</li>
+        <li data-reveal="rise" style="--i:3;">4 层知识库</li>
+        <li data-reveal="rise" style="--i:4;">进程隔离部署</li>
       </ul>
     </article>
 
     <aside class="proj-side">
       <div class="side-block">
-        <div class="side-title">at a glance</div>
+        <div class="side-title">速览</div>
         <dl>
           <dt>version</dt><dd>v0.5.1</dd>
           <dt>license</dt><dd>Apache-2.0</dd>
@@ -338,7 +338,7 @@
         </dl>
       </div>
       <div class="side-block">
-        <div class="side-title">stack</div>
+        <div class="side-title">技术栈</div>
         <div class="side-list">
           <span class="pill">fastapi · langgraph</span>
           <span class="pill">wazuh · suricata</span>
@@ -346,13 +346,13 @@
         </div>
       </div>
       <div class="side-block">
-        <div class="side-title">## more from me</div>
+        <div class="side-title">## 其它项目</div>
         <ul class="side-more">
-          <li><a href="/projects/secopent/">→ SecOpent</a></li>
-        <li><a href="/projects/netsage/">→ NetSage</a></li>
-        <li><a href="/projects/vidslice/">→ VidSlice</a></li>
-        <li><a href="/projects/opencut002/">→ OpenCut v3</a></li>
-        <li><a href="/projects/hydro-fork/">→ Hydro OJ</a></li>
+          <li><a href="/zh/projects/secopent/">→ SecOpent</a></li>
+        <li><a href="/zh/projects/netsage/">→ NetSage</a></li>
+        <li><a href="/zh/projects/vidslice/">→ VidSlice</a></li>
+        <li><a href="/zh/projects/opencut002/">→ OpenCut v3</a></li>
+        <li><a href="/zh/projects/hydro-fork/">→ Hydro OJ</a></li>
         </ul>
       </div>
     </aside>
@@ -364,12 +364,12 @@
 <script defer src="/assets/js/sw-register.js"></script>
 <footer class="footer">
   <div class="shell footer-row">
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div>由 echocc00 构建和维护 · 上海 · 2026</div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="/">home</a>
-      <a href="/projects/">projects</a>
-      <a href="/about/">about</a>
-      <a href="/assets/cv.pdf">cv</a>
+      <a href="/zh/">首页</a>
+      <a href="/zh/projects/">项目</a>
+      <a href="/zh/about/">关于</a>
+      <a href="/assets/cv.pdf">简历</a>
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
       <span>Apache-2.0</span>

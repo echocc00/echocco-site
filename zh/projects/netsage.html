@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NetSage · AI network engineer · echocc00</title>
-<meta name="description" content="NetSage takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline - every change pas">
+<title>NetSage · AI 网络工程师 · echocc00</title>
+<meta name="description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 <meta name="theme-color" content="#08090a">
-<link rel="canonical" href="https://www.echocco.com/projects/netsage/">
+<link rel="canonical" href="https://www.echocco.com/zh/projects/netsage/">
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/netsage/">
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/netsage/">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.echocco.com/projects/netsage/">
-<meta property="og:title" content="NetSage · AI network engineer · echocc00">
-<meta property="og:description" content="NetSage takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline - every change pas">
+<meta property="og:url" content="https://www.echocco.com/zh/projects/netsage/">
+<meta property="og:title" content="NetSage · AI 网络工程师 · echocc00">
+<meta property="og:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 <meta property="og:image" content="https://www.echocco.com/assets/og/netsage.png">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NetSage · AI network engineer · echocc00">
-<meta name="twitter:description" content="NetSage takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline - every change pas">
+<meta name="twitter:title" content="NetSage · AI 网络工程师 · echocc00">
+<meta name="twitter:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/netsage.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
 <body>
 <nav class="nav glass">
   <div class="shell nav-inner">
-    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+    <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
     <div class="nav-menu">
-      <a class="nav-link " href="/">home</a>
-      <a class="nav-link active" href="/projects/">projects</a>
-      <a class="nav-link " href="/about/">about</a>
-      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <a class="nav-link " href="/zh/">首页</a>
+      <a class="nav-link active" href="/zh/projects/">项目</a>
+      <a class="nav-link " href="/zh/about/">关于</a>
+      <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
       <span class="lang-switch">
-        <a href="/zh/projects/netsage/" class="active" hreflang="zh-CN">中文</a>
+        <a href="/projects/netsage/" class="" hreflang="en">EN</a>
       </span>
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
     </div>
@@ -46,9 +46,9 @@
 <header class="proj-hero" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%); color: white;">
   <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="shell">
-    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /projects/netsage/</span></div>
+    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /zh/projects/netsage/</span></div>
     <h1 class="proj-title">NetSage</h1>
-    <p class="proj-tagline">AI network engineer</p>
+    <p class="proj-tagline">AI 网络工程师</p>
     <div class="proj-meta-bar">
       <span class="proj-ver">v0.1.1</span>
       <span class="dot"></span>
@@ -62,8 +62,8 @@
 <section class="proj-body">
   <div class="shell proj-layout">
     <article class="proj-main" data-reveal="rise">
-      <h2 class="proj-h2" data-reveal="curtain">## overview</h2>
-      <div class="proj-desc"><p>NetSage takes over the network engineer workload: design, config generation, troubleshooting, deployment, and audit. Eight specialized agents collaborate under a three-gate pipeline - every change passes Containerlab simulation, Batfish validation, and human approval with snapshot rollback before it touches a real device.</p></div>
+      <h2 class="proj-h2" data-reveal="curtain">## 概览</h2>
+      <div class="proj-desc"><p>NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。</p></div>
 
         <section class="impact-section" data-reveal>
           <header class="impact-head">
@@ -272,25 +272,25 @@
         </section>
 
 
-      <h2 class="proj-h2" data-reveal="curtain">## technical architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 技术架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/netsage.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/netsage.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## product architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 产品架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/netsage-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/netsage-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## capabilities</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 能力</h2>
       <div class="proj-features">
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">8 specialized agents</div><div class="proj-feat-desc">planner · config_engineer · validator · troubleshooter · deploy · observer · security_auditor · compliance.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">3-gate pipeline</div><div class="proj-feat-desc">Containerlab sim -> Batfish validation -> human approval + snapshot rollback.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">Multi-vendor</div><div class="proj-feat-desc">Huawei VRP · Cisco IOS-XE · H3C · Juniper · Arista.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">Dual source-of-truth</div><div class="proj-feat-desc">NetBox + Nautobot adapters, switchable.</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">8 个专业代理</div><div class="proj-feat-desc">planner · config_engineer · validator · troubleshooter · deploy · observer · security_auditor · compliance。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">三道闸管线</div><div class="proj-feat-desc">Containerlab 仿真 → Batfish 校验 → 人工审批 + 快照回滚。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">多厂商</div><div class="proj-feat-desc">华为 VRP · 思科 IOS-XE · H3C · Juniper · Arista。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">双 Source-of-Truth</div><div class="proj-feat-desc">NetBox + Nautobot 适配器,可切换。</div></div>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## screenshots</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 截图</h2>
       <div class="proj-screenshots">
         <figure class="demo-frame" data-reveal="image" data-parallax="0.08">
           <picture>
@@ -301,19 +301,19 @@
         </figure>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## metrics</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 数据</h2>
       <ul class="proj-metrics">
-        <li data-reveal="rise" style="--i:0;">8 specialized agents</li>
-        <li data-reveal="rise" style="--i:1;">3-gate pipeline (simulate -> validate -> approve)</li>
-        <li data-reveal="rise" style="--i:2;">Multi-vendor: 5 OS families</li>
-        <li data-reveal="rise" style="--i:3;">30 baseline rules (CIS + vendor)</li>
-        <li data-reveal="rise" style="--i:4;">RBAC 5 levels</li>
+        <li data-reveal="rise" style="--i:0;">8 个专业代理</li>
+        <li data-reveal="rise" style="--i:1;">三道闸管线(仿真 → 校验 → 审批)</li>
+        <li data-reveal="rise" style="--i:2;">多厂商: 5 个 OS 家族</li>
+        <li data-reveal="rise" style="--i:3;">30 条基线规则 (CIS + 厂商加固)</li>
+        <li data-reveal="rise" style="--i:4;">RBAC 5 级权限</li>
       </ul>
     </article>
 
     <aside class="proj-side">
       <div class="side-block">
-        <div class="side-title">at a glance</div>
+        <div class="side-title">速览</div>
         <dl>
           <dt>version</dt><dd>v0.1.1</dd>
           <dt>license</dt><dd>Apache-2.0</dd>
@@ -322,7 +322,7 @@
         </dl>
       </div>
       <div class="side-block">
-        <div class="side-title">stack</div>
+        <div class="side-title">技术栈</div>
         <div class="side-list">
           <span class="pill">napalm · containerlab</span>
           <span class="pill">batfish · netbox</span>
@@ -330,13 +330,13 @@
         </div>
       </div>
       <div class="side-block">
-        <div class="side-title">## more from me</div>
+        <div class="side-title">## 其它项目</div>
         <ul class="side-more">
-          <li><a href="/projects/secsight/">→ SecSight</a></li>
-        <li><a href="/projects/secopent/">→ SecOpent</a></li>
-        <li><a href="/projects/vidslice/">→ VidSlice</a></li>
-        <li><a href="/projects/opencut002/">→ OpenCut v3</a></li>
-        <li><a href="/projects/hydro-fork/">→ Hydro OJ</a></li>
+          <li><a href="/zh/projects/secsight/">→ SecSight</a></li>
+        <li><a href="/zh/projects/secopent/">→ SecOpent</a></li>
+        <li><a href="/zh/projects/vidslice/">→ VidSlice</a></li>
+        <li><a href="/zh/projects/opencut002/">→ OpenCut v3</a></li>
+        <li><a href="/zh/projects/hydro-fork/">→ Hydro OJ</a></li>
         </ul>
       </div>
     </aside>
@@ -348,12 +348,12 @@
 <script defer src="/assets/js/sw-register.js"></script>
 <footer class="footer">
   <div class="shell footer-row">
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div>由 echocc00 构建和维护 · 上海 · 2026</div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="/">home</a>
-      <a href="/projects/">projects</a>
-      <a href="/about/">about</a>
-      <a href="/assets/cv.pdf">cv</a>
+      <a href="/zh/">首页</a>
+      <a href="/zh/projects/">项目</a>
+      <a href="/zh/about/">关于</a>
+      <a href="/assets/cv.pdf">简历</a>
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
       <span>Apache-2.0</span>

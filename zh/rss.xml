@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>[你的名字] · /now</title>
+    <link>https://www.echocco.com/zh/now/</link>
+    <atom:link href="https://www.echocco.com/zh/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>我现在在做什么 — 每月更新。受 Derek Sivers 启发。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Sep 2026 12:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>SecSight v0.6: 闭环自动处置</title>
+      <link>https://www.echocco.com/zh/projects/secsight/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-secsight-v0-6-zh</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>替换 L3 SOAR 启发式层为带验证的智能路由。需要生产试点。</description>
+    </item>
+    <item>
+      <title>NetSage v0.2: 多租户 source-of-truth 同步</title>
+      <link>https://www.echocco.com/zh/projects/netsage/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-netsage-v0-2-zh</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>NetBox ↔ Nautobot 双向对账,带冲突解决日志。</description>
+    </item>
+    <item>
+      <title>博客: 脱敏复盘</title>
+      <link>https://www.echocco.com/zh/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-blog-postmortems-zh</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>起草 2 篇 2024-2025 的脱敏复盘。目标: 每月一篇。</description>
+    </item>
+  </channel>
+</rss>

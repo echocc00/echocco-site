@@ -1,13 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.echocco.com/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.echocco.com/about/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.echocco.com/projects/secsight/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/secopent/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/vidslice/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/netsage/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/secopentagent/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/strixoc/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.echocco.com/projects/opencut002/</loc><lastmod>2026-09-01</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.echocco.com/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/about/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/about/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/now/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/now/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/now/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/uses/</loc>
+  <url>
+    <loc>https://www.echocco.com/colophon/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/colophon/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/colophon/"/>
+  </url>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/uses/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/uses/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/secsight/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secsight/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secsight/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/secopent/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secopent/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secopent/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/netsage/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/netsage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/netsage/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/vidslice/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/vidslice/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/vidslice/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/opencut002/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/opencut002/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/opencut002/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/projects/hydro-fork/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/hydro-fork/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/hydro-fork/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/about/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/about/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/now/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/now/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/now/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/uses/</loc>
+  <url>
+    <loc>https://www.echocco.com/zh/colophon/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/colophon/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/colophon/"/>
+  </url>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/uses/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/uses/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/secsight/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secsight/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secsight/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/secopent/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secopent/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secopent/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/netsage/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/netsage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/netsage/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/vidslice/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/vidslice/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/vidslice/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/opencut002/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/opencut002/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/opencut002/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/zh/projects/hydro-fork/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/hydro-fork/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/hydro-fork/"/>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/rss.xml</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.echocco.com/uses.json</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

@@ -1,261 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" data-page-title-en="About — echocc00 · Security &amp; Network Engineer" data-page-title-zh="关于 — echocc00 · 安全与网络工程师" data-page-desc-en="About echocc00 — 9 years in cloud security &amp; network engineering. CCIE-certified. Operating open-source AI security and network automation tooling from Shanghai." data-page-desc-zh="关于 echocc00 — 九年云安全与网络工程经验。CCIE 认证，坐标上海，运营开源 AI 安全与网络自动化工具。">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — echocc00 · Security & Network Engineer</title>
-<meta name="description" content="About echocc00 — 9 years in cloud security &amp; network engineering. CCIE-certified. Currently shipping open-source AI security and network automation tooling from Shanghai.">
-<meta name="author" content="echocc00">
-<meta name="theme-color" content="#000000">
+<title>echocc00 · About</title>
+<meta name="description" content="I'm echocc00, a security and network engineer based in Shanghai. I spent nine years in cloud security & network engineering and I'm CCIE-certified.">
+<meta name="theme-color" content="#08090a">
 <link rel="canonical" href="https://www.echocco.com/about/">
+<link rel="alternate" hreflang="en" href="https://www.echocco.com/about/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/about/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.echocco.com/about/">
+<meta property="og:title" content="echocc00 · About">
+<meta property="og:description" content="I'm echocc00, a security and network engineer based in Shanghai. I spent nine years in cloud security & network engineering and I'm CCIE-certified.">
+<meta property="og:image" content="https://www.echocco.com/assets/og/about.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="echocc00 · About">
+<meta name="twitter:description" content="I'm echocc00, a security and network engineer based in Shanghai. I spent nine years in cloud security & network engineering and I'm CCIE-certified.">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/about.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://www.echocco.com/about/">
-<meta property="og:title" content="About — echocc00 · echocc00">
-<meta property="og:description" content="9 years in cloud security · CCIE · shipping open-source AI SOC + network automation.">
-<meta property="og:image" content="https://www.echocco.com/assets/og/about.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About — echocc00 · echocc00">
-<meta name="twitter:image" content="https://www.echocco.com/assets/og/about.png">
-
-<style>
-/* Inlined critical motion CSS — guarantees animations work even if main.css is cached */
-[data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
-[data-reveal].reveal-in { opacity: 1; transform: translate3d(0, 0, 0); }
-[data-reveal-stagger] > * { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-[data-reveal-stagger].reveal-in > * { opacity: 1; transform: translate3d(0, 0, 0); }
-[data-reveal-stagger].reveal-in > *:nth-child(1) { transition-delay: 0ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(2) { transition-delay: 80ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(3) { transition-delay: 160ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(4) { transition-delay: 240ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(5) { transition-delay: 320ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(6) { transition-delay: 400ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(7) { transition-delay: 480ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(8) { transition-delay: 560ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(9) { transition-delay: 640ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(10) { transition-delay: 720ms; }
-.proj-hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.proj-hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
-.hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal], [data-reveal-stagger] > *, .proj-hero h1, .hero h1 { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
-}
-</style>
-<link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "url": "https://www.echocco.com/about/",
-  "name": "About echocc00",
-  "isPartOf": {"type": "WebSite", "url": "https://www.echocco.com/", "name": "echocc00 portfolio"},
-  "about": {"type": "Person", "name": "echocc00", "alternateName": "echocc00", "url": "https://www.echocco.com/"}
-}
-</script>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav glass">
   <div class="shell nav-inner">
-    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
-      <a class="nav-link active" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
-      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
-      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+      <a class="nav-link " href="/">home</a>
+      <a class="nav-link " href="/projects/">projects</a>
+      <a class="nav-link active" href="/about/">about</a>
+      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <span class="lang-switch">
+        <a href="/zh/about/" class="active" hreflang="zh-CN">中文</a>
+      </span>
+      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
     </div>
-        <div class="lang-toggle" aria-label="Language switcher">
-          <a href="/" data-lang="en" hreflang="en" rel="alternate">EN</a>
-          <a href="/zh/" data-lang="zh" hreflang="zh" rel="alternate">中文</a>
-        </div>
   </div>
 </nav>
-
 <main>
-  <!-- ====== Hero: Story, not metrics ====== -->
-  <section class="about-hero">
-    <div class="shell about-hero-grid">
-      <div class="about-hero-text">
-        <span class="eyebrow-badge" data-i18n-en="About" data-i18n-zh="关于">About</span>
-        <h1 class="about-title">
-          <span data-i18n-en="Operator, not influencer." data-i18n-zh="我是工程师，不是网红。">Operator, not influencer.</span><br>
-          <span class="accent-gradient" data-i18n-en="Code I run in production." data-i18n-zh="代码在生产环境跑着。">Code I run in production.</span>
-        </h1>
-        <p class="about-lede">
-          <span data-i18n-en="I'm" data-i18n-zh="我是">I'm</span> <strong>echocc00</strong><span data-i18n-en=", a security and network engineer based in Shanghai." data-i18n-zh="，一名坐标上海的安全与网络工程师。">, a security and network engineer based in Shanghai.</span>
-          <span data-i18n-en="I've spent nine years in cloud security &amp; network engineering and I'm CCIE-certified." data-i18n-zh="九年云安全与网络工程经验，CCIE 持证。">I've spent nine years in cloud security &amp; network engineering and I'm CCIE-certified.</span>
-          <span data-i18n-en="The work on this site is what I run, not what I blog about:" data-i18n-zh="这个站里展示的，都是我在真实生产环境跑着的代码：">The work on this site is what I run, not what I blog about:</span>
-          <span data-i18n-en="code I deploy, alerts I page on, changes I push through review." data-i18n-zh="我部署的代码，我值守的告警，我推上线的变更。">code I deploy, alerts I page on, changes I push through review.</span>
-        </p>
-        <p class="about-lede">
-          <span data-i18n-en="In 2024 I started turning one-off internal tools into seven Apache-2.0 open-source products." data-i18n-zh="2024 年开始，我把内部零散工具整理成七个 Apache-2.0 开源产品。">In 2024 I started turning one-off internal tools into seven Apache-2.0 open-source products.</span>
-          <span data-i18n-en="The thesis is simple: AI agents are good enough to take over the boring parts of security and network operations — alert triage, config generation, playbook execution — so a small team can operate like a much bigger one." data-i18n-zh="想法很朴素：AI 智能体已经足够成熟，能接管安全运营里最琐碎的事——告警分流、配置生成、剧本执行——让小团队能抵大团队。">The thesis is simple: AI agents are good enough to take over the boring parts of security and network operations — alert triage, config generation, playbook execution — so a small team can operate like a much bigger one.</span>
-        </p>
-        <div class="about-cta">
-          <a class="btn btn-primary" data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi%20from%20your%20portfolio"
-             data-i18n-en="Get in touch ↗" data-i18n-zh="联系我 ↗">Get in touch ↗</a>
-          <a class="btn btn-outline" href="/assets/cv.pdf" target="_blank" rel="noopener"
-             data-i18n-en="Download CV ↗" data-i18n-zh="下载简历 ↗">Download CV ↗</a>
-        </div>
-      </div>
-      <aside class="about-card">
-        <div class="about-card-avatar"><img src="/assets/avatar.png" alt="echocc00" class="about-card-avatar-img" width="64" height="64" loading="eager" decoding="async" onerror="this.style.display='none';this.parentNode.innerHTML='[photo]';"></div>
-        <div class="about-card-name">echocc00</div>
-        <div class="about-card-role" data-i18n-en="Security &amp; Network Engineer" data-i18n-zh="安全与网络工程师">Security &amp; Network Engineer</div>
-        <ul class="about-card-list">
-          <li>📍 <span data-i18n-en="Shanghai, China" data-i18n-zh="中国上海">Shanghai, China</span></li>
-          <li>🎓 <span data-i18n-en="CCIE RS / Security" data-i18n-zh="CCIE RS / Security">CCIE RS / Security</span></li>
-          <li>🛠 <span data-i18n-en="9 years production" data-i18n-zh="9 年生产经验">9 years production</span></li>
-          <li>🔓 <span data-i18n-en="Open to: staff IC, consulting, pilots" data-i18n-zh="可接 staff IC / 咨询 / 试点项目">Open to: staff IC, consulting, pilots</span></li>
-        </ul>
-        <div class="about-card-links">
-          <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
-          <a href="https://github.com/echocc00" rel="noopener" target="_blank">github.com/echocc00</a>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ====== Timeline ====== -->
-  <section class="section">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow" data-i18n-en="Career" data-i18n-zh="职业经历">Career</div>
-        <h2 class="section-title" data-i18n-en="Nine years, one trajectory." data-i18n-zh="九年，一条轨迹。">Nine years, one trajectory.</h2>
-        <p class="section-desc" data-i18n-en="From hands-on network engineering into AI-driven security operations." data-i18n-zh="从一线网络工程一路走到 AI 驱动的安全运营。">From hands-on network engineering into AI-driven security operations.</p>
-      </div>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <div class="t-dot"></div>
-          <div class="t-year">2024 — now</div>
-          <div class="t-card">
-            <div class="t-role" data-i18n-en="Open-source maintainer" data-i18n-zh="开源项目维护者">Open-source maintainer</div>
-            <div class="t-company" data-i18n-en="Independent · Shanghai" data-i18n-zh="独立 · 上海">Independent · Shanghai</div>
-            <div class="t-desc"
-                 data-i18n-en="Built and shipped 7 Apache-2.0 products: SecSight (AI SOC), NetSage (AI network engineer), SecOpent (pentest workbench), VidSlice (video material index), OpenCut v3 (short-video pipeline), SecOpentAgent (AI agent runtime), StrixOC (AI pentesting). 1,500+ tests across the portfolio."
-                 data-i18n-zh="构建并发布了 7 个 Apache-2.0 项目：SecSight（AI 安全运营）、NetSage（AI 网络工程师）、SecOpent（渗透测试工作台）、VidSlice（视频素材索引）、OpenCut v3（短视频流水线）、SecOpentAgent（AI 智能体运行时）、StrixOC（AI 渗透测试）。全产品累计 1,500+ 测试用例。">Built and shipped 7 Apache-2.0 products.</div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="t-dot"></div>
-          <div class="t-year">2020 — 2024</div>
-          <div class="t-card">
-            <div class="t-role" data-i18n-en="[Senior] Security Engineer" data-i18n-zh="[高级] 安全工程师">[Senior] Security Engineer</div>
-            <div class="t-company" data-i18n-en="[Industry, anonymized]" data-i18n-zh="[已脱敏]">[Industry, anonymized]</div>
-            <div class="t-desc"
-                 data-i18n-en="Owned [scope: SIEM/SOAR/IR]. Shipped [N] detections, [M] automated remediations. Cut MTTD from [X] to [Y]. Worked with Wazuh + Suricata + Shuffle stack in production."
-                 data-i18n-zh="负责 SIEM/SOAR/IR 体系。交付 [N] 条检测规则与 [M] 个自动化响应剧本。平均检测时间（MTTD）从 [X] 缩短到 [Y]。生产环境使用 Wazuh + Suricata + Shuffle。">Owned SIEM/SOAR/IR scope.</div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="t-dot"></div>
-          <div class="t-year">2018 — 2020</div>
-          <div class="t-card">
-            <div class="t-role" data-i18n-en="Security Engineer" data-i18n-zh="安全工程师">Security Engineer</div>
-            <div class="t-company" data-i18n-en="[Industry, anonymized]" data-i18n-zh="[已脱敏]">[Industry, anonymized]</div>
-            <div class="t-desc"
-                 data-i18n-en="[Major project: detection pipeline / compliance / network segmentation]. Aligned with MLPS 2.0 (等保 2.0) controls."
-                 data-i18n-zh="[主要项目：检测流水线 / 合规 / 网络分段]。对接等保 2.0 控制点。">Aligned with MLPS 2.0 (等保 2.0) controls.</div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="t-dot"></div>
-          <div class="t-year">2017</div>
-          <div class="t-card">
-            <div class="t-role" data-i18n-en="CCIE RS / Security certified" data-i18n-zh="取得 CCIE RS / Security 认证">CCIE RS / Security certified</div>
-            <div class="t-company">Cisco</div>
-            <div class="t-desc" data-i18n-en="Hands-on multi-vendor: Cisco IOS-XE / Huawei VRP / H3C / Juniper / Arista." data-i18n-zh="多厂商一线经验：Cisco IOS-XE / 华为 VRP / H3C / Juniper / Arista。">Hands-on multi-vendor.</div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="t-dot"></div>
-          <div class="t-year">2015 — 2018</div>
-          <div class="t-card">
-            <div class="t-role" data-i18n-en="Network Engineer" data-i18n-zh="网络工程师">Network Engineer</div>
-            <div class="t-company" data-i18n-en="[Industry, anonymized]" data-i18n-zh="[已脱敏]">[Industry, anonymized]</div>
-            <div class="t-desc" data-i18n-en="Campus + data center + WAN. BGP / OSPF / MPLS / VXLAN-EVPN. [N] device fleet, [highlight: e.g. zero-touch rollout / DC migration]." data-i18n-zh="园区 + 数据中心 + 广域网。BGP / OSPF / MPLS / VXLAN-EVPN。[N] 设备规模，[亮点：如零开局 / 数据中心迁移]。">Campus + DC + WAN.</div>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ====== Current focus ====== -->
-  <section class="section alt">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow" data-i18n-en="Now" data-i18n-zh="当前">Now</div>
-        <h2 class="section-title" data-i18n-en="What I'm working on, and what I'm looking for." data-i18n-zh="当前在做的事，以及我希望合作的方向。">What I'm working on, and what I'm looking for.</h2>
-      </div>
-      <div class="now-grid">
-        <div class="now-card">
-          <div class="now-label" data-i18n-en="Building" data-i18n-zh="在构建">Building</div>
-          <p data-i18n-en="SecSight v0.6: closed-loop remediation with policy gates. NetSage v0.2: multi-tenant source-of-truth sync." data-i18n-zh="SecSight v0.6：带策略闸门的闭环自动化响应。NetSage v0.2：多租户 Source of Truth 同步。">Building SecSight v0.6 and NetSage v0.2.</p>
-        </div>
-        <div class="now-card">
-          <div class="now-label" data-i18n-en="Writing" data-i18n-zh="在写">Writing</div>
-          <p data-i18n-en="Architecture deep-dives for OSS products. Internal post-mortems (sanitized). CCIE / 等保 2.0 study notes." data-i18n-zh="开源产品的架构深度文章、内部复盘（脱敏版）、CCIE / 等保 2.0 学习笔记。">Writing architecture deep-dives.</p>
-        </div>
-        <div class="now-card">
-          <div class="now-label" data-i18n-en="Looking for" data-i18n-zh="希望合作">Looking for</div>
-          <p data-i18n-en="Staff security engineer roles (remote or Shanghai). Consulting on AI SecOps adoption. Commercial pilots for SecSight / NetSage." data-i18n-zh="高级安全工程师岗位（远程或上海）。AI SecOps 落地咨询。SecSight / NetSage 商业试点。">Looking for staff IC, consulting, pilots.</p>
-        </div>
-        <div class="now-card">
-          <div class="now-label" data-i18n-en="Not looking for" data-i18n-zh="不接的方向">Not looking for</div>
-          <p data-i18n-en="Short-form content creation. Pure ML research. Crypto / NFT / &quot;Web3&quot; projects." data-i18n-zh="短视频内容创作。纯 ML 研究。Crypto / NFT / &quot;Web3&quot; 项目。">Not looking for content / ML research / Web3.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== Outside of work ====== -->
-  <section class="section alt">
-    <div class="shell">
-      <div class="section-head">
-        <div class="section-eyebrow" data-i18n-en="Outside of work" data-i18n-zh="工作之外">Outside of work</div>
-      </div>
-      <p class="outside-text"
-         data-i18n-en="Long-distance runner · vinyl collector · average climber, enthusiastic belayer. Based in Shanghai, originally from [hometown]. Speak Mandarin and working English."
-         data-i18n-zh="长跑爱好者 / 黑胶唱片收藏 / 攀岩一般、但保护员意识拉满。坐标上海，老家[待填]。中文母语，工作用英文。">Long-distance runner · vinyl collector · average climber.</p>
-    </div>
-  </section>
-
-  <!-- ====== Contact CTA (real, working) ====== -->
-  <section class="section dark">
-    <div class="shell">
-      <div class="cta-row">
-        <div>
-          <h2 class="cta-title" data-i18n-en="Want to talk?" data-i18n-zh="想聊聊吗？">Want to talk?</h2>
-          <p class="cta-desc"><span data-i18n-en="Best channel: " data-i18n-zh="首选联系方式：">Best channel: </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a><span data-i18n-en=". I reply within 48 hours on weekdays." data-i18n-zh="。工作日 48 小时内回复。">. I reply within 48 hours on weekdays.</span></p>
-        </div>
+<section class="about-hero">
+  <div class="shell about-hero-grid">
+    <div>
+      <div class="hero-prompt" style="margin-bottom:16px;"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat about.md</div>
+      <h1 class="about-title" data-anim="title">Operator, not influencer.</h1>
+      <p class="about-lede" data-anim="roles">I'm <strong>echocc00</strong>, a security and network engineer based in Shanghai. I spent <strong>nine years</strong> in cloud security & network engineering and I'm CCIE-certified.</p>
+      <p class="about-lede" data-anim="bio">The work on this site is what I run, not what I blog about: code I deploy, alerts I page on, changes I push through review.</p>
+      <p class="about-lede" data-anim="bio" style="animation-delay:1000ms;">In 2024 I started turning one-off internal tools into six Apache-2.0 open-source products.</p>
+      <div class="cta-row" style="margin-top:32px;">
         <div class="cta-actions">
-          <a class="btn btn-primary" data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi%20from%20your%20portfolio"
-             data-i18n-en="Email me ↗" data-i18n-zh="发邮件给我 ↗">Email me ↗</a>
-          <a class="btn btn-outline" href="/assets/cv.pdf" target="_blank" rel="noopener"
-             data-i18n-en="CV ↗" data-i18n-zh="简历 ↗">CV ↗</a>
+          <a class="cta-btn primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me ↗</a>
+          <a class="cta-btn" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
         </div>
       </div>
     </div>
-  </section>
-</main>
+    <aside class="about-card">
+      <img src="/assets/avatar.png" alt="echocc00" class="about-card-avatar-img" onerror="this.outerHTML='<div class=&quot;about-card-avatar&quot;>[photo]</div>'">
+      <div class="about-card-name">echocc00</div>
+      <div class="about-card-role">Security & Network Engineer</div>
+      <ul class="about-card-list">
+        <li>Shanghai, China</li>
+        <li>CCIE RS / Security</li>
+        <li>9 years production</li>
+        <li>open to: staff IC, consulting, pilots</li>
+      </ul>
+    </aside>
+  </div>
+</section>
 
+</main>
+<script defer src="/assets/js/motion.js"></script>
+<script defer src="/assets/webgl/strands.js"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 <footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
-    <div class="footer-meta">
-      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
-      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
-      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
-      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
-      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
+    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="/">home</a>
+      <a href="/projects/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/assets/cv.pdf">cv</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+      <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+      <span>Apache-2.0</span>
     </div>
   </div>
 </footer>
-<script src="/assets/js/mailto.js?v=20260903a" defer></script>
-<script src="/assets/js/i18n.js?v=20260903a" defer></script>
 </body>
 </html>

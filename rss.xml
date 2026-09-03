@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>echocc00 · /now</title>
+    <link>https://www.echocco.com/now/</link>
+    <atom:link href="https://www.echocco.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>What I'm focused on right now — updated monthly. Inspired by Derek Sivers.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Sep 2026 12:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>SecSight v0.6: closed-loop remediation</title>
+      <link>https://www.echocco.com/projects/secsight/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-secsight-v0-6</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>Replacing the L3 SOAR heuristic layer with verified-aware routing. Production pilots wanted.</description>
+    </item>
+    <item>
+      <title>NetSage v0.2: multi-tenant source-of-truth sync</title>
+      <link>https://www.echocco.com/projects/netsage/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-netsage-v0-2</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>Bidirectional reconciliation between NetBox and Nautobot, with conflict resolution log.</description>
+    </item>
+    <item>
+      <title>Blog: sanitized postmortems</title>
+      <link>https://www.echocco.com/</link>
+      <guid isPermaLink="false">echocco-now-2026-09-03-blog-postmortems</guid>
+      <pubDate>Wed, 03 Sep 2026 12:00:00 +0800</pubDate>
+      <description>Drafting 2 sanitized postmortems from 2024-2025 work. Goal: one published per month.</description>
+    </item>
+  </channel>
+</rss>

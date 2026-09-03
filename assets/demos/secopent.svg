@@ -1,0 +1,94 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <style>
+      .so-bg { fill: #0a0a0a; }
+      .so-panel { fill: #111113; stroke: #1f1f23; }
+      .so-title { fill: #94a3b8; font-family: 'SF Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
+      .so-text { fill: #e6e6e6; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .so-dim { fill: #64748b; font-family: 'SF Mono', monospace; font-size: 11px; }
+      .so-accent { fill: #fb923c; }
+      .so-ok { fill: #22c55e; }
+      .so-run { fill: #fbbf24; }
+      .so-bar-bg { fill: #1f1f23; }
+      .so-bar-fill { fill: #fb923c; }
+      @keyframes soSlide { 0%{transform:translateX(-8px);opacity:0} 100%{transform:translateX(0);opacity:1} }
+      @keyframes soProgress { 0%{width:0} 100%{width:var(--w)} }
+      @keyframes soPulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+      .so-row { animation: soSlide 0.6s var(--ease-out-quart, ease-out) both; }
+    </style>
+  </defs>
+  <rect class="so-bg" width="800" height="450"/>
+  <rect class="so-panel" x="16" y="16" width="768" height="60" rx="4"/>
+  <text x="32" y="40" class="so-title">SECOPENT · CASE RUNNER · case: web-acme-corp-2026</text>
+  <text x="32" y="60" class="so-dim">scope: web · scope_mode: authorized · evidence_redact: strict</text>
+  <text x="700" y="40" class="so-dim">re-run 2 / 5</text>
+  <text x="700" y="60" class="so-dim">started 14:18:22 UTC</text>
+  <rect class="so-panel" x="16" y="92" width="500" height="340" rx="4"/>
+  <g>
+    <g class="so-row" style="animation-delay:0s">
+      <circle cx="36" cy="118" r="5" class="so-ok"/>
+      <text x="50" y="122" class="so-text">step 1/8  recon  · scope enumeration</text>
+      <rect x="380" y="115" width="120" height="10" rx="5" class="so-bar-bg"/>
+      <rect x="380" y="115" width="120" height="10" rx="5" class="so-bar-fill" style="animation: soProgress 5s var(--ease-out-quart, ease-out) infinite;--w:120px;animation-delay:0s"/>
+    </g>
+    <g class="so-row" style="animation-delay:0.4s">
+      <circle cx="36" cy="148" r="5" class="so-ok"/>
+      <text x="50" y="152" class="so-text">step 2/8  probe  · tech fingerprint</text>
+      <rect x="380" y="145" width="120" height="10" rx="5" class="so-bar-bg"/>
+      <rect x="380" y="145" width="120" height="10" rx="5" class="so-bar-fill" style="animation: soProgress 5s var(--ease-out-quart, ease-out) infinite;--w:120px;animation-delay:0.4s"/>
+    </g>
+    <g class="so-row" style="animation-delay:0.8s">
+      <circle cx="36" cy="178" r="5" class="so-ok"/>
+      <text x="50" y="182" class="so-text">step 3/8  exploit-check  · test signed payloads</text>
+      <rect x="380" y="175" width="120" height="10" rx="5" class="so-bar-bg"/>
+      <rect x="380" y="175" width="120" height="10" rx="5" class="so-bar-fill" style="animation: soProgress 5s var(--ease-out-quart, ease-out) infinite;--w:120px;animation-delay:0.8s"/>
+    </g>
+    <g class="so-row" style="animation-delay:1.2s">
+      <circle cx="36" cy="208" r="5" class="so-run" style="animation: soPulse 0.8s ease-in-out infinite"/>
+      <text x="50" y="212" class="so-text">step 4/8  oracle-check  · 17 adapter passes</text>
+      <rect x="380" y="205" width="120" height="10" rx="5" class="so-bar-bg"/>
+      <rect x="380" y="205" width="120" height="10" rx="5" class="so-bar-fill" style="animation: soProgress 5s var(--ease-out-quart, ease-out) infinite;--w:96px;animation-delay:1.2s"/>
+    </g>
+    <g class="so-row" style="animation-delay:1.6s">
+      <circle cx="36" cy="238" r="5" fill="#1f1f23"/>
+      <text x="50" y="242" class="so-dim">step 5/8  evidence-layer1  · raw capture</text>
+      <rect x="380" y="235" width="120" height="10" rx="5" fill="#1f1f23"/>
+    </g>
+    <g class="so-row" style="animation-delay:2.0s">
+      <circle cx="36" cy="268" r="5" fill="#1f1f23"/>
+      <text x="50" y="272" class="so-dim">step 6/8  evidence-layer2  · normalized</text>
+      <rect x="380" y="265" width="120" height="10" rx="5" fill="#1f1f23"/>
+    </g>
+    <g class="so-row" style="animation-delay:2.4s">
+      <circle cx="36" cy="298" r="5" fill="#1f1f23"/>
+      <text x="50" y="302" class="so-dim">step 7/8  evidence-layer3  · summary</text>
+      <rect x="380" y="295" width="120" height="10" rx="5" fill="#1f1f23"/>
+    </g>
+    <g class="so-row" style="animation-delay:2.8s">
+      <circle cx="36" cy="328" r="5" fill="#1f1f23"/>
+      <text x="50" y="332" class="so-dim">step 8/8  coverage-matrix  · emit report</text>
+      <rect x="380" y="325" width="120" height="10" rx="5" fill="#1f1f23"/>
+    </g>
+    <text x="50" y="380" class="so-dim">seccomp sandbox: read-only mounts · netns isolated · 30s timeout</text>
+    <text x="50" y="398" class="so-dim">17 adapters active · oracle N/N · redacted evidence · 3 layers</text>
+    <text x="50" y="416" class="so-accent">LLM proposes · oracle decides · humans approve</text>
+  </g>
+  <rect class="so-panel" x="528" y="92" width="256" height="340" rx="4"/>
+  <text x="544" y="120" class="so-title">↑ COVERAGE</text>
+  <line x1="544" y1="128" x2="768" y2="128" stroke="#1f1f23"/>
+  <text x="544" y="152" class="so-text">recon  ····· 100%</text>
+  <text x="544" y="176" class="so-text">TA0001  initial-access  <tspan class="so-ok">4/4</tspan></text>
+  <text x="544" y="196" class="so-text">TA0007  discovery      <tspan class="so-ok">5/5</tspan></text>
+  <text x="544" y="216" class="so-text">TA0008  lateral-mvmt   <tspan class="so-run">2/3</tspan></text>
+  <text x="544" y="236" class="so-text">TA0043  recon         <tspan class="so-dim">0/2</tspan></text>
+  <text x="544" y="260" class="so-title">↑ ORACLE</text>
+  <line x1="544" y1="268" x2="768" y2="268" stroke="#1f1f23"/>
+  <text x="544" y="292" class="so-dim">N = 5 (deterministic)</text>
+  <text x="544" y="312" class="so-dim">passed 5/5</text>
+  <text x="544" y="332" class="so-dim">flaky: 0</text>
+  <text x="544" y="356" class="so-title">↑ EVIDENCE</text>
+  <line x1="544" y1="364" x2="768" y2="364" stroke="#1f1f23"/>
+  <text x="544" y="386" class="so-dim">layer1: 142 KB</text>
+  <text x="544" y="406" class="so-dim">layer2: 38 KB (normalized)</text>
+  <text x="544" y="426" class="so-dim">layer3: pending</text>
+</svg>

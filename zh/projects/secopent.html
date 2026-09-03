@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SecOpent · Authorized pentest workbench · echocc00</title>
-<meta name="description" content="SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp s">
+<title>SecOpent · 授权渗透测试工作台 · echocc00</title>
+<meta name="description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 <meta name="theme-color" content="#08090a">
-<link rel="canonical" href="https://www.echocco.com/projects/secopent/">
+<link rel="canonical" href="https://www.echocco.com/zh/projects/secopent/">
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/secopent/">
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/secopent/">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.echocco.com/projects/secopent/">
-<meta property="og:title" content="SecOpent · Authorized pentest workbench · echocc00">
-<meta property="og:description" content="SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp s">
+<meta property="og:url" content="https://www.echocco.com/zh/projects/secopent/">
+<meta property="og:title" content="SecOpent · 授权渗透测试工作台 · echocc00">
+<meta property="og:description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 <meta property="og:image" content="https://www.echocco.com/assets/og/secopent.png">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SecOpent · Authorized pentest workbench · echocc00">
-<meta name="twitter:description" content="SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp s">
+<meta name="twitter:title" content="SecOpent · 授权渗透测试工作台 · echocc00">
+<meta name="twitter:description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/secopent.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
 <body>
 <nav class="nav glass">
   <div class="shell nav-inner">
-    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+    <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
     <div class="nav-menu">
-      <a class="nav-link " href="/">home</a>
-      <a class="nav-link active" href="/projects/">projects</a>
-      <a class="nav-link " href="/about/">about</a>
-      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <a class="nav-link " href="/zh/">首页</a>
+      <a class="nav-link active" href="/zh/projects/">项目</a>
+      <a class="nav-link " href="/zh/about/">关于</a>
+      <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
       <span class="lang-switch">
-        <a href="/zh/projects/secopent/" class="active" hreflang="zh-CN">中文</a>
+        <a href="/projects/secopent/" class="" hreflang="en">EN</a>
       </span>
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
     </div>
@@ -46,9 +46,9 @@
 <header class="proj-hero" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%); color: white;">
   <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="shell">
-    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /projects/secopent/</span></div>
+    <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /zh/projects/secopent/</span></div>
     <h1 class="proj-title">SecOpent</h1>
-    <p class="proj-tagline">Authorized pentest workbench</p>
+    <p class="proj-tagline">授权渗透测试工作台</p>
     <div class="proj-meta-bar">
       <span class="proj-ver">v1.1.1-stable</span>
       <span class="dot"></span>
@@ -62,8 +62,8 @@
 <section class="proj-body">
   <div class="shell proj-layout">
     <article class="proj-main" data-reveal="rise">
-      <h2 class="proj-h2" data-reveal="curtain">## overview</h2>
-      <div class="proj-desc"><p>SecOpent is a catalog-driven, agent-native pentest workbench for authorized engagements. The LLM proposes; a deterministic layer + humans decide. Cases are written in YAML, executed inside a seccomp sandbox, and validated by an oracle that does N/N re-runs to catch flaky tests.</p></div>
+      <h2 class="proj-h2" data-reveal="curtain">## 概览</h2>
+      <div class="proj-desc"><p>SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。</p></div>
 
         <section class="impact-section" data-reveal>
           <header class="impact-head">
@@ -272,25 +272,25 @@
         </section>
 
 
-      <h2 class="proj-h2" data-reveal="curtain">## technical architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 技术架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/secopent.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/secopent.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## product architecture</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 产品架构</h2>
       <figure class="proj-figure arch-embed-frame-wrap">
-        <iframe class="arch-embed-frame" src="/assets/archify/secopent-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/archify/secopent-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
       </figure>
 
-      <h2 class="proj-h2" data-reveal="curtain">## capabilities</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 能力</h2>
       <div class="proj-features">
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">Catalog-driven</div><div class="proj-feat-desc">17 adapters · YAML case DSL · CoverageMatrix.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Agent-native</div><div class="proj-feat-desc">LLM proposes; deterministic layer + humans decide.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">Oracle N/N validation</div><div class="proj-feat-desc">Independent re-runs to catch flaky tests.</div></div>
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">Hardened sandbox</div><div class="proj-feat-desc">seccomp · process-isolated · timeout + resource caps.</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">目录驱动</div><div class="proj-feat-desc">17 个适配器 · YAML case DSL · CoverageMatrix。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Agent-native</div><div class="proj-feat-desc">LLM 提议,确定性层 + 人工决策。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">Oracle N/N 验证</div><div class="proj-feat-desc">独立重跑,捕获 flaky 测试。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">加固沙箱</div><div class="proj-feat-desc">seccomp · 进程隔离 · 超时 + 资源限制。</div></div>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## screenshots</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 截图</h2>
       <div class="proj-screenshots">
         <figure class="demo-frame" data-reveal="image" data-parallax="0.08">
           <picture>
@@ -301,19 +301,19 @@
         </figure>
       </div>
 
-      <h2 class="proj-h2" data-reveal="curtain">## metrics</h2>
+      <h2 class="proj-h2" data-reveal="curtain">## 数据</h2>
       <ul class="proj-metrics">
-        <li data-reveal="rise" style="--i:0;">17 cross-domain adapters</li>
+        <li data-reveal="rise" style="--i:0;">17 个跨域适配器</li>
         <li data-reveal="rise" style="--i:1;">YAML case DSL</li>
-        <li data-reveal="rise" style="--i:2;">Oracle N/N validation</li>
-        <li data-reveal="rise" style="--i:3;">seccomp sandbox</li>
-        <li data-reveal="rise" style="--i:4;">3-layer evidence + redaction</li>
+        <li data-reveal="rise" style="--i:2;">Oracle N/N 验证</li>
+        <li data-reveal="rise" style="--i:3;">seccomp 沙箱</li>
+        <li data-reveal="rise" style="--i:4;">3 层证据 + 脱敏</li>
       </ul>
     </article>
 
     <aside class="proj-side">
       <div class="side-block">
-        <div class="side-title">at a glance</div>
+        <div class="side-title">速览</div>
         <dl>
           <dt>version</dt><dd>v1.1.1-stable</dd>
           <dt>license</dt><dd>Apache-2.0</dd>
@@ -322,7 +322,7 @@
         </dl>
       </div>
       <div class="side-block">
-        <div class="side-title">stack</div>
+        <div class="side-title">技术栈</div>
         <div class="side-list">
           <span class="pill">fastapi · react</span>
           <span class="pill">rust · seccomp</span>
@@ -330,13 +330,13 @@
         </div>
       </div>
       <div class="side-block">
-        <div class="side-title">## more from me</div>
+        <div class="side-title">## 其它项目</div>
         <ul class="side-more">
-          <li><a href="/projects/secsight/">→ SecSight</a></li>
-        <li><a href="/projects/netsage/">→ NetSage</a></li>
-        <li><a href="/projects/vidslice/">→ VidSlice</a></li>
-        <li><a href="/projects/opencut002/">→ OpenCut v3</a></li>
-        <li><a href="/projects/hydro-fork/">→ Hydro OJ</a></li>
+          <li><a href="/zh/projects/secsight/">→ SecSight</a></li>
+        <li><a href="/zh/projects/netsage/">→ NetSage</a></li>
+        <li><a href="/zh/projects/vidslice/">→ VidSlice</a></li>
+        <li><a href="/zh/projects/opencut002/">→ OpenCut v3</a></li>
+        <li><a href="/zh/projects/hydro-fork/">→ Hydro OJ</a></li>
         </ul>
       </div>
     </aside>
@@ -348,12 +348,12 @@
 <script defer src="/assets/js/sw-register.js"></script>
 <footer class="footer">
   <div class="shell footer-row">
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div>由 echocc00 构建和维护 · 上海 · 2026</div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="/">home</a>
-      <a href="/projects/">projects</a>
-      <a href="/about/">about</a>
-      <a href="/assets/cv.pdf">cv</a>
+      <a href="/zh/">首页</a>
+      <a href="/zh/projects/">项目</a>
+      <a href="/zh/about/">关于</a>
+      <a href="/assets/cv.pdf">简历</a>
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
       <span>Apache-2.0</span>

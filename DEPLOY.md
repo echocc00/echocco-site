@@ -56,6 +56,30 @@ Optional: delete `assets/avatar-placeholder.svg` (it is just a fallback).
 
 ---
 
+
+## i18n — Chinese version
+
+The site now ships in both English and Chinese. The Chinese version lives under /zh/ and shares all assets (CSS, OG images, diagrams, avatar, CV) with the English version.
+
+**URL structure:**
+
+| Language | URL prefix | Example |
+|---|---|---|
+| English | (none) | /about/ |
+| Chinese | /zh/ | /zh/about/ |
+
+**Language switcher** is in the nav (right side). Clicking swaps to the same page in the other language (computed from current path automatically).
+
+**SEO:**
+- Every page has `<link rel="alternate" hreflang="en">` and `hreflang="zh-CN">`
+- Sitemap includes both languages with cross-references
+- Google indexes them as two separate URLs and serves the right one based on user locale
+
+**Translated sections:** home, about, career timeline, now grid, testimonials placeholders, project descriptions, project capabilities, all nav labels, status pills, stats labels.
+
+**Replacing `echocc00` placeholder:** it appears 65 times total. Run the same replacement in both the root and /zh/ folders.
+
+After deployment, verify i18n by visiting https://www.echocco.com/ and https://www.echocco.com/zh/ — the nav should show 中文 / EN toggle, and switching should land on the equivalent page in the other language.
 ## Step 2 — Push to Git
 
 Option A — separate repo (recommended if you want domain-isolated CI):

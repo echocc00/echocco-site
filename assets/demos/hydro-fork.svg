@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <style>
+      .hy-bg { fill: #0a0a0a; }
+      .hy-panel { fill: #111113; stroke: #1f1f23; }
+      .hy-title { fill: #94a3b8; font-family: 'SF Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
+      .hy-code { fill: #e6e6e6; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .hy-kw { fill: #c084fc; }
+      .hy-fn { fill: #60a5fa; }
+      .hy-str { fill: #86efac; }
+      .hy-com { fill: #64748b; font-style: italic; }
+      .hy-num { fill: #fbbf24; }
+      .hy-dim { fill: #64748b; font-family: 'SF Mono', monospace; font-size: 11px; }
+      .hy-ok { fill: #22c55e; }
+      .hy-accent { fill: #3b82f6; }
+      @keyframes hyType { 0%{width:0} 100%{width:100%} }
+      @keyframes hyProgress { 0%{width:0} 100%{width:100%} }
+      @keyframes hyVerdict { 0%,80%{opacity:0;transform:translateY(8px)} 90%,100%{opacity:1;transform:translateY(0)} }
+      .hy-progress { animation: hyProgress 5s var(--ease-out-quart, ease-out) infinite; }
+      .hy-verdict { animation: hyVerdict 5s ease-out infinite; transform-origin: left; }
+    </style>
+  </defs>
+  <rect class="hy-bg" width="800" height="450"/>
+  <!-- Top: submission -->
+  <rect class="hy-panel" x="16" y="16" width="500" height="280" rx="4"/>
+  <text x="32" y="40" class="hy-title">SUBMISSION  #1024  · problem: P1042 扫雷</text>
+  <line x1="32" y1="50" x2="500" y2="50" stroke="#1f1f23"/>
+  <text x="32" y="76" class="hy-code"><tspan class="hy-kw">def</tspan> <tspan class="hy-fn">solve</tspan>(grid, n, m):</text>
+  <text x="32" y="94" class="hy-code">    <tspan class="hy-com"># flood fill from each '0' cell</tspan></text>
+  <text x="32" y="112" class="hy-code">    <tspan class="hy-kw">def</tspan> <tspan class="hy-fn">bfs</tspan>(sx, sy):</text>
+  <text x="32" y="130" class="hy-code">        vis = [[<tspan class="hy-kw">False</tspan>]*m <tspan class="hy-kw">for</tspan> _ <tspan class="hy-kw">in</tspan> <tspan class="hy-fn">range</tspan>(n)]</text>
+  <text x="32" y="148" class="hy-code">        q = collections.deque([(sx, sy)])</text>
+  <text x="32" y="166" class="hy-code">        vis[sx][sy] = <tspan class="hy-kw">True</tspan></text>
+  <text x="32" y="184" class="hy-code">        <tspan class="hy-kw">while</tspan> q:</text>
+  <text x="32" y="202" class="hy-code">            x, y = q.popleft()</text>
+  <text x="32" y="220" class="hy-code">            <tspan class="hy-kw">for</tspan> dx, dy <tspan class="hy-kw">in</tspan> DIRS:</text>
+  <text x="32" y="238" class="hy-code">                <tspan class="hy-kw">if</tspan> <tspan class="hy-fn">in_bounds</tspan>(x+dx, y+dy) <tspan class="hy-kw">and</tspan> grid[x+dx][y+dy] == <tspan class="hy-str">'.'</tspan>:</text>
+  <text x="32" y="256" class="hy-code">                    q.append((x+dx, y+dy))</text>
+  <text x="32" y="274" class="hy-code">    <tspan class="hy-com"># ... main loop calls bfs</tspan></text>
+  <!-- Right: judge console -->
+  <rect class="hy-panel" x="528" y="16" width="256" height="280" rx="4"/>
+  <text x="544" y="40" class="hy-title">↑ JUDGE  · 5s deadline</text>
+  <line x1="544" y1="50" x2="768" y2="50" stroke="#1f1f23"/>
+  <text x="544" y="74" class="hy-dim">compile</text>
+  <rect x="544" y="80" width="220" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="80" width="220" height="6" rx="3" fill="#3b82f6" class="hy-progress"/>
+  <text x="544" y="106" class="hy-dim">compile · 0.4s · ok</text>
+  <text x="544" y="130" class="hy-dim">test cases 1-3</text>
+  <rect x="544" y="136" width="220" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="136" width="220" height="6" rx="3" fill="#3b82f6" class="hy-progress"/>
+  <text x="544" y="156" class="hy-dim">test 1 · 142ms · pass</text>
+  <text x="544" y="174" class="hy-dim">test 2 · 168ms · pass</text>
+  <text x="544" y="192" class="hy-dim">test 3 · 201ms · pass</text>
+  <text x="544" y="216" class="hy-dim">test cases 4-10</text>
+  <rect x="544" y="222" width="220" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="222" width="220" height="6" rx="3" fill="#fbbf24" style="animation: hyProgress 5s var(--ease-out-quart, ease-out) infinite;animation-delay:2.5s;width:60%"/>
+  <text x="544" y="244" class="hy-dim">...</text>
+  <text x="544" y="280" class="hy-ok">↑ verdict pending</text>
+  <!-- Bottom: verdict panel -->
+  <rect class="hy-panel" x="16" y="312" width="768" height="120" rx="4"/>
+  <g class="hy-verdict">
+    <text x="32" y="340" class="hy-ok" style="font-family:'SF Mono',monospace;font-size:24px;font-weight:700">✓ ACCEPTED  · score: 100 / 100  · time: 2.31s  · memory: 4.2 MB</text>
+    <text x="32" y="368" class="hy-code">10/10 test cases pass · 7 fastest · ranked #3 globally · +47 rating</text>
+    <text x="32" y="392" class="hy-dim">storage: TS-hydro-1042.py · 38 lines · 1.1 KB · ed25519 signed</text>
+    <text x="32" y="416" class="hy-dim">recent: submit #1023 (-2 WA on T6) · submit #1022 (TLE) · submit #1021 (CE) · 4h12m total</text>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <style>
+      .oc-bg { fill: #0a0a0a; }
+      .oc-panel { fill: #111113; stroke: #1f1f23; }
+      .oc-stage { fill: #1a1a1f; stroke: #2a2a30; }
+      .oc-stage-on { fill: #c2410c; stroke: #fb923c; stroke-width: 2; }
+      .oc-text { fill: #e6e6e6; font-family: 'SF Mono', monospace; font-size: 10px; }
+      .oc-dim { fill: #64748b; font-family: 'SF Mono', monospace; font-size: 9px; }
+      .oc-active { fill: #fb923c; }
+      .oc-title { fill: #94a3b8; font-family: 'SF Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
+      @keyframes ocScan { 0%{transform:translateX(0)} 100%{transform:translateX(720px)} }
+      @keyframes ocPulse { 0%,100%{opacity:.7} 50%{opacity:1} }
+      .oc-scan-line { animation: ocScan 8s linear infinite; }
+      .oc-active { animation: ocPulse 0.6s ease-in-out infinite; }
+    </style>
+  </defs>
+  <rect class="oc-bg" width="800" height="450"/>
+  <rect class="oc-panel" x="16" y="16" width="768" height="60" rx="4"/>
+  <text x="32" y="40" class="oc-title">OPENCUT V3 · 20-STAGE PIPELINE · domain: education</text>
+  <text x="32" y="60" class="oc-dim">input: 3 images · output: 1080x1920 vertical · format: mp4</text>
+  <text x="700" y="40" class="oc-dim">elapsed: 14.2s</text>
+  <text x="700" y="60" class="oc-active">stage 12/20</text>
+  <!-- Stage blocks: 5 rows x 4 cols = 20 stages -->
+  <g>
+    <rect class="oc-stage-on" x="32" y="100" width="170" height="48" rx="4"/>
+          <text x="42" y="120" class="oc-text">01  domain</text>
+          <text x="42" y="138" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="217" y="100" width="170" height="48" rx="4"/>
+          <text x="227" y="120" class="oc-text">02  script</text>
+          <text x="227" y="138" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="402" y="100" width="170" height="48" rx="4"/>
+          <text x="412" y="120" class="oc-text">03  tts</text>
+          <text x="412" y="138" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="587" y="100" width="170" height="48" rx="4"/>
+          <text x="597" y="120" class="oc-text">04  bgm</text>
+          <text x="597" y="138" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="32" y="164" width="170" height="48" rx="4"/>
+          <text x="42" y="184" class="oc-text">05  caption</text>
+          <text x="42" y="202" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="217" y="164" width="170" height="48" rx="4"/>
+          <text x="227" y="184" class="oc-text">06  storyboard</text>
+          <text x="227" y="202" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="402" y="164" width="170" height="48" rx="4"/>
+          <text x="412" y="184" class="oc-text">07  remotion</text>
+          <text x="412" y="202" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="587" y="164" width="170" height="48" rx="4"/>
+          <text x="597" y="184" class="oc-text">08  render</text>
+          <text x="597" y="202" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="32" y="228" width="170" height="48" rx="4"/>
+          <text x="42" y="248" class="oc-text">09  encode</text>
+          <text x="42" y="266" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="217" y="228" width="170" height="48" rx="4"/>
+          <text x="227" y="248" class="oc-text">10  distribute</text>
+          <text x="227" y="266" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="402" y="228" width="170" height="48" rx="4"/>
+          <text x="412" y="248" class="oc-text">11  cli</text>
+          <text x="412" y="266" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage-on" x="587" y="228" width="170" height="48" rx="4"/>
+          <text x="597" y="248" class="oc-active">12  saas</text>
+          <text x="597" y="266" class="oc-dim"><tspan fill="#fb923c">done</tspan></text><rect class="oc-stage" x="32" y="292" width="170" height="48" rx="4"/>
+          <text x="42" y="312" class="oc-text">13  analytics</text>
+          <text x="42" y="330" class="oc-dim">pending</text><rect class="oc-stage" x="217" y="292" width="170" height="48" rx="4"/>
+          <text x="227" y="312" class="oc-text">14  cdn</text>
+          <text x="227" y="330" class="oc-dim">pending</text><rect class="oc-stage" x="402" y="292" width="170" height="48" rx="4"/>
+          <text x="412" y="312" class="oc-text">15  log</text>
+          <text x="412" y="330" class="oc-dim">pending</text><rect class="oc-stage" x="587" y="292" width="170" height="48" rx="4"/>
+          <text x="597" y="312" class="oc-text">16  audit</text>
+          <text x="597" y="330" class="oc-dim">pending</text><rect class="oc-stage" x="32" y="356" width="170" height="48" rx="4"/>
+          <text x="42" y="376" class="oc-text">17  cache</text>
+          <text x="42" y="394" class="oc-dim">pending</text><rect class="oc-stage" x="217" y="356" width="170" height="48" rx="4"/>
+          <text x="227" y="376" class="oc-text">18  webhook</text>
+          <text x="227" y="394" class="oc-dim">pending</text><rect class="oc-stage" x="402" y="356" width="170" height="48" rx="4"/>
+          <text x="412" y="376" class="oc-text">19  webhook2</text>
+          <text x="412" y="394" class="oc-dim">pending</text><rect class="oc-stage" x="587" y="356" width="170" height="48" rx="4"/>
+          <text x="597" y="376" class="oc-text">20  done</text>
+          <text x="597" y="394" class="oc-dim">pending</text>
+  </g>
+  <!-- Scan line -->
+  <rect class="oc-scan-line" x="32" y="92" width="2" height="340" fill="#fb923c" opacity="0.6"/>
+  <!-- Bottom stats -->
+  <text x="32" y="430" class="oc-dim">20 stages · 14.2s elapsed · 4 parallel workers · 1080x1920 vertical output · h.264 + aac</text>
+</svg>

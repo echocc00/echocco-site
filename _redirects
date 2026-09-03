@@ -1,32 +1,34 @@
 # Cloudflare Pages _redirects
-# Trailing-slash URLs → .html files (since we use flat-file structure)
+# Trailing-slash URLs to .html — use 301 so CF Pages serves /about.html
+# (CF Pages auto-rewrites /about.html → /about in the address bar)
 
-/about/                       /about.html                       200
-/projects/                    /projects/index.html              200
-/projects/secsight/           /projects/secsight.html           200
-/projects/secopent/           /projects/secopent.html           200
-/projects/netsage/            /projects/netsage.html            200
-/projects/vidslice/           /projects/vidslice.html           200
-/projects/opencut002/         /projects/opencut002.html         200
-/projects/secopentagent/      /projects/secopentagent.html   200
-/projects/strixoc/             /projects/strixoc.html          200
+/about                       /about.html                       301
+/now                         /now.html                         301
+/uses                        /uses.html                        301
+/colophon                    /colophon.html                    301
+/projects                    /projects/index.html              301
+/projects/secsight           /projects/secsight.html           301
+/projects/secopent           /projects/secopent.html           301
+/projects/netsage            /projects/netsage.html            301
+/projects/vidslice           /projects/vidslice.html           301
+/projects/opencut002         /projects/opencut002.html         301
+/projects/hydro-fork         /projects/hydro-fork.html         301
+/projects/opencut            /projects/opencut002.html         301
 
-# Legacy URLs (in case anyone bookmarked old paths)
-/projects/opencut/            /projects/opencut002.html         301
-/cv.pdf                       /assets/cv.pdf                  301
+/zh                          /zh/index.html                    301
+/zh/about                    /zh/about.html                    301
+/zh/now                      /zh/now.html                      301
+/zh/uses                     /zh/uses.html                     301
+/zh/colophon                 /zh/colophon.html                 301
+/zh/projects                 /zh/projects/index.html           301
+/zh/projects/secsight        /zh/projects/secsight.html        301
+/zh/projects/secopent        /zh/projects/secopent.html        301
+/zh/projects/netsage         /zh/projects/netsage.html         301
+/zh/projects/vidslice        /zh/projects/vidslice.html        301
+/zh/projects/opencut002      /zh/projects/opencut002.html      301
+/zh/projects/hydro-fork      /zh/projects/hydro-fork.html      301
 
-# /zh/* URLs — explicit per-file mapping (CF Pages 200 with splat is
-# 308 chain, not direct rewrite, so we list every file we want to
-# route. Each /zh/<rest>.html rule proxies the same file in /<rest>.html
-# without touching /zh/* path semantics)
-/zh                           /index.html                      200
-/zh/                          /index.html                      200
-/zh/about.html                /about.html                      200
-/zh/projects/index.html       /projects/index.html             200
-/zh/projects/secsight.html    /projects/secsight.html          200
-/zh/projects/secopent.html    /projects/secopent.html          200
-/zh/projects/secopentagent.html /projects/secopentagent.html   200
-/zh/projects/strixoc.html     /projects/strixoc.html           200
-/zh/projects/netsage.html     /projects/netsage.html           200
-/zh/projects/vidslice.html    /projects/vidslice.html          200
-/zh/projects/opencut002.html  /projects/opencut002.html        200
+/sw.js                       /sw.js                            200
+/rss.xml                     /rss.xml                          200
+/zh/rss.xml                  /zh/rss.xml                       200
+/uses.json                   /uses.json                        200

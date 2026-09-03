@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <style>
+      .ss-bg { fill: #0a0a0a; }
+      .ss-panel { fill: #111113; stroke: #1f1f23; stroke-width: 1; }
+      .ss-title { fill: #94a3b8; font-family: 'SF Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
+      .ss-row { fill: #e6e6e6; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .ss-meta { fill: #64748b; font-family: 'SF Mono', monospace; font-size: 10px; }
+      .ss-sev-crit { fill: #ef4444; }
+      .ss-sev-warn { fill: #fbbf24; }
+      .ss-sev-info { fill: #22c55e; }
+      .ss-accent { fill: #6366f1; }
+      .ss-bar { fill: #6366f1; opacity: 0.85; }
+      @keyframes ssPulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+      @keyframes ssSlide { 0%{transform:translateY(-8px);opacity:0} 30%{transform:translateY(0);opacity:1} 90%{transform:translateY(0);opacity:1} 100%{transform:translateY(0);opacity:0} }
+      @keyframes ssFill { 0%{width:0} 100%{width:var(--w,60%)} }
+      @keyframes ssGlow { 0%,100%{filter:drop-shadow(0 0 0 transparent)} 50%{filter:drop-shadow(0 0 6px currentColor)} }
+      .ss-row-new { animation: ssSlide 5s var(--ease-out-quart, ease-out) infinite; }
+      .ss-dot { animation: ssPulse 1.6s ease-in-out infinite; }
+    </style>
+  </defs>
+  <rect class="ss-bg" width="800" height="450"/>
+  <!-- Header -->
+  <rect class="ss-panel" x="16" y="16" width="768" height="36" rx="4"/>
+  <circle cx="34" cy="34" r="4" class="ss-sev-crit ss-dot"/>
+  <text x="50" y="38" class="ss-title">SECSIGHT · LIVE ALERT FEED · 22 PLAYBOOKS</text>
+  <text x="700" y="38" class="ss-meta">+142 / -38 / 4 pending</text>
+  <!-- Alert rows -->
+  <rect class="ss-panel" x="16" y="64" width="500" height="370" rx="4"/>
+  <g>
+    <text x="32" y="92" class="ss-row"><tspan class="ss-sev-crit">●</tspan> CRIT  Phishing campaign detected</text>
+    <text x="32" y="108" class="ss-meta">14:23:01 · playbook: enrich+ioc+notify</text>
+    <line x1="32" y1="118" x2="500" y2="118" stroke="#1f1f23"/>
+    <text x="32" y="140" class="ss-row"><tspan class="ss-sev-warn">●</tspan> WARN Brute force on auth-svc</text>
+    <text x="32" y="156" class="ss-meta">14:22:48 · auto-throttled @ 142/180s</text>
+    <line x1="32" y1="166" x2="500" y2="166" stroke="#1f1f23"/>
+    <text x="32" y="188" class="ss-row"><tspan class="ss-sev-info">●</tspan> INFO IOC enrichment batch done</text>
+    <text x="32" y="204" class="ss-meta">14:22:30 · 18 IOCs · 4 sources · 12s</text>
+    <line x1="32" y1="214" x2="500" y2="214" stroke="#1f1f23"/>
+    <g class="ss-row-new">
+      <text x="32" y="236" class="ss-row"><tspan class="ss-sev-crit">●</tspan> CRIT  Suspicious login geo-mismatch</text>
+      <text x="32" y="252" class="ss-meta">14:22:14 · awaiting human review</text>
+    </g>
+    <text x="32" y="284" class="ss-row"><tspan class="ss-sev-info">●</tspan> INFO Wazuh rule fired</text>
+    <text x="32" y="300" class="ss-meta">14:21:58 · matched: webshell-upload-attempt</text>
+    <line x1="32" y1="310" x2="500" y2="310" stroke="#1f1f23"/>
+    <text x="32" y="332" class="ss-row"><tspan class="ss-sev-warn">●</tspan> WARN  SSL cert expiring &lt; 7d</text>
+    <text x="32" y="348" class="ss-meta">14:21:30 · auto-renew triggered</text>
+    <line x1="32" y1="358" x2="500" y2="358" stroke="#1f1f23"/>
+  </g>
+  <!-- Right panel: agent activity -->
+  <rect class="ss-panel" x="528" y="64" width="256" height="370" rx="4"/>
+  <text x="544" y="92" class="ss-title">↑ SECOPS COPILOT</text>
+  <line x1="544" y1="100" x2="768" y2="100" stroke="#1f1f23"/>
+  <text x="544" y="124" class="ss-row">triage</text>
+  <rect x="544" y="132" width="160" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="132" width="160" height="6" rx="3" class="ss-bar" style="animation:ssFill 5s ease-out infinite;--w:95%"/>
+  <text x="544" y="164" class="ss-row">investigate</text>
+  <rect x="544" y="172" width="160" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="172" width="160" height="6" rx="3" class="ss-bar" style="animation:ssFill 5s ease-out infinite;--w:78%;animation-delay:1s"/>
+  <text x="544" y="204" class="ss-row">enrich</text>
+  <rect x="544" y="212" width="160" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="212" width="160" height="6" rx="3" class="ss-bar" style="animation:ssFill 5s ease-out infinite;--w:62%;animation-delay:2s"/>
+  <text x="544" y="244" class="ss-row">report</text>
+  <rect x="544" y="252" width="160" height="6" rx="3" fill="#1f1f23"/>
+  <rect x="544" y="252" width="160" height="6" rx="3" class="ss-bar" style="animation:ssFill 5s ease-out infinite;--w:30%;animation-delay:3s"/>
+  <text x="544" y="304" class="ss-meta">autonomy: L3</text>
+  <text x="544" y="322" class="ss-meta">avg response: 14s</text>
+  <text x="544" y="340" class="ss-meta">playbooks loaded: 22</text>
+</svg>

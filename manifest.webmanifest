@@ -5,12 +5,46 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#08090a",
+  "theme_color": "#08090a",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" },
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
   ],
-  "categories": ["developer", "productivity", "utilities"]
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/projects/",
+      "description": "Open-source products"
+    },
+    {
+      "name": "/now",
+      "url": "/now/",
+      "description": "Current focus"
+    },
+    {
+      "name": "/uses",
+      "url": "/uses/",
+      "description": "Tools and setup"
+    },
+    {
+      "name": "/colophon",
+      "url": "/colophon/",
+      "description": "How this site is made"
+    }
+  ],
+  "categories": [
+    "developer",
+    "productivity",
+    "utilities"
+  ],
+  "lang": "en"
 }

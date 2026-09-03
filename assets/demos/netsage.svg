@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <style>
+      .ns-bg { fill: #0a0a0a; }
+      .ns-panel { fill: #111113; stroke: #1f1f23; }
+      .ns-row { fill: #94a3b8; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .ns-prompt { fill: #22c55e; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .ns-cmd { fill: #e6e6e6; font-family: 'SF Mono', monospace; font-size: 12px; }
+      .ns-out { fill: #64748b; font-family: 'SF Mono', monospace; font-size: 11px; }
+      .ns-accent { fill: #6366f1; font-family: 'SF Mono', monospace; font-size: 11px; }
+      .ns-ok { fill: #22c55e; }
+      .ns-warn { fill: #fbbf24; }
+      .ns-gate1 { fill: #22c55e; }
+      .ns-gate2 { fill: #6366f1; }
+      .ns-gate3 { fill: #fbbf24; }
+      @keyframes nsBlink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+      @keyframes nsScan { 0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0} }
+      @keyframes nsFill { 0%{transform:scaleX(0);transform-origin:left} 100%{transform:scaleX(1);transform-origin:left} }
+      .ns-cursor { animation: nsBlink 1s steps(1) infinite; }
+      .ns-scan { stroke-dasharray:200; animation: nsScan 3s ease-out infinite; }
+      .ns-fill { animation: nsFill 4s var(--ease-out-quart, ease-out) infinite; transform-origin: left; }
+    </style>
+  </defs>
+  <rect class="ns-bg" width="800" height="450"/>
+  <rect class="ns-panel" x="16" y="16" width="768" height="418" rx="4"/>
+  <text x="32" y="50" class="ns-prompt">netsage ~ %</text>
+  <text x="148" y="50" class="ns-cmd">plan --intent "spine-leaf for 200 hosts"</text>
+  <text x="32" y="74" class="ns-out">[planner]    analyzing intent ... OK</text>
+  <text x="32" y="92" class="ns-out">[planner]    querying netbox SoT ... 47 devices, 12 VLANs</text>
+  <text x="32" y="110" class="ns-out">[planner]    designing topology ...</text>
+  <text x="148" y="128" class="ns-cmd">→ [config_engineer]</text>
+  <text x="32" y="146" class="ns-out">[config_engineer]  generating vrpcfg.cfg (huawei VRP 8.180)</text>
+  <text x="32" y="164" class="ns-out">[config_engineer]  generating ios-xe.cfg (Cisco IOS-XE 17.9)</text>
+  <text x="32" y="182" class="ns-out">[config_engineer]  4 of 4 files written</text>
+  <text x="148" y="200" class="ns-cmd">→ [validator]</text>
+  <text x="32" y="218" class="ns-out">[validator]    loading containerlab topology ...</text>
+  <text x="32" y="236" class="ns-out">[validator]    starting 8 devices (cEOS, vrpcfg, ...) ...</text>
+  <text x="32" y="254" class="ns-out">[validator]    batfish snapshot ...</text>
+  <text x="32" y="272" class="ns-out">[validator]    ACL reachability: <tspan class="ns-ok">42/42 PASS</tspan></text>
+  <text x="32" y="290" class="ns-out">[validator]    BGP session: <tspan class="ns-ok">8/8 ESTABLISHED</tspan></text>
+  <text x="32" y="308" class="ns-out">[validator]    baseline check: <tspan class="ns-warn">38/40 PASS</tspan> (2 advisory)</text>
+  <text x="148" y="326" class="ns-cmd">→ [compliance]</text>
+  <text x="32" y="344" class="ns-out">[compliance]  30 baseline rules: <tspan class="ns-ok">28/30 PASS</tspan></text>
+  <text x="32" y="362" class="ns-out">[compliance]  2 advisory (NTP, logging) — review required</text>
+  <text x="32" y="380" class="ns-out">[compliance]  CIS Level 1 + vendor hardening: <tspan class="ns-ok">93%</tspan></text>
+  <text x="32" y="398" class="ns-out">[auditor]    snapshot saved · git commit a3f8c2d · awaiting approval</text>
+  <text x="32" y="416" class="ns-accent">[GATE 3 / 3] <tspan class="ns-warn">awaiting human approval</tspan> <tspan class="ns-cursor">▌</tspan></text>
+</svg>

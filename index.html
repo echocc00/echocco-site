@@ -1,369 +1,228 @@
 <!DOCTYPE html>
-<html lang="en" data-page-title-en="echocc00 — Security &amp; Network Engineer · Open Source" data-page-title-zh="echocc00 — 安全与网络工程师 · 开源" data-page-desc-en="AI-driven security infrastructure. Cloud security, network engineering, and AI-driven SecOps. Apache-2.0 open source." data-page-desc-zh="AI 驱动的安全基础设施。云安全、网络工程与 AI 驱动 SecOps。Apache-2.0 开源。">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>echocc00 — Security &amp; Network Engineer · Open Source</title>
-<meta name="description" content="AI-driven security infrastructure. Cloud security, network engineering, and AI-driven SecOps. Apache-2.0 open source.">
-<meta name="author" content="echocc00">
-<meta name="theme-color" content="#000000">
+<title>echocc00 · Security & Network Engineer</title>
+<meta name="description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
+<meta name="theme-color" content="#08090a">
 <link rel="canonical" href="https://www.echocco.com/">
-<style>
-/* Inlined critical motion CSS — guarantees animations work even if main.css is cached */
-[data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
-[data-reveal].reveal-in { opacity: 1; transform: translate3d(0, 0, 0); }
-[data-reveal-stagger] > * { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-[data-reveal-stagger].reveal-in > * { opacity: 1; transform: translate3d(0, 0, 0); }
-[data-reveal-stagger].reveal-in > *:nth-child(1) { transition-delay: 0ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(2) { transition-delay: 80ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(3) { transition-delay: 160ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(4) { transition-delay: 240ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(5) { transition-delay: 320ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(6) { transition-delay: 400ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(7) { transition-delay: 480ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(8) { transition-delay: 560ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(9) { transition-delay: 640ms; }
-[data-reveal-stagger].reveal-in > *:nth-child(10) { transition-delay: 720ms; }
-.proj-hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.proj-hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
-.hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal], [data-reveal-stagger] > *, .proj-hero h1, .hero h1 { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
-}
-</style>
-<link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
-
-<!--
-  Index.html — Linear-flavored hero + i18n helper attrs.
-  Every translatable text node has data-i18n-en + data-i18n-zh.
-  The i18n.js bundle detects URL → /zh/ vs / and swaps textContent.
--->
-
+<link rel="alternate" hreflang="en" href="https://www.echocco.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.echocco.com/">
+<meta property="og:title" content="echocc00 · Security & Network Engineer">
+<meta property="og:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
+<meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="echocc00 · Security & Network Engineer">
+<meta name="twitter:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "echocc00",
+  "alternateName": "echocc00",
+  "url": "https://www.echocco.com",
+  "jobTitle": "Security & Network Engineer",
+  "knowsAbout": [
+    "Cloud Security",
+    "SecOps",
+    "SOAR",
+    "Network Engineering",
+    "AI",
+    "LangGraph"
+  ],
+  "sameAs": [
+    "https://github.com/echocc00"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shanghai",
+    "addressCountry": "CN"
+  }
+}</script>
+</head>
 <body>
-
-<nav class="nav">
+<nav class="nav glass">
   <div class="shell nav-inner">
-    <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
     <div class="nav-menu">
-      <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
-      <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
-      <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
-      <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
-      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+      <a class="nav-link active" href="/">home</a>
+      <a class="nav-link " href="/projects/">projects</a>
+      <a class="nav-link " href="/about/">about</a>
+      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <span class="lang-switch">
+        <a href="/zh/" class="active" hreflang="zh-CN">中文</a>
+      </span>
+      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
     </div>
-        <div class="lang-toggle" aria-label="Language switcher">
-          <a href="/" data-lang="en" hreflang="en" rel="alternate">EN</a>
-          <a href="/zh/" data-lang="zh" hreflang="zh" rel="alternate">中文</a>
-        </div>
   </div>
 </nav>
-
-<section class="hero">
+<main>
+<section class="hero grain">
+  <canvas id="hero-strands-canvas" class="hero-strands-canvas" aria-hidden="true"></canvas>
+  <noscript>
+    <div class="hero-strands-fallback">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="none">
+        <path d="M 0 100 Q 300 50 600 200 T 1200 180" />
+        <path d="M 0 200 Q 400 280 700 180 T 1200 320" />
+        <path d="M 0 350 Q 350 250 600 380 T 1200 280" />
+        <path d="M 0 480 Q 300 420 600 500 T 1200 460" />
+        <path d="M 0 580 Q 350 520 700 600 T 1200 540" />
+        <path d="M 0 50 Q 250 130 500 80 T 1000 160" />
+        <path d="M 0 420 Q 200 380 450 440 T 900 400" />
+      </svg>
+    </div>
+  </noscript>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
   <div class="shell hero-inner">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      <span data-i18n-en="Open to staff security engineer roles · AI SecOps consulting" data-i18n-zh="正在寻求安全工程师职位 · AI 安全运营咨询"></span>
-    </div>
-    <h1 class="hero-title hero-reveal">
-      <span data-i18n-en="Building AI-driven" data-i18n-zh="构建 AI 驱动的"></span><br>
-      <span class="accent" data-i18n-en="security infrastructure" data-i18n-zh="安全基础设施"></span><br>
-      <span data-i18n-en="that ships to production." data-i18n-zh="并投入生产环境。"></span>
-    </h1>
-    <p class="hero-tagline">
-      <span data-i18n-en="I'm" data-i18n-zh="我是"></span> <strong>echocc00</strong><span data-i18n-en=", a security &amp; network engineer in" data-i18n-zh="，一名常驻上海的安全与网络工程师。"></span>
-      <span data-i18n-en="9 years in cloud security and CCIE-certified." data-i18n-zh="九年云安全经验，CCIE 认证。"></span>
-      <span data-i18n-en="Currently operating AI-driven SOC and network automation tooling as open source." data-i18n-zh="目前以开源形式运行 AI 驱动的安全运营与网络自动化工具。"></span>
-    </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="/projects/" data-i18n-en="See my work" data-i18n-zh="查看我的作品"><span class="arrow" aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com" data-mailto-subject="Hi from your portfolio" href="#"
-         data-i18n-en="Get in touch" data-i18n-zh="联系我"><span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="btn btn-ghost" href="/assets/cv.pdf" target="_blank" rel="noopener"
-         data-i18n-en="Download CV" data-i18n-zh="下载简历"><span class="arrow" aria-hidden="true">↓</span></a>
+    <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> <span>whoami</span></div>
+    <h1 class="hero-title" data-anim="title">echocc00<span class="cursor-blink">_</span></h1>
+    <div class="hero-roles" data-anim="roles">security engineer <span class="sep">·</span> network engineer <span class="sep">·</span> OSS maintainer</div>
+    <p class="hero-bio" data-anim="bio">based in <strong>Shanghai</strong>. 9 years cloud security, <strong>CCIE</strong>-certified. shipping 6 apache-2.0 products — most recently <strong>secsight v0.5.1</strong> (ai soc, 22 soar playbooks, 87.8% tests).</p>
+    <div class="status-row" data-anim="status">
+      <span class="status-pill live" data-anim="status-pill" data-stagger="0">Open for work</span>
+      <span class="status-pill">Open to: <strong>staff security engineer</strong></span>
+      <span class="status-pill"><strong>consulting</strong></span>
+      <span class="status-pill"><strong>commercial pilots</strong></span>
     </div>
   </div>
 </section>
 
-<!-- Metrics row -->
-<section class="section" data-reveal>
-  <div class="shell">
-    <div class="metrics" data-reveal-stagger>
-      <div class="metric">
-        <div class="metric-value">9+</div>
-        <div class="metric-label" data-i18n-en="years in cloud security" data-i18n-zh="年云安全经验"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-value">22</div>
-        <div class="metric-label" data-i18n-en="SOAR playbooks in production" data-i18n-zh="个生产级 SOAR 剧本"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-value">7</div>
-        <div class="metric-label" data-i18n-en="open-source products" data-i18n-zh="个开源产品"></div>
-      </div>
-      <div class="metric">
-        <div class="metric-value">1,500+</div>
-        <div class="metric-label" data-i18n-en="tests across products" data-i18n-zh="单元/集成测试用例"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects grid (7 cards hand-written) -->
-<section class="section alt" data-reveal>
+<section class="section">
   <div class="shell">
     <div class="section-head">
-      <div class="section-eyebrow" data-i18n-en="Projects" data-i18n-zh="项目"></div>
-      <h2 class="section-title" data-i18n-en="Seven products in production." data-i18n-zh="七款投入生产的产品。"></h2>
-      <p class="section-desc"
-         data-i18n-en="Each ships as an Apache-2.0 project with a stable version, tests, and an honest README. Click any of them for the full technical detail, stack, and integrations."
-         data-i18n-zh="每款都是 Apache-2.0 项目，带有稳定版本、测试和诚实的 README。点击任意项目查看完整的技术细节、技术栈与集成。"></p>
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> whoami --stats</h2>
+      <span class="section-meta">system info</span>
     </div>
-    <div class="grid" data-reveal-stagger>
-      <!-- SecSight -->
-      <a class="project-card" href="/projects/secsight/" data-cat="security">
-        <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);"><span style="font-size:36px;">🛡</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.5.1</span>
-            <span class="dot"></span>
-            <span class="project-tag">security</span>
-          </div>
-          <h3 class="project-title">SecSight</h3>
-          <div class="project-tagline"
-               data-i18n-en="AI-driven SOC platform"
-               data-i18n-zh="AI 驱动的安全运营平台"></div>
-          <p class="project-desc"
-             data-i18n-en="22 production playbooks · 5 autonomy levels · 234 tests at 87.8% coverage."
-             data-i18n-zh="22 个生产级剧本 · 5 级自主性 · 234 测试覆盖率达 87.8%。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- SecOpent -->
-      <a class="project-card" href="/projects/secopent/" data-cat="security">
-        <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%);"><span style="font-size:36px;">🔐</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v1.1.1-stable</span>
-            <span class="dot"></span>
-            <span class="project-tag">security</span>
-          </div>
-          <h3 class="project-title">SecOpent</h3>
-          <div class="project-tagline"
-               data-i18n-en="Authorized pentest workbench"
-               data-i18n-zh="授权渗透测试工作台"></div>
-          <p class="project-desc"
-             data-i18n-en="Catalog-driven, agent-native pentest workbench. LLM proposes, deterministic layer + humans decide."
-             data-i18n-zh="目录驱动的智能体渗透测试工作台。LLM 提议，确定性层 + 人来决策。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- VidSlice -->
-      <a class="project-card" href="/projects/vidslice/" data-cat="content">
-        <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%);"><span style="font-size:36px;">🎬</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.7.10</span>
-            <span class="dot"></span>
-            <span class="project-tag">content</span>
-          </div>
-          <h3 class="project-title">VidSlice</h3>
-          <div class="project-tagline"
-               data-i18n-en="Material vector index for video pipelines"
-               data-i18n-zh="视频流水线的素材向量索引"></div>
-          <p class="project-desc"
-             data-i18n-en="Third-party material vector indexing with Ed25519 attestation. 408 tests, LanceDB storage."
-             data-i18n-zh="第三方素材向量索引 + Ed25519 签名验证。408 测试，LanceDB 存储。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- NetSage -->
-      <a class="project-card" href="/projects/netsage/" data-cat="network">
-        <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%);"><span style="font-size:36px;">🌐</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.1.1</span>
-            <span class="dot"></span>
-            <span class="project-tag">network</span>
-          </div>
-          <h3 class="project-title">NetSage</h3>
-          <div class="project-tagline"
-               data-i18n-en="AI network engineer"
-               data-i18n-zh="AI 网络工程师"></div>
-          <p class="project-desc"
-             data-i18n-en="Multi-vendor config generation with Containerlab simulation, Batfish validation, and human approval + snapshot rollback."
-             data-i18n-zh="多厂商配置生成、Containerlab 仿真、Batfish 校验，以及人工审批 + 快照回滚。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- OpenCut v3 -->
-      <a class="project-card" href="/projects/opencut002/" data-cat="content">
-        <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #c2410c 0%, #1c1917 100%);"><span style="font-size:36px;">✂️</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.6.5</span>
-            <span class="dot"></span>
-            <span class="project-tag">content</span>
-          </div>
-          <h3 class="project-title">OpenCut v3</h3>
-          <div class="project-tagline"
-               data-i18n-en="Multi-domain short-video platform"
-               data-i18n-zh="多领域短视频平台"></div>
-          <p class="project-desc"
-             data-i18n-en="AI short-video production pipeline. 20 stages from input image to 1080×1920 vertical. CLI + SaaS modes."
-             data-i18n-zh="AI 短视频生产流水线。从素材图到 1080×1920 竖屏共 20 个阶段，CLI + SaaS 双轨。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- SecOpentAgent -->
-      <a class="project-card" href="/projects/secopentagent/" data-cat="security">
-        <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%);"><span style="font-size:36px;">🛰</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.x</span>
-            <span class="dot"></span>
-            <span class="project-tag">security</span>
-          </div>
-          <h3 class="project-title">SecOpentAgent</h3>
-          <div class="project-tagline"
-               data-i18n-en="Self-improving AI agent infrastructure"
-               data-i18n-zh="自进化 AI 智能体基础设施"></div>
-          <p class="project-desc"
-             data-i18n-en="Agent runtime with closed-loop learning and multi-platform gateway (Telegram, Discord, Slack, CLI)."
-             data-i18n-zh="具备闭环学习与多平台网关（Telegram / Discord / Slack / CLI）的智能体运行时。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- StrixOC -->
-      <a class="project-card" href="/projects/strixoc/" data-cat="security">
-        <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);">
-          <div class="project-cover" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%);"><span style="font-size:36px;">🎯</span></div>
-        </div>
-        <div class="project-body">
-          <div class="project-tag-row">
-            <span class="project-tag">v0.x</span>
-            <span class="dot"></span>
-            <span class="project-tag">security</span>
-          </div>
-          <h3 class="project-title">StrixOC</h3>
-          <div class="project-tagline"
-               data-i18n-en="Autonomous AI penetration testing"
-               data-i18n-zh="自主 AI 渗透测试"></div>
-          <p class="project-desc"
-             data-i18n-en="AI penetration testing agents with real PoC validation and multi-agent orchestration."
-             data-i18n-zh="具备真实 PoC 验证与多智能体协作的 AI 渗透测试代理。"></p>
-          <span class="project-link"
-                data-i18n-en="View project"
-                data-i18n-zh="查看项目"><span class="arrow">→</span></span>
-        </div>
-      </a>
+    <div class="stats-grid" data-reveal="rise">
+      <div class="stat-box tilt" data-reveal="rise" style="--i: 0;"><div class="stat-value">9+</div><div class="stat-label">years</div></div>
+      <div class="stat-box tilt" data-reveal="rise" style="--i: 1;"><div class="stat-value">6</div><div class="stat-label">products</div></div>
+      <div class="stat-box tilt" data-reveal="rise" style="--i: 2;"><div class="stat-value">22</div><div class="stat-label">playbooks</div></div>
+      <div class="stat-box tilt" data-reveal="rise" style="--i: 3;"><div class="stat-value">1.5k+</div><div class="stat-label">tests</div></div>
     </div>
   </div>
 </section>
 
-<!-- Three engineering areas -->
-<section class="section" data-reveal>
+<section class="section">
   <div class="shell">
     <div class="section-head">
-      <div class="section-eyebrow" data-i18n-en="Where I focus" data-i18n-zh="专注领域"></div>
-      <h2 class="section-title" data-i18n-en="Three engineering areas, one stack." data-i18n-zh="三大工程领域，一套技术栈。"></h2>
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> /projects</h2>
+      <span class="section-meta">6 entries · last updated 2026-09-01</span>
     </div>
-    <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;">
-      <div style="background:var(--bg);padding:var(--s-5);">
-        <div class="focus-icon">🛡</div>
-        <div class="focus-title" data-i18n-en="Cloud Security &amp; SecOps" data-i18n-zh="云安全与 SecOps"></div>
-        <div class="focus-desc" data-i18n-en="AI SecOps Copilot + auto-remediation SOAR for small-to-mid SOC teams." data-i18n-zh="面向中小型 SOC 团队的 AI 安全运营助手 + 自动化响应 SOAR 引擎。"></div>
-      </div>
-      <div style="background:var(--bg);padding:var(--s-5);">
-        <div class="focus-icon">🌐</div>
-        <div class="focus-title" data-i18n-en="Network Engineering &amp; AI" data-i18n-zh="网络工程与 AI"></div>
-        <div class="focus-desc" data-i18n-en="Multi-vendor config generation, simulation, and policy validation." data-i18n-zh="多厂商配置生成、网络仿真与策略验证。"></div>
-      </div>
-      <div style="background:var(--bg);padding:var(--s-5);">
-        <div class="focus-icon">🎬</div>
-        <div class="focus-title" data-i18n-en="Content &amp; Creative AI" data-i18n-zh="内容与创意 AI"></div>
-        <div class="focus-desc" data-i18n-en="Short-form video pipelines and creative tooling research." data-i18n-zh="短视频流水线与创意工具研究。"></div>
-      </div>
+    <table class="proj-table">
+      <thead><tr><th></th><th>name</th><th>ver</th><th>stack</th><th>desc</th><th></th></tr></thead>
+      <tbody>
+        <tr class="proj-row" data-reveal="rise" style="--i:0;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/secsight/">SecSight</a></td>
+          <td><span class="proj-version">v0.5.1</span></td>
+          <td><span class="proj-stack">fastapi · langgraph</span></td>
+          <td><span class="proj-desc">22 SOAR playbooks · 5 autonomy levels</span></td>
+          <td><a class="proj-link" href="/projects/secsight/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+        <tr class="proj-row" data-reveal="rise" style="--i:1;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/secopent/">SecOpent</a></td>
+          <td><span class="proj-version">v1.1.1-stable</span></td>
+          <td><span class="proj-stack">fastapi · react</span></td>
+          <td><span class="proj-desc">17 cross-domain adapters · oracle N/N validation</span></td>
+          <td><a class="proj-link" href="/projects/secopent/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+        <tr class="proj-row" data-reveal="rise" style="--i:2;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/netsage/">NetSage</a></td>
+          <td><span class="proj-version">v0.1.1</span></td>
+          <td><span class="proj-stack">napalm · containerlab</span></td>
+          <td><span class="proj-desc">8 agents · 3 gates (sim -> validate -> approve)</span></td>
+          <td><a class="proj-link" href="/projects/netsage/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+        <tr class="proj-row" data-reveal="rise" style="--i:3;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/vidslice/">VidSlice</a></td>
+          <td><span class="proj-version">v0.7.10</span></td>
+          <td><span class="proj-stack">lancedb · opencv</span></td>
+          <td><span class="proj-desc">Vector index + Ed25519 attestation · 408 tests</span></td>
+          <td><a class="proj-link" href="/projects/vidslice/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+        <tr class="proj-row" data-reveal="rise" style="--i:4;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/opencut002/">OpenCut v3</a></td>
+          <td><span class="proj-version">v0.6.5</span></td>
+          <td><span class="proj-stack">python · remotion</span></td>
+          <td><span class="proj-desc">20-stage pipeline · 1080x1920 vertical · CLI + SaaS</span></td>
+          <td><a class="proj-link" href="/projects/opencut002/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+        <tr class="proj-row" data-reveal="rise" style="--i:5;">
+          <td style="width:36px;font-size:18px;"></td>
+          <td><a class="proj-name" href="/projects/hydro-fork/">Hydro OJ</a></td>
+          <td><span class="proj-version">fork</span></td>
+          <td><span class="proj-stack">typescript · mongodb</span></td>
+          <td><span class="proj-desc">Fork of hydro-dev/Hydro · AGPL-3.0</span></td>
+          <td><a class="proj-link" href="/projects/hydro-fork/"><span class="proj-arrow">→</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> /stack</h2>
+      <span class="section-meta">6 categories</span>
+    </div>
+    <div class="stack-grid" data-reveal="rise">
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val">langgraph · litellm · mcp · qdrant</div></div>
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val">wazuh · suricata · shuffle · opencti</div></div>
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val">napalm · containerlab · batfish · netbox</div></div>
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val">react · antd · vite</div></div>
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val">python · fastapi</div></div>
+      <div class="stack-cell tilt" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val">postgres · redis · lancedb</div></div>
     </div>
   </div>
 </section>
 
-<!-- Stack -->
-<section class="section dark" data-reveal>
+<section class="section">
   <div class="shell">
-    <div class="section-head">
-      <div class="section-eyebrow" data-i18n-en="Stack &amp; tooling" data-i18n-zh="技术栈"></div>
-      <h2 class="section-title" data-i18n-en="Tools I work with across the products." data-i18n-zh="我在产品中使用的工具。"></h2>
-      <p class="section-desc"
-         data-i18n-en="Not exhaustive, not aspirational — the ones that show up in real commits."
-         data-i18n-zh="不是穷尽，也不是愿景 — 而是真实代码里出现过的。"></p>
-    </div>
-    <div class="pill-cloud">
-      <span class="pill dark">LangGraph</span>
-      <span class="pill dark">FastAPI</span>
-      <span class="pill dark">React</span>
-      <span class="pill dark">Antd</span>
-      <span class="pill dark">Wazuh</span>
-      <span class="pill dark">Suricata</span>
-      <span class="pill dark">Containerlab</span>
-      <span class="pill dark">Batfish</span>
-      <span class="pill dark">NetBox</span>
-      <span class="pill dark">Qdrant</span>
-      <span class="pill dark">MCP</span>
-      <span class="pill dark">LiteLLM</span>
-      <span class="pill dark">TypeScript</span>
-      <span class="pill dark">Python</span>
+    <div class="cta-row" data-reveal="rise">
+      <div>
+        <div class="cta-title">$ let's work together.</div>
+        <div class="cta-desc">Open to staff security engineering roles, AI security infra consulting, and commercial pilots of SecSight / NetSage.</div>
+      </div>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me ↗</a>
+        <a class="cta-btn" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+        <a class="cta-btn" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+      </div>
     </div>
   </div>
 </section>
-<footer class="footer" data-reveal>
+</main>
+<script defer src="/assets/js/motion.js"></script>
+<script defer src="/assets/webgl/strands.js"></script>
+<script defer src="/assets/js/sw-register.js"></script>
+<footer class="footer">
   <div class="shell footer-row">
-    <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
-    <div class="footer-meta">
-      <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
-      <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
-      <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
-      <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
-      <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
+    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="/">home</a>
+      <a href="/projects/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/assets/cv.pdf">cv</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+      <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+      <span>Apache-2.0</span>
     </div>
   </div>
 </footer>
-
-<script src="/assets/js/reveal.js?v=20260903a" defer></script>
-<script src="/assets/js/hero-anim.js?v=20260903a" defer></script>
-<script src="/assets/js/mailto.js?v=20260903a" defer></script>
-<script src="/assets/js/i18n.js?v=20260903a" defer></script>
 </body>
 </html>
-
-

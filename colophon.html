@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colophon — echocc00</title>
+<meta name="description" content="A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.">
+<meta name="theme-color" content="#08090a">
+<link rel="canonical" href="https://www.echocco.com/colophon/">
+<link rel="alternate" hreflang="en" href="https://www.echocco.com/colophon/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/colophon/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.echocco.com/colophon/">
+<meta property="og:title" content="Colophon — echocc00">
+<meta property="og:description" content="A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.">
+<meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Colophon — echocc00">
+<meta name="twitter:description" content="A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.">
+<meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body>
+<nav class="nav glass">
+  <div class="shell nav-inner">
+    <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+    <div class="nav-menu">
+      <a class="nav-link " href="/">home</a>
+      <a class="nav-link " href="/projects/">projects</a>
+      <a class="nav-link " href="/about/">about</a>
+      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <span class="lang-switch">
+        <a href="/zh/colophon/" class="active" hreflang="zh-CN">中文</a>
+      </span>
+      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="hero">
+  <div class="shell hero-inner">
+    <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat colophon.md</div>
+    <h1 class="hero-title" data-anim="title">/colophon<span class="cursor-blink">_</span></h1>
+    <p class="hero-bio" data-anim="bio">A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.</p>
+    <div class="status-row" data-anim="status">
+      <span class="status-pill live tilt" data-anim="status-pill" data-stagger="0">how this site is made</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="colophon-grid"><article class="colophon-block" data-reveal="rise" style="--i:0;">
+      <h2 class="colophon-h">Why this site exists</h2>
+      <p class="colophon-body">I built this site to be a portfolio, a documentation hub, and a contact card — in that order. Most of what I ship is open source, and most of my professional relationships come from people reading the READMEs first and then looking me up. This site is the answer to "who is the person behind SecSight / NetSage."</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:1;">
+      <h2 class="colophon-h">Design philosophy</h2>
+      <p class="colophon-body">Terminal-aesthetic + restrained type. The site should feel like a senior engineer's editor, not a marketing site. Dark by default. Information density is fine — whitespace is for emphasis, not decoration. Every animation must be earned: if a motion doesn't communicate hierarchy or state, it's noise.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:2;">
+      <h2 class="colophon-h">Typography</h2>
+      <p class="colophon-body">System monospace stack — SF Mono → JetBrains Mono → IBM Plex Mono → Menlo → Consolas. No web font downloads. Headings and body use the same family to reinforce the "single editor" feel. Type scale uses clamp() so the layout never breaks across viewports.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:3;">
+      <h2 class="colophon-h">Color</h2>
+      <p class="colophon-body">Three colors do all the work: ink (#e6e6e6) for primary text, indigo (#6366f1) for accent / brand, and emerald (#22c55e) for status / live indicators. Everything else is muted grays. No gradients except the radial wash on hero orbs. No drop shadows except an 8px subtle one on hovered buttons.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:4;">
+      <h2 class="colophon-h">Motion</h2>
+      <p class="colophon-body">Five-act choreographed motion: opening title squash (only place spring easing is allowed), scroll-reveal with curtain wipe, cards stagger 70ms, mouse-follow 3D tilt, scroll parallax on figures. All animations use transform + opacity only (GPU-composited). prefers-reduced-motion is fully respected. WebGL particle strands in the hero run at 60fps on modern devices, fall back to CSS-only SVG on others.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:5;">
+      <h2 class="colophon-h">Tools used</h2>
+      <p class="colophon-body">Built with: vanilla HTML + CSS + JS (no framework). WebGL 1.0 for the hero strands. Python + PIL for OG image generation. Cloudflare Pages for hosting. Cloudflare Email Obfuscation is OFF — your real email reaches me. No analytics, no tracking pixels. Just a static site that does what it says.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:6;">
+      <h2 class="colophon-h">Inspirations</h2>
+      <p class="colophon-body">Rauno Freiberg, Tobias van Schneider, Bruno Simon, Linear, Vercel, Stripe Press, the React Bits Strands animation. Mostly: the senior engineer's portfolio genre — quiet competence over loud design.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:7;">
+      <h2 class="colophon-h">License</h2>
+      <p class="colophon-body">Site content (copy, layout, design): CC BY 4.0. Source code of this site: MIT. Code that powers the projects behind it: Apache-2.0 (or AGPL-3.0 for the Hydro OJ fork). Use whatever. Just don't pretend you wrote it.</p>
+    </article><article class="colophon-block" data-reveal="rise" style="--i:8;">
+      <h2 class="colophon-h">Colophon</h2>
+      <p class="colophon-body">Set in monospace. Composed on a MacBook Pro. Rendered by Cloudflare's edge. Bound by 4 nginx workers in 11 regions. Last refreshed 2026-09-03.</p>
+    </article></div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="shell">
+    <div class="cta-row">
+      <div class="cta-actions">
+        <a class="cta-btn primary tilt" href="/">home ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<script defer src="/assets/js/motion.js"></script>
+<script defer src="/assets/webgl/strands.js"></script>
+<script defer src="/assets/js/sw-register.js"></script>
+<footer class="footer">
+  <div class="shell footer-row">
+    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="/">home</a>
+      <a href="/projects/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/assets/cv.pdf">cv</a>
+      <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+      <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+      <span>Apache-2.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

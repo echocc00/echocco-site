@@ -1,0 +1,330 @@
+/* echocc00 motion system — Linear v3
+   Design tokens: cubic-bezier easings, durations, motion vocabulary.
+   All animations use only transform + opacity (GPU-composited).
+   Respects prefers-reduced-motion.
+*/
+
+:root {
+  /* Easings */
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-expo:  cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-soft:      cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Durations */
+  --dur-quick:   300ms;
+  --dur-base:    600ms;
+  --dur-slow:    900ms;
+  --dur-cinema:  1400ms;
+
+  /* Frosted glass tokens */
+  --glass-bg:    rgba(10, 10, 11, 0.55);
+  --glass-bg-2:  rgba(20, 20, 24, 0.45);
+  --glass-line:  rgba(255, 255, 255, 0.08);
+  --glass-blur:  24px;
+}
+
+/* ============================================================
+   ① OPENING ANIMATIONS — page load
+   ============================================================ */
+
+/* Mask reveal for hero title — wipes left-to-right, then settles */
+@keyframes titleMaskReveal {
+  0%   { clip-path: inset(0 100% 0 0); transform: scaleY(1.35); }
+  60%  { clip-path: inset(0 0 0 0); transform: scaleY(1.08); }
+  100% { clip-path: inset(0 0 0 0); transform: scaleY(1); }
+}
+
+/* Letter stagger (for spans wrapping individual chars) */
+@keyframes letterIn {
+  0%   { opacity: 0; transform: translateY(0.6em) rotateX(-40deg); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+/* Subtle slide-in for secondary lines */
+@keyframes lineIn {
+  0%   { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Soft fade for ambient elements */
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+[data-anim="prompt"] {
+  animation: lineIn 700ms var(--ease-out-quart) 0ms both;
+}
+[data-anim="title"] {
+  display: inline-block;
+  animation: titleMaskReveal 1300ms var(--ease-spring) 100ms both;
+  transform-origin: 50% 100%;
+  will-change: clip-path, transform;
+}
+[data-anim="title-word"] {
+  display: inline-block;
+  animation: letterIn 700ms var(--ease-out-quart) both;
+  transform-origin: 50% 100%;
+}
+[data-anim="title-word:nth-child(1)"]{ animation-delay: 300ms; }
+[data-anim="title-word:nth-child(2)"]{ animation-delay: 400ms; }
+[data-anim="title-word:nth-child(3)"]{ animation-delay: 500ms; }
+[data-anim="title-word:nth-child(4)"]{ animation-delay: 600ms; }
+[data-anim="title-word:nth-child(5)"]{ animation-delay: 700ms; }
+[data-anim="title-word:nth-child(6)"]{ animation-delay: 800ms; }
+[data-anim="roles"] {
+  animation: lineIn 700ms var(--ease-out-quart) 700ms both;
+}
+[data-anim="bio"] {
+  animation: lineIn 800ms var(--ease-out-quart) 850ms both;
+}
+[data-anim="status"] {
+  animation: lineIn 600ms var(--ease-out-expo) 1000ms both;
+}
+[data-anim="status-pill"] {
+  animation: lineIn 500ms var(--ease-out-quart) both;
+}
+[data-anim="status-pill"][data-stagger="0"] { animation-delay: 1100ms; }
+[data-anim="status-pill"][data-stagger="1"] { animation-delay: 1180ms; }
+[data-anim="status-pill"][data-stagger="2"] { animation-delay: 1260ms; }
+[data-anim="status-pill"][data-stagger="3"] { animation-delay: 1340ms; }
+
+/* ============================================================
+   ② SCROLL REVEAL — IntersectionObserver adds .is-revealed
+   ============================================================ */
+
+/* Section title — clip-path wipe top-to-bottom (curtain reveal) */
+@keyframes curtainReveal {
+  0%   { clip-path: inset(0 0 100% 0); transform: translateY(8px); }
+  100% { clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+
+/* Card / row — gentle rise + fade */
+@keyframes riseIn {
+  0%   { opacity: 0; transform: translateY(24px) scale(0.985); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* Image reveal — slight zoom-in + fade */
+@keyframes imageReveal {
+  0%   { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+[data-reveal] {
+  opacity: 0;
+}
+[data-reveal="curtain"] {
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(8px);
+}
+[data-reveal="rise"] {
+  transform: translateY(24px) scale(0.985);
+}
+[data-reveal="image"] {
+  transform: scale(1.06);
+}
+
+[data-reveal].is-revealed {
+  animation: curtainReveal 1100ms var(--ease-out-quart) forwards;
+}
+[data-reveal="rise"].is-revealed {
+  animation: riseIn 900ms var(--ease-out-quart) forwards;
+}
+[data-reveal="image"].is-revealed {
+  animation: imageReveal 1400ms var(--ease-out-quart) forwards;
+}
+
+/* Stagger via inline custom property --i (set by generator) */
+[style*="--i:"] {
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* ============================================================
+   ③ CONTINUOUS ANIMATIONS
+   ============================================================ */
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s steps(1) infinite; }
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.status-dot { animation: pulse 2.4s var(--ease-soft) infinite; }
+
+/* Hero ambient orbs — slow drift */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(20px, -16px) scale(1.04); }
+  66%      { transform: translate(-14px, 12px) scale(0.97); }
+}
+.hero-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
+  opacity: 0.4; pointer-events: none; will-change: transform;
+  animation: drift 14s var(--ease-soft) infinite;
+}
+.hero-orb-1 { width: 360px; height: 360px; background: var(--accent); top: -80px; left: -100px; }
+.hero-orb-2 { width: 280px; height: 280px; background: #c084fc; bottom: -60px; right: -80px; animation-delay: -4s; opacity: 0.25; }
+
+/* ============================================================
+   ④ MICRO-INTERACTIONS
+   ============================================================ */
+
+/* Magnetic tilt (set by JS via inline transform on mousemove) */
+.tilt {
+  transition: transform 200ms var(--ease-soft);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Project row hover — arrow translate + bg gradient */
+.proj-row {
+  position: relative;
+  transition: background var(--dur-quick) var(--ease-out-quart);
+}
+.proj-row::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.06));
+  opacity: 0; transition: opacity var(--dur-quick) var(--ease-out-quart);
+  pointer-events: none;
+}
+.proj-row:hover::before { opacity: 1; }
+.proj-row .proj-arrow {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+.proj-row:hover .proj-arrow { transform: translateX(6px); color: var(--accent-green); }
+
+/* Nav link underline draw */
+.nav-link {
+  position: relative;
+  padding: 6px 0;
+}
+.nav-link::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 1px;
+  background: var(--accent-green);
+  transform: scaleX(0); transform-origin: 50% 50%;
+  transition: transform 350ms var(--ease-out-expo);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Filter chip — fill on hover/active */
+.filter-chip {
+  transition: all var(--dur-quick) var(--ease-out-quart);
+}
+.filter-chip:hover {
+  background: var(--bg-2);
+  border-color: var(--ink-4);
+  transform: translateY(-1px);
+}
+
+/* Button lift */
+.cta-btn {
+  transition: all var(--dur-quick) var(--ease-out-quart);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.18);
+}
+
+/* External link hover — arrow drift */
+a[target="_blank"]:hover::after { content: ' ↗'; opacity: 0.6; }
+
+/* ============================================================
+   ⑤ FROSTED GLASS + STRANDS
+   ============================================================ */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-line);
+}
+.glass-2 {
+  background: var(--glass-bg-2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-line);
+}
+
+/* Nav glass */
+.nav.glass {
+  background: rgba(8, 9, 10, 0.65);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--glass-line);
+}
+
+/* Project figure — glass with subtle gradient edge */
+.proj-figure {
+  background: linear-gradient(135deg, rgba(20,20,24,0.6), rgba(8,9,10,0.8));
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-line);
+  position: relative;
+  overflow: hidden;
+}
+.proj-figure::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(99,102,241,0.04) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Hero strands — SVG-based particle backdrop */
+.hero-strands {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-strands svg {
+  width: 100%; height: 100%;
+  opacity: 0.45;
+}
+.hero-strands path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.5;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawStrand 4s var(--ease-out-quart) forwards;
+}
+.hero-strands path:nth-child(2n) { stroke: #c084fc; animation-delay: 0.4s; }
+.hero-strands path:nth-child(3n) { stroke: #22c55e; animation-delay: 0.8s; opacity: 0.5; }
+@keyframes drawStrand {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Subtle noise grain overlay */
+.grain::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; filter: none !important; }
+}
