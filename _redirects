@@ -1,34 +1,45 @@
 # Cloudflare Pages _redirects
-# Trailing-slash URLs to .html — use 301 so CF Pages serves /about.html
-# (CF Pages auto-rewrites /about.html → /about in the address bar)
+# Index pages: trailing-slash to .html (200 = serve file)
+# DO NOT redirect individual project pages (causes 308 loop)
+# CF Pages auto-rewrites /projects/secsight → projects/secsight.html
 
-/about                       /about.html                       301
-/now                         /now.html                         301
-/uses                        /uses.html                        301
-/colophon                    /colophon.html                    301
-/projects                    /projects/index.html              301
-/projects/secsight           /projects/secsight.html           301
-/projects/secopent           /projects/secopent.html           301
-/projects/netsage            /projects/netsage.html            301
-/projects/vidslice           /projects/vidslice.html           301
-/projects/opencut002         /projects/opencut002.html         301
-/projects/hydro-fork         /projects/hydro-fork.html         301
-/projects/opencut            /projects/opencut002.html         301
+/                           /index.html                       200
+/about/                     /about.html                       200
+/now/                       /now.html                         200
+/uses/                      /uses.html                        200
+/colophon/                  /colophon.html                    200
+/projects/                  /projects/index.html              200
 
-/zh                          /zh/index.html                    301
-/zh/about                    /zh/about.html                    301
-/zh/now                      /zh/now.html                      301
-/zh/uses                     /zh/uses.html                     301
-/zh/colophon                 /zh/colophon.html                 301
-/zh/projects                 /zh/projects/index.html           301
-/zh/projects/secsight        /zh/projects/secsight.html        301
-/zh/projects/secopent        /zh/projects/secopent.html        301
-/zh/projects/netsage         /zh/projects/netsage.html         301
-/zh/projects/vidslice        /zh/projects/vidslice.html        301
-/zh/projects/opencut002      /zh/projects/opencut002.html      301
-/zh/projects/hydro-fork      /zh/projects/hydro-fork.html      301
+# Individual project pages - let CF Pages auto-handle
+# /projects/secsight       → projects/secsight.html  (CF auto)
+/projects/secsight.html    → /projects/secsight       301
+/projects/secopent.html    → /projects/secopent       301
+/projects/netsage.html     → /projects/netsage        301
+/projects/vidslice.html    → /projects/vidslice       301
+/projects/opencut002.html  → /projects/opencut002     301
+/projects/hydro-fork.html  → /projects/hydro-fork     301
+/projects/opencut.html     → /projects/opencut002.html 301
 
-/sw.js                       /sw.js                            200
-/rss.xml                     /rss.xml                          200
-/zh/rss.xml                  /zh/rss.xml                       200
-/uses.json                   /uses.json                        200
+# Chinese mirror
+/zh                         /zh/index.html                   200
+/zh/about/                  /zh/about.html                   200
+/zh/now/                    /zh/now.html                     200
+/zh/uses/                   /zh/uses.html                    200
+/zh/colophon/               /zh/colophon.html                200
+/zh/projects/               /zh/projects/index.html          200
+
+/zh/projects/secsight.html  /zh/projects/secsight            301
+/zh/projects/secopent.html  /zh/projects/secopent            301
+/zh/projects/netsage.html   /zh/projects/netsage             301
+/zh/projects/vidslice.html  /zh/projects/vidslice            301
+/zh/projects/opencut002.html → /zh/projects/opencut002        301
+/zh/projects/hydro-fork.html → /zh/projects/hydro-fork        301
+
+# Legacy URLs
+/projects/opencut/          /projects/opencut002.html        301
+
+# Allow direct access to special files
+/sw.js                      /sw.js                           200
+/rss.xml                    /rss.xml                         200
+/zh/rss.xml                 /zh/rss.xml                      200
+/uses.json                  /uses.json                       200
