@@ -59,7 +59,7 @@
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
         <span class="proj-cat" data-i18n-en="Network" data-i18n-zh="网络">Network</span>
-        <h1 class="proj-title">NetSage</h1>
+        <h1 class="proj-title hero-reveal">NetSage</h1>
         <p class="proj-tagline" data-i18n-en="AI network engineer" data-i18n-zh="AI 网络工程师">AI network engineer</p>
 
         <div class="proj-meta-bar">
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <section class="proj-body">
+  <section class="proj-body" data-reveal>
     <div class="shell proj-layout">
       <article class="proj-main">
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
@@ -82,7 +82,7 @@
           <p data-i18n-en="It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically." data-i18n-zh="跨厂商（华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista），从 NetBox 或 Nautobot 读取 Source of Truth。30 条基线规则（CIS + 厂商加固）自动拦下高危配置。">It speaks multi-vendor (Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista) and reads source-of-truth from NetBox or Nautobot. The 30-rule baseline (CIS + vendor hardening) catches the dangerous stuff automatically.</p>
         </div>
                   <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
-        <section class="impact-section">
+        <section class="impact-section" data-reveal>
           <header class="impact-head">
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
@@ -91,7 +91,7 @@
           </header>
 
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
-          <div class="impact-rows" role="list">
+          <div class="impact-rows" role="list" data-reveal-stagger>
             <!-- Row 1 -->
             <div class="impact-row" role="listitem">
               <div class="impact-cell impact-cell--pain">
@@ -221,7 +221,7 @@
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
 
-          <div class="impact-grid">
+          <div class="impact-grid" data-reveal-stagger>
             <!-- Pain card -->
             <div class="impact-card impact-card--pain">
               <div class="impact-card-art" aria-hidden="true">
@@ -291,7 +291,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
-        <div class="how-grid">
+        <div class="how-grid" data-reveal-stagger>
           <div class="how-stage">
             <div class="how-num">01</div>
             <div class="how-title" data-i18n-en="Plan" data-i18n-zh="规划">Plan</div>
@@ -322,7 +322,7 @@
         </div>
 
         <!-- ============ Runtime sequence (4-stage engine) ============ -->
-        <section class="how-section">
+        <section class="how-section" data-reveal>
           <h2 class="proj-h2" data-i18n-en="Runtime flow" data-i18n-zh="运行时流程">Runtime flow</h2>
           <p class="proj-desc"
              data-i18n-en="From intent to live device, every change moves through the same six participants: the operator states the goal, the planner designs a config, the simulator and validator probe it in a virtual twin, the human approver signs off, then the planner takes a snapshot and applies to the real device while the observer watches for drift. Click any participant or message for details."
@@ -341,7 +341,7 @@
         </section>
 
         <!-- Architecture embed - placed between Overview and Capabilities -->
-        <section class="arch-embed" aria-labelledby="arch-title-netsage">
+        <section class="arch-embed" data-reveal aria-labelledby="arch-title-netsage">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-netsage" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
@@ -363,7 +363,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
-        <div class="proj-features">
+        <div class="proj-features" data-reveal-stagger>
         <div class="proj-feat">
             <div class="proj-feat-title" data-i18n-en="Three-gate engine" data-i18n-zh="三道闸门">Three-gate engine</div>
             <div class="proj-feat-desc" data-i18n-en="Containerlab simulation → Batfish validation → human approval + snapshot rollback." data-i18n-zh="Containerlab 仿真 → Batfish 校验 → 人工审批 + 快照回滚。">Containerlab simulation → Batfish validation → human approval + snapshot rollback.</div>
@@ -422,7 +422,7 @@
   
     </section>
 
-  <section class="section dark">
+  <section class="section dark" data-reveal>
     <div class="shell">
       <div class="cta-row">
         <div>
@@ -437,7 +437,7 @@
     </div>
   </section></main>
 
-      <footer class="footer">
+      <footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -449,6 +449,8 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

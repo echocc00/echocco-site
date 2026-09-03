@@ -59,7 +59,7 @@
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
         <span class="proj-cat" data-i18n-en="Content" data-i18n-zh="内容">Content</span>
-        <h1 class="proj-title">VidSlice</h1>
+        <h1 class="proj-title hero-reveal">VidSlice</h1>
         <p class="proj-tagline" data-i18n-en="Material vector index for video pipelines" data-i18n-zh="视频流水线的素材向量索引">Material vector index for video pipelines</p>
 
         <div class="proj-meta-bar">
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <section class="proj-body">
+  <section class="proj-body" data-reveal>
     <div class="shell proj-layout">
       <article class="proj-main">
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
@@ -83,7 +83,7 @@
                   </div>
 
                           <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
-        <section class="impact-section">
+        <section class="impact-section" data-reveal>
           <header class="impact-head">
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
@@ -92,7 +92,7 @@
           </header>
 
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
-          <div class="impact-rows" role="list">
+          <div class="impact-rows" role="list" data-reveal-stagger>
             <!-- Row 1 -->
             <div class="impact-row" role="listitem">
               <div class="impact-cell impact-cell--pain">
@@ -222,7 +222,7 @@
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
 
-          <div class="impact-grid">
+          <div class="impact-grid" data-reveal-stagger>
             <!-- Pain card -->
             <div class="impact-card impact-card--pain">
               <div class="impact-card-art" aria-hidden="true">
@@ -293,7 +293,7 @@
 
                   <h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
                   <p class="proj-desc" data-i18n-en="Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest." data-i18n-zh="CLI 的四个阶段把一个装着原始素材的目录变成一个 OpenCut 可以直接接入的签名向量索引。">Four CLI stages turn a directory of raw material into a signed vector index ready for OpenCut to ingest.</p>
-                  <ol class="how-grid" role="list">
+                  <ol class="how-grid" role="list" data-reveal-stagger>
                     <li class="how-stage">
                       <span class="how-stage-num">01</span>
                       <h3 data-i18n-en="Discover" data-i18n-zh="扫描">Discover</h3>
@@ -320,7 +320,7 @@
                   </ol>
 
 <!-- ============ SECTION: Product architecture (runtime sequence) ============ -->
-<section class="how-section"><h2 class="proj-h2" data-i18n-en="Runtime sequence" data-i18n-zh="运行时调用顺序">Runtime sequence</h2>
+<section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Runtime sequence" data-i18n-zh="运行时调用顺序">Runtime sequence</h2>
     <p class="proj-desc"
        data-i18n-en="A single VidSlice CLI run walks through five participants — operator, scanner, extractor, embedder, and writer — turning a materials directory into a signed LanceDB index that flows back to the operator or straight into OpenCut. Click any participant or message for details."
        data-i18n-zh="单次 VidSlice CLI 运行会经过五个参与者——操作员、扫描器、抽帧器、向量化、输出器——把一个素材目录变成签名化的 LanceDB 索引，再回流到操作员或直接送入 OpenCut。点击任意参与者或消息查看详情。">A single VidSlice CLI run walks through five participants.</p>
@@ -337,7 +337,7 @@
     </div></section>
 
                     <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-vidslice">
+          <section class="arch-embed" data-reveal aria-labelledby="arch-title-vidslice">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-vidslice" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
@@ -359,7 +359,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
-        <div class="proj-features">
+        <div class="proj-features" data-reveal-stagger>
         <div class="proj-feat">
             <div class="proj-feat-title" data-i18n-en="Vector index" data-i18n-zh="向量索引">Vector index</div>
             <div class="proj-feat-desc" data-i18n-en="LanceDB over multi-frame embeddings." data-i18n-zh="基于 LanceDB 的多帧 embedding。">LanceDB over multi-frame embeddings.</div>
@@ -418,7 +418,7 @@
   
     </section>
 
-  <section class="section dark">
+  <section class="section dark" data-reveal>
     <div class="shell">
       <div class="cta-row">
         <div>
@@ -433,7 +433,7 @@
     </div>
   </section></main>
 
-      <footer class="footer">
+      <footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -445,6 +445,8 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

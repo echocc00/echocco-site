@@ -44,7 +44,7 @@
         <span class="status-dot"></span>
         <span data-i18n-en="7 products in production · 1,500+ tests · 22 SOAR playbooks" data-i18n-zh="7 款产品生产中 · 1,500+ 测试 · 22 个 SOAR 剧本">7 products in production · 1,500+ tests · 22 SOAR playbooks</span>
       </div>
-      <h1 class="hero-title" data-i18n-en="Projects." data-i18n-zh="项目。">Projects.</h1>
+      <h1 class="hero-title hero-reveal" data-i18n-en="Projects." data-i18n-zh="项目。">Projects.</h1>
       <p class="hero-tagline">
         <span data-i18n-en="Each ships as an Apache-2.0 project with a stable version, tests, and an honest README." data-i18n-zh="每款都是 Apache-2.0 项目，带有稳定版本、测试和诚实的 README。">Each ships as an Apache-2.0 project with a stable version, tests, and an honest README.</span>
         <span data-i18n-en="Click any for the full technical detail, architecture diagram, stack, and integrations." data-i18n-zh="点击任意项目查看完整的技术细节、架构图、技术栈与集成。">Click any for the full technical detail, architecture diagram, stack, and integrations.</span>
@@ -52,7 +52,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="shell">
       <div class="proj-toolbar">
         <input class="search-input" type="search" id="projSearch"
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="grid" id="projGrid">
+      <div class="grid" id="projGrid" data-reveal-stagger>
         <a class="project-card" href="/projects/secsight/" data-cat="security">
           <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);">
           <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);"><span style="font-size:36px;">🛡</span></div>
@@ -168,7 +168,7 @@
   </section>
 </main>
 
-<footer class="footer">
+<footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -213,6 +213,8 @@
   if (search) search.addEventListener('input', apply);
 })();
 </script>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

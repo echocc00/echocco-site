@@ -59,7 +59,7 @@
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
         <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
-        <h1 class="proj-title">SecOpentAgent</h1>
+        <h1 class="proj-title hero-reveal">SecOpentAgent</h1>
         <p class="proj-tagline" data-i18n-en="Self-improving AI agent infrastructure" data-i18n-zh="自进化 AI 智能体基础设施">Self-improving AI agent infrastructure</p>
 
         <div class="proj-meta-bar">
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <section class="proj-body">
+  <section class="proj-body" data-reveal>
     <div class="shell proj-layout">
       <article class="proj-main">
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
@@ -83,7 +83,7 @@
                   </div>
 
                           <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
-        <section class="impact-section">
+        <section class="impact-section" data-reveal>
           <header class="impact-head">
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
@@ -92,7 +92,7 @@
           </header>
 
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
-          <div class="impact-rows" role="list">
+          <div class="impact-rows" role="list" data-reveal-stagger>
             <!-- Row 1 -->
             <div class="impact-row" role="listitem">
               <div class="impact-cell impact-cell--pain">
@@ -222,7 +222,7 @@
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
 
-          <div class="impact-grid">
+          <div class="impact-grid" data-reveal-stagger>
             <!-- Pain card -->
             <div class="impact-card impact-card--pain">
               <div class="impact-card-art" aria-hidden="true">
@@ -291,7 +291,7 @@
 
 
 
-        <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+        <section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
             <p class="proj-desc"
                data-i18n-en="Every request threads through five participants. The user message arrives on any channel, the gateway normalizes it and forwards to the agent core, the agent calls LiteLLM to plan a tool sequence with the chosen provider, the tools execute and stream observations back, and the reply (plus a newly authored or improved skill) returns through the same gateway. Click any participant or message for details."
                data-i18n-zh="每一次请求都流经五个参与者：用户消息到达任意通道，网关统一通道格式后转发到智能体核心，智能体通过 LiteLLM 选定供应商来规划工具调用序列，工具执行并将观察结果回流，最终答复与新写入或改进的技能一起沿原通道返回。点击任意参与者或消息查看详情。">Every request threads through five participants.</p>
@@ -308,7 +308,7 @@
             </div></section>
 
                     <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-secopentagent">
+          <section class="arch-embed" data-reveal aria-labelledby="arch-title-secopentagent">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-secopentagent" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
@@ -330,7 +330,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
-        <div class="proj-features">
+        <div class="proj-features" data-reveal-stagger>
         <div class="proj-feat">
             <div class="proj-feat-title" data-i18n-en="Closed-loop learning" data-i18n-zh="闭环学习">Closed-loop learning</div>
             <div class="proj-feat-desc" data-i18n-en="Agent-curated memory and skill self-improvement across sessions." data-i18n-zh="智能体管理记忆，技能在使用中自我进化，跨会话持久。">Agent-curated memory and skill self-improvement across sessions.</div>
@@ -389,7 +389,7 @@
   
     </section>
 
-  <section class="section dark">
+  <section class="section dark" data-reveal>
     <div class="shell">
       <div class="cta-row">
         <div>
@@ -404,7 +404,7 @@
     </div>
   </section></main>
 
-      <footer class="footer">
+      <footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -416,6 +416,8 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

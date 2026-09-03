@@ -41,7 +41,7 @@
       <span class="dot"></span>
       <span data-i18n-en="Open to staff security engineer roles · AI SecOps consulting" data-i18n-zh="正在寻求安全工程师职位 · AI 安全运营咨询"></span>
     </div>
-    <h1 class="hero-title">
+    <h1 class="hero-title hero-reveal">
       <span data-i18n-en="Building AI-driven" data-i18n-zh="构建 AI 驱动的"></span><br>
       <span class="accent" data-i18n-en="security infrastructure" data-i18n-zh="安全基础设施"></span><br>
       <span data-i18n-en="that ships to production." data-i18n-zh="并投入生产环境。"></span>
@@ -62,9 +62,9 @@
 </section>
 
 <!-- Metrics row -->
-<section class="section">
+<section class="section" data-reveal>
   <div class="shell">
-    <div class="metrics">
+    <div class="metrics" data-reveal-stagger>
       <div class="metric">
         <div class="metric-value">9+</div>
         <div class="metric-label" data-i18n-en="years in cloud security" data-i18n-zh="年云安全经验"></div>
@@ -86,7 +86,7 @@
 </section>
 
 <!-- Projects grid (7 cards hand-written) -->
-<section class="section alt">
+<section class="section alt" data-reveal>
   <div class="shell">
     <div class="section-head">
       <div class="section-eyebrow" data-i18n-en="Projects" data-i18n-zh="项目"></div>
@@ -95,7 +95,7 @@
          data-i18n-en="Each ships as an Apache-2.0 project with a stable version, tests, and an honest README. Click any of them for the full technical detail, stack, and integrations."
          data-i18n-zh="每款都是 Apache-2.0 项目，带有稳定版本、测试和诚实的 README。点击任意项目查看完整的技术细节、技术栈与集成。"></p>
     </div>
-    <div class="grid">
+    <div class="grid" data-reveal-stagger>
       <!-- SecSight -->
       <a class="project-card" href="/projects/secsight/" data-cat="security">
         <div class="project-cover" style="background: linear-gradient(135deg, #1e3a8a 0%, #000 100%);">
@@ -268,7 +268,7 @@
 </section>
 
 <!-- Three engineering areas -->
-<section class="section">
+<section class="section" data-reveal>
   <div class="shell">
     <div class="section-head">
       <div class="section-eyebrow" data-i18n-en="Where I focus" data-i18n-zh="专注领域"></div>
@@ -295,7 +295,7 @@
 </section>
 
 <!-- Stack -->
-<section class="section dark">
+<section class="section dark" data-reveal>
   <div class="shell">
     <div class="section-head">
       <div class="section-eyebrow" data-i18n-en="Stack &amp; tooling" data-i18n-zh="技术栈"></div>
@@ -322,7 +322,7 @@
     </div>
   </div>
 </section>
-<footer class="footer">
+<footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -335,6 +335,8 @@
   </div>
 </footer>
 
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

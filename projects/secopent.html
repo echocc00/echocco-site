@@ -59,7 +59,7 @@
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
         <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
-        <h1 class="proj-title">SecOpent</h1>
+        <h1 class="proj-title hero-reveal">SecOpent</h1>
         <p class="proj-tagline" data-i18n-en="Authorized pentest workbench" data-i18n-zh="授权渗透测试工作台">Authorized pentest workbench</p>
 
         <div class="proj-meta-bar">
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <section class="proj-body">
+  <section class="proj-body" data-reveal>
     <div class="shell proj-layout">
       <article class="proj-main">
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
@@ -84,7 +84,7 @@
              data-i18n-zh="覆盖资产 / Web / 网络 / 云 / 身份的 17 个适配器，让你能拼起真实战役而无需写粘合代码。三层证据 + 脱敏处理，交付干净的报告。">17 adapters across asset/web/network/cloud/identity.</p>
         </div>
                 <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
-        <section class="impact-section">
+        <section class="impact-section" data-reveal>
           <header class="impact-head">
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
@@ -93,7 +93,7 @@
           </header>
 
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
-          <div class="impact-rows" role="list">
+          <div class="impact-rows" role="list" data-reveal-stagger>
             <!-- Row 1 -->
             <div class="impact-row" role="listitem">
               <div class="impact-cell impact-cell--pain">
@@ -223,7 +223,7 @@
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
 
-          <div class="impact-grid">
+          <div class="impact-grid" data-reveal-stagger>
             <!-- Pain card -->
             <div class="impact-card impact-card--pain">
               <div class="impact-card-art" aria-hidden="true">
@@ -292,7 +292,7 @@
 
 
 
-        <section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+        <section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
             <p class="proj-desc"
                data-i18n-en="Every authorized engagement moves through the same five participants. The operator opens the workbench with credentials, the catalog hands back scope and pre-approved techniques, the agent proposes the next action without ever executing it, the operator approves or rejects, the deterministic sandbox runs the approved action with provenance, and signed findings publish back to the catalog and downstream pipeline. Click any participant or message for details."
                data-i18n-zh="每一次授权测试都经过同样的五个参与者：操作员凭据打开工作台，目录返回范围与预先批准的技术，智能体只提议下一步动作而不执行，操作员批准或驳回，确定性沙箱以可追溯的方式执行批准动作，加签后的发现项回写到目录与下游流水线。点击任意参与者或消息查看详情。">Every authorized engagement moves through the same five participants.</p>
@@ -309,7 +309,7 @@
             </div></section>
 
           <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-secopent">
+          <section class="arch-embed" data-reveal aria-labelledby="arch-title-secopent">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-secopent" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
@@ -331,7 +331,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
-        <div class="proj-features">
+        <div class="proj-features" data-reveal-stagger>
           <div class="proj-feat">
             <div class="proj-feat-title" data-i18n-en="Catalog-driven" data-i18n-zh="目录驱动">Catalog-driven</div>
             <div class="proj-feat-desc" data-i18n-en="17 adapters · YAML case DSL · CoverageMatrix." data-i18n-zh="17 个适配器 · YAML case DSL · CoverageMatrix。">17 adapters · YAML case DSL · CoverageMatrix.</div>
@@ -382,7 +382,7 @@
 
     </section>
 
-  <section class="section dark">
+  <section class="section dark" data-reveal>
     <div class="shell">
       <div class="cta-row">
         <div>
@@ -397,7 +397,7 @@
     </div>
   </section></main>
 
-      <footer class="footer">
+      <footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -409,6 +409,8 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>

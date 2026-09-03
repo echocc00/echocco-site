@@ -59,7 +59,7 @@
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
       <div class="proj-hero-content">
         <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
-        <h1 class="proj-title">SecSight</h1>
+        <h1 class="proj-title hero-reveal">SecSight</h1>
         <p class="proj-tagline" data-i18n-en="AI-driven SOC platform" data-i18n-zh="AI 驱动的安全运营平台">AI-driven SOC platform</p>
 
         <div class="proj-meta-bar">
@@ -73,7 +73,7 @@
     </div>
   </header>
 
-  <section class="proj-body">
+  <section class="proj-body" data-reveal>
     <div class="shell proj-layout">
       <article class="proj-main">
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
@@ -83,7 +83,7 @@
           <p data-i18n-en="The system ships with a process-isolated deployment model and is aligned with MLPS 2.0 (等保 2.0) so it can be installed in regulated environments without architectural rewrites."
              data-i18n-zh="系统自带进程隔离部署模型并对齐等保 2.0 控制点，可在合规环境中直接落地，无需重构。">The system ships with a process-isolated deployment model and is aligned with MLPS 2.0.</p>
         <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
-        <section class="impact-section">
+        <section class="impact-section" data-reveal>
           <header class="impact-head">
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
@@ -92,7 +92,7 @@
           </header>
 
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
-          <div class="impact-rows" role="list">
+          <div class="impact-rows" role="list" data-reveal-stagger>
 
             <!-- Row 1 -->
             <div class="impact-row" role="listitem">
@@ -230,7 +230,7 @@
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及分析师体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
           </div>
 
-          <div class="impact-grid">
+          <div class="impact-grid" data-reveal-stagger>
             <!-- Pain card -->
             <div class="impact-card impact-card--pain">
               <div class="impact-card-art" aria-hidden="true">
@@ -306,7 +306,7 @@
         </section>
 
 <!-- ============ SECTION 2: Product architecture (4-stage flow) ============ -->
-<section class="how-section"><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+<section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
     <p class="proj-desc"
        data-i18n-en="Every alert moves through the same four participants. Detection arrives at the ingest pipeline, gets normalized and routed to the multi-agent Copilot, the Copilot matches a verdict to a playbook on the SOAR engine, and any L4 over-budget action lands in a human review queue. Click any participant or message for details."
        data-i18n-zh="每一条告警都经过同样的四个参与者。检测信号到达接入流水线后被归一化并路由到多智能体助手；助手把判定结果匹配到 SOAR 引擎上的剧本；任何超出 L4 自主预算的动作都会落入人工审核队列。点击任意参与者或消息查看详情。">Every alert moves through the same four participants.</p>
@@ -324,7 +324,7 @@
 
 
           <!-- Architecture embed - placed between Overview and Capabilities -->
-          <section class="arch-embed" aria-labelledby="arch-title-secsight">
+          <section class="arch-embed" data-reveal aria-labelledby="arch-title-secsight">
             <header class="arch-embed-head">
               <h2 class="proj-h2" id="arch-title-secsight" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
               <p class="arch-embed-sub"
@@ -346,7 +346,7 @@
 
 
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
-        <div class="proj-features">
+        <div class="proj-features" data-reveal-stagger>
           <div class="proj-feat">
             <div class="proj-feat-title" data-i18n-en="AI SecOps Copilot" data-i18n-zh="AI SecOps 助手">AI SecOps Copilot</div>
             <div class="proj-feat-desc" data-i18n-en="Multi-agent SOC assistant over SIEM/ticket/KB." data-i18n-zh="覆盖 SIEM / 工单 / 知识库的多智能体 SOC 助手。">Multi-agent SOC assistant over SIEM/ticket/KB.</div>
@@ -404,7 +404,7 @@
   
     </section>
 
-  <section class="section dark">
+  <section class="section dark" data-reveal>
     <div class="shell">
       <div class="cta-row">
         <div>
@@ -419,7 +419,7 @@
     </div>
   </section></main>
 
-      <footer class="footer">
+      <footer class="footer" data-reveal>
   <div class="shell footer-row">
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
     <div class="footer-meta">
@@ -431,6 +431,8 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 <script src="/assets/js/mailto.js" defer></script>
 <script src="/assets/js/i18n.js" defer></script>
 </body>
