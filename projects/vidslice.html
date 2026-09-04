@@ -1,366 +1,733 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>VidSlice · Material vector index for video pipelines · echocc00</title>
+
 <meta name="description" content="VidSlice indexes third-party video material (photos, clips, B-roll) into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into t">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/projects/vidslice/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/vidslice/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/vidslice/">
+
 <meta property="og:type" content="article">
+
 <meta property="og:url" content="https://www.echocco.com/projects/vidslice/">
+
 <meta property="og:title" content="VidSlice · Material vector index for video pipelines · echocc00">
+
 <meta property="og:description" content="VidSlice indexes third-party video material (photos, clips, B-roll) into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into t">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/vidslice.png">
+
 <meta property="og:locale" content="en_US">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="VidSlice · Material vector index for video pipelines · echocc00">
+
 <meta name="twitter:description" content="VidSlice indexes third-party video material (photos, clips, B-roll) into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into t">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/vidslice.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/">home</a>
+
       <a class="nav-link active" href="/projects/">projects</a>
+
       <a class="nav-link " href="/about/">about</a>
+
       <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+
       <span class="lang-switch">
+
         <a href="/zh/projects/vidslice/" class="active" hreflang="zh-CN">中文</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <header class="proj-hero" style="background: linear-gradient(135deg, #6d28d9 0%, #1e1b4b 100%); color: white;">
+
   <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
   <div class="shell">
+
     <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /projects/vidslice/</span></div>
-    <h1 class="proj-title">VidSlice</h1>
+
+    <h1 class="proj-title hero-reveal-in">VidSlice</h1>
+
     <p class="proj-tagline">Material vector index for video pipelines</p>
+
     <div class="proj-meta-bar">
+
       <span class="proj-ver">v0.7.10</span>
+
       <span class="dot"></span>
+
       <span>Apache-2.0</span>
+
       <span class="dot"></span>
+
       <a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">github.com/echocc00/VidSlice ↗</a>
+
     </div>
+
   </div>
+
 </header>
 
+
+
 <section class="proj-body">
+
   <div class="shell proj-layout">
+
     <article class="proj-main" data-reveal="rise">
+
       <h2 class="proj-h2" data-reveal="curtain">## overview</h2>
+
       <div class="proj-desc"><p>VidSlice indexes third-party video material (photos, clips, B-roll) into a LanceDB vector store, signs every entry with Ed25519 for tamper detection, and serves results over HTTP. Built to plug into the OpenCut short-video pipeline.</p></div>
 
+
+
         <section class="impact-section" data-reveal>
+
           <header class="impact-head">
+
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+
             <p data-i18n-en="Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. VidSlice gives the outsourced team a standalone CLI: hand it materials, get back a signed standard index that OpenCut consumes directly."
+
                data-i18n-zh="每个团队都各自实现一套抽帧和 embedding 流水线。原始素材不能交给外部供应商，但索引又必须在某处完成。VidSlice 给外包团队一个独立的 CLI：把素材丢进去，拿回 OpenCut 直接能消费的签名标准索引。">Every team rolls its own frame extractor and embedding pipeline. Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere. VidSlice gives the outsourced team a standalone CLI: hand it materials, get back a signed standard index that OpenCut consumes directly.</p>
+
           </header>
 
+
+
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+
           <div class="impact-rows" role="list" data-reveal-stagger>
+
             <!-- Row 1 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Material processing fragmented" data-i18n-zh="素材处理链路支离破碎">Material processing fragmented</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Every team rolls its own." data-i18n-zh="每个团队都各自实现。">Every team rolls its own.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Standalone CLI + LanceDB index" data-i18n-zh="独立 CLI + LanceDB 索引">Standalone CLI + LanceDB index</div>
+
                   <div class="impact-cell-sub" data-i18n-en="One tool, one output format." data-i18n-zh="一个工具，一种输出格式。">One tool, one output format.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+
                 <div class="impact-metric-label" data-i18n-en="Tool, 408 tests" data-i18n-zh="1 个工具，408 个测试">Tool, 408 tests</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 2 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Vendors can't be trusted with raw assets" data-i18n-zh="原始素材不能交给外部供应商">Vendors can't be trusted with raw assets</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Production credentials at risk." data-i18n-zh="生产凭证存在风险。">Production credentials at risk.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Indexed output, no raw access" data-i18n-zh="只输出索引，不接触原片">Indexed output, no raw access</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Signed index flows back, raw stays." data-i18n-zh="签名索引回流，原始素材留本地。">Signed index flows back, raw stays.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>100%" data-i18n-zh="<span class="arrow-up">↑</span>100%"><span class="arrow-up">↑</span>100%</div>
+
                 <div class="impact-metric-label" data-i18n-en="Raw-asset isolation" data-i18n-zh="原始素材隔离">Raw-asset isolation</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 3 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M3 12h6M9 12v0M9 12c0-1 1-2 2-2M21 12h-6M15 12c0-1-1-2-2-2M12 3v6M12 15v6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Index format inconsistent" data-i18n-zh="索引格式各走各路">Index format inconsistent</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Group A's index doesn't load in B." data-i18n-zh="A 组的索引在 B 组跑不起来。">Group A's index doesn't load in B.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Signed standard index" data-i18n-zh="签名化的标准索引">Signed standard index</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Every team's index looks the same." data-i18n-zh="所有团队的索引格式完全一致。">Every team's index looks the same.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="1" data-i18n-zh="1">1</div>
+
                 <div class="impact-metric-label" data-i18n-en="Deterministic OpenCut input" data-i18n-zh="OpenCut 输入确定化">Deterministic OpenCut input</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 4 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v4a4 4 0 0 0 4 4h2a4 4 0 0 0 4-4V7M18 7v10"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Pipeline reinvents vector store" data-i18n-zh="流水线各自重新造轮子向量库">Pipeline reinvents vector store</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Each partner reinvents ingestion." data-i18n-zh="每个合作伙伴都重造摄取。">Each partner reinvents ingestion.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1-1"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Signed LanceDB output" data-i18n-zh="签名化的 LanceDB 输出">Signed LanceDB output</div>
+
                   <div class="impact-cell-sub" data-i18n-en="One integration per partner." data-i18n-zh="每方只需一次集成。">One integration per partner.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>1" data-i18n-zh="<span class="arrow-down">↓</span>1"><span class="arrow-down">↓</span>1</div>
+
                 <div class="impact-metric-label" data-i18n-en="Integration per partner, forever" data-i18n-zh="每方只集成一次">Integration per partner, forever</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
+
 
           <!-- ============ B. Impact Columns (large visual cards) ============ -->
+
           <div class="impact-columns-head">
+
             <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+
             <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+
           </div>
+
+
 
           <div class="impact-grid" data-reveal-stagger>
+
             <!-- Pain card -->
+
             <div class="impact-card impact-card--pain">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-pain"
+
                    data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Outsourced indexing without leaking secrets"
+
                   data-i18n-zh="外包索引又不能泄露生产秘密">Outsourced indexing without leaking secrets</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Every team rolls its own frame extractor and embedding pipeline — formats drift across groups." data-i18n-zh="每个团队都各自实现抽帧与 embedding——格式在团队之间漂移。">Every team rolls its own frame extractor and embedding pipeline — formats drift across groups.</li>
+
                 <li data-i18n-en="Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere." data-i18n-zh="原始生产素材不能交给外部供应商，但索引又必须在某处完成。">Vendors cannot be trusted with raw production assets, yet indexing has to happen somewhere.</li>
+
                 <li data-i18n-en="A clip indexed by group A rarely loads cleanly in group B's pipeline." data-i18n-zh="A 组索引过的素材在 B 组的流水线里几乎跑不起来。">A clip indexed by group A rarely loads cleanly in group B's pipeline.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">0</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Standard index format across teams" data-i18n-zh="跨团队统一索引格式">Standard index format across teams</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Solution card -->
+
             <div class="impact-card impact-card--solution">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-solution"
+
                    data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="One CLI, one signed LanceDB output"
+
                   data-i18n-zh="一个 CLI，一份签名化的 LanceDB 输出">One CLI, one signed LanceDB output</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Hand it raw materials — VidSlice walks the directory, extracts frames, computes embeddings." data-i18n-zh="把原始素材丢给 VidSlice——它会遍历目录、抽帧、计算 embedding。">Hand it raw materials — VidSlice walks the directory, extracts frames, computes embeddings.</li>
+
                 <li data-i18n-en="Writes a signed LanceDB index that OpenCut consumes directly." data-i18n-zh="写出一个 OpenCut 直接能消费的签名化 LanceDB 索引。">Writes a signed LanceDB index that OpenCut consumes directly.</li>
+
                 <li data-i18n-en="Outsourced teams never touch production credentials, repos, or downstream services." data-i18n-zh="外包团队永远接触不到生产凭证、源码仓库或下游服务。">Outsourced teams never touch production credentials, repos, or downstream services.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">408</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Tests passing on every release" data-i18n-zh="个测试每次发布通过">Tests passing on every release</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Value card -->
+
             <div class="impact-card impact-card--value">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-value"
+
                    data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Third parties index, secrets stay home"
+
                   data-i18n-zh="第三方可以索引，生产秘密留在自家">Third parties index, secrets stay home</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Outsourced teams run VidSlice on materials they're given; signed index flows back to OpenCut." data-i18n-zh="外包团队在拿到的素材上跑 VidSlice；签名索引回流到 OpenCut。">Outsourced teams run VidSlice on materials they're given; signed index flows back to OpenCut.</li>
+
                 <li data-i18n-en="Index format consistent across vendors — no per-partner normalization layer." data-i18n-zh="所有外部供应商的索引格式一致——无需为每个合作伙伴写一层归一化。">Index format consistent across vendors — no per-partner normalization layer.</li>
+
                 <li data-i18n-en="Production credentials, source repositories, and downstream services stay inside the perimeter." data-i18n-zh="生产凭证、源码仓库、下游服务始终留在内部边界。">Production credentials, source repositories, and downstream services stay inside the perimeter.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">1</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Integration per partner, forever" data-i18n-zh="每方只集成一次">Integration per partner, forever</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
         </section>
 
 
+
+
+
       <h2 class="proj-h2" data-reveal="curtain">## technical architecture</h2>
+
       <figure class="proj-figure arch-embed-frame-wrap">
+
         <iframe class="arch-embed-frame" src="/assets/archify/vidslice.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
+
       </figure>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## product architecture</h2>
+
       <figure class="proj-figure arch-embed-frame-wrap">
+
         <iframe class="arch-embed-frame" src="/assets/archify/vidslice-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
+
       </figure>
 
+
+
       <h2 class="proj-h2" data-reveal="curtain">## capabilities</h2>
+
       <div class="proj-features">
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">Vector index</div><div class="proj-feat-desc">LanceDB-backed, 3-frame extraction, parallel workers.</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Ed25519 attestation</div><div class="proj-feat-desc">Every entry signed; tamper-evident.</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">OpenCut compatibility</div><div class="proj-feat-desc">v0.5 read / v0.6 write opt-in.</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">Streaming pipeline</div><div class="proj-feat-desc">NDJSON progress events · incremental updates.</div></div>
+
       </div>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## screenshots</h2>
+
       <div class="proj-screenshots">
+
         <figure class="demo-frame" data-reveal="image" data-parallax="0.08">
+
           <picture>
+
             <source srcset="/assets/demos/vidslice.gif" type="image/gif">
+
             <img src="/assets/demos/vidslice.svg" alt="VidSlice runtime demo" loading="lazy">
+
           </picture>
+
           <figcaption>VidSlice v0.7.10 — runtime demo (5-7s loop)</figcaption>
+
         </figure>
+
       </div>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## metrics</h2>
+
       <ul class="proj-metrics">
+
         <li data-reveal="rise" style="--i:0;">408 tests</li>
+
         <li data-reveal="rise" style="--i:1;">3-frame extraction per clip</li>
+
         <li data-reveal="rise" style="--i:2;">Parallel workers (configurable)</li>
+
         <li data-reveal="rise" style="--i:3;">NDJSON progress events</li>
+
         <li data-reveal="rise" style="--i:4;">v0.5 / v0.6 compat flags</li>
+
       </ul>
+
     </article>
 
+
+
     <aside class="proj-side">
+
       <div class="side-block">
+
         <div class="side-title">at a glance</div>
+
         <dl>
+
           <dt>version</dt><dd>v0.7.10</dd>
+
           <dt>license</dt><dd>Apache-2.0</dd>
+
           <dt>category</dt><dd>content</dd>
+
           <dt>source</dt><dd><a href="https://github.com/echocc00/VidSlice" rel="noopener" target="_blank">VidSlice ↗</a></dd>
+
         </dl>
+
       </div>
+
       <div class="side-block">
+
         <div class="side-title">stack</div>
+
         <div class="side-list">
+
           <span class="pill">lancedb · opencv</span>
+
           <span class="pill">ed25519 · python</span>
+
           <span class="pill">fastapi</span>
+
         </div>
+
       </div>
+
       <div class="side-block">
+
         <div class="side-title">## more from me</div>
+
         <ul class="side-more">
+
           <li><a href="/projects/secsight/">→ SecSight</a></li>
+
         <li><a href="/projects/secopent/">→ SecOpent</a></li>
+
         <li><a href="/projects/netsage/">→ NetSage</a></li>
+
         <li><a href="/projects/opencut002/">→ OpenCut v3</a></li>
+
         <li><a href="/projects/hydro-fork/">→ Hydro OJ</a></li>
+
         </ul>
+
       </div>
+
     </aside>
+
   </div>
+
 </section>
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/">home</a>
+
       <a href="/projects/">projects</a>
+
       <a href="/about/">about</a>
+
       <a href="/assets/cv.pdf">cv</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
   <script src="/assets/js/reveal.js" defer></script>
-  <script src="/assets/js/hero-anim.js" defer></script>
+
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
+
 </body>
+
 </html>

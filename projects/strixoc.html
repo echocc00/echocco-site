@@ -1,479 +1,960 @@
 <!DOCTYPE html>
+
 <html lang="en" data-page-title-en="StrixOC — Autonomous AI penetration testing · echocc00" data-page-title-zh="StrixOC（自主 AI 渗透测试）· echocc00" data-page-desc-en="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna" data-page-desc-zh="StrixOC 动态运行你的代码，定位漏洞并通过真实 PoC 验证。多智能体编排让一组 AI 渗透测试员协同工作、可横向扩展。在内部作为 SecOpent 适配器路径的参考实现，也是新 case-DSL 原型落地前的快速反馈通道。">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>StrixOC — Autonomous AI penetration testing</title>
+
 <meta name="description" content="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna">
+
 <meta name="author" content="echocc00">
+
 <meta name="theme-color" content="#000000">
+
 <link rel="canonical" href="https://www.echocco.com/projects/strixoc/">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 
+
+
 <meta property="og:type" content="article">
+
 <meta property="og:url" content="https://www.echocco.com/projects/strixoc/">
+
 <meta property="og:title" content="StrixOC — Autonomous AI penetration testing">
+
 <meta property="og:description" content="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used interna">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/strixoc.png">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="StrixOC">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/strixoc.png">
 
+
+
 <style>
+
 /* Inlined critical motion CSS — guarantees animations work even if main.css is cached */
+
 [data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+
 [data-reveal].reveal-in { opacity: 1; transform: translate3d(0, 0, 0); }
+
 [data-reveal-stagger] > * { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+
 [data-reveal-stagger].reveal-in > * { opacity: 1; transform: translate3d(0, 0, 0); }
+
 [data-reveal-stagger].reveal-in > *:nth-child(1) { transition-delay: 0ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(2) { transition-delay: 80ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(3) { transition-delay: 160ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(4) { transition-delay: 240ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(5) { transition-delay: 320ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(6) { transition-delay: 400ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(7) { transition-delay: 480ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(8) { transition-delay: 560ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(9) { transition-delay: 640ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(10) { transition-delay: 720ms; }
+
 .proj-hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
 .proj-hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+
 .hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
 .hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+
 @media (prefers-reduced-motion: reduce) {
+
   [data-reveal], [data-reveal-stagger] > *, .proj-hero h1, .hero h1 { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+
 }
+
 </style>
+
 <link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
+
 <script type="application/ld+json">
+
 {
+
   "@context": "https://schema.org",
+
   "@type": "SoftwareSourceCode",
+
   "name": "StrixOC",
+
   "version": "v0.x",
+
   "codeRepository": "https://github.com/echocc00/strixoc",
+
   "programmingLanguage": "Python",
+
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
+
   "description": "Autonomous AI penetration testing",
+
   "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+
 }
+
 </script>
+
 </head>
+
 <body>
+
 <nav class="nav">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+
       <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+
       <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+
       <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
+
       <a class="nav-cta" href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">GitHub ↗</a>
+
     </div>
+
         <div class="lang-toggle" aria-label="Language switcher">
+
           <a href="/" data-lang="en" hreflang="en" rel="alternate">EN</a>
+
           <a href="/zh/" data-lang="zh" hreflang="zh" rel="alternate">中文</a>
+
         </div>
+
   </div>
+
 </nav>
 
+
+
 <main>
+
   <header class="proj-hero" style="background: linear-gradient(135deg, #b91c1c 0%, #1c1917 100%); color: white;">
+
     <div class="shell">
+
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
+
       <div class="proj-hero-content">
+
         <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
-        <h1 class="proj-title hero-reveal">StrixOC</h1>
+
+        <h1 class="proj-title hero-reveal hero-reveal-in">StrixOC</h1>
+
         <p class="proj-tagline" data-i18n-en="Autonomous AI penetration testing" data-i18n-zh="自主 AI 渗透测试">Autonomous AI penetration testing</p>
 
+
+
         <div class="proj-meta-bar">
+
           <span class="proj-ver">v0.x</span>
+
           <span class="dot"></span>
+
           <span>Apache-2.0</span>
+
           <span class="dot"></span>
+
           <a href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">github.com/echocc00/strixoc ↗</a>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
+
+
   <section class="proj-body" data-reveal>
+
     <div class="shell proj-layout">
+
       <article class="proj-main">
+
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+
         <div class="proj-desc">
+
           <p data-i18n-en="StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production." data-i18n-zh="StrixOC 动态运行你的代码，定位漏洞并通过真实 PoC 验证。多智能体编排让一组 AI 渗透测试员协同工作、可横向扩展。在内部作为 SecOpent 适配器路径的参考实现，也是新 case-DSL 原型落地前的快速反馈通道。">StrixOC runs your code dynamically, finds vulnerabilities, and validates them through real proofs-of-concept. Multi-agent orchestration lets a team of AI pentesters collaborate and scale. Used internally as a reference implementation for SecOpent's adapter path and as a fast-feedback channel for new case-DSL primitives before they land in production.</p>
+
           <p data-i18n-en="GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in." data-i18n-zh="与 GitHub Actions / CI 集成，提供面向开发者的 CLI，反馈循环短。支持开源 LLM 提供商，无供应商锁定。">GitHub Actions / CI integrations and a developer-first CLI keep the loop short. Open-source LLM providers supported; no vendor lock-in.</p>
+
         </div>
 
+
+
                 <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+
         <section class="impact-section" data-reveal>
+
           <header class="impact-head">
+
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+
             <p data-i18n-en="Penetration testing is sold as a once-a-year snapshot — expensive, slow to schedule, and stale the moment the application ships. StrixOC replaces the annual engagement with an autonomous agent team that runs per release, exploits what it finds, and outputs Pydantic-validated, signed findings."
+
                data-i18n-zh="渗透测试通常被当作一年一次的快照出售——昂贵、排期慢、应用一上线就过时。StrixOC 用一支自主智能体团队替代年度委托：每次发布触发，真实利用漏洞，输出经 Pydantic 校验、签名化的发现项。">Penetration testing is sold as a once-a-year snapshot — expensive, slow to schedule, and stale the moment the application ships. StrixOC replaces the annual engagement with an autonomous agent team that runs per release, exploits what it finds, and outputs Pydantic-validated, signed findings.</p>
+
           </header>
 
+
+
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+
           <div class="impact-rows" role="list" data-reveal-stagger>
+
             <!-- Row 1 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Annual pentest = snapshot in time" data-i18n-zh="年度渗透测试=一次快照">Annual pentest = snapshot in time</div>
+
                   <div class="impact-cell-sub" data-i18n-en="App ships weekly; coverage is yearly." data-i18n-zh="应用周更，覆盖度按年计。">App ships weekly; coverage is yearly.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="AI agent runs per release" data-i18n-zh="AI 智能体按发布运行">AI agent runs per release</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Nightly in CI, on every deploy." data-i18n-zh="每晚在 CI 中、每次部署触发。">Nightly in CI, on every deploy.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="24/7" data-i18n-zh="24/7">24/7</div>
+
                 <div class="impact-metric-label" data-i18n-en="Continuous vs 1× / year" data-i18n-zh="持续 vs 一年一次">Continuous vs 1× / year</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 2 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M3 12h6M9 12v0M9 12c0-1 1-2 2-2M21 12h-6M15 12c0-1-1-2-2-2M12 3v6M12 15v6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Static-scanner noise" data-i18n-zh="静态扫描器噪声">Static-scanner noise</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Thousands of unvalidated alerts." data-i18n-zh="成千上万条未验证告警。">Thousands of unvalidated alerts.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Dynamic real exploitation" data-i18n-zh="动态真实利用">Dynamic real exploitation</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Agent proves the vuln before reporting." data-i18n-zh="智能体先验证漏洞再上报。">Agent proves the vuln before reporting.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>" data-i18n-zh="<span class="arrow-down">↓</span>"><span class="arrow-down">↓</span></div>
+
                 <div class="impact-metric-label" data-i18n-en="False-positive cleanup" data-i18n-zh="误报清理工作量">False-positive cleanup</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 3 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M12 3v18M16 7H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H8"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Expensive manual labor" data-i18n-zh="昂贵的人工成本">Expensive manual labor</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Senior hours × weeks per run." data-i18n-zh="资深小时 × 数周每次。">Senior hours × weeks per run.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Token-cost agent" data-i18n-zh="按 token 计费的智能体">Token-cost agent</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Minutes + tokens, not consulting." data-i18n-zh="几分钟 + token，不是咨询合同。">Minutes + tokens, not consulting.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>" data-i18n-zh="<span class="arrow-down">↓</span>"><span class="arrow-down">↓</span></div>
+
                 <div class="impact-metric-label" data-i18n-en="$ per finding" data-i18n-zh="每条发现成本">$ per finding</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 4 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M3 3l18 18"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Findings not actionable" data-i18n-zh="发现项难以落地">Findings not actionable</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Reports with no fixes attached." data-i18n-zh="只报问题，不附修复。">Reports with no fixes attached.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Pydantic-validated + signed" data-i18n-zh="Pydantic 校验 + 签名">Pydantic-validated + signed</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Structurally sound, signed + fix proposed." data-i18n-zh="结构合规、签名化、并附修复建议。">Structurally sound, signed + fix proposed.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>100%" data-i18n-zh="<span class="arrow-up">↑</span>100%"><span class="arrow-up">↑</span>100%</div>
+
                 <div class="impact-metric-label" data-i18n-en="Actionable output" data-i18n-zh="可落地输出">Actionable output</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
+
 
           <!-- ============ B. Impact Columns (large visual cards) ============ -->
+
           <div class="impact-columns-head">
+
             <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+
             <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+
           </div>
+
+
 
           <div class="impact-grid" data-reveal-stagger>
+
             <!-- Pain card -->
+
             <div class="impact-card impact-card--pain">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-pain"
+
                    data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Annual pentest is stale on arrival"
+
                   data-i18n-zh="年度渗透测试一上线就已过时">Annual pentest is stale on arrival</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Expensive, slow to schedule, dependent on senior-tester time on your attack surface." data-i18n-zh="昂贵、排期慢、完全依赖资深测试员在攻击面上投入的时间。">Expensive, slow to schedule, dependent on senior-tester time on your attack surface.</li>
+
                 <li data-i18n-en="Between engagements the app keeps shipping — new endpoints, deps, auth paths — none tested." data-i18n-zh="两次测试之间应用持续上线——新接口、新依赖、新认证路径——都没被覆盖。">Between engagements the app keeps shipping — new endpoints, deps, auth paths — none tested.</li>
+
                 <li data-i18n-en="Static scanners fill the gap with noise: thousands of unvalidated alerts." data-i18n-zh="静态扫描器只能用噪声填补空档：成千上万条未验证告警。">Static scanners fill the gap with noise: thousands of unvalidated alerts.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">12 mo</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Gap between pentests" data-i18n-zh="两次测试之间的空档">Gap between pentests</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Solution card -->
+
             <div class="impact-card impact-card--solution">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-solution"
+
                    data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Autonomous red team on tap"
+
                   data-i18n-zh="随时可调用的自主红队">Autonomous red team on tap</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Agent teams (openai-agents SDK + LiteLLM) collaborate like a real red team — recon, exploit, report." data-i18n-zh="智能体团队（openai-agents SDK + LiteLLM）像真实红队一样协作——侦察、利用、报告。">Agent teams (openai-agents SDK + LiteLLM) collaborate like a real red team — recon, exploit, report.</li>
+
                 <li data-i18n-en="Operator-defined scope; every step validated against Pydantic — agents cannot drift." data-i18n-zh="操作员定义范围；每一步经 Pydantic 校验——智能体无法越界。">Operator-defined scope; every step validated against Pydantic — agents cannot drift.</li>
+
                 <li data-i18n-en="Agents propose and generate fixes — not just findings." data-i18n-zh="智能体会主动提出并生成修复——不只是发现问题。">Agents propose and generate fixes — not just findings.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">100%</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Findings structurally sound" data-i18n-zh="发现项结构合规">Findings structurally sound</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Value card -->
+
             <div class="impact-card impact-card--value">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-7"/><path d="M14 9h6v6"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-value"
+
                    data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Continuous coverage, lower cost curve"
+
                   data-i18n-zh="持续覆盖，成本曲线下行">Continuous coverage, lower cost curve</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Pentesting becomes continuous: a run costs LLM tokens + minutes, not a consulting engagement." data-i18n-zh="渗透测试变为持续——一次运行只花 LLM token 与几分钟，而非一笔咨询合同。">Pentesting becomes continuous: a run costs LLM tokens + minutes, not a consulting engagement.</li>
+
                 <li data-i18n-en="Time-to-discovery drops from months to the length of a single run." data-i18n-zh="发现漏洞的时间从数月缩短到一次运行的长度。">Time-to-discovery drops from months to the length of a single run.</li>
+
                 <li data-i18n-en="Apache-2.0, self-hostable, no single-vendor LLM dependency — cost curve under your control." data-i18n-zh="Apache-2.0、可自托管、不绑定单一 LLM 供应商——成本曲线始终归你掌控。">Apache-2.0, self-hostable, no single-vendor LLM dependency — cost curve under your control.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">1× / release</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="vs 1× / year engagement" data-i18n-zh="vs 一年一次的委托">vs 1× / year engagement</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
         </section>
 
 
 
+
+
+
+
         <section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+
                 <div class="how-grid" data-reveal-stagger>
+
           <div class="how-stage">
+
             <div class="how-num">01</div>
+
             <div class="how-title" data-i18n-en="Scope" data-i18n-zh="界定范围">Scope</div>
+
             <p class="how-desc" data-i18n-en="The operator declares the target from the CLI: which hosts, repositories, and endpoints are in play, and which are explicitly off-limits. Scope is the hard boundary for every agent that follows — not a suggestion in a prompt."
+
                data-i18n-zh="操作员在 CLI 中声明目标：哪些主机、仓库、接口在范围内，哪些明确禁止。范围是后续所有智能体的硬边界——不是 prompt 里的一句建议。">Operator declares the boundary from the CLI.</p>
+
           </div>
+
           <span class="how-arrow" aria-hidden="true">→</span>
+
           <div class="how-stage">
+
             <div class="how-num">02</div>
+
             <div class="how-title" data-i18n-en="Recon" data-i18n-zh="侦察">Recon</div>
+
             <p class="how-desc" data-i18n-en="An agent maps the attack surface inside that boundary — routes, parameters, auth flows, dependencies, and the code paths behind them — and builds the working picture the rest of the team reasons over."
+
                data-i18n-zh="智能体在边界内绘制攻击面——路由、参数、认证流、依赖以及其背后的代码路径——并构建出团队后续推理所依赖的工作视图。">Agent maps routes, params, auth flows, dependencies.</p>
+
           </div>
+
           <span class="how-arrow" aria-hidden="true">→</span>
+
           <div class="how-stage">
+
             <div class="how-num">03</div>
+
             <div class="how-title" data-i18n-en="Exploit" data-i18n-zh="利用">Exploit</div>
+
             <p class="how-desc" data-i18n-en="Agents attempt real exploitation against the mapped surface, running the code dynamically to prove a vulnerability rather than infer it. Safety rails hold: actions stay in scope, and each step is Pydantic-validated before it executes."
+
                data-i18n-zh="智能体针对已绘制的攻击面进行真实利用尝试，通过动态运行代码来证明漏洞而非推断漏洞。安全护栏始终生效：动作不出范围，每一步执行前都经 Pydantic 校验。">Real exploitation attempts, inside safety rails.</p>
+
           </div>
+
           <span class="how-arrow" aria-hidden="true">→</span>
+
           <div class="how-stage">
+
             <div class="how-num">04</div>
+
             <div class="how-title" data-i18n-en="Report" data-i18n-zh="报告">Report</div>
+
             <p class="how-desc" data-i18n-en="Confirmed findings are emitted as Pydantic-validated structures — reproducible PoC, affected path, severity, remediation guidance — so they drop straight into CI output, a ticket, or a compliance-ready report without hand-editing."
+
                data-i18n-zh="已确认的发现以 Pydantic 校验过的结构输出——可复现的 PoC、受影响路径、严重级别、修复建议——可直接落入 CI 输出、工单或合规级报告，无需手工整理。">Pydantic-validated findings, ready for CI or tickets.</p>
+
           </div>
+
                   </div>
+
+
 
                   <p class="proj-desc"
+
                      data-i18n-en="Every run moves through the same five participants. Operator declares scope, recon maps the surface, exploit runs inside safety rails, every finding passes Pydantic before the aggregated report ships to CI, ticketing, and compliance. Click any participant or message for details."
+
                      data-i18n-zh="每一次运行都经过同样的五个参与者：操作员声明范围、侦察代理盘点攻击面、利用代理在安全边界内动态执行、每条发现经 Pydantic 校验后聚合，结构化报告再下发到 CI、工单与合规系统。点击任意参与者或消息查看详情。">Every run moves through the same five participants.</p>
+
                   <div class="arch-embed-frame-wrap">
+
                     <iframe src="/assets/archify/strixoc-sequence?theme=light"
+
                             class="archify-frame"
+
                             title="strixoc runtime sequence diagram"
+
                             loading="lazy"
+
                             referrerpolicy="no-referrer"
+
                             sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+
                       <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+
                          data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+
                     </iframe>
+
                   </div>
+
                   </section>
 
+
+
                   <!-- Architecture embed - placed between Overview and Capabilities -->
+
                   <section class="arch-embed" data-reveal aria-labelledby="arch-title-strixoc">
+
             <header class="arch-embed-head">
+
               <h2 class="proj-h2" id="arch-title-strixoc" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
+
               <p class="arch-embed-sub"
+
                  data-i18n-en="AI penetration testing · usestrix/strix fork. Click any node or relationship for details."
+
                  data-i18n-zh="AI 渗透测试 · usestrix/strix fork。点击任意节点或连线查看详情。">AI penetration testing · usestrix/strix fork. Click any node or relationship for details.</p>
+
             </header>
+
             <div class="arch-embed-frame-wrap">
+
               <iframe src="/assets/archify/strixoc?theme=light"
+
                       class="archify-frame"
+
                       title="strixoc technical architecture"
+
                       loading="lazy"
+
                       referrerpolicy="no-referrer"
+
                       sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+
                 <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+
                    data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+
               </iframe>
+
             </div>
+
           </section>
 
 
+
+
+
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
+
         <div class="proj-features" data-reveal-stagger>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Real exploit validation" data-i18n-zh="真实漏洞验证">Real exploit validation</div>
+
             <div class="proj-feat-desc" data-i18n-en="Real PoCs through dynamic execution, not the false positives of static analyzers." data-i18n-zh="通过动态执行产出真 PoC，而非静态扫描的高误报。">Real PoCs through dynamic execution, not the false positives of static analyzers.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Multi-agent teams" data-i18n-zh="多智能体团队">Multi-agent teams</div>
+
             <div class="proj-feat-desc" data-i18n-en="Collaborative pentesters that scale the way real red teams do." data-i18n-zh="协同工作的渗透测试员，像真实红队一样横向扩展。">Collaborative pentesters that scale the way real red teams do.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Developer-first CLI" data-i18n-zh="面向开发者的 CLI">Developer-first CLI</div>
+
             <div class="proj-feat-desc" data-i18n-en="Actionable findings with remediation guidance, not 50-page PDFs." data-i18n-zh="可执行的发现 + 修复建议，不是 50 页 PDF。">Actionable findings with remediation guidance, not 50-page PDFs.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Auto-fix and reporting" data-i18n-zh="自动修复与报告">Auto-fix and reporting</div>
+
             <div class="proj-feat-desc" data-i18n-en="Generates patches and compliance-ready pentest reports." data-i18n-zh="自动生成补丁与合规级渗透测试报告。">Generates patches and compliance-ready pentest reports.</div>
+
           </div>
+
         </div>
+
+
 
         <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
+
         <ul class="proj-metrics">
+
           <li data-i18n-en="Real PoC validation" data-i18n-zh="真实 PoC 验证">Real PoC validation</li>
+
           <li data-i18n-en="Multi-agent orchestration" data-i18n-zh="多智能体编排">Multi-agent orchestration</li>
+
           <li data-i18n-en="Developer-first CLI" data-i18n-zh="面向开发者的 CLI">Developer-first CLI</li>
+
           <li data-i18n-en="Auto-fix + reporting" data-i18n-zh="自动修复 + 报告">Auto-fix + reporting</li>
+
           <li data-i18n-en="GitHub Actions integration" data-i18n-zh="GitHub Actions 集成">GitHub Actions integration</li>
+
           <li data-i18n-en="Open-source LLM providers" data-i18n-zh="支持开源 LLM 提供商">Open-source LLM providers</li>
+
         </ul>
+
       </article>
 
+
+
       <aside class="proj-side">
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
+
           <dl>
+
             <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.x</dd>
+
             <dt>License</dt><dd>Apache-2.0</dd>
+
             <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Security" data-i18n-zh="安全">Security</dd>
+
             <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank">StrixOC ↗</a></dd>
+
           </dl>
+
         </div>
 
+
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
+
           <div class="side-list">
+
             <span class="pill" data-i18n-en="Python · Agent + toolkit" data-i18n-zh="Python · 智能体 + 工具集">Python · Agent + toolkit</span>
+
           </div>
+
         </div>
 
+
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
+
           <div class="side-list">
+
             <span class="pill">GitHub Actions / CI</span><span class="pill">Open-source LLMs</span><span class="pill">Multiple vendors</span>
+
           </div>
+
         </div>
+
       </aside>
+
     </div>
+
   
+
     </section>
 
+
+
   <section class="section dark" data-reveal>
+
     <div class="shell">
+
       <div class="cta-row">
+
         <div>
+
           <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+
           <p class="cta-desc"><span data-i18n-en="Source on GitHub · {p['license']} · questions to " data-i18n-zh="代码在 GitHub · {p['license']} · 邮件咨询：">Source on GitHub · {p['license']} · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+
         </div>
+
         <div class="cta-actions">
+
           <a class="btn btn-primary" href="https://github.com/echocc00/strixoc" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+
           <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
+
         </div>
+
       </div>
+
     </div>
+
   </section></main>
 
+
+
       <footer class="footer" data-reveal>
+
   <div class="shell footer-row">
+
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
+
     <div class="footer-meta">
+
       <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+
       <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+
       <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+
       <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+
       <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
 <script src="/assets/js/reveal.js?v=20260903a" defer></script>
+
 <script src="/assets/js/hero-anim.js?v=20260903a" defer></script>
+
 <script src="/assets/js/mailto.js?v=20260903a" defer></script>
+
 <script src="/assets/js/i18n.js?v=20260903a" defer></script>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>
+

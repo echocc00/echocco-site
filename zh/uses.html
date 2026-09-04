@@ -1,195 +1,391 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>echocc00 · /uses</title>
+
 <meta name="description" content="我每天用的工具清单。受 uses.tech 和 Wes Bos 的 /uses 启发。">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/zh/uses/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/uses/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/uses/">
+
 <meta property="og:type" content="website">
+
 <meta property="og:url" content="https://www.echocco.com/zh/uses/">
+
 <meta property="og:title" content="echocc00 · /uses">
+
 <meta property="og:description" content="我每天用的工具清单。受 uses.tech 和 Wes Bos 的 /uses 启发。">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+
 <meta property="og:locale" content="zh_CN">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="echocc00 · /uses">
+
 <meta name="twitter:description" content="我每天用的工具清单。受 uses.tech 和 Wes Bos 的 /uses 启发。">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/zh/">首页</a>
+
       <a class="nav-link " href="/zh/projects/">项目</a>
+
       <a class="nav-link " href="/zh/about/">关于</a>
+
       <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
+
       <span class="lang-switch">
+
         <a href="/uses/" class="" hreflang="en">EN</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <section class="hero">
+
   <div class="shell hero-inner">
+
     <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat uses.md</div>
-    <h1 class="hero-title" data-anim="title">/uses<span class="cursor-blink">_</span></h1>
+
+    <h1 class="hero-title hero-reveal-in" data-anim="title">/uses<span class="cursor-blink">_</span></h1>
+
     <p class="hero-bio" data-anim="bio">我每天用的工具清单。受 uses.tech 和 Wes Bos 的 /uses 启发。</p>
+
     <div class="status-row" data-anim="status">
+
       <span class="status-pill live tilt" data-anim="status-pill" data-stagger="0">工具、硬件、服务 · 最后更新 2026-09</span>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 硬件</h2>
+
       <span class="section-meta">5 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">MacBook Pro 16" M3 Max</div>
+
       <div class="uses-item-note">64GB 内存 · 1TB SSD · 主开发机。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">自组装台式机 (Linux)</div>
+
       <div class="uses-item-note">Ryzen 9 + 128GB + RTX 4090 · 本地跑 Containerlab + Batfish + NetBox。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">Logitech MX Master 3S</div>
+
       <div class="uses-item-note">史上最好的鼠标。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:3;">
+
       <div class="uses-item-name">HHKB Studio</div>
+
       <div class="uses-item-note">静电容 · 安静 · 60g。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:4;">
+
       <div class="uses-item-name">2x Dell U2723QE</div>
+
       <div class="uses-item-note">27" 4K · USB-C hub + KVM。</div>
+
     </li></ul>
+
   </div>
+
 </section><section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 编辑器 + 终端</h2>
+
       <span class="section-meta">3 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">Neovim</div>
+
       <div class="uses-item-note">0.10+。Lazy.nvim。Treesitter + LSP。配置:github.com/echocc00/dotfiles。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">tmux + zsh + starship</div>
+
       <div class="uses-item-note">Warp 作为需要共享屏幕时的 GUI 备选。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">lazygit</div>
+
       <div class="uses-item-note">任何仓库操作都离不开它。</div>
+
     </li></ul>
+
   </div>
+
 </section><section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 语言 + 运行时</h2>
+
       <span class="section-meta">3 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">Python 3.11+</div>
+
       <div class="uses-item-note">主力。uv 管依赖。ruff lint+format。pytest。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">TypeScript / Node.js</div>
+
       <div class="uses-item-note">写工具用,不写产品用。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">Rust</div>
+
       <div class="uses-item-note">性能或沙箱要求高时用。在学。</div>
+
     </li></ul>
+
   </div>
+
 </section><section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 云 + 托管</h2>
+
       <span class="section-meta">4 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">Cloudflare Pages</div>
+
       <div class="uses-item-note">本站 + 我碰过的每个静态站。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">Cloudflare Workers</div>
+
       <div class="uses-item-note">需要边缘逻辑时用。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">Hetzner + OVH</div>
+
       <div class="uses-item-note">欧洲侧的实验室。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:3;">
+
       <div class="uses-item-name">阿里云</div>
+
       <div class="uses-item-note">中国侧部署。需要 ICP 备案的走合规。</div>
+
     </li></ul>
+
   </div>
+
 </section><section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 工具 + 服务</h2>
+
       <span class="section-meta">4 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">DeepSeek + Qwen + GPT-4o</div>
+
       <div class="uses-item-note">通过 LiteLLM。按任务选。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">Wazuh + Suricata + Shuffle</div>
+
       <div class="uses-item-note">生产 SOC 栈。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">Containerlab + Batfish + NetBox</div>
+
       <div class="uses-item-note">生产网络栈。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:3;">
+
       <div class="uses-item-name">Stripe + Linear + Notion</div>
+
       <div class="uses-item-note">产品运营靠这三个。</div>
+
     </li></ul>
+
   </div>
+
 </section><section class="section">
+
   <div class="shell">
+
     <div class="section-head">
+
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> 沟通</h2>
+
       <span class="section-meta">4 items</span>
+
     </div>
+
     <ul class="uses-list"><li class="uses-item tilt" data-reveal="rise" style="--i:0;">
+
       <div class="uses-item-name">Slack</div>
+
       <div class="uses-item-note">团队沟通用。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:1;">
+
       <div class="uses-item-name">飞书</div>
+
       <div class="uses-item-note">中国侧团队用。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:2;">
+
       <div class="uses-item-name">邮箱</div>
+
       <div class="uses-item-note">286043314+echocc00@users.noreply.github.com — 异步、重要的都走邮箱。</div>
+
     </li><li class="uses-item tilt" data-reveal="rise" style="--i:3;">
+
       <div class="uses-item-name">GitHub Issues + Discussions</div>
+
       <div class="uses-item-note">所有开源协作在这里。</div>
+
     </li></ul>
+
   </div>
+
 </section>
 
+
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/zh/">首页</a>
+
       <a href="/zh/projects/">项目</a>
+
       <a href="/zh/about/">关于</a>
+
       <a href="/assets/cv.pdf">简历</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>

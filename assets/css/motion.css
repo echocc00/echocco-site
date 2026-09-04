@@ -42,8 +42,7 @@
 }
 
 /* Subtle slide-in for secondary lines */
-@keyframes lineIn {
-  0%   { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+@keyframes lineIn {}
   100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
@@ -91,6 +90,29 @@
 [data-anim="status-pill"][data-stagger="3"] { animation-delay: 1340ms; }
 
 /* ============================================================
+   P1 — Fix 1+4: hero-reveal-in class on hero h1 elements.
+   Now styled directly in markup so the reveal works without JS.
+   Uses GPU-only properties (opacity, transform, clip-path).
+   ============================================================ */
+@keyframes heroRevealIn {
+  0%   { opacity: 0; clip-path: inset(0 100% 0 0); transform: scaleY(1.35); }
+  60%  { opacity: 1; clip-path: inset(0 0 0 0);   transform: scaleY(1.08); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0);   transform: scaleY(1); }
+}
+.hero-reveal-in {
+  display: inline-block;
+  animation: heroRevealIn 1300ms var(--ease-spring) 100ms both;
+  transform-origin: 50% 100%;
+  will-change: clip-path, transform, opacity;
+}
+.hero-reveal {
+  display: inline-block;
+  animation: heroRevealIn 1300ms var(--ease-spring) 100ms both;
+  transform-origin: 50% 100%;
+  will-change: clip-path, transform, opacity;
+}
+
+/* ============================================================
    ② SCROLL REVEAL — IntersectionObserver adds .is-revealed
    ============================================================ */
 
@@ -101,14 +123,12 @@
 }
 
 /* Card / row — gentle rise + fade */
-@keyframes riseIn {
-  0%   { opacity: 0; transform: translateY(24px) scale(0.985); filter: blur(2px); }
+@keyframes riseIn {}
   100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
 /* Image reveal — slight zoom-in + fade */
-@keyframes imageReveal {
-  0%   { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+@keyframes imageReveal {}
   100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 

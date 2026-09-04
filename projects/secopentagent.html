@@ -1,448 +1,898 @@
 <!DOCTYPE html>
+
 <html lang="en" data-page-title-en="SecOpentAgent — Self-improving AI agent infrastructure · echocc00" data-page-title-zh="SecOpentAgent（自进化 AI 智能体基础设施）· echocc00" data-page-desc-en="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across se" data-page-desc-zh="SecOpentAgent 是自进化的 AI 智能体基础设施——具备闭环学习回路，能从经验中提炼技能、在使用中不断改进、跨会话持久化记忆。部署为一个网关进程，可同时触达 Telegram / Discord / Slack / Signal / CLI，并原生支持定时自动化任务。在 SOC 侧为 SecSight 提供后端，在 SecOpent 上驱动 case-DSL 探索。">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>SecOpentAgent — Self-improving AI agent infrastructure</title>
+
 <meta name="description" content="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across se">
+
 <meta name="author" content="echocc00">
+
 <meta name="theme-color" content="#000000">
+
 <link rel="canonical" href="https://www.echocco.com/projects/secopentagent/">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 
+
+
 <meta property="og:type" content="article">
+
 <meta property="og:url" content="https://www.echocco.com/projects/secopentagent/">
+
 <meta property="og:title" content="SecOpentAgent — Self-improving AI agent infrastructure">
+
 <meta property="og:description" content="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across se">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/secopentagent.png">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="SecOpentAgent">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/secopentagent.png">
 
+
+
 <style>
+
 /* Inlined critical motion CSS — guarantees animations work even if main.css is cached */
+
 [data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+
 [data-reveal].reveal-in { opacity: 1; transform: translate3d(0, 0, 0); }
+
 [data-reveal-stagger] > * { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+
 [data-reveal-stagger].reveal-in > * { opacity: 1; transform: translate3d(0, 0, 0); }
+
 [data-reveal-stagger].reveal-in > *:nth-child(1) { transition-delay: 0ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(2) { transition-delay: 80ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(3) { transition-delay: 160ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(4) { transition-delay: 240ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(5) { transition-delay: 320ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(6) { transition-delay: 400ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(7) { transition-delay: 480ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(8) { transition-delay: 560ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(9) { transition-delay: 640ms; }
+
 [data-reveal-stagger].reveal-in > *:nth-child(10) { transition-delay: 720ms; }
+
 .proj-hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
 .proj-hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+
 .hero h1 { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.96); filter: blur(8px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
 .hero h1.hero-reveal-in { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+
 @media (prefers-reduced-motion: reduce) {
+
   [data-reveal], [data-reveal-stagger] > *, .proj-hero h1, .hero h1 { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+
 }
+
 </style>
+
 <link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
+
 <script type="application/ld+json">
+
 {
+
   "@context": "https://schema.org",
+
   "@type": "SoftwareSourceCode",
+
   "name": "SecOpentAgent",
+
   "version": "v0.x",
+
   "codeRepository": "https://github.com/echocc00/SecOpentAgent",
+
   "programmingLanguage": "Python",
+
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
+
   "description": "Self-improving AI agent infrastructure",
+
   "author": {"@type": "Person", "name": "echocc00", "url": "https://www.echocco.com/"}
+
 }
+
 </script>
+
 </head>
+
 <body>
+
 <nav class="nav">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/"><span class="brand-name">echocc00</span><span class="brand-handle">/echocc00</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link" href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+
       <a class="nav-link" href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+
       <a class="nav-link" href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+
       <a class="nav-link" href="/assets/cv.pdf" target="_blank" rel="noopener" data-i18n-en="CV" data-i18n-zh="简历">CV ↗</a>
+
       <a class="nav-cta" href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">GitHub ↗</a>
+
     </div>
+
         <div class="lang-toggle" aria-label="Language switcher">
+
           <a href="/" data-lang="en" hreflang="en" rel="alternate">EN</a>
+
           <a href="/zh/" data-lang="zh" hreflang="zh" rel="alternate">中文</a>
+
         </div>
+
   </div>
+
 </nav>
 
+
+
 <main>
+
   <header class="proj-hero" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%); color: white;">
+
     <div class="shell">
+
       <a class="proj-back" href="/projects/" data-i18n-en="← All projects" data-i18n-zh="← 全部项目">← All projects</a>
+
       <div class="proj-hero-content">
+
         <span class="proj-cat" data-i18n-en="Security" data-i18n-zh="安全">Security</span>
-        <h1 class="proj-title hero-reveal">SecOpentAgent</h1>
+
+        <h1 class="proj-title hero-reveal hero-reveal-in">SecOpentAgent</h1>
+
         <p class="proj-tagline" data-i18n-en="Self-improving AI agent infrastructure" data-i18n-zh="自进化 AI 智能体基础设施">Self-improving AI agent infrastructure</p>
 
+
+
         <div class="proj-meta-bar">
+
           <span class="proj-ver">v0.x</span>
+
           <span class="dot"></span>
+
           <span>MIT</span>
+
           <span class="dot"></span>
+
           <a href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">github.com/echocc00/SecOpentAgent ↗</a>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
+
+
   <section class="proj-body" data-reveal>
+
     <div class="shell proj-layout">
+
       <article class="proj-main">
+
         <h2 class="proj-h2" data-i18n-en="Overview" data-i18n-zh="概述">Overview</h2>
+
         <div class="proj-desc">
+
           <p data-i18n-en="SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across sessions. Deployed behind a single gateway process reaching Telegram, Discord, Slack, Signal, and CLI, with scheduled automations handled natively. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration." data-i18n-zh="SecOpentAgent 是自进化的 AI 智能体基础设施——具备闭环学习回路，能从经验中提炼技能、在使用中不断改进、跨会话持久化记忆。部署为一个网关进程，可同时触达 Telegram / Discord / Slack / Signal / CLI，并原生支持定时自动化任务。在 SOC 侧为 SecSight 提供后端，在 SecOpent 上驱动 case-DSL 探索。">SecOpentAgent is self-improving AI agent infrastructure — agent runtime with a closed-loop learning loop that creates skills from experience, improves them during use, and persists knowledge across sessions. Deployed behind a single gateway process reaching Telegram, Discord, Slack, Signal, and CLI, with scheduled automations handled natively. Used to back SecSight from the SOC side and to power SecOpent case-DSL exploration.</p>
+
           <p data-i18n-en="Seven runtime backends including serverless persistence — runs on a $5 VPS, a GPU cluster, or serverless infrastructure that hibernates when idle and costs nearly nothing between sessions. Compatible with the open agentskills.io skill standard and the Honcho dialectic user-modeling dialect." data-i18n-zh="7 种运行时后端，包括 serverless 持久化——既能在 5 美元的 VPS 上跑，也能在 GPU 集群或 serverless 基础设施上跑，空闲时自动休眠，几乎不花钱。兼容开源 agentskills.io 技能规范与 Honcho 对话式用户建模。">Seven runtime backends including serverless persistence — runs on a $5 VPS, a GPU cluster, or serverless infrastructure that hibernates when idle and costs nearly nothing between sessions. Compatible with the open agentskills.io skill standard and the Honcho dialectic user-modeling dialect.</p>
+
                   </div>
 
+
+
                           <!-- ============ SECTION 1: Pain → Solution → Value ============ -->
+
         <section class="impact-section" data-reveal>
+
           <header class="impact-head">
+
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+
             <p data-i18n-en="Most AI chat sessions reset to a blank slate — skills lost between conversations, vendor lock-in everywhere, no way to drive the agent from your phone. SecOpentAgent turns that blank slate into a compounding asset: a single agent that learns, runs anywhere, and keeps memory across every model and surface."
+
                data-i18n-zh="多数 AI 对话都从空白板开始——技能在会话间丢失，到处都是供应商锁定，手机无法驱动智能体。SecOpentAgent 让这块白板变成复利资产：一个会学习、可跨任意模型与触点运行的智能体。">Most AI chat sessions reset to a blank slate — skills lost between conversations, vendor lock-in everywhere, no way to drive the agent from your phone. SecOpentAgent turns that blank slate into a compounding asset: a single agent that learns, runs anywhere, and keeps memory across every model and surface.</p>
+
           </header>
 
+
+
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+
           <div class="impact-rows" role="list" data-reveal-stagger>
+
             <!-- Row 1 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3V5z"/><path d="M15 5a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3V5z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Skills lost between sessions" data-i18n-zh="技能在会话间丢失">Skills lost between sessions</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Next chat has no idea who you are." data-i18n-zh="下一次对话对你一无所知。">Next chat has no idea who you are.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Closed learning loop" data-i18n-zh="闭环学习回路">Closed learning loop</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Create + improve skills + memory." data-i18n-zh="技能创建 + 改进 + 记忆。">Create + improve skills + memory.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>" data-i18n-zh="<span class="arrow-up">↑</span>"><span class="arrow-up">↑</span></div>
+
                 <div class="impact-metric-label" data-i18n-en="Each session gets smarter" data-i18n-zh="每次会话都更聪明">Each session gets smarter</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 2 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Vendor lock-in" data-i18n-zh="供应商锁定">Vendor lock-in</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Closed gardens trap your data." data-i18n-zh="封闭花园锁住你的数据。">Closed gardens trap your data.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="LiteLLM routes any model" data-i18n-zh="LiteLLM 路由任意模型">LiteLLM routes any model</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Anthropic / OpenAI / local in one config." data-i18n-zh="Anthropic / OpenAI / 本地一份配置。">Anthropic / OpenAI / local in one config.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="1 → N" data-i18n-zh="1 → N">1 → N</div>
+
                 <div class="impact-metric-label" data-i18n-en="Config, N vendors" data-i18n-zh="一份配置，N 个供应商">Config, N vendors</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 3 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Can't run from phone" data-i18n-zh="无法从手机驱动">Can't run from phone</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Chained to a desktop." data-i18n-zh="被绑死在桌面端。">Chained to a desktop.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Telegram / Discord / Slack gateway" data-i18n-zh="Telegram / Discord / Slack 网关">Telegram / Discord / Slack gateway</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Same agent, any messaging app." data-i18n-zh="同一个智能体，任何聊天 App。">Same agent, any messaging app.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="7" data-i18n-zh="7">7</div>
+
                 <div class="impact-metric-label" data-i18n-en="Platforms, 1 agent" data-i18n-zh="7 个平台，1 个智能体">Platforms, 1 agent</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 4 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M5 11a7 7 0 0 1 14 0v8a2 2 0 0 1-2 2h-1l-1-2-1 2h-2l-1-2-1 2H7a2 2 0 0 1-2-2v-8z"/><circle cx="9" cy="11" r="1"/><circle cx="15" cy="11" r="1"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="No persistent memory of who you are" data-i18n-zh="没有关于「你是谁」的持久记忆">No persistent memory of who you are</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Role, stack, preferences — all gone." data-i18n-zh="角色、技术栈、偏好——全部丢失。">Role, stack, preferences — all gone.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M11 12h10M17 12v3M21 12v2"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Honcho user model + FTS5 search" data-i18n-zh="Honcho 用户模型 + FTS5 检索">Honcho user model + FTS5 search</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Cross-session search + user model." data-i18n-zh="跨会话检索 + 用户模型。">Cross-session search + user model.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-up">↑</span>100%" data-i18n-zh="<span class="arrow-up">↑</span>100%"><span class="arrow-up">↑</span>100%</div>
+
                 <div class="impact-metric-label" data-i18n-en="Context retention" data-i18n-zh="上下文保留">Context retention</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
+
 
           <!-- ============ B. Impact Columns (large visual cards) ============ -->
+
           <div class="impact-columns-head">
+
             <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+
             <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+
           </div>
+
+
 
           <div class="impact-grid" data-reveal-stagger>
+
             <!-- Pain card -->
+
             <div class="impact-card impact-card--pain">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-pain"
+
                    data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Every chat starts from zero"
+
                   data-i18n-zh="每次对话都从零开始">Every chat starts from zero</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Skills taught today are forgotten tomorrow — the next session has no idea who you are." data-i18n-zh="今天教会的技能明天就忘了——下一次会话对你一无所知。">Skills taught today are forgotten tomorrow — the next session has no idea who you are.</li>
+
                 <li data-i18n-en="Vendor lock-in traps your conversations, context, and tooling inside one closed garden." data-i18n-zh="供应商锁定把对话、上下文、工具全部锁在封闭花园里。">Vendor lock-in traps your conversations, context, and tooling inside one closed garden.</li>
+
                 <li data-i18n-en="You're chained to a desktop — no way to drive the agent from your phone." data-i18n-zh="被绑死在桌面端——出门时无法用手机驱动智能体。">You're chained to a desktop — no way to drive the agent from your phone.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">0</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Context carried across sessions" data-i18n-zh="跨会话保留的上下文">Context carried across sessions</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Solution card -->
+
             <div class="impact-card impact-card--solution">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-solution"
+
                    data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="A self-improving agent, anywhere"
+
                   data-i18n-zh="一个自我进化的智能体，随处可达">A self-improving agent, anywhere</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Closed learning loop: skill creation + improvement + memory + cross-session search + user modeling." data-i18n-zh="闭环学习回路：技能创建 + 改进 + 记忆 + 跨会话检索 + 用户建模。">Closed learning loop: skill creation + improvement + memory + cross-session search + user modeling.</li>
+
                 <li data-i18n-en="LiteLLM routes Anthropic, OpenAI, local models, and self-hosted weights behind one interface." data-i18n-zh="LiteLLM 在同一接口下路由 Anthropic、OpenAI、本地模型与自托管权重。">LiteLLM routes Anthropic, OpenAI, local models, and self-hosted weights behind one interface.</li>
+
                 <li data-i18n-en="Reach the same agent from Telegram, Discord, Slack, WhatsApp, Signal, or CLI — even while asleep." data-i18n-zh="从 Telegram / Discord / Slack / WhatsApp / Signal / CLI 触达同一个智能体——甚至在你睡觉时。">Reach the same agent from Telegram, Discord, Slack, WhatsApp, Signal, or CLI — even while asleep.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">5</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Learning mechanisms, one loop" data-i18n-zh="种学习机制，一条回路">Learning mechanisms, one loop</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Value card -->
+
             <div class="impact-card impact-card--value">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M4 17 9 12l4 4 7-7"/><path d="M14 9h6v6"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-value"
+
                    data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Smarter every session. Yours, forever."
+
                   data-i18n-zh="每次会话都更聪明，永远属于你">Smarter every session. Yours, forever.</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="The agent gets sharper with every session — accumulated skills and memory compound like interest." data-i18n-zh="智能体每次会话都更敏锐——技能与记忆像复利一样积累。">The agent gets sharper with every session — accumulated skills and memory compound like interest.</li>
+
                 <li data-i18n-en="No vendor lock-in: swap models, self-host, or take it offline — your data stays yours." data-i18n-zh="无供应商锁定：换模型、自托管甚至离线运行——数据始终是你的。">No vendor lock-in: swap models, self-host, or take it offline — your data stays yours.</li>
+
                 <li data-i18n-en="Control from anywhere: message the agent from your phone, laptop, or chat thread — same brain." data-i18n-zh="随时随地控制：用手机、笔记本或聊天线程——背后是同一个大脑。">Control from anywhere: message the agent from your phone, laptop, or chat thread — same brain.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">7</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Surfaces, one agent" data-i18n-zh="个触点，一个智能体">Surfaces, one agent</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
         </section>
 
 
 
+
+
+
+
         <section class="how-section" data-reveal><h2 class="proj-h2" data-i18n-en="Product architecture" data-i18n-zh="产品架构">Product architecture</h2>
+
             <p class="proj-desc"
+
                data-i18n-en="Every request threads through five participants. The user message arrives on any channel, the gateway normalizes it and forwards to the agent core, the agent calls LiteLLM to plan a tool sequence with the chosen provider, the tools execute and stream observations back, and the reply (plus a newly authored or improved skill) returns through the same gateway. Click any participant or message for details."
+
                data-i18n-zh="每一次请求都流经五个参与者：用户消息到达任意通道，网关统一通道格式后转发到智能体核心，智能体通过 LiteLLM 选定供应商来规划工具调用序列，工具执行并将观察结果回流，最终答复与新写入或改进的技能一起沿原通道返回。点击任意参与者或消息查看详情。">Every request threads through five participants.</p>
+
             <div class="arch-embed-frame-wrap">
+
               <iframe src="/assets/archify/secopentagent-sequence?theme=light"
+
                       class="archify-frame"
+
                       title="SecOpentAgent runtime loop sequence diagram"
+
                       loading="lazy"
+
                       referrerpolicy="no-referrer"
+
                       sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+
                 <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+
                    data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+
               </iframe>
+
             </div></section>
 
+
+
                     <!-- Architecture embed - placed between Overview and Capabilities -->
+
           <section class="arch-embed" data-reveal aria-labelledby="arch-title-secopentagent">
+
             <header class="arch-embed-head">
+
               <h2 class="proj-h2" id="arch-title-secopentagent" data-i18n-en="Technical architecture" data-i18n-zh="技术架构">Technical architecture</h2>
+
               <p class="arch-embed-sub"
+
                  data-i18n-en="AI agent · NousResearch/hermes-agent fork. Click any node or relationship for details."
+
                  data-i18n-zh="AI 智能体 · NousResearch/hermes-agent fork。点击任意节点或连线查看详情。">AI agent · NousResearch/hermes-agent fork. Click any node or relationship for details.</p>
+
             </header>
+
             <div class="arch-embed-frame-wrap">
+
               <iframe src="/assets/archify/secopentagent?theme=light"
+
                       class="archify-frame"
+
                       title="secopentagent interactive architecture"
+
                       loading="lazy"
+
                       referrerpolicy="no-referrer"
+
                       sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+
                 <p data-i18n-en="Your browser cannot display iframes. View the diagram directly:"
+
                    data-i18n-zh="浏览器不支持 iframe。直接查看:">Your browser cannot display iframes.</p>
+
               </iframe>
+
             </div>
+
           </section>
 
 
+
+
+
         <h2 class="proj-h2" data-i18n-en="Capabilities" data-i18n-zh="能力">Capabilities</h2>
+
         <div class="proj-features" data-reveal-stagger>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Closed-loop learning" data-i18n-zh="闭环学习">Closed-loop learning</div>
+
             <div class="proj-feat-desc" data-i18n-en="Agent-curated memory and skill self-improvement across sessions." data-i18n-zh="智能体管理记忆，技能在使用中自我进化，跨会话持久。">Agent-curated memory and skill self-improvement across sessions.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Multi-platform gateway" data-i18n-zh="多平台网关">Multi-platform gateway</div>
+
             <div class="proj-feat-desc" data-i18n-en="Single gateway to Telegram, Discord, Slack, WhatsApp, Signal, and CLI." data-i18n-zh="单一网关触达 Telegram / Discord / Slack / WhatsApp / Signal / CLI。">Single gateway to Telegram, Discord, Slack, WhatsApp, Signal, and CLI.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Scheduled automations" data-i18n-zh="定时自动化">Scheduled automations</div>
+
             <div class="proj-feat-desc" data-i18n-en="Built-in cron — daily reports, nightly backups, weekly audits in natural language." data-i18n-zh="内置 cron——日报、备份、周报，全部用自然语言写。">Built-in cron — daily reports, nightly backups, weekly audits in natural language.</div>
+
           </div>
+
         <div class="proj-feat">
+
             <div class="proj-feat-title" data-i18n-en="Serverless-friendly runtime" data-i18n-zh="Serverless 友好">Serverless-friendly runtime</div>
+
             <div class="proj-feat-desc" data-i18n-en="7 backends incl. serverless persistence — hibernates when idle." data-i18n-zh="7 种后端，包含 serverless 持久化，空闲时自动休眠。">7 backends incl. serverless persistence — hibernates when idle.</div>
+
           </div>
+
         </div>
+
+
 
         <h2 class="proj-h2" data-i18n-en="By the numbers" data-i18n-zh="数据指标">By the numbers</h2>
+
         <ul class="proj-metrics">
+
           <li data-i18n-en="Closed-loop learning" data-i18n-zh="闭环学习">Closed-loop learning</li>
+
           <li data-i18n-en="7 runtime backends" data-i18n-zh="7 种运行时后端">7 runtime backends</li>
+
           <li data-i18n-en="Multi-platform gateway" data-i18n-zh="多平台网关">Multi-platform gateway</li>
+
           <li data-i18n-en="Scheduled automations" data-i18n-zh="定时自动化">Scheduled automations</li>
+
           <li data-i18n-en="Honcho user modeling" data-i18n-zh="Honcho 用户建模">Honcho user modeling</li>
+
           <li data-i18n-en="agentskills.io compatible" data-i18n-zh="兼容 agentskills.io">agentskills.io compatible</li>
+
         </ul>
+
       </article>
 
+
+
       <aside class="proj-side">
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="At a glance" data-i18n-zh="速览">At a glance</div>
+
           <dl>
+
             <dt data-i18n-en="Version" data-i18n-zh="版本">Version</dt><dd>v0.x</dd>
+
             <dt>License</dt><dd>MIT</dd>
+
             <dt data-i18n-en="Category" data-i18n-zh="分类">Category</dt><dd data-i18n-en="Security" data-i18n-zh="安全">Security</dd>
+
             <dt data-i18n-en="Source" data-i18n-zh="源码">Source</dt><dd><a href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank">SecOpentAgent ↗</a></dd>
+
           </dl>
+
         </div>
 
+
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="Stack" data-i18n-zh="技术栈">Stack</div>
+
           <div class="side-list">
+
             <span class="pill" data-i18n-en="Python · Agent runtime" data-i18n-zh="Python · 智能体运行时">Python · Agent runtime</span>
+
           </div>
+
         </div>
 
+
+
         <div class="side-block">
+
           <div class="side-title" data-i18n-en="Integrations" data-i18n-zh="集成">Integrations</div>
+
           <div class="side-list">
+
             <span class="pill">Honcho</span><span class="pill">LLM providers (any)</span><span class="pill">Telegram</span><span class="pill">Discord</span><span class="pill">Slack</span>
+
           </div>
+
         </div>
+
       </aside>
+
     </div>
+
   
+
     </section>
 
+
+
   <section class="section dark" data-reveal>
+
     <div class="shell">
+
       <div class="cta-row">
+
         <div>
+
           <h2 class="cta-title" data-i18n-en="Try it, fork it, or hire me to extend it." data-i18n-zh="试用、fork，或请我帮你扩展。">Try it, fork it, or hire me to extend it.</h2>
+
           <p class="cta-desc"><span data-i18n-en="Source on GitHub · {p['license']} · questions to " data-i18n-zh="代码在 GitHub · {p['license']} · 邮件咨询：">Source on GitHub · {p['license']} · questions to </span><a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a></p>
+
         </div>
+
         <div class="cta-actions">
+
           <a class="btn btn-primary" href="https://github.com/echocc00/SecOpentAgent" rel="noopener" target="_blank" data-i18n-en="Open on GitHub ↗" data-i18n-zh="在 GitHub 上打开 ↗">Open on GitHub ↗</a>
+
           <a class="btn btn-outline" href="/projects/" data-i18n-en="See all projects" data-i18n-zh="看全部项目">See all projects</a>
+
         </div>
+
       </div>
+
     </div>
+
   </section></main>
 
+
+
       <footer class="footer" data-reveal>
+
   <div class="shell footer-row">
+
     <div><span class="footer-brand">echocc00</span> · <span data-i18n-en="echocc00 · Shanghai · 2026" data-i18n-zh="echocc00 · 上海 · 2026">echocc00 · Shanghai · 2026</span></div>
+
     <div class="footer-meta">
+
       <a href="/" data-i18n-en="Home" data-i18n-zh="首页">Home</a>
+
       <a href="/projects/" data-i18n-en="Projects" data-i18n-zh="项目">Projects</a>
+
       <a href="/about/" data-i18n-en="About" data-i18n-zh="关于">About</a>
+
       <a data-mailto-user="286043314+echocc00" data-mailto-domain="users.noreply.github.com"><span data-ml="u">286043314+echocc00</span><span data-ml="at">@</span><span data-ml="d">users.noreply.github.com</span></a>
+
       <span data-i18n-en="Apache-2.0" data-i18n-zh="Apache-2.0">Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
 <script src="/assets/js/reveal.js?v=20260903a" defer></script>
+
 <script src="/assets/js/hero-anim.js?v=20260903a" defer></script>
+
 <script src="/assets/js/mailto.js?v=20260903a" defer></script>
+
 <script src="/assets/js/i18n.js?v=20260903a" defer></script>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>
+

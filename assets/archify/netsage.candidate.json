@@ -1,152 +1,152 @@
-{
-  "schema_version": 1,
-  "diagram_type": "architecture",
-  "meta": {
-    "quality_profile": "showcase",
-    "title": "NetSage",
-    "subtitle": "AI network engineer",
-    "output": "netsage-architecture.html"
-  },
-  "components": [
-    {
-      "id": "op",
-      "type": "external",
-      "label": "Operator",
-      "sublabel": "CLI / chat",
-      "pos": [60, 60],
-      "size": [140, 60]
-    },
-    {
-      "id": "llm",
-      "type": "cloud",
-      "label": "LLM",
-      "sublabel": "multi-vendor",
-      "pos": [310, 60],
-      "size": [150, 60],
-      "tag": "planner + reasoning"
-    },
-    {
-      "id": "jinja",
-      "type": "cloud",
-      "label": "Jinja2",
-      "sublabel": "config templates",
-      "pos": [310, 220],
-      "size": [150, 60]
-    },
-    {
-      "id": "nornir",
-      "type": "backend",
-      "label": "Nornir",
-      "sublabel": "Python orchestrator",
-      "pos": [560, 60],
-      "size": [150, 60],
-      "tag": "network ops"
-    },
-    {
-      "id": "netmiko",
-      "type": "backend",
-      "label": "Netmiko + NAPALM",
-      "sublabel": "device drivers",
-      "pos": [810, 140],
-      "size": [170, 60]
-    },
-    {
-      "id": "ansible",
-      "type": "backend",
-      "label": "Ansible",
-      "sublabel": "config gen",
-      "pos": [810, 60],
-      "size": [170, 60]
-    },
-    {
-      "id": "rdma",
-      "type": "cloud",
-      "label": "RDMA tuning",
-      "sublabel": "perf toolkit",
-      "pos": [810, 220],
-      "size": [170, 60]
-    },
-    {
-      "id": "devices",
-      "type": "cloud",
-      "label": "Network Devices",
-      "sublabel": "routers / switches",
-      "pos": [1060, 60],
-      "size": [180, 60]
-    }
-  ],
-  "connections": [
-    {
-      "id": "op-llm",
-      "from": "op",
-      "to": "llm",
-      "label": "intent"
-    },
-    {
-      "id": "llm-jinja",
-      "from": "llm",
-      "to": "jinja",
-      "label": "render",
-      "labelAt": [385, 175]
-    },
-    {
-      "id": "llm-nornir",
-      "from": "llm",
-      "to": "nornir",
-      "label": "instruct"
-    },
-    {
-      "id": "nornir-netmiko",
-      "from": "nornir",
-      "to": "netmiko",
-      "label": "connect",
-      "labelAt": [735, 50]
-    },
-    {
-      "id": "nornir-ansible",
-      "from": "nornir",
-      "to": "ansible",
-      "label": "generate",
-      "labelAt": [700, 200]
-    },
-    {
-      "id": "llm-rdma",
-      "from": "llm",
-      "to": "rdma",
-      "label": "optimize"
-    },
-    {
-      "id": "netmiko-devices",
-      "from": "netmiko",
-      "to": "devices",
-      "label": "SSH",
-      "variant": "security"
-    }
-  ],
-  "cards": [
-    {
-      "dot": "cyan",
-      "title": "Intent",
-      "items": [
-        "Operator states intent",
-        "LLM plans config + verify path"
-      ]
-    },
-    {
-      "dot": "emerald",
-      "title": "Execute",
-      "items": [
-        "Nornir orchestrates Netmiko + Ansible",
-        "Jinja2 renders device-specific config"
-      ]
-    },
-    {
-      "dot": "rose",
-      "title": "Optimize",
-      "items": [
-        "RDMA tuning toolkit for fabric perf",
-        "Devices gated by elevated SG"
-      ]
-    }
-  ]
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "quality_profile": "showcase",
+    "title": "NetSage",
+    "subtitle": "AI network engineer",
+    "output": "netsage-architecture.html"
+  },
+  "components": [
+    {
+      "id": "op",
+      "type": "external",
+      "label": "Operator",
+      "sublabel": "CLI / chat",
+      "pos": [60, 60],
+      "size": [140, 60]
+    },
+    {
+      "id": "llm",
+      "type": "cloud",
+      "label": "LLM",
+      "sublabel": "multi-vendor",
+      "pos": [310, 60],
+      "size": [150, 60],
+      "tag": "planner + reasoning"
+    },
+    {
+      "id": "jinja",
+      "type": "cloud",
+      "label": "Jinja2",
+      "sublabel": "config templates",
+      "pos": [310, 220],
+      "size": [150, 60]
+    },
+    {
+      "id": "nornir",
+      "type": "backend",
+      "label": "Nornir",
+      "sublabel": "Python orchestrator",
+      "pos": [560, 60],
+      "size": [150, 60],
+      "tag": "network ops"
+    },
+    {
+      "id": "netmiko",
+      "type": "backend",
+      "label": "Netmiko + NAPALM",
+      "sublabel": "device drivers",
+      "pos": [810, 140],
+      "size": [170, 60]
+    },
+    {
+      "id": "ansible",
+      "type": "backend",
+      "label": "Ansible",
+      "sublabel": "config gen",
+      "pos": [810, 60],
+      "size": [170, 60]
+    },
+    {
+      "id": "rdma",
+      "type": "cloud",
+      "label": "RDMA tuning",
+      "sublabel": "perf toolkit",
+      "pos": [810, 220],
+      "size": [170, 60]
+    },
+    {
+      "id": "devices",
+      "type": "cloud",
+      "label": "Network Devices",
+      "sublabel": "routers / switches",
+      "pos": [1060, 60],
+      "size": [180, 60]
+    }
+  ],
+  "connections": [
+    {
+      "id": "op-llm",
+      "from": "op",
+      "to": "llm",
+      "label": "intent"
+    },
+    {
+      "id": "llm-jinja",
+      "from": "llm",
+      "to": "jinja",
+      "label": "render",
+      "labelAt": [385, 175]
+    },
+    {
+      "id": "llm-nornir",
+      "from": "llm",
+      "to": "nornir",
+      "label": "instruct"
+    },
+    {
+      "id": "nornir-netmiko",
+      "from": "nornir",
+      "to": "netmiko",
+      "label": "connect",
+      "labelAt": [735, 50]
+    },
+    {
+      "id": "nornir-ansible",
+      "from": "nornir",
+      "to": "ansible",
+      "label": "generate",
+      "labelAt": [700, 200]
+    },
+    {
+      "id": "llm-rdma",
+      "from": "llm",
+      "to": "rdma",
+      "label": "optimize"
+    },
+    {
+      "id": "netmiko-devices",
+      "from": "netmiko",
+      "to": "devices",
+      "label": "SSH",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Intent",
+      "items": [
+        "Operator states intent",
+        "LLM plans config + verify path"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Execute",
+      "items": [
+        "Nornir orchestrates Netmiko + Ansible",
+        "Jinja2 renders device-specific config"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Optimize",
+      "items": [
+        "RDMA tuning toolkit for fabric perf",
+        "Devices gated by elevated SG"
+      ]
+    }
+  ]
 }

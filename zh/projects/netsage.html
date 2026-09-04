@@ -1,366 +1,733 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>NetSage · AI 网络工程师 · echocc00</title>
+
 <meta name="description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/zh/projects/netsage/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/netsage/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/netsage/">
+
 <meta property="og:type" content="article">
+
 <meta property="og:url" content="https://www.echocco.com/zh/projects/netsage/">
+
 <meta property="og:title" content="NetSage · AI 网络工程师 · echocc00">
+
 <meta property="og:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/netsage.png">
+
 <meta property="og:locale" content="zh_CN">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="NetSage · AI 网络工程师 · echocc00">
+
 <meta name="twitter:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/netsage.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/zh/">首页</a>
+
       <a class="nav-link active" href="/zh/projects/">项目</a>
+
       <a class="nav-link " href="/zh/about/">关于</a>
+
       <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
+
       <span class="lang-switch">
+
         <a href="/projects/netsage/" class="" hreflang="en">EN</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <header class="proj-hero" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%); color: white;">
+
   <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
   <div class="shell">
+
     <div class="proj-prompt"><span style="color:var(--accent-green);">$</span> <span class="path">cd /zh/projects/netsage/</span></div>
-    <h1 class="proj-title">NetSage</h1>
+
+    <h1 class="proj-title hero-reveal-in">NetSage</h1>
+
     <p class="proj-tagline">AI 网络工程师</p>
+
     <div class="proj-meta-bar">
+
       <span class="proj-ver">v0.1.1</span>
+
       <span class="dot"></span>
+
       <span>Apache-2.0</span>
+
       <span class="dot"></span>
+
       <a href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">github.com/echocc00/NetSage ↗</a>
+
     </div>
+
   </div>
+
 </header>
 
+
+
 <section class="proj-body">
+
   <div class="shell proj-layout">
+
     <article class="proj-main" data-reveal="rise">
+
       <h2 class="proj-h2" data-reveal="curtain">## 概览</h2>
+
       <div class="proj-desc"><p>NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。</p></div>
 
+
+
         <section class="impact-section" data-reveal>
+
           <header class="impact-head">
+
             <span class="impact-eyebrow" data-i18n-en="Product impact" data-i18n-zh="产品价值">Product impact</span>
+
             <h2 data-i18n-en="Pain → Solution → Value" data-i18n-zh="痛点 → 方案 → 价值">Pain → Solution → Value</h2>
+
             <p data-i18n-en="Network operations depend on deep vendor-specific knowledge that few engineers actually hold — and a single misconfig can take down a region. NetSage replaces tribal CCIE work with a coordinated team of 10 specialized AI agents, a three-gate engine, and multi-vendor support out of the box."
+
                data-i18n-zh="网络运维依赖深厚且高度厂商特定的知识储备——一个配置错误就足以让一个区域宕机。NetSage 用 10 个专业 AI 智能体组成的团队、一道三闸门引擎，以及开箱即用的多厂商支持，替代口口相传的 CCIE 工作。">Network operations depend on deep vendor-specific knowledge that few engineers actually hold — and a single misconfig can take down a region. NetSage replaces tribal CCIE work with a coordinated team of 10 specialized AI agents, a three-gate engine, and multi-vendor support out of the box.</p>
+
           </header>
 
+
+
           <!-- ============ A. Impact Rows (compact horizontal flow) ============ -->
+
           <div class="impact-rows" role="list" data-reveal-stagger>
+
             <!-- Row 1 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M3 9V6a1 1 0 0 1 1-1h5v4M21 9V6a1 1 0 0 0-1-1h-5v4M3 9h6M15 9h6M3 15h6M15 15h6M3 15v3a1 1 0 0 0 1 1h5v-4M21 15v3a1 1 0 0 1-1 1h-5v-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Vendor-locked config" data-i18n-zh="供应商锁定的配置">Vendor-locked config</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Huawei / Cisco / H3C each speak their own." data-i18n-zh="华为 / Cisco / H3C 各说各话。">Huawei / Cisco / H3C each speak their own.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="10 agents + multi-vendor" data-i18n-zh="10 个智能体 + 多厂商">10 agents + multi-vendor</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista." data-i18n-zh="华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista。">Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="5" data-i18n-zh="5">5</div>
+
                 <div class="impact-metric-label" data-i18n-en="Vendors, 1 workflow" data-i18n-zh="5 个厂商，1 条工作流">Vendors, 1 workflow</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 2 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Misconfigs cause outages" data-i18n-zh="配置错误引发宕机">Misconfigs cause outages</div>
+
                   <div class="impact-cell-sub" data-i18n-en="One typo can take down a region." data-i18n-zh="一个错字可能让一个区域宕机。">One typo can take down a region.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Three-gate engine" data-i18n-zh="三闸门引擎">Three-gate engine</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Simulate → validate → approve + rollback." data-i18n-zh="仿真 → 校验 → 审批并回滚。">Simulate → validate → approve + rollback.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="0" data-i18n-zh="0">0</div>
+
                 <div class="impact-metric-label" data-i18n-en="Unintended outages" data-i18n-zh="意外宕机">Unintended outages</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 3 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M14 19c0-2 2-3 4-3s4 1 4 3"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Scarce CCIE engineers" data-i18n-zh="CCIE 工程师稀缺">Scarce CCIE engineers</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Few hold the tribal knowledge." data-i18n-zh="掌握经验的人凤毛麟角。">Few hold the tribal knowledge.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3V5z"/><path d="M15 5a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3V5z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="Planner + containerlab sim" data-i18n-zh="Planner + containerlab 仿真">Planner + containerlab sim</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Topology-driven deploys." data-i18n-zh="拓扑驱动的部署。">Topology-driven deploys.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="<span class="arrow-down">↓</span>" data-i18n-zh="<span class="arrow-down">↓</span>"><span class="arrow-down">↓</span></div>
+
                 <div class="impact-metric-label" data-i18n-en="Days → hours" data-i18n-zh="从天级降到小时级">Days → hours</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Row 4 -->
+
             <div class="impact-row" role="listitem">
+
               <div class="impact-cell impact-cell--pain">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
                   <div class="impact-cell-text" data-i18n-en="Tribal troubleshooting slow" data-i18n-zh="口耳相传的排障慢">Tribal troubleshooting slow</div>
+
                   <div class="impact-cell-sub" data-i18n-en="Outages sit until a CCIE is online." data-i18n-zh="CCIE 不在线就解决不了。">Outages sit until a CCIE is online.</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-cell impact-cell--solution">
+
                 <div class="impact-cell-icon" aria-hidden="true">
+
                   <svg viewBox="0 0 24 24"><path d="M13 3 4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+
                 </div>
+
                 <div class="impact-cell-body">
+
                   <div class="impact-cell-label" data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
                   <div class="impact-cell-text" data-i18n-en="10 named agents on-call" data-i18n-zh="10 个命名智能体随时待命">10 named agents on-call</div>
+
                   <div class="impact-cell-sub" data-i18n-en="planner, validator, troubleshooter, …" data-i18n-zh="planner / validator / troubleshooter 等。">planner, validator, troubleshooter, …</div>
+
                 </div>
+
               </div>
+
               <span class="impact-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
               <div class="impact-metric">
+
                 <div class="impact-metric-value" data-i18n-en="24/7" data-i18n-zh="24/7">24/7</div>
+
                 <div class="impact-metric-label" data-i18n-en="Always-on network engineer" data-i18n-zh="全天候在线的网络工程师">Always-on network engineer</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
+
 
           <!-- ============ B. Impact Columns (large visual cards) ============ -->
+
           <div class="impact-columns-head">
+
             <h3 data-i18n-en="What changes for the team" data-i18n-zh="团队会发生什么变化">What changes for the team</h3>
+
             <p data-i18n-en="A wider view of the same loop. Each card zooms into the corresponding column above — the pain, what we do about it, and the analyst experience after."
+
                data-i18n-zh="同一回路的放大视图。每张卡片对应上面一列的纵深——痛点、我们做了什么、以及体验之后的样子。">A wider view of the same loop. Each card zooms into the corresponding column above.</p>
+
           </div>
+
+
 
           <div class="impact-grid" data-reveal-stagger>
+
             <!-- Pain card -->
+
             <div class="impact-card impact-card--pain">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5M12 18h.01"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-pain"
+
                    data-i18n-en="Pain" data-i18n-zh="痛点">Pain</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Network ops depend on tribal CCIE knowledge"
+
                   data-i18n-zh="网络运维依赖口耳相传的 CCIE 经验">Network ops depend on tribal CCIE knowledge</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Deep vendor-specific knowledge — Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista — held by few engineers." data-i18n-zh="深厚的厂商特定知识——华为 VRP / Cisco IOS-XE / H3C / Juniper / Arista——仅极少数人掌握。">Deep vendor-specific knowledge — Huawei VRP, Cisco IOS-XE, H3C, Juniper, Arista — held by few engineers.</li>
+
                 <li data-i18n-en="A single typo in an ACL or BGP config can take down a region." data-i18n-zh="ACL 或 BGP 配置里的一个错字就可能让一个区域宕机。">A single typo in an ACL or BGP config can take down a region.</li>
+
                 <li data-i18n-en="Troubleshooting is slow, tribal, and dependent on who's online." data-i18n-zh="排障缓慢、依赖经验、取决于谁在线。">Troubleshooting is slow, tribal, and dependent on who's online.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">5</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Vendors each with its own dialect" data-i18n-zh="个厂商各有各的方言">Vendors each with its own dialect</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Solution card -->
+
             <div class="impact-card impact-card--solution">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.5 7.5 9.5 10.5M17.5 7.5 14.5 10.5M6.5 16.5 9.5 13.5M17.5 16.5 14.5 13.5"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-solution"
+
                    data-i18n-en="Solution" data-i18n-zh="方案">Solution</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="10 agents + a three-gate engine"
+
                   data-i18n-zh="10 个智能体 + 一道三闸门引擎">10 agents + a three-gate engine</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Specialized agents — planner, config_engineer, validator, troubleshooter, observer, security_auditor, … — each own a stage." data-i18n-zh="专业智能体——planner / config_engineer / validator / troubleshooter / observer / security_auditor 等——各管一段。">Specialized agents — planner, config_engineer, validator, troubleshooter, observer, security_auditor, … — each own a stage.</li>
+
                 <li data-i18n-en="Containerlab simulation + Batfish validation + human approval with snapshot rollback before any device is touched." data-i18n-zh="Containerlab 仿真 + Batfish 校验 + 人工审批并落快照回滚，触达设备前已通过所有闸门。">Containerlab simulation + Batfish validation + human approval with snapshot rollback before any device is touched.</li>
+
                 <li data-i18n-en="Multi-vendor out of the box: Huawei, Cisco, H3C, Juniper, Arista." data-i18n-zh="开箱即支持多厂商：华为、思科、华三、瞻博、Arista。">Multi-vendor out of the box: Huawei, Cisco, H3C, Juniper, Arista.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">10</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Specialized agents" data-i18n-zh="个专业智能体">Specialized agents</div>
+
               </div>
+
             </div>
+
+
 
             <!-- Value card -->
+
             <div class="impact-card impact-card--value">
+
               <div class="impact-card-art" aria-hidden="true">
+
                 <svg viewBox="0 0 24 24"><path d="M12 14l4-6"/><circle cx="12" cy="14" r="9"/><path d="M3 14a9 9 0 0 1 18 0"/></svg>
+
               </div>
+
               <div class="impact-card-tag impact-tag impact-tag-value"
+
                    data-i18n-en="Value" data-i18n-zh="价值">Value</div>
+
               <h3 class="impact-card-title"
+
                   data-i18n-en="Deploys in hours, outages become rare"
+
                   data-i18n-zh="部署以小时计，宕机罕见且可回滚">Deploys in hours, outages become rare</h3>
+
               <ul class="impact-card-list">
+
                 <li data-i18n-en="Changes that took days ship in hours — the planner + simulator pipeline replaces tribal pre-checks." data-i18n-zh="原本需要数天的变更现在以小时上线——planner + 仿真流水线取代口口相传的预检。">Changes that took days ship in hours — the planner + simulator pipeline replaces tribal pre-checks.</li>
+
                 <li data-i18n-en="Misconfig-driven incidents drop sharply: every change is simulated, validated, approved." data-i18n-zh="配置错误引发的事故显著下降：每次变更都经过仿真、校验、审批。">Misconfig-driven incidents drop sharply: every change is simulated, validated, approved.</li>
+
                 <li data-i18n-en="One platform runs the whole multi-vendor network — no tribal knowledge required." data-i18n-zh="一个平台就能跑通整个多厂商网络——无需个人经验。">One platform runs the whole multi-vendor network — no tribal knowledge required.</li>
+
               </ul>
+
               <div class="impact-card-metric">
+
                 <div class="impact-card-metric-value">3</div>
+
                 <div class="impact-card-metric-label" data-i18n-en="Gates before any device is touched" data-i18n-zh="道闸门保护真实设备">Gates before any device is touched</div>
+
               </div>
+
             </div>
 
+
+
           </div>
+
         </section>
 
 
+
+
+
       <h2 class="proj-h2" data-reveal="curtain">## 技术架构</h2>
+
       <figure class="proj-figure arch-embed-frame-wrap">
+
         <iframe class="arch-embed-frame" src="/assets/archify/netsage.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
+
       </figure>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## 产品架构</h2>
+
       <figure class="proj-figure arch-embed-frame-wrap">
+
         <iframe class="arch-embed-frame" src="/assets/archify/netsage-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
+
       </figure>
 
+
+
       <h2 class="proj-h2" data-reveal="curtain">## 能力</h2>
+
       <div class="proj-features">
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">8 个专业代理</div><div class="proj-feat-desc">planner · config_engineer · validator · troubleshooter · deploy · observer · security_auditor · compliance。</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">三道闸管线</div><div class="proj-feat-desc">Containerlab 仿真 → Batfish 校验 → 人工审批 + 快照回滚。</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">多厂商</div><div class="proj-feat-desc">华为 VRP · 思科 IOS-XE · H3C · Juniper · Arista。</div></div>
+
         <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">双 Source-of-Truth</div><div class="proj-feat-desc">NetBox + Nautobot 适配器,可切换。</div></div>
+
       </div>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## 截图</h2>
+
       <div class="proj-screenshots">
+
         <figure class="demo-frame" data-reveal="image" data-parallax="0.08">
+
           <picture>
+
             <source srcset="/assets/demos/netsage.gif" type="image/gif">
+
             <img src="/assets/demos/netsage.svg" alt="NetSage runtime demo" loading="lazy">
+
           </picture>
+
           <figcaption>NetSage v0.1.1 — runtime demo (5-7s loop)</figcaption>
+
         </figure>
+
       </div>
+
+
 
       <h2 class="proj-h2" data-reveal="curtain">## 数据</h2>
+
       <ul class="proj-metrics">
+
         <li data-reveal="rise" style="--i:0;">8 个专业代理</li>
+
         <li data-reveal="rise" style="--i:1;">三道闸管线(仿真 → 校验 → 审批)</li>
+
         <li data-reveal="rise" style="--i:2;">多厂商: 5 个 OS 家族</li>
+
         <li data-reveal="rise" style="--i:3;">30 条基线规则 (CIS + 厂商加固)</li>
+
         <li data-reveal="rise" style="--i:4;">RBAC 5 级权限</li>
+
       </ul>
+
     </article>
 
+
+
     <aside class="proj-side">
+
       <div class="side-block">
+
         <div class="side-title">速览</div>
+
         <dl>
+
           <dt>version</dt><dd>v0.1.1</dd>
+
           <dt>license</dt><dd>Apache-2.0</dd>
+
           <dt>category</dt><dd>network</dd>
+
           <dt>source</dt><dd><a href="https://github.com/echocc00/NetSage" rel="noopener" target="_blank">NetSage ↗</a></dd>
+
         </dl>
+
       </div>
+
       <div class="side-block">
+
         <div class="side-title">技术栈</div>
+
         <div class="side-list">
+
           <span class="pill">napalm · containerlab</span>
+
           <span class="pill">batfish · netbox</span>
+
           <span class="pill">python · react</span>
+
         </div>
+
       </div>
+
       <div class="side-block">
+
         <div class="side-title">## 其它项目</div>
+
         <ul class="side-more">
+
           <li><a href="/zh/projects/secsight/">→ SecSight</a></li>
+
         <li><a href="/zh/projects/secopent/">→ SecOpent</a></li>
+
         <li><a href="/zh/projects/vidslice/">→ VidSlice</a></li>
+
         <li><a href="/zh/projects/opencut002/">→ OpenCut v3</a></li>
+
         <li><a href="/zh/projects/hydro-fork/">→ Hydro OJ</a></li>
+
         </ul>
+
       </div>
+
     </aside>
+
   </div>
+
 </section>
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/zh/">首页</a>
+
       <a href="/zh/projects/">项目</a>
+
       <a href="/zh/about/">关于</a>
+
       <a href="/assets/cv.pdf">简历</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
   <script src="/assets/js/reveal.js" defer></script>
-  <script src="/assets/js/hero-anim.js" defer></script>
+
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
+
 </body>
+
 </html>

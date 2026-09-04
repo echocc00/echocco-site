@@ -1,50 +1,50 @@
-{
-  "name": "echocc00 · Project Portfolio",
-  "short_name": "echocc00",
-  "description": "Portfolio & project index for echocc00 (echocc00) — Cloud Security, Network Engineering, AI-Driven SecOps",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "background_color": "#08090a",
-  "theme_color": "#08090a",
-  "icons": [
-    {
-      "src": "/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Projects",
-      "url": "/projects/",
-      "description": "Open-source products"
-    },
-    {
-      "name": "/now",
-      "url": "/now/",
-      "description": "Current focus"
-    },
-    {
-      "name": "/uses",
-      "url": "/uses/",
-      "description": "Tools and setup"
-    },
-    {
-      "name": "/colophon",
-      "url": "/colophon/",
-      "description": "How this site is made"
-    }
-  ],
-  "categories": [
-    "developer",
-    "productivity",
-    "utilities"
-  ],
-  "lang": "en"
+{
+  "name": "echocc00 · Project Portfolio",
+  "short_name": "echocc00",
+  "description": "Portfolio & project index for echocc00 (echocc00) — Cloud Security, Network Engineering, AI-Driven SecOps",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#08090a",
+  "theme_color": "#08090a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/projects/",
+      "description": "Open-source products"
+    },
+    {
+      "name": "/now",
+      "url": "/now/",
+      "description": "Current focus"
+    },
+    {
+      "name": "/uses",
+      "url": "/uses/",
+      "description": "Tools and setup"
+    },
+    {
+      "name": "/colophon",
+      "url": "/colophon/",
+      "description": "How this site is made"
+    }
+  ],
+  "categories": [
+    "developer",
+    "productivity",
+    "utilities"
+  ],
+  "lang": "en"
 }

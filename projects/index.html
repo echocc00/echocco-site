@@ -1,144 +1,289 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>echocc00 · projects</title>
+
 <meta name="description" content="6 entries · click any for full detail">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/projects/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/">
+
 <meta property="og:type" content="website">
+
 <meta property="og:url" content="https://www.echocco.com/projects/">
+
 <meta property="og:title" content="echocc00 · projects">
+
 <meta property="og:description" content="6 entries · click any for full detail">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+
 <meta property="og:locale" content="en_US">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="echocc00 · projects">
+
 <meta name="twitter:description" content="6 entries · click any for full detail">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/">home</a>
+
       <a class="nav-link active" href="/projects/">projects</a>
+
       <a class="nav-link " href="/about/">about</a>
+
       <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+
       <span class="lang-switch">
+
         <a href="/zh/projects/" class="active" hreflang="zh-CN">中文</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <section class="hero">
+
   <div class="shell hero-inner">
+
     <div class="hero-prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cd projects</div>
-    <h1 class="hero-title">/projects</h1>
+
+    <h1 class="hero-title hero-reveal-in">/projects</h1>
+
     <p class="hero-bio">6 entries · click any for full detail</p>
+
   </div>
+
 </section>
+
+
 
 <section class="section">
+
   <div class="shell">
+
     <div class="filter-bar">
+
       <button class="filter-chip active" data-tag="all">all</button>
+
       <button class="filter-chip" data-tag="security">security</button>
+
       <button class="filter-chip" data-tag="network">network</button>
+
       <button class="filter-chip" data-tag="content">content</button>
+
       <button class="filter-chip" data-tag="fork">fork</button>
+
     </div>
+
     <table class="proj-table" id="project-grid">
+
       <thead><tr><th>name</th><th>ver</th><th>stack</th><th>desc</th><th></th></tr></thead>
+
       <tbody>
+
         <tr class="proj-row" data-tag="security" data-reveal="rise" style="--i:0;">
+
           <td><a class="proj-name" href="/projects/secsight/">SecSight</a></td>
+
           <td><span class="proj-version">v0.5.1</span></td>
+
           <td><span class="proj-stack">fastapi · langgraph</span></td>
+
           <td><span class="proj-desc">22 SOAR playbooks · 5 autonomy levels</span></td>
+
           <td><a class="proj-link" href="/projects/secsight/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="security" data-reveal="rise" style="--i:1;">
+
           <td><a class="proj-name" href="/projects/secopent/">SecOpent</a></td>
+
           <td><span class="proj-version">v1.1.1-stable</span></td>
+
           <td><span class="proj-stack">fastapi · react</span></td>
+
           <td><span class="proj-desc">17 cross-domain adapters · oracle N/N validation</span></td>
+
           <td><a class="proj-link" href="/projects/secopent/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="network" data-reveal="rise" style="--i:2;">
+
           <td><a class="proj-name" href="/projects/netsage/">NetSage</a></td>
+
           <td><span class="proj-version">v0.1.1</span></td>
+
           <td><span class="proj-stack">napalm · containerlab</span></td>
+
           <td><span class="proj-desc">8 agents · 3 gates (sim -> validate -> approve)</span></td>
+
           <td><a class="proj-link" href="/projects/netsage/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="content" data-reveal="rise" style="--i:3;">
+
           <td><a class="proj-name" href="/projects/vidslice/">VidSlice</a></td>
+
           <td><span class="proj-version">v0.7.10</span></td>
+
           <td><span class="proj-stack">lancedb · opencv</span></td>
+
           <td><span class="proj-desc">Vector index + Ed25519 attestation · 408 tests</span></td>
+
           <td><a class="proj-link" href="/projects/vidslice/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="content" data-reveal="rise" style="--i:4;">
+
           <td><a class="proj-name" href="/projects/opencut002/">OpenCut v3</a></td>
+
           <td><span class="proj-version">v0.6.5</span></td>
+
           <td><span class="proj-stack">python · remotion</span></td>
+
           <td><span class="proj-desc">20-stage pipeline · 1080x1920 vertical · CLI + SaaS</span></td>
+
           <td><a class="proj-link" href="/projects/opencut002/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="fork" data-reveal="rise" style="--i:5;">
+
           <td><a class="proj-name" href="/projects/hydro-fork/">Hydro OJ</a></td>
+
           <td><span class="proj-version">fork</span></td>
+
           <td><span class="proj-stack">typescript · mongodb</span></td>
+
           <td><span class="proj-desc">Fork of hydro-dev/Hydro · AGPL-3.0</span></td>
+
           <td><a class="proj-link" href="/projects/hydro-fork/">→</a></td>
+
         </tr>
+
       </tbody>
+
     </table>
+
   </div>
+
 </section>
 
+
+
 <script>
+
 document.querySelectorAll('.filter-chip').forEach(chip => {
+
   chip.addEventListener('click', () => {
+
     document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+
     chip.classList.add('active');
+
     const tag = chip.dataset.tag;
+
     document.querySelectorAll('#project-grid tbody tr').forEach(row => {
+
       row.style.display = (tag === 'all' || row.dataset.tag === tag) ? '' : 'none';
+
     });
+
   });
+
 });
+
 </script>
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/">home</a>
+
       <a href="/projects/">projects</a>
+
       <a href="/about/">about</a>
+
       <a href="/assets/cv.pdf">cv</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>

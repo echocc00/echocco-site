@@ -1,28 +1,66 @@
 # Cloudflare Pages _redirects
+
 # CF Pages auto-rewrites URLs to remove .html trailing extension.
+
 # We just need to handle index pages and clean URLs.
 
+
+
 # Index pages — use 200 to serve the file directly (CF will rewrite URL)
+
 /                           /index.html                       200
+
 /about/                     /about.html                       200
+
 /now/                       /now.html                         200
+
 /uses/                      /uses.html                        200
+
 /colophon/                  /colophon.html                    200
+
 /projects/                  /projects/index.html              200
 
+
+
 # Chinese mirror - same pattern
+
 /zh                         /zh/index.html                   200
+
 /zh/about/                  /zh/about.html                   200
+
 /zh/now/                    /zh/now.html                     200
+
 /zh/uses/                   /zh/uses.html                    200
+
 /zh/colophon/               /zh/colophon.html                200
+
 /zh/projects/               /zh/projects/index.html          200
 
+
+
 # Allow direct access to special files
+
 /sw.js                      /sw.js                           200
+
 /rss.xml                    /rss.xml                         200
+
 /zh/rss.xml                 /zh/rss.xml                      200
+
 /uses.json                  /uses.json                       200
 
+
+
 # Legacy URL
+
 /projects/opencut/          /projects/opencut002.html        301
+
+# Per-project Chinese mirror pages
+/zh/projects/secsight/             /zh/projects/secsight.html           200
+/zh/projects/secopent/             /zh/projects/secopent.html           200
+/zh/projects/netsage/             /zh/projects/netsage.html           200
+/zh/projects/vidslice/             /zh/projects/vidslice.html           200
+/zh/projects/opencut002/             /zh/projects/opencut002.html           200
+/zh/projects/hydro-fork/             /zh/projects/hydro-fork.html           200
+/zh/projects/secopentagent/             /zh/projects/secopentagent.html           200
+/zh/projects/strixoc/             /zh/projects/strixoc.html           200
+/zh/                       /zh/index.html                   200

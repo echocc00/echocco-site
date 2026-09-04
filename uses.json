@@ -1,132 +1,132 @@
-{
-  "$schema": "https://usesthis.com/schema/v1/schema.json",
-  "name": "echocc00",
-  "handle": "echocc00",
-  "url": "https://www.echocco.com/uses/",
-  "description": "Security & network engineer based in Shanghai. 9 years cloud security, CCIE-certified.",
-  "last_updated": "2026-09-03T00:00:00Z",
-  "sections": [
-    {
-      "name": "Hardware",
-      "items": [
-        {
-          "name": "MacBook Pro 16\" M3 Max",
-          "description": "64GB RAM · 1TB SSD · primary dev machine."
-        },
-        {
-          "name": "Custom desktop (Linux)",
-          "description": "Ryzen 9 + 128GB RAM + RTX 4090 · runs Containerlab + Batfish + NetBox locally."
-        },
-        {
-          "name": "Logitech MX Master 3S",
-          "description": "Best mouse ever made."
-        },
-        {
-          "name": "HHKB Studio",
-          "description": "Topre keys · quiet · 60g."
-        },
-        {
-          "name": "2x Dell U2723QE",
-          "description": "27\" 4K · USB-C hub + KVM."
-        }
-      ]
-    },
-    {
-      "name": "Editor + Terminal",
-      "items": [
-        {
-          "name": "Neovim",
-          "description": "0.10+. Lazy.nvim. Treesitter + LSP. Config: github.com/echocc00/dotfiles."
-        },
-        {
-          "name": "tmux + zsh + starship",
-          "description": "Warp as GUI fallback when I need to share screen."
-        },
-        {
-          "name": "lazygit",
-          "description": "For any repo work."
-        }
-      ]
-    },
-    {
-      "name": "Languages + Runtimes",
-      "items": [
-        {
-          "name": "Python 3.11+",
-          "description": "Primary. uv for deps. ruff for lint+format. pytest."
-        },
-        {
-          "name": "TypeScript / Node.js",
-          "description": "For tooling, not for products."
-        },
-        {
-          "name": "Rust",
-          "description": "When perf or sandboxing matters. Learning."
-        }
-      ]
-    },
-    {
-      "name": "Cloud + Hosting",
-      "items": [
-        {
-          "name": "Cloudflare Pages",
-          "description": "This site + every static site I touch."
-        },
-        {
-          "name": "Cloudflare Workers",
-          "description": "Edge glue when needed."
-        },
-        {
-          "name": "Hetzner + OVH",
-          "description": "For EU-side labs."
-        },
-        {
-          "name": "Aliyun",
-          "description": "For China-side deployments. ICP filing where required."
-        }
-      ]
-    },
-    {
-      "name": "Tools + Services",
-      "items": [
-        {
-          "name": "DeepSeek + Qwen + GPT-4o",
-          "description": "Via LiteLLM. Pick per-task."
-        },
-        {
-          "name": "Wazuh + Suricata + Shuffle",
-          "description": "In production SOC stack."
-        },
-        {
-          "name": "Containerlab + Batfish + NetBox",
-          "description": "In production network stack."
-        },
-        {
-          "name": "Stripe + Linear + Notion",
-          "description": "For product-side ops. Lean on these hard."
-        }
-      ]
-    },
-    {
-      "name": "Communication",
-      "items": [
-        {
-          "name": "Slack",
-          "description": "For team comms."
-        },
-        {
-          "name": "Feishu",
-          "description": "For China-side teams."
-        },
-        {
-          "name": "Email",
-          "description": "286043314+echocc00@users.noreply.github.com — best for asynchronous, anything important."
-        },
-        {
-          "name": "GitHub Issues + Discussions",
-          "description": "For all OSS work."
-        }
-      ]
-    }
-  ]
+{
+  "$schema": "https://usesthis.com/schema/v1/schema.json",
+  "name": "echocc00",
+  "handle": "echocc00",
+  "url": "https://www.echocco.com/uses/",
+  "description": "Security & network engineer based in Shanghai. 9 years cloud security, CCIE-certified.",
+  "last_updated": "2026-09-03T00:00:00Z",
+  "sections": [
+    {
+      "name": "Hardware",
+      "items": [
+        {
+          "name": "MacBook Pro 16\" M3 Max",
+          "description": "64GB RAM · 1TB SSD · primary dev machine."
+        },
+        {
+          "name": "Custom desktop (Linux)",
+          "description": "Ryzen 9 + 128GB RAM + RTX 4090 · runs Containerlab + Batfish + NetBox locally."
+        },
+        {
+          "name": "Logitech MX Master 3S",
+          "description": "Best mouse ever made."
+        },
+        {
+          "name": "HHKB Studio",
+          "description": "Topre keys · quiet · 60g."
+        },
+        {
+          "name": "2x Dell U2723QE",
+          "description": "27\" 4K · USB-C hub + KVM."
+        }
+      ]
+    },
+    {
+      "name": "Editor + Terminal",
+      "items": [
+        {
+          "name": "Neovim",
+          "description": "0.10+. Lazy.nvim. Treesitter + LSP. Config: github.com/echocc00/dotfiles."
+        },
+        {
+          "name": "tmux + zsh + starship",
+          "description": "Warp as GUI fallback when I need to share screen."
+        },
+        {
+          "name": "lazygit",
+          "description": "For any repo work."
+        }
+      ]
+    },
+    {
+      "name": "Languages + Runtimes",
+      "items": [
+        {
+          "name": "Python 3.11+",
+          "description": "Primary. uv for deps. ruff for lint+format. pytest."
+        },
+        {
+          "name": "TypeScript / Node.js",
+          "description": "For tooling, not for products."
+        },
+        {
+          "name": "Rust",
+          "description": "When perf or sandboxing matters. Learning."
+        }
+      ]
+    },
+    {
+      "name": "Cloud + Hosting",
+      "items": [
+        {
+          "name": "Cloudflare Pages",
+          "description": "This site + every static site I touch."
+        },
+        {
+          "name": "Cloudflare Workers",
+          "description": "Edge glue when needed."
+        },
+        {
+          "name": "Hetzner + OVH",
+          "description": "For EU-side labs."
+        },
+        {
+          "name": "Aliyun",
+          "description": "For China-side deployments. ICP filing where required."
+        }
+      ]
+    },
+    {
+      "name": "Tools + Services",
+      "items": [
+        {
+          "name": "DeepSeek + Qwen + GPT-4o",
+          "description": "Via LiteLLM. Pick per-task."
+        },
+        {
+          "name": "Wazuh + Suricata + Shuffle",
+          "description": "In production SOC stack."
+        },
+        {
+          "name": "Containerlab + Batfish + NetBox",
+          "description": "In production network stack."
+        },
+        {
+          "name": "Stripe + Linear + Notion",
+          "description": "For product-side ops. Lean on these hard."
+        }
+      ]
+    },
+    {
+      "name": "Communication",
+      "items": [
+        {
+          "name": "Slack",
+          "description": "For team comms."
+        },
+        {
+          "name": "Feishu",
+          "description": "For China-side teams."
+        },
+        {
+          "name": "Email",
+          "description": "286043314+echocc00@users.noreply.github.com — best for asynchronous, anything important."
+        },
+        {
+          "name": "GitHub Issues + Discussions",
+          "description": "For all OSS work."
+        }
+      ]
+    }
+  ]
 }

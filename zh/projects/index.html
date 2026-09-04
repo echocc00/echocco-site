@@ -1,144 +1,289 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>echocc00 · 项目</title>
+
 <meta name="description" content="6 个项目 · 点任意查看完整细节">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/zh/projects/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/projects/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/projects/">
+
 <meta property="og:type" content="website">
+
 <meta property="og:url" content="https://www.echocco.com/zh/projects/">
+
 <meta property="og:title" content="echocc00 · 项目">
+
 <meta property="og:description" content="6 个项目 · 点任意查看完整细节">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+
 <meta property="og:locale" content="zh_CN">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="echocc00 · 项目">
+
 <meta name="twitter:description" content="6 个项目 · 点任意查看完整细节">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/zh/">首页</a>
+
       <a class="nav-link active" href="/zh/projects/">项目</a>
+
       <a class="nav-link " href="/zh/about/">关于</a>
+
       <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
+
       <span class="lang-switch">
+
         <a href="/projects/" class="" hreflang="en">EN</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <section class="hero">
+
   <div class="shell hero-inner">
+
     <div class="hero-prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cd projects</div>
-    <h1 class="hero-title">/projects</h1>
+
+    <h1 class="hero-title hero-reveal-in">/projects</h1>
+
     <p class="hero-bio">6 个项目 · 点任意查看完整细节</p>
+
   </div>
+
 </section>
+
+
 
 <section class="section">
+
   <div class="shell">
+
     <div class="filter-bar">
+
       <button class="filter-chip active" data-tag="all">全部</button>
+
       <button class="filter-chip" data-tag="security">security</button>
+
       <button class="filter-chip" data-tag="network">network</button>
+
       <button class="filter-chip" data-tag="content">content</button>
+
       <button class="filter-chip" data-tag="fork">fork</button>
+
     </div>
+
     <table class="proj-table" id="project-grid">
+
       <thead><tr><th>name</th><th>ver</th><th>stack</th><th>desc</th><th></th></tr></thead>
+
       <tbody>
+
         <tr class="proj-row" data-tag="security" data-reveal="rise" style="--i:0;">
+
           <td><a class="proj-name" href="/zh/projects/secsight/">SecSight</a></td>
+
           <td><span class="proj-version">v0.5.1</span></td>
+
           <td><span class="proj-stack">fastapi · langgraph</span></td>
+
           <td><span class="proj-desc">22 个剧本 · 5 级自主性</span></td>
+
           <td><a class="proj-link" href="/zh/projects/secsight/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="security" data-reveal="rise" style="--i:1;">
+
           <td><a class="proj-name" href="/zh/projects/secopent/">SecOpent</a></td>
+
           <td><span class="proj-version">v1.1.1-stable</span></td>
+
           <td><span class="proj-stack">fastapi · react</span></td>
+
           <td><span class="proj-desc">17 个跨域适配器 · oracle N/N 验证</span></td>
+
           <td><a class="proj-link" href="/zh/projects/secopent/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="network" data-reveal="rise" style="--i:2;">
+
           <td><a class="proj-name" href="/zh/projects/netsage/">NetSage</a></td>
+
           <td><span class="proj-version">v0.1.1</span></td>
+
           <td><span class="proj-stack">napalm · containerlab</span></td>
+
           <td><span class="proj-desc">8 代理 · 三道闸(仿真/校验/审批)</span></td>
+
           <td><a class="proj-link" href="/zh/projects/netsage/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="content" data-reveal="rise" style="--i:3;">
+
           <td><a class="proj-name" href="/zh/projects/vidslice/">VidSlice</a></td>
+
           <td><span class="proj-version">v0.7.10</span></td>
+
           <td><span class="proj-stack">lancedb · opencv</span></td>
+
           <td><span class="proj-desc">向量索引 + Ed25519 签名 · 408 个测试</span></td>
+
           <td><a class="proj-link" href="/zh/projects/vidslice/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="content" data-reveal="rise" style="--i:4;">
+
           <td><a class="proj-name" href="/zh/projects/opencut002/">OpenCut v3</a></td>
+
           <td><span class="proj-version">v0.6.5</span></td>
+
           <td><span class="proj-stack">python · remotion</span></td>
+
           <td><span class="proj-desc">20 阶段管线 · 1080x1920 竖屏 · CLI + SaaS 双轨</span></td>
+
           <td><a class="proj-link" href="/zh/projects/opencut002/">→</a></td>
+
         </tr>
+
         <tr class="proj-row" data-tag="fork" data-reveal="rise" style="--i:5;">
+
           <td><a class="proj-name" href="/zh/projects/hydro-fork/">Hydro OJ</a></td>
+
           <td><span class="proj-version">fork</span></td>
+
           <td><span class="proj-stack">typescript · mongodb</span></td>
+
           <td><span class="proj-desc">hydro-dev/Hydro 镜像 · AGPL-3.0</span></td>
+
           <td><a class="proj-link" href="/zh/projects/hydro-fork/">→</a></td>
+
         </tr>
+
       </tbody>
+
     </table>
+
   </div>
+
 </section>
 
+
+
 <script>
+
 document.querySelectorAll('.filter-chip').forEach(chip => {
+
   chip.addEventListener('click', () => {
+
     document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+
     chip.classList.add('active');
+
     const tag = chip.dataset.tag;
+
     document.querySelectorAll('#project-grid tbody tr').forEach(row => {
+
       row.style.display = (tag === 'all' || row.dataset.tag === tag) ? '' : 'none';
+
     });
+
   });
+
 });
+
 </script>
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/zh/">首页</a>
+
       <a href="/zh/projects/">项目</a>
+
       <a href="/zh/about/">关于</a>
+
       <a href="/assets/cv.pdf">简历</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>

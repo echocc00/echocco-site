@@ -1,118 +1,237 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
 <title>版权页 — echocc00</title>
+
 <meta name="description" content="关于本站的设计与工艺 — 字体、工具、哲学。借鉴书籍版权页的传统。">
+
 <meta name="theme-color" content="#08090a">
+
 <link rel="canonical" href="https://www.echocco.com/zh/colophon/">
+
 <link rel="alternate" hreflang="en" href="https://www.echocco.com/colophon/">
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/zh/colophon/">
+
 <meta property="og:type" content="website">
+
 <meta property="og:url" content="https://www.echocco.com/zh/colophon/">
+
 <meta property="og:title" content="版权页 — echocc00">
+
 <meta property="og:description" content="关于本站的设计与工艺 — 字体、工具、哲学。借鉴书籍版权页的传统。">
+
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
+
 <meta property="og:locale" content="zh_CN">
+
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="twitter:title" content="版权页 — echocc00">
+
 <meta name="twitter:description" content="关于本站的设计与工艺 — 字体、工具、哲学。借鉴书籍版权页的传统。">
+
 <meta name="twitter:image" content="https://www.echocco.com/assets/og/home.png">
+
 <link rel="manifest" href="/manifest.webmanifest">
+
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
+
 <link rel="stylesheet" href="/assets/css/main.css">
 
+
+
 </head>
+
 <body>
+
 <nav class="nav glass">
+
   <div class="shell nav-inner">
+
     <a class="nav-brand" href="/zh/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
+
     <div class="nav-menu">
+
       <a class="nav-link " href="/zh/">首页</a>
+
       <a class="nav-link " href="/zh/projects/">项目</a>
+
       <a class="nav-link " href="/zh/about/">关于</a>
+
       <a class="nav-link" href="/assets/cv.pdf">简历 ↗</a>
+
       <span class="lang-switch">
+
         <a href="/colophon/" class="" hreflang="en">EN</a>
+
       </span>
+
       <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
     </div>
+
   </div>
+
 </nav>
+
 <main>
+
 <section class="hero">
+
   <div class="shell hero-inner">
+
     <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat colophon.md</div>
-    <h1 class="hero-title" data-anim="title">/版权页<span class="cursor-blink">_</span></h1>
+
+    <h1 class="hero-title hero-reveal-in" data-anim="title">/版权页<span class="cursor-blink">_</span></h1>
+
     <p class="hero-bio" data-anim="bio">关于本站的设计与工艺 — 字体、工具、哲学。借鉴书籍版权页的传统。</p>
+
     <div class="status-row" data-anim="status">
+
       <span class="status-pill live tilt" data-anim="status-pill" data-stagger="0">本站如何构建</span>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <section class="section">
+
   <div class="shell">
+
     <div class="colophon-grid"><article class="colophon-block" data-reveal="rise" style="--i:0;">
+
       <h2 class="colophon-h">为什么有这个站</h2>
+
       <p class="colophon-body">我做这个站是把它当作品集、文档中心、和联系卡 —— 按这个顺序。我交付的大多数东西都是开源的,我大多数职业关系都来自先读 README 再查人。这个站是对"SecSight / NetSage 背后是谁"的回答。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:1;">
+
       <h2 class="colophon-h">设计哲学</h2>
+
       <p class="colophon-body">终端美学 + 克制的字。站应该感觉像高级工程师的编辑器,不像营销站。默认暗色。信息密度没问题 —— 留白用于强调,不用于装饰。每个动画必须赚来:如果一个动作不传达层级或状态,就是噪音。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:2;">
+
       <h2 class="colophon-h">字体</h2>
+
       <p class="colophon-body">系统等宽栈 — SF Mono → JetBrains Mono → IBM Plex Mono → Menlo → Consolas。不下载 web font。标题和正文用同一个字体族,强化"单一编辑器"的感觉。字号用 clamp(),任何视口下都不破。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:3;">
+
       <h2 class="colophon-h">颜色</h2>
+
       <p class="colophon-body">三个颜色干所有活:ink (#e6e6e6) 主文字,indigo (#6366f1) 强调/品牌,emerald (#22c55e) 状态/实时指示。其他都是灰色。除 hero orb 的径向晕染,没有渐变。除按钮 hover 的 8px 微妙阴影,没有投影。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:4;">
+
       <h2 class="colophon-h">动效</h2>
+
       <p class="colophon-body">五幕编排:开屏标题 squash(唯一允许 spring 的地方),滚动揭示窗帘擦除,卡片 stagger 70ms,鼠标跟随 3D 倾斜,滚动视差。所有动画只用 transform + opacity(GPU 合成层)。prefers-reduced-motion 完全尊重。hero WebGL 粒子 strands 现代设备 60fps,老设备降级到 CSS-only SVG。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:5;">
+
       <h2 class="colophon-h">使用的工具</h2>
+
       <p class="colophon-body">构建于:原生 HTML + CSS + JS(无框架)。WebGL 1.0 用于 hero strands。Python + PIL 生成 OG 图。Cloudflare Pages 托管。Cloudflare 邮件混淆已关闭 — 你的真邮箱能到我这里。无分析,无追踪像素。就是一个说了做到的静态站。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:6;">
+
       <h2 class="colophon-h">灵感</h2>
+
       <p class="colophon-body">Rauno Freiberg、Tobias van Schneider、Bruno Simon、Linear、Vercel、Stripe Press、React Bits Strands 动画。主要是:高级工程师作品集流派 — 安静的能力胜过响亮的设计。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:7;">
+
       <h2 class="colophon-h">许可证</h2>
+
       <p class="colophon-body">本站内容(文案、布局、设计):CC BY 4.0。本站的源码:MIT。项目背后的代码:Apache-2.0(Hydro OJ fork 用 AGPL-3.0)。随便用。只是别假装是你写的。</p>
+
     </article><article class="colophon-block" data-reveal="rise" style="--i:8;">
+
       <h2 class="colophon-h">版权页</h2>
+
       <p class="colophon-body">等宽字体。MacBook Pro 上写。Cloudflare 边缘渲染。11 个区域的 4 个 nginx worker 提供服务。最后更新 2026-09-03。</p>
+
     </article></div>
+
   </div>
+
 </section>
 
+
+
 <section class="section dark">
+
   <div class="shell">
+
     <div class="cta-row">
+
       <div class="cta-actions">
+
         <a class="cta-btn primary tilt" href="/zh/">首页 ↗</a>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
 </main>
+
 <script defer src="/assets/js/motion.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
+
 <footer class="footer">
+
   <div class="shell footer-row">
+
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+
     <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
       <a href="/zh/">首页</a>
+
       <a href="/zh/projects/">项目</a>
+
       <a href="/zh/about/">关于</a>
+
       <a href="/assets/cv.pdf">简历</a>
+
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
+
       <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+
       <span>Apache-2.0</span>
+
     </div>
+
   </div>
+
 </footer>
+
+<script src="/assets/js/count-up.js" defer></script>
 </body>
+
 </html>

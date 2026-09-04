@@ -1,149 +1,149 @@
-{
-  "schema_version": 1,
-  "diagram_type": "sequence",
-  "meta": {
-    "title": "SecSight alert lifecycle",
-    "subtitle": "From raw detection signal to closed incident",
-    "output": "secsight-sequence.html",
-    "visual_preset": "signal-flow",
-    "quality_profile": "showcase",
-    "viewBox": [
-      920,
-      920
-    ],
-    "column_fit": "spread",
-    "views": [
-      {
-        "id": "ingest-and-analyze",
-        "label": "Ingest and analyze",
-        "focus": [
-          "alert",
-          "ingest",
-          "agents"
-        ],
-        "note": "Detection signal arrives, gets normalized, then multi-agent Copilot assembles a verdict and matches a playbook."
-      },
-      {
-        "id": "human-gate",
-        "label": "Human gate on L4",
-        "focus": [
-          "agents",
-          "human",
-          "alert"
-        ],
-        "note": "Actions beyond the autonomy budget land in human review; analyst approves, modifies, or rejects."
-      }
-    ]
-  },
-  "participants": [
-    {
-      "id": "alert",
-      "type": "external",
-      "label": "Alert",
-      "sublabel": "SIEM / NIDS"
-    },
-    {
-      "id": "ingest",
-      "type": "backend",
-      "label": "Ingest",
-      "sublabel": "normalize · tag"
-    },
-    {
-      "id": "agents",
-      "type": "cloud",
-      "label": "Copilot",
-      "sublabel": "multi-agent + SOAR"
-    },
-    {
-      "id": "human",
-      "type": "external",
-      "label": "Human",
-      "sublabel": "L4 reviewer"
-    }
-  ],
-  "messages": [
-    {
-      "id": "m1",
-      "from": "alert",
-      "to": "ingest",
-      "y": 180,
-      "label": "raw event arrives",
-      "variant": "emphasis"
-    },
-    {
-      "id": "m2",
-      "from": "ingest",
-      "to": "agents",
-      "y": 280,
-      "label": "normalized event in tenant context",
-      "variant": "emphasis"
-    },
-    {
-      "id": "m3",
-      "from": "agents",
-      "to": "ingest",
-      "y": 380,
-      "label": "matches verdict → 22 playbooks",
-      "variant": "return"
-    },
-    {
-      "id": "m4",
-      "from": "ingest",
-      "to": "alert",
-      "y": 460,
-      "label": "auto-execute L0–L3 within budget",
-      "variant": "emphasis"
-    },
-    {
-      "id": "m5",
-      "from": "agents",
-      "to": "human",
-      "y": 560,
-      "label": "L4 over budget → human review",
-      "variant": "emphasis"
-    },
-    {
-      "id": "m6",
-      "from": "human",
-      "to": "agents",
-      "y": 640,
-      "label": "approve · modify · reject",
-      "variant": "return"
-    },
-    {
-      "id": "m7",
-      "from": "agents",
-      "to": "alert",
-      "y": 740,
-      "label": "incident closed + postmortem",
-      "variant": "emphasis"
-    }
-  ],
-  "activations": [],
-  "cards": [
-    {
-      "dot": "cyan",
-      "title": "Ingest",
-      "items": [
-        "Detection signal arrives from SIEM, NIDS, or threat-intel",
-        "Normalized, deduped, tagged before downstream agents see it"
-      ]
-    },
-    {
-      "dot": "emerald",
-      "title": "Analyze",
-      "items": [
-        "Triage → Investigate → Enrich → Report agents collaborate",
-        "Verdict carries full evidence chain into SOAR"
-      ]
-    },
-    {
-      "dot": "rose",
-      "title": "Act",
-      "items": [
-        "SOAR picks one of 22 playbooks within autonomy budget",
-        "L4 over-budget items land in human review with full trail"
-      ]
-    }
-  ]
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "SecSight alert lifecycle",
+    "subtitle": "From raw detection signal to closed incident",
+    "output": "secsight-sequence.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "viewBox": [
+      920,
+      920
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "ingest-and-analyze",
+        "label": "Ingest and analyze",
+        "focus": [
+          "alert",
+          "ingest",
+          "agents"
+        ],
+        "note": "Detection signal arrives, gets normalized, then multi-agent Copilot assembles a verdict and matches a playbook."
+      },
+      {
+        "id": "human-gate",
+        "label": "Human gate on L4",
+        "focus": [
+          "agents",
+          "human",
+          "alert"
+        ],
+        "note": "Actions beyond the autonomy budget land in human review; analyst approves, modifies, or rejects."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "alert",
+      "type": "external",
+      "label": "Alert",
+      "sublabel": "SIEM / NIDS"
+    },
+    {
+      "id": "ingest",
+      "type": "backend",
+      "label": "Ingest",
+      "sublabel": "normalize · tag"
+    },
+    {
+      "id": "agents",
+      "type": "cloud",
+      "label": "Copilot",
+      "sublabel": "multi-agent + SOAR"
+    },
+    {
+      "id": "human",
+      "type": "external",
+      "label": "Human",
+      "sublabel": "L4 reviewer"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "from": "alert",
+      "to": "ingest",
+      "y": 180,
+      "label": "raw event arrives",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m2",
+      "from": "ingest",
+      "to": "agents",
+      "y": 280,
+      "label": "normalized event in tenant context",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m3",
+      "from": "agents",
+      "to": "ingest",
+      "y": 380,
+      "label": "matches verdict → 22 playbooks",
+      "variant": "return"
+    },
+    {
+      "id": "m4",
+      "from": "ingest",
+      "to": "alert",
+      "y": 460,
+      "label": "auto-execute L0–L3 within budget",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m5",
+      "from": "agents",
+      "to": "human",
+      "y": 560,
+      "label": "L4 over budget → human review",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m6",
+      "from": "human",
+      "to": "agents",
+      "y": 640,
+      "label": "approve · modify · reject",
+      "variant": "return"
+    },
+    {
+      "id": "m7",
+      "from": "agents",
+      "to": "alert",
+      "y": 740,
+      "label": "incident closed + postmortem",
+      "variant": "emphasis"
+    }
+  ],
+  "activations": [],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Ingest",
+      "items": [
+        "Detection signal arrives from SIEM, NIDS, or threat-intel",
+        "Normalized, deduped, tagged before downstream agents see it"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Analyze",
+      "items": [
+        "Triage → Investigate → Enrich → Report agents collaborate",
+        "Verdict carries full evidence chain into SOAR"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Act",
+      "items": [
+        "SOAR picks one of 22 playbooks within autonomy budget",
+        "L4 over-budget items land in human review with full trail"
+      ]
+    }
+  ]
 }
