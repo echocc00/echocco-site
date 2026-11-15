@@ -36,9 +36,6 @@
 
   Cache-Control: public, max-age=0, must-revalidate
 
-/assets/cv.pdf
-
-  Cache-Control: public, max-age=86400
 
 /manifest.webmanifest
 

@@ -362,39 +362,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .hero-title .cursor-blink { color: var(--accent-green); animation: blink 1s steps(1) infinite; }
 .hero-roles {
-  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: var(--space-1);
   font-size: var(--text-lg); color: var(--ink-2);
   margin-bottom: var(--space-5);
 }
 .hero-roles .role { color: var(--ink); font-weight: 500; }
-/* Separator drawn by CSS, not a middot character — the middot-meta tell
-   says metadata must be separated by layout, not by a typographic mark. */
-.hero-roles .role + .role {
-  position: relative;
-  padding-left: var(--space-4);
-}
-.hero-roles .role + .role::before {
-  content: '';
-  position: absolute; left: 0; top: 0.18em; bottom: 0.18em;
-  width: 1px; background: var(--border-strong);
-}
 
-/* Below 700px the roles do not fit on one line. A separator that starts a
-   wrapped line reads as a dangling mark, so the row becomes a stack and
-   the rule disappears — the line break is the separator. */
-@media (max-width: 700px) {
-  .hero-roles {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-1);
-  }
-  .hero-roles .role + .role {
-    padding-left: 0;
-  }
-  .hero-roles .role + .role::before {
-    display: none;
-  }
-}
+/* The roles stack rather than sit in a row with a separator rule.
+   The hero is a two-column split, so the copy column is narrow at every
+   viewport size — not just on phones. A row here wraps at a width that
+   depends on the font metrics of the text, and a separator that lands at
+   the start of a wrapped line reads as a dangling mark. Stacking has no
+   wrap point, so the layout is the same at every size. */
 .hero-bio {
   color: var(--ink-2); font-size: var(--text-base);
   max-width: 54ch; line-height: var(--leading-base);
@@ -793,8 +773,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .footer a {
   color: var(--ink-2);
-  /* 24px pointer target for every footer link. Short labels like "cv" are
-     narrower than 24px on their own, so the box is padded to the floor. */
+  /* 24px pointer target for every footer link. Short labels are narrower
+     than 24px on their own, so the box is padded to the floor. */
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 24px; min-height: 24px;
 }
