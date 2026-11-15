@@ -378,6 +378,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: absolute; left: 0; top: 0.18em; bottom: 0.18em;
   width: 1px; background: var(--border-strong);
 }
+
+/* Below 700px the roles do not fit on one line. A separator that starts a
+   wrapped line reads as a dangling mark, so the row becomes a stack and
+   the rule disappears — the line break is the separator. */
+@media (max-width: 700px) {
+  .hero-roles {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  .hero-roles .role + .role {
+    padding-left: 0;
+  }
+  .hero-roles .role + .role::before {
+    display: none;
+  }
+}
 .hero-bio {
   color: var(--ink-2); font-size: var(--text-base);
   max-width: 54ch; line-height: var(--leading-base);
@@ -563,6 +580,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Project detail page ---------- */
 
 .proj-hero { padding: var(--space-8) 0 var(--space-6); border-bottom: 1px solid var(--border); }
+
+/* Per-project hero washes. Each product keeps its own colour identity, but
+   the gradient lives in the stylesheet rather than an inline style, and the
+   deep end is dark enough to carry body copy at full contrast. */
+.proj-hero--secsight  { background: linear-gradient(135deg, #1e3a8a 0%, #060b1c 100%); color: #fff; }
+.proj-hero--secopent  { background: linear-gradient(135deg, #7c2d12 0%, #150d08 100%); color: #fff; }
+.proj-hero--secagent  { background: linear-gradient(135deg, #3b2f8f 0%, #0b0920 100%); color: #fff; }
+.proj-hero--netsage   { background: linear-gradient(135deg, #065f46 0%, #04150f 100%); color: #fff; }
+.proj-hero--vidslice  { background: linear-gradient(135deg, #5b21b6 0%, #100a24 100%); color: #fff; }
+.proj-hero--opencut   { background: linear-gradient(135deg, #9a3412 0%, #1a0f07 100%); color: #fff; }
+.proj-hero--strixoc   { background: linear-gradient(135deg, #991b1b 0%, #1a0808 100%); color: #fff; }
+.proj-hero--hydrofork { background: linear-gradient(135deg, #1d4ed8 0%, #050c22 100%); color: #fff; }
 .proj-prompt {
   font-family: var(--font-mono); font-size: var(--text-xs);
   color: var(--ink-3); margin-bottom: var(--space-4);
