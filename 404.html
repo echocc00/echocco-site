@@ -24,9 +24,17 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 <nav class="nav glass">
   <div class="shell nav-inner">
     <a class="nav-brand" href="/"><span class="prompt">$</span> echocc00<span class="cursor">_</span></a>
@@ -42,7 +50,7 @@
     </div>
   </div>
 </nav>
-<main>
+<main id="main">
 <div class="not-found">
   <div class="shell">
     <h1>404</h1>
@@ -61,7 +69,7 @@
 <footer class="footer">
   <div class="shell footer-row">
     <div>Built and maintained by echocc00 · Shanghai · 2026</div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
       <a href="/">home</a>
       <a href="/projects/">projects</a>
       <a href="/about/">about</a>

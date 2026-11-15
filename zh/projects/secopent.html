@@ -50,12 +50,20 @@
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
 
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav glass">
 
@@ -87,7 +95,7 @@
 
 </nav>
 
-<main>
+<main id="main">
 
 <header class="proj-hero" style="background: linear-gradient(135deg, #7c2d12 0%, #0f172a 100%); color: white;">
 
@@ -529,7 +537,7 @@
 
       <figure class="proj-figure arch-embed-frame-wrap">
 
-        <iframe class="arch-embed-frame" src="/assets/archify/secopent.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/vendor/archify/secopent.html?theme=dark" loading="lazy" title="技术架构图"></iframe>
 
       </figure>
 
@@ -539,7 +547,7 @@
 
       <figure class="proj-figure arch-embed-frame-wrap">
 
-        <iframe class="arch-embed-frame" src="/assets/archify/secopent-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/vendor/archify/secopent-sequence.html?theme=light" loading="lazy" title="产品架构时序图"></iframe>
 
       </figure>
 
@@ -679,7 +687,7 @@
 
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
 
       <a href="/zh/">首页</a>
 

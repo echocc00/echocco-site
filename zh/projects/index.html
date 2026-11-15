@@ -50,12 +50,20 @@
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
 
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav glass">
 
@@ -87,7 +95,7 @@
 
 </nav>
 
-<main>
+<main id="main">
 
 <section class="hero">
 
@@ -111,15 +119,15 @@
 
     <div class="filter-bar">
 
-      <button class="filter-chip active" data-tag="all">全部</button>
+      <button class="filter-chip active" data-tag="all" type="button">全部</button>
 
-      <button class="filter-chip" data-tag="security">security</button>
+      <button class="filter-chip" data-tag="security" type="button">security</button>
 
-      <button class="filter-chip" data-tag="network">network</button>
+      <button class="filter-chip" data-tag="network" type="button">network</button>
 
-      <button class="filter-chip" data-tag="content">content</button>
+      <button class="filter-chip" data-tag="content" type="button">content</button>
 
-      <button class="filter-chip" data-tag="fork">fork</button>
+      <button class="filter-chip" data-tag="fork" type="button">fork</button>
 
     </div>
 
@@ -139,7 +147,7 @@
 
           <td><span class="proj-desc">22 个剧本 · 5 级自主性</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/secsight/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/secsight/" aria-label="Open SecSight"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -153,7 +161,7 @@
 
           <td><span class="proj-desc">17 个跨域适配器 · oracle N/N 验证</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/secopent/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/secopent/" aria-label="Open SecOpent"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -167,7 +175,7 @@
 
           <td><span class="proj-desc">8 代理 · 三道闸(仿真/校验/审批)</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/netsage/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/netsage/" aria-label="Open NetSage"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -181,7 +189,7 @@
 
           <td><span class="proj-desc">向量索引 + Ed25519 签名 · 408 个测试</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/vidslice/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/vidslice/" aria-label="Open VidSlice"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -195,7 +203,7 @@
 
           <td><span class="proj-desc">20 阶段管线 · 1080x1920 竖屏 · CLI + SaaS 双轨</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/opencut002/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/opencut002/" aria-label="Open OpenCut v3"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -209,7 +217,7 @@
 
           <td><span class="proj-desc">hydro-dev/Hydro 镜像 · AGPL-3.0</span></td>
 
-          <td><a class="proj-link" href="/zh/projects/hydro-fork/">→</a></td>
+          <td><a class="proj-link" href="/zh/projects/hydro-fork/" aria-label="Open Hydro OJ"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -261,7 +269,7 @@ document.querySelectorAll('.filter-chip').forEach(chip => {
 
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
 
       <a href="/zh/">首页</a>
 

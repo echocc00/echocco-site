@@ -92,6 +92,7 @@
 </style>
 
 <link rel="stylesheet" href="/assets/css/main.css?v=20260903a">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
 <script type="application/ld+json">
 
@@ -119,9 +120,16 @@
 
 </script>
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav">
 
@@ -157,7 +165,7 @@
 
 
 
-<main>
+<main id="main">
 
   <header class="proj-hero" style="background: linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%); color: white;">
 
@@ -643,7 +651,7 @@
 
             <div class="arch-embed-frame-wrap">
 
-              <iframe src="/assets/archify/secopentagent-sequence?theme=light"
+              <iframe src="/assets/vendor/archify/secopentagent-sequence?theme=light"
 
                       class="archify-frame"
 
@@ -683,7 +691,7 @@
 
             <div class="arch-embed-frame-wrap">
 
-              <iframe src="/assets/archify/secopentagent?theme=light"
+              <iframe src="/assets/vendor/archify/secopentagent?theme=light"
 
                       class="archify-frame"
 

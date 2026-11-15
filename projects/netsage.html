@@ -50,12 +50,20 @@
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
 
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
 
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav glass">
 
@@ -87,7 +95,7 @@
 
 </nav>
 
-<main>
+<main id="main">
 
 <header class="proj-hero" style="background: linear-gradient(135deg, #047857 0%, #052e16 100%); color: white;">
 
@@ -551,7 +559,7 @@
 
       <figure class="proj-figure arch-embed-frame-wrap">
 
-        <iframe class="arch-embed-frame" src="/assets/archify/netsage.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/vendor/archify/netsage.html?theme=dark" loading="lazy" title="Architecture diagram"></iframe>
 
       </figure>
 
@@ -561,7 +569,7 @@
 
       <figure class="proj-figure arch-embed-frame-wrap">
 
-        <iframe class="arch-embed-frame" src="/assets/archify/netsage-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
+        <iframe class="arch-embed-frame" src="/assets/vendor/archify/netsage-sequence.html?theme=light" loading="lazy" title="Product architecture sequence diagram"></iframe>
 
       </figure>
 
@@ -701,7 +709,7 @@
 
     <div>Built and maintained by echocc00 · Shanghai · 2026</div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
 
       <a href="/">home</a>
 

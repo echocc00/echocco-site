@@ -1,5 +1,5 @@
 // echocc00 service worker — cache strategy
-const VERSION = 'v3-2026-09-03';
+const VERSION = 'v4-2026-11-15';
 const CACHE_STATIC = `echocco-static-${VERSION}`;
 const CACHE_RUNTIME = `echocco-runtime-${VERSION}`;
 
@@ -21,8 +21,17 @@ const STATIC_ASSETS = [
   '/apple-touch-icon.png',
   '/assets/css/main.css',
   '/assets/css/motion.css',
+  '/assets/css/console.css',
   '/assets/js/motion.js',
+  '/assets/js/console.js',
+  '/assets/js/reveal.js',
+  '/assets/js/hero-anim.js',
   '/assets/webgl/strands.js',
+  '/assets/fonts/ibm-plex-sans-400.woff2',
+  '/assets/fonts/ibm-plex-sans-500.woff2',
+  '/assets/fonts/ibm-plex-sans-600.woff2',
+  '/assets/fonts/jetbrains-mono-400.woff2',
+  '/assets/fonts/jetbrains-mono-700.woff2',
 ];
 
 self.addEventListener('install', (e) => {

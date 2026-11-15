@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-page-title-en="echocc00 · Security & Network Engineer" data-page-title-zh="echocc00 · 安全与网络工程师" data-page-desc-en="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests)." data-page-desc-zh="坐标 上海 · 9 年云安全经验 · CCIE 认证 · 维护 6 个 Apache-2.0 开源项目 · 最近上线 SecSight v0.5.1(AI SOC, 22 个 SOAR 剧本, 87.8% 测试覆盖率)。">
 
 <head>
 
@@ -13,7 +13,7 @@
 
 <meta name="description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
-<meta name="theme-color" content="#08090a">
+<meta name="theme-color" content="#0b0d12">
 
 <link rel="canonical" href="https://www.echocco.com/">
 
@@ -50,6 +50,8 @@
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/rss.xml">
 
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
+<link rel="stylesheet" href="/assets/css/console.css">
 
 <script type="application/ld+json">{
 
@@ -99,9 +101,16 @@
 
 }</script>
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav glass">
 
@@ -117,7 +126,7 @@
 
       <a class="nav-link " href="/about/">about</a>
 
-      <a class="nav-link" href="/assets/cv.pdf">cv ↗</a>
+      <a class="nav-link" href="/assets/cv.pdf">cv</a>
 
       <span class="lang-switch">
 
@@ -125,7 +134,7 @@
 
       </span>
 
-      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+      <a class="nav-cta" href="https://github.com/echocc00" rel="noopener" target="_blank">github</a>
 
     </div>
 
@@ -133,7 +142,7 @@
 
 </nav>
 
-<main>
+<main id="main">
 
 <section class="hero grain">
 
@@ -171,23 +180,103 @@
 
   <div class="shell hero-inner">
 
-    <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> <span>whoami</span></div>
+    <div class="hero-copy">
 
-    <h1 class="hero-title hero-reveal-in" data-anim="title">echocc00<span class="cursor-blink">_</span></h1>
+      <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> <span>whoami</span></div>
 
-    <div class="hero-roles" data-anim="roles">security engineer <span class="sep">·</span> network engineer <span class="sep">·</span> OSS maintainer</div>
+      <h1 class="hero-title hero-reveal-in" data-anim="title">echocc00<span class="cursor-blink">_</span></h1>
 
-    <p class="hero-bio" data-anim="bio">based in <strong>Shanghai</strong>. 9 years cloud security, <strong>CCIE</strong>-certified. shipping 6 apache-2.0 products — most recently <strong>secsight v0.5.1</strong> (ai soc, 22 soar playbooks, 87.8% tests).</p>
+      <div class="hero-roles" data-anim="roles"><span class="role">security engineer</span><span class="role">network engineer</span><span class="role">OSS maintainer</span></div>
 
-    <div class="status-row" data-anim="status">
+      <p class="hero-bio" data-anim="bio">based in <strong>Shanghai</strong>. 9 years cloud security, <strong>CCIE</strong>-certified. shipping 6 apache-2.0 products — most recently <strong>secsight v0.5.1</strong> (ai soc, 22 soar playbooks, 87.8% tests).</p>
 
-      <span class="status-pill live" data-anim="status-pill" data-stagger="0">Open for work</span>
+      <div class="status-row" data-anim="status">
 
-      <span class="status-pill">Open to: <strong>staff security engineer</strong></span>
+        <span class="status-pill live" data-anim="status-pill" data-stagger="0">Open for work</span>
 
-      <span class="status-pill"><strong>consulting</strong></span>
+        <span class="status-pill" data-anim="status-pill" data-stagger="1">Open to: <strong>staff security engineer</strong></span>
 
-      <span class="status-pill"><strong>commercial pilots</strong></span>
+        <span class="status-pill" data-anim="status-pill" data-stagger="2"><strong>consulting</strong></span>
+
+        <span class="status-pill" data-anim="status-pill" data-stagger="3"><strong>commercial pilots</strong></span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-panel" data-anim="console">
+
+      <div class="console" role="img" aria-label="Live status of the six shipped products: SecSight v0.5.1, SecOpent v1.1.1, NetSage v0.1.1, VidSlice v0.7.10, OpenCut v0.6.5, plus the latest release date and average test coverage.">
+
+        <div class="console-matrix" aria-hidden="true"></div>
+
+        <div class="console-scanline" aria-hidden="true"></div>
+
+        <div class="console-head">
+
+          <span class="console-title"><span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span> deployed</span>
+
+          <span class="console-live"><span class="console-live-dot" aria-hidden="true"></span> 6 online</span>
+
+          <span class="console-clock" data-console-clock>—</span>
+
+        </div>
+
+        <div class="console-body">
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">SecSight</span>
+            <span class="console-row-ver">v0.5.1</span>
+            <span class="console-state is-live"><i aria-hidden="true"></i>live</span>
+          </div>
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">SecOpent</span>
+            <span class="console-row-ver">v1.1.1</span>
+            <span class="console-state is-live"><i aria-hidden="true"></i>live</span>
+          </div>
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">NetSage</span>
+            <span class="console-row-ver">v0.1.1</span>
+            <span class="console-state is-live"><i aria-hidden="true"></i>live</span>
+          </div>
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">VidSlice</span>
+            <span class="console-row-ver">v0.7.10</span>
+            <span class="console-state is-live"><i aria-hidden="true"></i>live</span>
+          </div>
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">OpenCut v3</span>
+            <span class="console-row-ver">v0.6.5</span>
+            <span class="console-state is-live"><i aria-hidden="true"></i>live</span>
+          </div>
+
+          <div class="console-row" data-console-row>
+            <span class="console-row-name">Hydro OJ</span>
+            <span class="console-row-ver">fork</span>
+            <span class="console-state is-ship"><i aria-hidden="true"></i>upstream</span>
+          </div>
+
+        </div>
+
+        <div class="console-foot">
+
+          <div class="console-metric-head">
+
+            <span class="console-metric-label">SecSight test coverage</span>
+
+            <span class="console-metric-value" data-console-metric="87.8" data-console-suffix="%">87.8%</span>
+
+          </div>
+
+          <div class="console-bar" role="presentation"><span data-console-bar="87.8"></span></div>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -211,13 +300,13 @@
 
     <div class="stats-grid" data-reveal="rise">
 
-      <div class="stat-box tilt" data-reveal="rise" style="--i: 0;"><div class="stat-value">9+</div><div class="stat-label">years</div></div>
+      <div class="stat-box" data-reveal="rise" style="--i: 0;"><div class="stat-value">9+</div><div class="stat-label">years</div></div>
 
-      <div class="stat-box tilt" data-reveal="rise" style="--i: 1;"><div class="stat-value">6</div><div class="stat-label">products</div></div>
+      <div class="stat-box" data-reveal="rise" style="--i: 1;"><div class="stat-value">6</div><div class="stat-label">products</div></div>
 
-      <div class="stat-box tilt" data-reveal="rise" style="--i: 2;"><div class="stat-value">22</div><div class="stat-label">playbooks</div></div>
+      <div class="stat-box" data-reveal="rise" style="--i: 2;"><div class="stat-value">22</div><div class="stat-label">playbooks</div></div>
 
-      <div class="stat-box tilt" data-reveal="rise" style="--i: 3;"><div class="stat-value">1.5k+</div><div class="stat-label">tests</div></div>
+      <div class="stat-box" data-reveal="rise" style="--i: 3;"><div class="stat-value">1.5k+</div><div class="stat-label">tests</div></div>
 
     </div>
 
@@ -235,19 +324,17 @@
 
       <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> /projects</h2>
 
-      <span class="section-meta">6 entries · last updated 2026-09-01</span>
+      <span class="section-meta"><span>6 entries</span><span>last updated 2026-09-01</span></span>
 
     </div>
 
     <table class="proj-table">
 
-      <thead><tr><th></th><th>name</th><th>ver</th><th>stack</th><th>desc</th><th></th></tr></thead>
+      <thead><tr><th scope="col">name</th><th scope="col">ver</th><th scope="col">stack</th><th scope="col">desc</th><th scope="col"><span class="visually-hidden">open</span></th></tr></thead>
 
       <tbody>
 
         <tr class="proj-row" data-reveal="rise" style="--i:0;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/secsight/">SecSight</a></td>
 
@@ -257,13 +344,11 @@
 
           <td><span class="proj-desc">22 SOAR playbooks · 5 autonomy levels</span></td>
 
-          <td><a class="proj-link" href="/projects/secsight/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/secsight/" aria-label="Open SecSight"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
         <tr class="proj-row" data-reveal="rise" style="--i:1;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/secopent/">SecOpent</a></td>
 
@@ -273,13 +358,11 @@
 
           <td><span class="proj-desc">17 cross-domain adapters · oracle N/N validation</span></td>
 
-          <td><a class="proj-link" href="/projects/secopent/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/secopent/" aria-label="Open SecOpent"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
         <tr class="proj-row" data-reveal="rise" style="--i:2;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/netsage/">NetSage</a></td>
 
@@ -289,13 +372,11 @@
 
           <td><span class="proj-desc">8 agents · 3 gates (sim -> validate -> approve)</span></td>
 
-          <td><a class="proj-link" href="/projects/netsage/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/netsage/" aria-label="Open NetSage"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
         <tr class="proj-row" data-reveal="rise" style="--i:3;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/vidslice/">VidSlice</a></td>
 
@@ -305,13 +386,11 @@
 
           <td><span class="proj-desc">Vector index + Ed25519 attestation · 408 tests</span></td>
 
-          <td><a class="proj-link" href="/projects/vidslice/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/vidslice/" aria-label="Open VidSlice"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
         <tr class="proj-row" data-reveal="rise" style="--i:4;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/opencut002/">OpenCut v3</a></td>
 
@@ -321,13 +400,11 @@
 
           <td><span class="proj-desc">20-stage pipeline · 1080x1920 vertical · CLI + SaaS</span></td>
 
-          <td><a class="proj-link" href="/projects/opencut002/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/opencut002/" aria-label="Open OpenCut v3"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
         <tr class="proj-row" data-reveal="rise" style="--i:5;">
-
-          <td style="width:36px;font-size:18px;"></td>
 
           <td><a class="proj-name" href="/projects/hydro-fork/">Hydro OJ</a></td>
 
@@ -337,7 +414,7 @@
 
           <td><span class="proj-desc">Fork of hydro-dev/Hydro · AGPL-3.0</span></td>
 
-          <td><a class="proj-link" href="/projects/hydro-fork/"><span class="proj-arrow">→</span></a></td>
+          <td><a class="proj-link" href="/projects/hydro-fork/" aria-label="Open Hydro OJ"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
         </tr>
 
@@ -365,17 +442,17 @@
 
     <div class="stack-grid" data-reveal="rise">
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val">langgraph · litellm · mcp · qdrant</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val">langgraph · litellm · mcp · qdrant</div></div>
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val">wazuh · suricata · shuffle · opencti</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val">wazuh · suricata · shuffle · opencti</div></div>
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val">napalm · containerlab · batfish · netbox</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val">napalm · containerlab · batfish · netbox</div></div>
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val">react · antd · vite</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val">react · antd · vite</div></div>
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val">python · fastapi</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val">python · fastapi</div></div>
 
-      <div class="stack-cell tilt" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val">postgres · redis · lancedb</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val">postgres · redis · lancedb</div></div>
 
     </div>
 
@@ -401,11 +478,11 @@
 
       <div class="cta-actions">
 
-        <a class="cta-btn primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me ↗</a>
+        <a class="cta-btn primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me</a>
 
-        <a class="cta-btn" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+        <a class="cta-btn" href="/assets/cv.pdf" target="_blank" rel="noopener">Download CV</a>
 
-        <a class="cta-btn" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub ↗</a>
+        <a class="cta-btn" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub</a>
 
       </div>
 
@@ -419,6 +496,8 @@
 
 <script defer src="/assets/js/motion.js"></script>
 
+<script defer src="/assets/js/console.js"></script>
+
 <script defer src="/assets/webgl/strands.js"></script>
 
 <script defer src="/assets/js/sw-register.js"></script>
@@ -429,7 +508,7 @@
 
     <div>Built and maintained by echocc00 · Shanghai · 2026</div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
 
       <a href="/">home</a>
 
@@ -441,7 +520,7 @@
 
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
 
-      <a href="https://github.com/echocc00" rel="noopener" target="_blank">github ↗</a>
+      <a href="https://github.com/echocc00" rel="noopener" target="_blank">github</a>
 
       <span>Apache-2.0</span>
 
@@ -452,6 +531,7 @@
 </footer>
 
 <script src="/assets/js/count-up.js" defer></script>
+
 </body>
 
 </html>

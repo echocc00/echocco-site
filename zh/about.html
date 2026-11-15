@@ -50,12 +50,20 @@
 <link rel="alternate" type="application/rss+xml" title="/now RSS" href="/zh/rss.xml">
 
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
 
 
 
+<style id="design-focus-ring">
+/* Focus ring — stated per page so keyboard focus is visible even if the
+   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+</style>
 </head>
 
 <body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <nav class="nav glass">
 
@@ -87,7 +95,7 @@
 
 </nav>
 
-<main>
+<main id="main">
 
 <section class="about-hero">
 
@@ -95,7 +103,7 @@
 
     <div>
 
-      <div class="hero-prompt" style="margin-bottom:16px;"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat about.md</div>
+      <div class="hero-prompt u-mb-4"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat about.md</div>
 
       <h1 class="about-title hero-reveal-in" data-anim="title">工程师,不是网红。</h1>
 
@@ -105,7 +113,7 @@
 
       <p class="about-lede" data-anim="bio" style="animation-delay:1000ms;">2024 年开始把内部一次性工具沉淀成 6 个 Apache-2.0 开源产品。</p>
 
-      <div class="cta-row" style="margin-top:32px;">
+      <div class="cta-row u-mt-6">
 
         <div class="cta-actions">
 
@@ -161,7 +169,7 @@
 
     <div>由 echocc00 构建和维护 · 上海 · 2026</div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="footer-meta">
 
       <a href="/zh/">首页</a>
 
