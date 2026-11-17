@@ -1380,3 +1380,31 @@ p { max-width: var(--measure); }
   .proj-desc, .proj-stack { display: flex; max-width: 100%; }
   .proj-desc > span, .proj-stack > span { white-space: normal; }
 }
+
+/* ---------- Secondary pages ----------
+   The masthead owns the one oversized setting on the site. A secondary
+   page that shouts at the same volume does not distinguish itself from
+   the home page, and a sparse page that jumps from 19.2px to 47.8px
+   skips four rungs of the scale.
+
+   So a secondary page sets its title at one rung below the masthead, its
+   section heads one below that, and its lede one below that. The ladder
+   stays contiguous on every page.
+   ------------------------------------------------------------------- */
+
+.page-secondary .masthead-title { font-size: var(--text-xl); }
+.page-secondary .section-h { font-size: var(--text-lg); }
+.page-secondary .hero-bio,
+.page-secondary .about-lede { font-size: var(--text-md); }
+
+/* The rung between the lede and the title. Each of these was sitting at
+   the same size as the body copy beside it, which is not what it is:
+   the index names are the index's headings, a colophon's labels are
+   headings, and the card's name is a heading. */
+.page-secondary .proj-name { font-size: var(--text-lg); }
+.page-secondary .colophon-h { font-size: var(--text-lg); }
+.page-secondary .about-card-name { font-size: var(--text-lg); }
+
+/* The about page keeps its two-column hero; the halftone band sits in
+   the first column and the card beside it. */
+.page-secondary .about-hero-grid { align-items: start; }

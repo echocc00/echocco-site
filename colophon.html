@@ -61,7 +61,7 @@
 </style>
 </head>
 
-<body>
+<body class="page-secondary">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -96,19 +96,33 @@
 
 <main id="main">
 
-<section class="hero">
+<section class="masthead masthead--page">
 
-  <div class="shell hero-inner">
+  <div class="shell">
 
-    <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> cat colophon.md</div>
+    <div class="masthead-grid">
 
-    <h1 class="hero-title hero-reveal-in" data-anim="title">/colophon<span class="cursor-blink">_</span></h1>
+      <div class="masthead-copy">
 
-    <p class="hero-bio" data-anim="bio">A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.</p>
+      <p class="masthead-eyebrow" data-anim="prompt"><span class="prompt-path">~/echocc00</span> <span>colophon</span></p>
 
-    <div class="status-row" data-anim="status">
+      <div class="masthead-display">
 
-      <span class="status-pill live tilt" data-anim="status-pill" data-stagger="0">how this site is made</span>
+        <div class="halftone-field" aria-hidden="true"></div>
+
+        <h1 class="masthead-title halftone-mask">Colophon</h1>
+
+      </div>
+
+      <p class="hero-bio" data-anim="bio">A note on the design and craft of this site — fonts, tools, philosophy. Inspired by the tradition of book colophons.</p>
+
+      <div class="status-row" data-anim="status">
+
+      <span class="status-pill live ">how this site is made</span>
+
+    </div>
+
+      </div>
 
     </div>
 
@@ -132,37 +146,37 @@
 
       <h2 class="colophon-h">Design philosophy</h2>
 
-      <p class="colophon-body">Terminal-aesthetic + restrained type. The site should feel like a senior engineer's editor, not a marketing site. Dark by default. Information density is fine — whitespace is for emphasis, not decoration. Every animation must be earned: if a motion doesn't communicate hierarchy or state, it's noise.</p>
+      <p class="colophon-body">Editorial, not dashboard. The site should feel like a well-set publication, not a control panel and not a marketing site. Paper ground, hairline rules, and space do the work that cards and shadows would do elsewhere. Density is fine — whitespace is for emphasis, not decoration. Every animation must be earned: if a motion doesn't communicate hierarchy or state, it's noise.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:2;">
 
       <h2 class="colophon-h">Typography</h2>
 
-      <p class="colophon-body">System monospace stack — SF Mono → JetBrains Mono → IBM Plex Mono → Menlo → Consolas. No web font downloads. Headings and body use the same family to reinforce the "single editor" feel. Type scale uses clamp() so the layout never breaks across viewports.</p>
+      <p class="colophon-body">Source Serif 4 sets the display, Source Sans 3 the prose, JetBrains Mono only the values — versions, coverage, identifiers. All three are self-hosted; no third-party font request leaves the browser. The type scale is one continuous 1.2 ladder from 12px to 47.8px, and every rung of it is used by something. The display size is a clamp, so the wordmark shrinks on a narrow viewport instead of breaking the layout.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:3;">
 
       <h2 class="colophon-h">Color</h2>
 
-      <p class="colophon-body">Three colors do all the work: ink (#e6e6e6) for primary text, indigo (#6366f1) for accent / brand, and emerald (#22c55e) for status / live indicators. Everything else is muted grays. No gradients except the radial wash on hero orbs. No drop shadows except an 8px subtle one on hovered buttons.</p>
+      <p class="colophon-body">Four colors do all the work: paper (#F2EEE6) for the ground, ink (#1A1A1A) for primary text, a single ink-blue (#1D3B6E) for accent and links, and green (#2F6B4F) for live status. Everything else is muted greys and two weights of hairline rule. No gradients and no drop shadows — not one.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:4;">
 
       <h2 class="colophon-h">Motion</h2>
 
-      <p class="colophon-body">Five-act choreographed motion: opening title squash (only place spring easing is allowed), scroll-reveal with curtain wipe, cards stagger 70ms, mouse-follow 3D tilt, scroll parallax on figures. All animations use transform + opacity only (GPU-composited). prefers-reduced-motion is fully respected. WebGL particle strands in the hero run at 60fps on modern devices, fall back to CSS-only SVG on others.</p>
+      <p class="colophon-body">One signature and a small set of reveals. The signature is the masthead: the wordmark prints itself in, resolving from a halftone screen of dots into solid ink. Everything else is a scroll-triggered reveal — a curtain wipe, a rise, an image mask — with children staggered a beat behind their parent. The ledger runs a live clock and fills its coverage bar once, on load. Everything animates transform, opacity and clip-path only, so it stays on the compositor. prefers-reduced-motion is fully respected.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:5;">
 
       <h2 class="colophon-h">Tools used</h2>
 
-      <p class="colophon-body">Built with: vanilla HTML + CSS + JS (no framework). WebGL 1.0 for the hero strands. Python + PIL for OG image generation. Cloudflare Pages for hosting. Cloudflare Email Obfuscation is OFF: your real email reaches me. No analytics, no tracking pixels. Just a static site that does what it says.</p>
+      <p class="colophon-body">Built with: vanilla HTML + CSS + JS (no framework). No WebGL, no canvas, no runtime dependency. Python + PIL for OG image generation. Cloudflare Pages for hosting. Cloudflare Email Obfuscation is OFF: your real email reaches me. No analytics, no tracking pixels. Just a static site that does what it says.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:6;">
 
       <h2 class="colophon-h">Inspirations</h2>
 
-      <p class="colophon-body">Rauno Freiberg, Tobias van Schneider, Bruno Simon, Linear, Vercel, Stripe Press, the React Bits Strands animation. Mostly: the senior engineer's portfolio genre — quiet competence over loud design.</p>
+      <p class="colophon-body">Rauno Freiberg, Tobias van Schneider, Bruno Simon, Linear, Vercel, Stripe Press. Mostly: the senior engineer's portfolio genre — quiet competence over loud design.</p>
 
     </article><article class="colophon-block" data-reveal="rise" style="--i:7;">
 
@@ -174,7 +188,7 @@
 
       <h2 class="colophon-h">Colophon</h2>
 
-      <p class="colophon-body">Set in monospace. Composed on a MacBook Pro. Rendered by Cloudflare's edge. Bound by 4 nginx workers in 11 regions. Last refreshed 2026-09-03.</p>
+      <p class="colophon-body">Set in Source Serif 4 and Source Sans 3. Composed on a MacBook Pro. Rendered by Cloudflare's edge. Last refreshed 2026-11-18.</p>
 
     </article></div>
 

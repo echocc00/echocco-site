@@ -1,5 +1,5 @@
 // echocc00 service worker — cache strategy
-const VERSION = 'v4-2026-11-15';
+const VERSION = 'v5-2026-11-18';
 const CACHE_STATIC = `echocco-static-${VERSION}`;
 const CACHE_RUNTIME = `echocco-runtime-${VERSION}`;
 
@@ -26,10 +26,8 @@ const STATIC_ASSETS = [
   '/assets/js/console.js',
   '/assets/js/reveal.js',
   '/assets/js/hero-anim.js',
-  '/assets/webgl/strands.js',
-  '/assets/fonts/ibm-plex-sans-400.woff2',
-  '/assets/fonts/ibm-plex-sans-500.woff2',
-  '/assets/fonts/ibm-plex-sans-600.woff2',
+  '/assets/fonts/source-serif-4-var.woff2',
+  '/assets/fonts/source-sans-3-var.woff2',
   '/assets/fonts/jetbrains-mono-400.woff2',
   '/assets/fonts/jetbrains-mono-700.woff2',
 ];
