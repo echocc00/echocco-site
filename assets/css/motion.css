@@ -1,7 +1,14 @@
 /* ============================================================================
    echocc00 — motion system
    ----------------------------------------------------------------------------
-   One easing family (cubic-bezier M3 lineage). Transform + opacity only.
+   One easing family. Transform + opacity only — never width, height or top,
+   because those cause reflow and CLS.
+
+   The signature moment is `halftone-reveal`: the masthead prints itself in.
+   A halftone screen is how a page comes off a press — dots close up into
+   solid ink. One block only (the masthead), everything else enters with a
+   plain rise. A halftone that repeated down the page would read as noise.
+
    Everything the user caused finishes within 500ms; ambient motion may run
    longer because nobody is waiting on it.
    ========================================================================= */
@@ -26,18 +33,12 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(61, 214, 140, 0.45); }
-  70% { box-shadow: 0 0 0 8px rgba(61, 214, 140, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(61, 214, 140, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(47, 107, 79, 0.35); }
+  70% { box-shadow: 0 0 0 8px rgba(47, 107, 79, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 107, 79, 0); }
 }
 
-@keyframes drift {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  33% { transform: translate3d(20px, -16px, 0) scale(1.04); }
-  66% { transform: translate3d(-14px, 12px, 0) scale(0.97); }
-}
-
-/* Opening: mask wipe + vertical squash settle (the oversized moment) */
+/* Opening: a mask wipe and a settle — the oversized moment */
 @keyframes heroRevealIn {
   0% { opacity: 0; clip-path: inset(0 100% 0 0); transform: scaleY(1.3); }
   55% { opacity: 1; clip-path: inset(0 0 0 0); transform: scaleY(1.06); }
@@ -49,41 +50,84 @@
   100% { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
-@keyframes panelIn {
-  0% { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.985); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-}
-
-/* Scroll reveal: curtain wipe for headings */
+/* Scroll reveal: a curtain wipe for headings */
 @keyframes curtainReveal {
   0% { clip-path: inset(0 0 100% 0); transform: translate3d(0, 8px, 0); }
   100% { clip-path: inset(0 0 0 0); transform: translate3d(0, 0, 0); }
 }
 
-/* Scroll reveal: rise for rows and cards */
+/* Scroll reveal: a rise for rows and entries */
 @keyframes riseIn {
-  0% { opacity: 0; transform: translate3d(0, 22px, 0) scale(0.99); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  0% { opacity: 0; transform: translate3d(0, 18px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
-/* Scroll reveal: clip for media */
+/* Scroll reveal: a clip for media */
 @keyframes imageReveal {
   0% { opacity: 0; clip-path: inset(0 0 0 100%); transform: scale(1.04); }
   100% { opacity: 1; clip-path: inset(0 0 0 0); transform: scale(1); }
 }
 
-/* Signature: scanline crosses the console panel */
-@keyframes scanlineSweep {
-  0% { transform: translate3d(0, -100%, 0); opacity: 0; }
-  8% { opacity: 1; }
-  92% { opacity: 1; }
-  100% { transform: translate3d(0, 100%, 0); opacity: 0; }
+/* Registering the custom property is what makes it animatable. An
+   unregistered custom property is just a string: the mask would snap to
+   its final value instead of travelling, or stay closed entirely. */
+@property --halftone-stop {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
 }
 
-/* Signature substrate: dot matrix drifts */
-@keyframes matrixDrift {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(0, 16px, 0); }
+/* ---------- The signature: halftone reveal ----------
+   The masthead prints itself in. A radial-gradient dot grid is used as a
+   mask; the mask's hard stop travels from the centre outward, so the dots
+   close up into solid ink the way a halftone screen resolves.
+
+   The mask is applied to the masthead's headline block only. A dot pattern
+   over a table of numbers reads as data, not as print — so the ledger
+   below it enters with a plain rise.
+   ------------------------------------------------------------------- */
+
+.halftone-mask {
+  --halftone-stop: 0%;
+  -webkit-mask-image: radial-gradient(circle at center,
+    var(--p-ink) 0%, var(--p-ink) var(--halftone-stop),
+    transparent calc(var(--halftone-stop) + 1%));
+  mask-image: radial-gradient(circle at center,
+    var(--p-ink) 0%, var(--p-ink) var(--halftone-stop),
+    transparent calc(var(--halftone-stop) + 1%));
+  -webkit-mask-size: 7px 7px;
+  mask-size: 7px 7px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  animation: halftonePrint 1100ms var(--ease-standard) 140ms forwards;
+}
+
+@keyframes halftonePrint {
+  0%   { --halftone-stop: 0%; }
+  55%  { --halftone-stop: 38%; }
+  /* The gradient's ray reaches the farthest corner of the 7px tile, so
+     100% is the stop at which the dots overlap and the block is solid.
+     Stopping short of it leaves a dot pattern where the ink should be. */
+  100% { --halftone-stop: 100%; }
+}
+
+/* The dot grid itself — the substrate the mask cuts through. It sits
+   behind the ink and gives the reveal something to resolve into. */
+.halftone-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center,
+    var(--border-strong) 1px, transparent 1.2px);
+  background-size: 7px 7px;
+  opacity: 0.65;
+  /* The plate fades out to the right, the way a print impression trails
+     off the page. A radial fade would have made it a smudge. */
+  -webkit-mask-image: linear-gradient(90deg,
+    var(--p-ink) 0%, var(--p-ink) 45%, transparent 100%);
+  mask-image: linear-gradient(90deg,
+    var(--p-ink) 0%, var(--p-ink) 45%, transparent 100%);
 }
 
 /* ---------- Opening sequence ---------- */
@@ -93,7 +137,6 @@
   display: inline-block;
   animation: heroRevealIn 1100ms var(--ease-enter) 120ms both;
   transform-origin: 50% 100%;
-  will-change: clip-path, transform, opacity;
 }
 [data-anim='title-word'] { display: inline-block; animation: lineIn 700ms var(--ease-standard) both; }
 [data-anim='title-word:nth-child(1)] { animation-delay: 300ms; }
@@ -110,89 +153,109 @@
 [data-anim='status-pill'][data-stagger='1'] { animation-delay: 980ms; }
 [data-anim='status-pill'][data-stagger='2'] { animation-delay: 1060ms; }
 [data-anim='status-pill'][data-stagger='3'] { animation-delay: 1140ms; }
-[data-anim='console'] { animation: panelIn 1000ms var(--ease-enter) 260ms both; }
+[data-anim='console'] { animation: lineIn 900ms var(--ease-standard) 320ms both; }
 
 .hero-reveal-in, .hero-reveal {
   display: inline-block;
   animation: heroRevealIn 1100ms var(--ease-enter) 120ms both;
   transform-origin: 50% 100%;
-  will-change: clip-path, transform, opacity;
 }
 
 /* ---------- Scroll reveal (IntersectionObserver adds .is-revealed) ---------- */
 
 [data-reveal] { opacity: 0; }
 [data-reveal='curtain'] { clip-path: inset(0 0 100% 0); transform: translate3d(0, 8px, 0); }
-[data-reveal='rise'] { transform: translate3d(0, 22px, 0) scale(0.99); }
+[data-reveal='rise'] { transform: translate3d(0, 18px, 0); }
 [data-reveal='image'] { transform: scale(1.04); }
 
 [data-reveal].is-revealed { animation: curtainReveal 900ms var(--ease-standard) forwards; }
 [data-reveal='rise'].is-revealed { animation: riseIn 800ms var(--ease-standard) forwards; }
 [data-reveal='image'].is-revealed { animation: imageReveal 1100ms var(--ease-standard) forwards; }
 
-/* Stagger via inline --i custom property */
+/* Stagger via the inline --i custom property */
 [style*='--i:'] { animation-delay: calc(var(--i, 0) * 70ms); }
 
 /* ---------- Continuous / ambient ---------- */
 
 .cursor-blink { animation: blink 1s steps(1) infinite; }
-.status-dot, .status-pill.live::before { animation: pulse 2.4s var(--ease-standard) infinite; }
-.hero-orb { will-change: transform; }
+.status-pill.live::before { animation: pulse 2.4s var(--ease-standard) infinite; }
 
-/* ---------- Micro-interactions ---------- */
+/* ---------- Micro-interactions ----------
+   Hover is reserved for things that are actually links. If everything
+   reacts, nothing is emphasised — so a row, a card and a chip do not
+   change on hover; only the link inside them does.
+   ------------------------------------------------------------------- */
 
-/* Tilt is applied by JS as an inline transform — transition only, no shadow */
-.tilt { transition: transform 200ms var(--ease-standard); will-change: transform; }
-
-/* Project row hover — background tint, not a lift */
-.proj-row {
-  position: relative;
-  transition: background 200ms var(--ease-standard);
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform 300ms var(--ease-enter);
 }
-.proj-row::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(124, 156, 255, 0.07));
-  opacity: 0; transition: opacity 200ms var(--ease-standard);
-  pointer-events: none;
-}
-.proj-row:hover::before { opacity: 1; }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+
 .proj-row .proj-arrow {
   display: inline-block;
   transition: transform 300ms var(--ease-enter);
 }
 .proj-row:hover .proj-arrow { transform: translate3d(4px, 0, 0); }
 
-/* Nav underline draw */
-.nav-link { position: relative; padding: var(--space-2) 0; }
-.nav-link::after {
-  content: ''; position: absolute; bottom: 0; left: 0;
-  width: 100%; height: 1px; background: var(--accent);
-  transform: scaleX(0); transform-origin: 50% 50%;
-  transition: transform 300ms var(--ease-enter);
-}
-.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
-
-/* Filter chip — fill on hover/active, no vertical jump */
-.filter-chip:hover { transform: none; }
-
-/* CTA — colour + border only. Lift is reserved for the one primary action. */
-.cta-btn:hover { transform: none; }
-.cta-btn.primary:hover { transform: translate3d(0, -2px, 0); }
-
-/* ---------- Reduced motion ---------- */
+/* ---------- Reduced motion ----------
+   The rules below are scoped to the same selectors as the rules they
+   override, so they win on order rather than on !important. Nothing here
+   needs !important: the reduced-motion block comes last in the file and
+   every selector it touches is repeated at the same specificity.
+   ------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
   }
+  html { scroll-behavior: auto; }
   [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
   }
-  .hero-orb, .hero-strands-canvas, .console-scanline, .console-matrix { display: none !important; }
+  [data-reveal='curtain'],
+  [data-reveal='rise'],
+  [data-reveal='image'] {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+  [data-anim='prompt'],
+  [data-anim='title'],
+  [data-anim='title-word'],
+  [data-anim='roles'],
+  [data-anim='bio'],
+  [data-anim='status'],
+  [data-anim='status-pill'],
+  [data-anim='console'],
+  .hero-reveal-in,
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    animation: none;
+  }
+  .halftone-mask {
+    -webkit-mask-image: none;
+    mask-image: none;
+    animation: none;
+  }
+  .halftone-field { display: none; }
+  .hero-strands-canvas { display: none; }
+  .cursor-blink { animation: none; opacity: 1; }
+  .status-pill.live::before { animation: none; }
 }
