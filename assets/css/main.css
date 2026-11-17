@@ -372,7 +372,8 @@ p { max-width: var(--measure); }
 .masthead-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-7);
+  gap: var(--space-5) var(--space-7);
+  align-items: start;
 }
 @media (min-width: 960px) {
   .masthead-grid {
@@ -451,6 +452,9 @@ p { max-width: var(--measure); }
   padding-top: var(--space-4);
   border-top: 1px solid var(--border);
 }
+/* The colophon spans the measure: four items in a 490px column left one
+   orphaned on its own line, which read as a mistake. */
+.masthead-grid > .status-row { grid-column: 1 / -1; }
 .status-pill {
   font-size: var(--text-sm);
   color: var(--ink-2);
