@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>SecSight · AI-driven SOC platform · echocc00</title>
+<title>SecSight — AI-driven SOC platform — echocc00</title>
 
 <meta name="description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/projects/secsight/">
 
-<meta property="og:title" content="SecSight · AI-driven SOC platform · echocc00">
+<meta property="og:title" content="SecSight — AI-driven SOC platform — echocc00">
 
 <meta property="og:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="SecSight · AI-driven SOC platform · echocc00">
+<meta name="twitter:title" content="SecSight — AI-driven SOC platform — echocc00">
 
 <meta name="twitter:description" content="SecSight is an AI-driven security operations platform built for small-and-mid SOC teams that don't have the headcount to staff a 24x7 detection and response function. It pairs a multi-agent SecOps Cop">
 
@@ -56,8 +56,9 @@
 
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -98,7 +99,7 @@
 
 <header class="proj-hero proj-hero--secsight">
 
-  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
 
   <div class="shell">
 
@@ -652,7 +653,7 @@
 
         <li data-reveal="rise" style="--i:1;">5 autonomy levels (L0-L4)</li>
 
-        <li data-reveal="rise" style="--i:2;">234 tests · 87.8% coverage</li>
+        <li class="sep" data-reveal="rise" style="--i:2;"><span>234 tests</span><span>87.8% coverage</span></li>
 
         <li data-reveal="rise" style="--i:3;">4-layer knowledge base</li>
 
@@ -690,11 +691,11 @@
 
         <div class="side-list">
 
-          <span class="pill">fastapi · langgraph</span>
+          <span class="pill sep"><span>fastapi</span><span>langgraph</span></span>
 
-          <span class="pill">wazuh · suricata</span>
+          <span class="pill sep"><span>wazuh</span><span>suricata</span></span>
 
-          <span class="pill">opencti · dfir-iris</span>
+          <span class="pill sep"><span>opencti</span><span>dfir-iris</span></span>
 
         </div>
 
@@ -732,13 +733,13 @@
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div class="sep"><span>Built and maintained by echocc00</span><span>Shanghai</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -761,10 +762,8 @@
 
 </footer>
 
-  <script src="/assets/js/reveal.js?v=9ecb9c9c" defer></script>
-
-  <script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
-<script src="/assets/js/hero-anim.js?v=9ecb9c9c" defer></script>
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 
 </body>
 

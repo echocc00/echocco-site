@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>echocc00 · /now</title>
+<title>echocc00 — /now</title>
 
 <meta name="description" content="This is a /now page — what I am focused on right now, updated monthly. Inspired by Derek Sivers.">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/now/">
 
-<meta property="og:title" content="echocc00 · /now">
+<meta property="og:title" content="echocc00 — /now">
 
 <meta property="og:description" content="This is a /now page — what I am focused on right now, updated monthly. Inspired by Derek Sivers.">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="echocc00 · /now">
+<meta name="twitter:title" content="echocc00 — /now">
 
 <meta name="twitter:description" content="This is a /now page — what I am focused on right now, updated monthly. Inspired by Derek Sivers.">
 
@@ -56,8 +56,9 @@
 
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -150,7 +151,7 @@
 
     </div>
 
-    <div class="now-page-grid"><div class="now-page-cell" data-reveal="rise" style="--i:0;"><div class="now-page-label">Architecture notes</div><div class="now-page-detail">SecSight 4-layer KB · NetSage 3-gate pipeline · VidSlice v0.5/v0.6 compat.</div></div><div class="now-page-cell" data-reveal="rise" style="--i:1;"><div class="now-page-label">CCIE / 等保 2.0 study notes</div><div class="now-page-detail">Slowly accumulating into a public cheat sheet.</div></div></div>
+    <div class="now-page-grid"><div class="now-page-cell" data-reveal="rise" style="--i:0;"><div class="now-page-label">Architecture notes</div><div class="now-page-detail sep"><span>SecSight 4-layer KB</span><span>NetSage 3-gate pipeline</span><span>VidSlice v0.5/v0.6 compat.</span></div></div><div class="now-page-cell" data-reveal="rise" style="--i:1;"><div class="now-page-label">CCIE / 等保 2.0 study notes</div><div class="now-page-detail">Slowly accumulating into a public cheat sheet.</div></div></div>
 
   </div>
 
@@ -214,13 +215,13 @@
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div class="sep"><span>Built and maintained by echocc00</span><span>Shanghai</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -243,7 +244,7 @@
 
 </footer>
 
-<script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
+<script src="/assets/js/count-up.js" defer></script>
 </body>
 
 </html>

@@ -24,7 +24,6 @@ const STATIC_ASSETS = [
   '/assets/css/console.css',
   '/assets/js/motion.js',
   '/assets/js/console.js',
-  '/assets/js/reveal.js',
   '/assets/js/hero-anim.js',
   '/assets/webgl/strands.js',
   '/assets/fonts/ibm-plex-sans-400.woff2',

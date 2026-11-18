@@ -75,8 +75,14 @@
     // Per-instance config from data-attrs
     const count = parseInt(canvas.dataset.count || '120', 10);
     const linkDist = parseInt(canvas.dataset.linkDist || '120', 10);
-    const lineColor = (canvas.dataset.lineColor || '#6366f1').slice(1);
-    const pointColor = (canvas.dataset.pointColor || '#22c55e').slice(1);
+    // The colours live in the token layer, so the markup never has to
+    // carry a hex. A data attribute still wins, for one-off canvases.
+    const cssColor = (name, fallback) => {
+      const v = getComputedStyle(canvas).getPropertyValue(name).trim();
+      return (v || fallback).replace('#', '');
+    };
+    const lineColor = (canvas.dataset.lineColor || cssColor('--strand-line', '#6366f1')).slice(1);
+    const pointColor = (canvas.dataset.pointColor || cssColor('--strand-point', '#22c55e')).slice(1);
     const speed = parseFloat(canvas.dataset.speed || '1');
     const maxLines = parseInt(canvas.dataset.maxLines || '1500', 10);
     const lineR = parseInt(lineColor.substr(0,2), 16) / 255;

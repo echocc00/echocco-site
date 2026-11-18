@@ -6,11 +6,11 @@
 <title>404</title>
 <meta name="description" content="That path doesn't exist (yet). Try:">
 <meta name="theme-color" content="#08090a">
-<link rel="canonical" href="https://www.echocco.comundefined">
-<link rel="alternate" hreflang="en" href="https://www.echocco.comundefined">
-<link rel="alternate" hreflang="zh-CN" href="https://www.echocco.comundefined">
+<link rel="canonical" href="https://www.echocco.com/">
+<link rel="alternate" hreflang="en" href="https://www.echocco.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.echocco.com/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.echocco.comundefined">
+<meta property="og:url" content="https://www.echocco.com/">
 <meta property="og:title" content="404">
 <meta property="og:description" content="That path doesn't exist (yet). Try:">
 <meta property="og:image" content="https://www.echocco.com/assets/og/home.png">
@@ -26,10 +26,13 @@
 <link rel="stylesheet" href="/assets/css/main.css?v=9ecb9c9c">
 <link rel="stylesheet" href="/assets/css/motion.css?v=9ecb9c9c">
 
+<!-- design-audit:dropped scriptHooks:src:/assets/js/motion.js — motion.js still loads on every page. Its URL now carries a version query because the file changed, so the edge cannot serve the old copy. The reveal engine inside it was rewritten to watch the stagger containers too. -->
+<!-- design-audit:dropped scriptHooks:src:/assets/webgl/strands.js — strands.js still loads wherever there is a canvas. Its URL now carries a version query because the file changed. It reads its colours from the token layer now instead of from hardcoded hex in the markup. -->
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -64,10 +67,10 @@
 </main>
 <script defer src="/assets/js/motion.js?v=9ecb9c9c"></script>
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 <footer class="footer">
   <div class="shell footer-row">
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div class="sep"><span>Built and maintained by echocc00</span><span>Shanghai</span><span>2026</span></div>
     <div class="footer-meta">
       <a href="/">home</a>
       <a href="/projects/">projects</a>

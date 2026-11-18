@@ -56,8 +56,11 @@
 
 /* Scroll reveal: curtain wipe for headings */
 @keyframes curtainReveal {
-  0% { clip-path: inset(0 0 100% 0); transform: translate3d(0, 8px, 0); }
-  100% { clip-path: inset(0 0 0 0); transform: translate3d(0, 0, 0); }
+  /* The curtain has to lift the opacity as well as the clip. The base
+     rule sets opacity: 0, so a reveal that only moves the clip leaves
+     the heading invisible for good. */
+  0% { opacity: 0; clip-path: inset(0 0 100% 0); transform: translate3d(0, 8px, 0); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); transform: translate3d(0, 0, 0); }
 }
 
 /* Scroll reveal: rise for rows and cards */
@@ -96,12 +99,12 @@
   will-change: clip-path, transform, opacity;
 }
 [data-anim='title-word'] { display: inline-block; animation: lineIn 700ms var(--ease-standard) both; }
-[data-anim='title-word:nth-child(1)] { animation-delay: 300ms; }
-[data-anim='title-word:nth-child(2)] { animation-delay: 400ms; }
-[data-anim='title-word:nth-child(3)] { animation-delay: 500ms; }
-[data-anim='title-word:nth-child(4)] { animation-delay: 600ms; }
-[data-anim='title-word:nth-child(5)] { animation-delay: 700ms; }
-[data-anim='title-word:nth-child(6)] { animation-delay: 800ms; }
+[data-anim='title-word']:nth-child(1) { animation-delay: 300ms; }
+[data-anim='title-word']:nth-child(2) { animation-delay: 400ms; }
+[data-anim='title-word']:nth-child(3) { animation-delay: 500ms; }
+[data-anim='title-word']:nth-child(4) { animation-delay: 600ms; }
+[data-anim='title-word']:nth-child(5) { animation-delay: 700ms; }
+[data-anim='title-word']:nth-child(6) { animation-delay: 800ms; }
 [data-anim='roles'] { animation: lineIn 700ms var(--ease-standard) 520ms both; }
 [data-anim='bio'] { animation: lineIn 800ms var(--ease-standard) 660ms both; }
 [data-anim='status'] { animation: lineIn 600ms var(--ease-standard) 800ms both; }
@@ -122,7 +125,10 @@
 /* ---------- Scroll reveal (IntersectionObserver adds .is-revealed) ---------- */
 
 [data-reveal] { opacity: 0; }
-[data-reveal='curtain'] { clip-path: inset(0 0 100% 0); transform: translate3d(0, 8px, 0); }
+/* The curtain lives in the animation, not in the resting state. A
+   clipped element has an empty intersection box, so the observer that
+   is supposed to reveal it never fires and the heading stays gone. */
+[data-reveal='curtain'] { transform: translate3d(0, 8px, 0); }
 [data-reveal='rise'] { transform: translate3d(0, 22px, 0) scale(0.99); }
 [data-reveal='image'] { transform: scale(1.04); }
 
@@ -132,6 +138,19 @@
 
 /* Stagger via inline --i custom property */
 [style*='--i:'] { animation-delay: calc(var(--i, 0) * 70ms); }
+
+/* The stagger inside a container is by position, not by an inline
+   index, so the delay is written out. Without it the whole grid
+   arrives at once. */
+[data-reveal-stagger].is-revealed > * { transition-delay: 0ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(1) { transition-delay: 0ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(2) { transition-delay: 80ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(3) { transition-delay: 160ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(4) { transition-delay: 240ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(5) { transition-delay: 320ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(6) { transition-delay: 400ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(7) { transition-delay: 480ms; }
+[data-reveal-stagger].is-revealed > *:nth-child(8) { transition-delay: 560ms; }
 
 /* ---------- Continuous / ambient ---------- */
 
@@ -144,55 +163,70 @@
 /* Tilt is applied by JS as an inline transform — transition only, no shadow */
 .tilt { transition: transform 200ms var(--ease-standard); will-change: transform; }
 
-/* Project row hover — background tint, not a lift */
-.proj-row {
-  position: relative;
+/* Project row hover — a background tint on the cells, not a lift.
+   The tint used to hang off a ::before on the row itself, and a table row
+   does not generate pseudo-elements, so it never appeared. The cells
+   carry it instead. */
+.proj-row td {
   transition: background 200ms var(--ease-standard);
+  background: var(--row-bg, transparent);
 }
-.proj-row::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(124, 156, 255, 0.07));
-  opacity: 0; transition: opacity 200ms var(--ease-standard);
-  pointer-events: none;
-}
-.proj-row:hover::before { opacity: 1; }
+/* The row's hover signal is one custom property, so the rule that reads
+   it and the rule that sets it cannot drift apart. */
+.proj-row:hover { --row-hover: 1; --row-bg: var(--bg-2); }
 .proj-row .proj-arrow {
   display: inline-block;
   transition: transform 300ms var(--ease-enter);
+  transform: translate3d(calc(4px * var(--row-hover, 0)), 0, 0);
 }
-.proj-row:hover .proj-arrow { transform: translate3d(4px, 0, 0); }
 
 /* Nav underline draw */
 .nav-link { position: relative; padding: var(--space-2) 0; }
 .nav-link::after {
   content: ''; position: absolute; bottom: 0; left: 0;
   width: 100%; height: 1px; background: var(--accent);
-  transform: scaleX(0); transform-origin: 50% 50%;
+  transform: scaleX(var(--nav-bar, 0)); transform-origin: 50% 50%;
   transition: transform 300ms var(--ease-enter);
 }
-.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
 
-/* Filter chip — fill on hover/active, no vertical jump */
-.filter-chip:hover { transform: none; }
-
-/* CTA — colour + border only. Lift is reserved for the one primary action. */
-.cta-btn:hover { transform: none; }
-.cta-btn.primary:hover { transform: translate3d(0, -2px, 0); }
+/* The primary action lifts on hover, driven by the shared hover rule. */
+.cta-btn.primary { transform: translate3d(0, calc(-2px * var(--btn-hover, 0)), 0); }
 
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
+  /* The base reset. It cannot outrank a class selector on its own, so the
+     list below restates every animated surface at the same specificity and
+     lets source order decide — which is what !important was doing here. */
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
   }
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
+  html { scroll-behavior: auto; }
+
+  .skip-link, .nav-cta, .nav-link::after, .nav-brand .cursor, .tilt,
+  .proj-table tbody tr, .proj-link, .filter-chip, .cta-btn, .btn,
+  .proj-row, .proj-row::before, .proj-row .proj-arrow,
+  .status-pill.live::before, .cursor-blink, .hero-orb,
+  .console-scanline, .console-matrix, .console-live-dot,
+  [data-anim], [data-reveal], [data-reveal].is-revealed,
+  [data-reveal-stagger] > *, [data-reveal-stagger].is-revealed > *,
+  .hero-reveal-in, .hero-reveal {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
   }
-  .hero-orb, .hero-strands-canvas, .console-scanline, .console-matrix { display: none !important; }
+
+  [data-reveal], [data-reveal].is-revealed,
+  [data-reveal-stagger] > *, [data-reveal-stagger].is-revealed > *,
+  .hero-reveal-in, .hero-reveal {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
+  .hero-orb, .hero-strands-canvas, .console-scanline, .console-matrix { display: none; }
 }

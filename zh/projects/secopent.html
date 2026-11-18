@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>SecOpent · 授权渗透测试工作台 · echocc00</title>
+<title>SecOpent — 授权渗透测试工作台 — echocc00</title>
 
 <meta name="description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/zh/projects/secopent/">
 
-<meta property="og:title" content="SecOpent · 授权渗透测试工作台 · echocc00">
+<meta property="og:title" content="SecOpent — 授权渗透测试工作台 — echocc00">
 
 <meta property="og:description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="SecOpent · 授权渗透测试工作台 · echocc00">
+<meta name="twitter:title" content="SecOpent — 授权渗透测试工作台 — echocc00">
 
 <meta name="twitter:description" content="SecOpent 是面向授权渗透测试的、目录驱动、agent-native 工作台。LLM 只提议,由确定性层 + 人工决策。用 YAML 写测试用例,在 seccomp 沙箱里执行,oracle 做 N/N 次重跑捕获 flaky 测试。">
 
@@ -56,8 +56,9 @@
 
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -98,7 +99,7 @@
 
 <header class="proj-hero proj-hero--secopent">
 
-  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
 
   <div class="shell">
 
@@ -556,13 +557,13 @@
 
       <div class="proj-features">
 
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">目录驱动</div><div class="proj-feat-desc">17 个适配器 · YAML case DSL · CoverageMatrix。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">目录驱动</div><div class="proj-feat-desc sep"><span>17 个适配器</span><span>YAML case DSL</span><span>CoverageMatrix。</span></div></div>
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Agent-native</div><div class="proj-feat-desc">LLM 提议,确定性层 + 人工决策。</div></div>
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">Oracle N/N 验证</div><div class="proj-feat-desc">独立重跑,捕获 flaky 测试。</div></div>
 
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">加固沙箱</div><div class="proj-feat-desc">seccomp · 进程隔离 · 超时 + 资源限制。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">加固沙箱</div><div class="proj-feat-desc sep"><span>seccomp</span><span>进程隔离</span><span>超时 + 资源限制。</span></div></div>
 
       </div>
 
@@ -636,9 +637,9 @@
 
         <div class="side-list">
 
-          <span class="pill">fastapi · react</span>
+          <span class="pill sep"><span>fastapi</span><span>react</span></span>
 
-          <span class="pill">rust · seccomp</span>
+          <span class="pill sep"><span>rust</span><span>seccomp</span></span>
 
           <span class="pill">postgresql</span>
 
@@ -678,13 +679,13 @@
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+    <div class="sep"><span>由 echocc00 构建和维护</span><span>上海</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -707,10 +708,8 @@
 
 </footer>
 
-  <script src="/assets/js/reveal.js?v=9ecb9c9c" defer></script>
-
-  <script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
-<script src="/assets/js/hero-anim.js?v=9ecb9c9c" defer></script>
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 
 </body>
 

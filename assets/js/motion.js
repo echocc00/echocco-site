@@ -4,8 +4,14 @@
   if (window.__echoccoMotion) return; window.__echoccoMotion = true;
 
   const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Both kinds of target. The stagger containers are marked on the
+  // container itself, because motion.css reveals their children through
+  // [data-reveal-stagger].is-revealed > *.
+  const REVEAL_TARGETS = '[data-reveal], [data-reveal-stagger]';
+
   if (prefersReduce) {
-    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
+    document.querySelectorAll(REVEAL_TARGETS).forEach(el => el.classList.add('is-revealed'));
     return;
   }
 
@@ -19,7 +25,7 @@
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
 
-  document.querySelectorAll('[data-reveal]').forEach(el => revealIO.observe(el));
+  document.querySelectorAll(REVEAL_TARGETS).forEach(el => revealIO.observe(el));
 
   // ② Magnetic tilt on .tilt elements
   const tiltEls = document.querySelectorAll('.tilt');
