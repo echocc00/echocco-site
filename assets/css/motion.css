@@ -125,12 +125,14 @@
 /* ---------- Scroll reveal (IntersectionObserver adds .is-revealed) ---------- */
 
 [data-reveal] { opacity: 0; }
-/* The curtain lives in the animation, not in the resting state. A
-   clipped element has an empty intersection box, so the observer that
-   is supposed to reveal it never fires and the heading stays gone. */
-[data-reveal='curtain'] { transform: translate3d(0, 8px, 0); }
-[data-reveal='rise'] { transform: translate3d(0, 22px, 0) scale(0.99); }
-[data-reveal='image'] { transform: scale(1.04); }
+/* The offset lives in the animation's 0% keyframe, not in the resting
+   state — the same reason the curtain does. A resting transform does two
+   things it should not do. It shifts the element 22px down inside every
+   ancestor that clips (overflow: hidden), which the runtime auditor reads
+   as clipped text; and it scales links to 0.99, which puts a 24px pointer
+   target under the 24px floor. The keyframes carry the same transforms, so
+   the element still arrives from the same place — it just no longer sits
+   there while it waits. */
 
 [data-reveal].is-revealed { animation: curtainReveal 900ms var(--ease-standard) forwards; }
 [data-reveal='rise'].is-revealed { animation: riseIn 800ms var(--ease-standard) forwards; }

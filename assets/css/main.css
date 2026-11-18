@@ -117,7 +117,14 @@
   --text-xl: 1.44rem;        /* 23px */
   --text-2xl: 1.728rem;      /* 27.6px */
   --text-3xl: 2.074rem;      /* 33.2px */
-  --text-display: clamp(2.75rem, 7vw, 5.25rem);
+  /* The display band is the one deliberate departure from the 1.2 ladder —
+     44px is the console wordmark's size, and it stays that size. The inner
+     min() only guards the floor: a rem floor grows with the reader's own
+     font size, so at 200% the wordmark grew wider than its column and the
+     hero had to clip it. Capping the floor against the viewport keeps the
+     band at 44px on a normal screen and lets it shrink instead of overflow
+     when the reader asks for bigger text. */
+  --text-display: clamp(min(2.75rem, 12vw), 7vw, 5.25rem);
 
   --leading-xs: 1.4;
   --leading-sm: 1.45;
@@ -262,8 +269,21 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ---------- Layout primitives ---------- */
 
-.shell { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--space-6); }
-@media (max-width: 600px) { .shell { padding: 0 var(--space-5); } }
+/* The page gutter also clears a notch. A landscape phone reports a 47px
+   left inset, and the gutter was 32px — so the hero CTA sat inside the
+   inset. max() keeps the gutter at its own size when nothing reports an
+   inset, and grows it only when the device says the edge is unsafe. */
+.shell {
+  max-width: var(--max-w); margin: 0 auto;
+  padding-left: max(var(--space-6), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--space-6), env(safe-area-inset-right, 0px));
+}
+@media (max-width: 600px) {
+  .shell {
+    padding-left: max(var(--space-5), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--space-5), env(safe-area-inset-right, 0px));
+  }
+}
 
 /* ---------- Nav ---------- */
 
@@ -273,10 +293,16 @@ h1, h2, h3 { text-wrap: balance; }
   backdrop-filter: saturate(160%) blur(var(--glass-blur));
   -webkit-backdrop-filter: saturate(160%) blur(var(--glass-blur));
   border-bottom: 1px solid var(--border);
+  /* The nav is the one thing that can land under a notch. Browsers that
+     report no inset give 0 here and nothing moves; the ones that do
+     (an installed PWA on a notched phone) push the row clear of it. */
+  padding-top: env(safe-area-inset-top, 0px);
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 56px; gap: var(--space-6);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
 }
 .nav-brand {
   font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 700;
@@ -385,6 +411,11 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: var(--text-display);
   font-weight: 600; letter-spacing: -0.03em; line-height: 1;
   color: var(--ink); margin-bottom: var(--space-5);
+  /* The wordmark is one unbreakable word, and the hero clips its overflow.
+     Left alone, a reader who doubles their text size had their wordmark
+     cut off instead of wrapped — content lost, not merely scrolled. */
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 .hero-title .cursor-blink { color: var(--accent-green); animation: blink 1s steps(1) infinite; }
 .hero-roles {
@@ -629,6 +660,10 @@ h1, h2, h3 { text-wrap: balance; }
   color: var(--ink-2);
   /* 24px pointer target for the meta-bar links. */
   display: inline-flex; align-items: center; min-height: 24px;
+  /* The repository URL is one unbreakable string. As a flex item its floor
+     is its content width, so at 200% text it pushed the page 37px past the
+     viewport. min-width lets it shrink; overflow-wrap lets the URL break. */
+  min-width: 0; overflow-wrap: anywhere;
 }
 
 .proj-body { padding: var(--space-7) 0; }
@@ -726,7 +761,9 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .side-more { list-style: none; padding: 0; font-size: var(--text-sm); }
 .side-more li { padding: var(--space-1) 0; }
-.side-more a { color: var(--ink-2); }
+/* Same treatment as .proj-name: an inline link in a list, lifted to the
+   24px pointer target without changing the type rhythm. */
+.side-more a { color: var(--ink-2); display: inline-block; min-height: 24px; line-height: 24px; }
 
 /* ---------- Timeline / now / quote ---------- */
 
@@ -809,6 +846,11 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .footer-brand { color: var(--ink-2); font-family: var(--font-mono); }
 .footer-meta { display: inline-flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+/* The mailto address is 44 unbroken characters. As a flex item its floor is
+   its content width, so at 200% text it pushed the whole document 177px
+   past the viewport — a WCAG 1.4.10 reflow failure. min-width lets the
+   item shrink; overflow-wrap lets the address break instead. */
+.footer-meta a[href^="mailto:"] { min-width: 0; overflow-wrap: anywhere; }
 
 /* ---------- 404 ---------- */
 
