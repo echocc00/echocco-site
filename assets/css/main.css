@@ -647,6 +647,11 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
   font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
   margin-bottom: var(--space-2); line-height: var(--leading-xl);
+  /* The project name is one unbreakable word (SecOpentAgent). At 200% text
+     it overflowed the viewport by 21px — WCAG 1.4.10. Same treatment as the
+     home hero title. */
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 .proj-tagline { color: var(--ink-2); font-size: var(--text-lg); margin-bottom: var(--space-5); line-height: var(--leading-lg); }
 .proj-meta-bar {
@@ -791,7 +796,12 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .cta-title { font-size: var(--text-xl); color: var(--ink); font-weight: 600; letter-spacing: -0.015em; }
 .cta-desc { color: var(--ink-2); font-size: var(--text-base); margin-top: var(--space-2); max-width: 52ch; }
-.cta-desc a { color: var(--accent); }
+/* The address is 43 unbroken characters. Inside the flex .cta-row it sets
+   that row's min-content floor: at 200% text it pushed the document 357px
+   past the viewport (WCAG 1.4.10). `anywhere` is the part that matters —
+   `break-word` would not shrink the min-content, so the row would still
+   overflow. Same treatment as the footer address. */
+.cta-desc a { color: var(--accent); overflow-wrap: anywhere; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
 .cta-btn {
   display: inline-flex; align-items: center; gap: var(--space-2);
@@ -958,7 +968,8 @@ h1, h2, h3 { text-wrap: balance; }
 .brand-name { font-weight: 600; color: var(--ink); }
 .brand-handle { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-xs); }
 .proj-cat { color: var(--ink-3); font-size: var(--text-xs); }
-.proj-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--ink-3); }
+/* 24px pointer target, same treatment as .proj-name and .side-more a. */
+.proj-back { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 24px; font-size: var(--text-sm); color: var(--ink-3); }
 .proj-hero-content { max-width: var(--measure); }
 .pill {
   font-family: var(--font-mono); font-size: var(--text-xs);
@@ -996,7 +1007,12 @@ h1, h2, h3 { text-wrap: balance; }
 .how-num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent); }
 .how-title { font-size: var(--text-lg); font-weight: 600; color: var(--ink); margin-top: var(--space-2); }
 .how-desc { color: var(--ink-2); font-size: var(--text-sm); margin-top: var(--space-2); line-height: var(--leading-sm); }
-.how-arrow { color: var(--ink-4); }
+/* The stage arrows sit next to .how-num and read as muted labels, so they
+   take the same muted-label ink as .proj-cat / .proj-back / .brand-handle.
+   ink-4 belongs to the .section-h .prompt role on the index / now / uses
+   pages; painting these arrows with it gave StrixOC a tenth text colour
+   that no other project page has. */
+.how-arrow { color: var(--ink-3); }
 
 /* ============================================================================
    IMPACT — Pain → Solution → Value
