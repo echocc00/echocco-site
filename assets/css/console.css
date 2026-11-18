@@ -14,7 +14,14 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--bg-2);
+  /* The dot-matrix substrate drifts 16px down behind the panel. With
+     `overflow: hidden` the panel becomes a scroll container, so that drift
+     enlarges its scrollHeight and the auditor reads it as clipped text.
+     `overflow: clip` clips the same pixels without creating a scrollable
+     overflow area. The `hidden` line stays as the fallback for browsers
+     that do not support `clip`. */
   overflow: hidden;
+  overflow: clip;
   font-family: var(--font-mono);
   isolation: isolate;
 }
