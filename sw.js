@@ -1,5 +1,5 @@
 // echocc00 service worker — cache strategy
-const VERSION = 'v4-2026-11-15';
+const VERSION = 'v6-2026-11-18';
 const CACHE_STATIC = `echocco-static-${VERSION}`;
 const CACHE_RUNTIME = `echocco-runtime-${VERSION}`;
 
@@ -58,7 +58,12 @@ self.addEventListener('fetch', (e) => {
   // Cache-first for known static assets
   if (STATIC_ASSETS.some((a) => url.pathname === a)) {
     e.respondWith(
-      caches.match(req).then((cached) => cached || fetch(req).then((res) => {
+      caches.match(req).then((cached) => cached
+        // The request may carry a version query, which the precached
+        // entry does not. Fall back to the bare path before the network,
+        // so the site still works offline.
+        || caches.match(url.pathname)
+      ).then((cached) => cached || fetch(req).then((res) => {
         const copy = res.clone();
         caches.open(CACHE_STATIC).then((c) => c.put(req, copy));
         return res;
