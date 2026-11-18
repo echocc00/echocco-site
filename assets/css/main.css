@@ -667,7 +667,13 @@ h1, h2, h3 { text-wrap: balance; }
 }
 
 .proj-body { padding: var(--space-7) 0; }
-.proj-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
+/* minmax(0, 1fr), not 1fr. A plain 1fr column is minmax(auto, 1fr), and
+   'auto' means the column's floor is its content's min-content width. The
+   runtime demo is an 800px-wide GIF, so that floor was 458px and the whole
+   project column refused to shrink — the page scrolled sideways on a phone.
+   The images themselves already cap at max-width: 100%; this lets the column
+   shrink so that cap can actually take effect. */
+.proj-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-7); }
 @media (min-width: 900px) { .proj-layout { grid-template-columns: minmax(0, 1fr) 280px; gap: var(--space-8); } }
 .proj-main { max-width: 72ch; }
 .proj-h2 {
@@ -722,8 +728,10 @@ h1, h2, h3 { text-wrap: balance; }
 .proj-feat-title { font-weight: 600; color: var(--ink); font-size: var(--text-base); }
 .proj-feat-desc { color: var(--ink-2); font-size: var(--text-sm); margin-top: var(--space-1); line-height: var(--leading-sm); }
 
-.proj-screenshots { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
-@media (min-width: 700px) { .proj-screenshots { grid-template-columns: 1fr 1fr; } }
+/* Same reason as .proj-layout: this grid holds the demo frames, and a
+   column whose floor is the image's intrinsic width cannot shrink. */
+.proj-screenshots { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+@media (min-width: 700px) { .proj-screenshots { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .proj-metrics { list-style: none; padding: 0; }
 .proj-metrics li {
   padding: var(--space-2) 0; border-bottom: 1px solid var(--border);
