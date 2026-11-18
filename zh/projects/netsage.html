@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>NetSage · AI 网络工程师 · echocc00</title>
+<title>NetSage — AI 网络工程师 — echocc00</title>
 
 <meta name="description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/zh/projects/netsage/">
 
-<meta property="og:title" content="NetSage · AI 网络工程师 · echocc00">
+<meta property="og:title" content="NetSage — AI 网络工程师 — echocc00">
 
 <meta property="og:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="NetSage · AI 网络工程师 · echocc00">
+<meta name="twitter:title" content="NetSage — AI 网络工程师 — echocc00">
 
 <meta name="twitter:description" content="NetSage 接管网工的工作:设计、配置生成、排障、部署、审计。8 个专业代理协同工作,走三道闸管线 —— 每次变更都要过 Containerlab 仿真、 Batfish 校验、 带快照回滚的人工审批,才能落到真实设备上。">
 
@@ -56,8 +56,9 @@
 
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -98,7 +99,7 @@
 
 <header class="proj-hero proj-hero--netsage">
 
-  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
 
   <div class="shell">
 
@@ -556,11 +557,11 @@
 
       <div class="proj-features">
 
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">8 个专业代理</div><div class="proj-feat-desc">planner · config_engineer · validator · troubleshooter · deploy · observer · security_auditor · compliance。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">8 个专业代理</div><div class="proj-feat-desc sep"><span>planner</span><span>config_engineer</span><span>validator</span><span>troubleshooter</span><span>deploy</span><span>observer</span><span>security_auditor</span><span>compliance。</span></div></div>
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">三道闸管线</div><div class="proj-feat-desc">Containerlab 仿真 → Batfish 校验 → 人工审批 + 快照回滚。</div></div>
 
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">多厂商</div><div class="proj-feat-desc">华为 VRP · 思科 IOS-XE · H3C · Juniper · Arista。</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">多厂商</div><div class="proj-feat-desc sep"><span>华为 VRP</span><span>思科 IOS-XE</span><span>H3C</span><span>Juniper</span><span>Arista。</span></div></div>
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:3;"><div class="proj-feat-title">双 Source-of-Truth</div><div class="proj-feat-desc">NetBox + Nautobot 适配器,可切换。</div></div>
 
@@ -636,11 +637,11 @@
 
         <div class="side-list">
 
-          <span class="pill">napalm · containerlab</span>
+          <span class="pill sep"><span>napalm</span><span>containerlab</span></span>
 
-          <span class="pill">batfish · netbox</span>
+          <span class="pill sep"><span>batfish</span><span>netbox</span></span>
 
-          <span class="pill">python · react</span>
+          <span class="pill sep"><span>python</span><span>react</span></span>
 
         </div>
 
@@ -678,13 +679,13 @@
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>由 echocc00 构建和维护 · 上海 · 2026</div>
+    <div class="sep"><span>由 echocc00 构建和维护</span><span>上海</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -707,10 +708,8 @@
 
 </footer>
 
-  <script src="/assets/js/reveal.js?v=9ecb9c9c" defer></script>
-
-  <script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
-<script src="/assets/js/hero-anim.js?v=9ecb9c9c" defer></script>
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 
 </body>
 

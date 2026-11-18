@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" data-page-title-en="echocc00 · Security & Network Engineer" data-page-title-zh="echocc00 · 安全与网络工程师" data-page-desc-en="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests)." data-page-desc-zh="坐标 上海 · 9 年云安全经验 · CCIE 认证 · 维护 6 个 Apache-2.0 开源项目 · 最近上线 SecSight v0.5.1(AI SOC, 22 个 SOAR 剧本, 87.8% 测试覆盖率)。">
+<html lang="en" data-page-title-en="echocc00 — Security & Network Engineer" data-page-title-zh="echocc00 — 安全与网络工程师" data-page-desc-en="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests)." data-page-desc-zh="坐标 上海，9 年云安全经验，CCIE 认证，维护 6 个 Apache-2.0 开源项目，最近上线 SecSight v0.5.1(AI SOC, 22 个 SOAR 剧本, 87.8% 测试覆盖率)。">
 
 <head>
 
@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>echocc00 · Security & Network Engineer</title>
+<title>echocc00 — Security & Network Engineer</title>
 
 <meta name="description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/">
 
-<meta property="og:title" content="echocc00 · Security & Network Engineer">
+<meta property="og:title" content="echocc00 — Security & Network Engineer">
 
 <meta property="og:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="echocc00 · Security & Network Engineer">
+<meta name="twitter:title" content="echocc00 — Security & Network Engineer">
 
 <meta name="twitter:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -103,8 +103,9 @@
 
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -125,8 +126,6 @@
       <a class="nav-link " href="/projects/">projects</a>
 
       <a class="nav-link " href="/about/">about</a>
-
-<!-- design-audit:dropped links:/assets/cv.pdf — The owner withdrew the resume document; echocc00 removed the PDF file and every nav, footer and CTA link that pointed at it. -->
 
 
       <span class="lang-switch">
@@ -341,9 +340,9 @@
 
           <td><span class="proj-version">v0.5.1</span></td>
 
-          <td><span class="proj-stack">fastapi · langgraph</span></td>
+          <td><span class="proj-stack sep"><span>fastapi</span><span>langgraph</span></span></td>
 
-          <td><span class="proj-desc">22 SOAR playbooks · 5 autonomy levels</span></td>
+          <td><span class="proj-desc sep"><span>22 SOAR playbooks</span><span>5 autonomy levels</span></span></td>
 
           <td><a class="proj-link" href="/projects/secsight/" aria-label="Open SecSight"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -355,9 +354,9 @@
 
           <td><span class="proj-version">v1.1.1-stable</span></td>
 
-          <td><span class="proj-stack">fastapi · react</span></td>
+          <td><span class="proj-stack sep"><span>fastapi</span><span>react</span></span></td>
 
-          <td><span class="proj-desc">17 cross-domain adapters · oracle N/N validation</span></td>
+          <td><span class="proj-desc sep"><span>17 cross-domain adapters</span><span>oracle N/N validation</span></span></td>
 
           <td><a class="proj-link" href="/projects/secopent/" aria-label="Open SecOpent"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -369,9 +368,9 @@
 
           <td><span class="proj-version">v0.1.1</span></td>
 
-          <td><span class="proj-stack">napalm · containerlab</span></td>
+          <td><span class="proj-stack sep"><span>napalm</span><span>containerlab</span></span></td>
 
-          <td><span class="proj-desc">8 agents · 3 gates (sim -> validate -> approve)</span></td>
+          <td><span class="proj-desc sep"><span>8 agents</span><span>3 gates (sim -> validate -> approve)</span></span></td>
 
           <td><a class="proj-link" href="/projects/netsage/" aria-label="Open NetSage"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -383,9 +382,9 @@
 
           <td><span class="proj-version">v0.7.10</span></td>
 
-          <td><span class="proj-stack">lancedb · opencv</span></td>
+          <td><span class="proj-stack sep"><span>lancedb</span><span>opencv</span></span></td>
 
-          <td><span class="proj-desc">Vector index + Ed25519 attestation · 408 tests</span></td>
+          <td><span class="proj-desc sep"><span>Vector index + Ed25519 attestation</span><span>408 tests</span></span></td>
 
           <td><a class="proj-link" href="/projects/vidslice/" aria-label="Open VidSlice"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -397,9 +396,9 @@
 
           <td><span class="proj-version">v0.6.5</span></td>
 
-          <td><span class="proj-stack">python · remotion</span></td>
+          <td><span class="proj-stack sep"><span>python</span><span>remotion</span></span></td>
 
-          <td><span class="proj-desc">20-stage pipeline · 1080x1920 vertical · CLI + SaaS</span></td>
+          <td><span class="proj-desc sep"><span>20-stage pipeline</span><span>1080x1920 vertical</span><span>CLI + SaaS</span></span></td>
 
           <td><a class="proj-link" href="/projects/opencut002/" aria-label="Open OpenCut v3"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -411,9 +410,9 @@
 
           <td><span class="proj-version">fork</span></td>
 
-          <td><span class="proj-stack">typescript · mongodb</span></td>
+          <td><span class="proj-stack sep"><span>typescript</span><span>mongodb</span></span></td>
 
-          <td><span class="proj-desc">Fork of hydro-dev/Hydro · AGPL-3.0</span></td>
+          <td><span class="proj-desc sep"><span>Fork of hydro-dev/Hydro</span><span>AGPL-3.0</span></span></td>
 
           <td><a class="proj-link" href="/projects/hydro-fork/" aria-label="Open Hydro OJ"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -443,17 +442,17 @@
 
     <div class="stack-grid" data-reveal="rise">
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val">langgraph · litellm · mcp · qdrant</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val sep"><span>langgraph</span><span>litellm</span><span>mcp</span><span>qdrant</span></div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val">wazuh · suricata · shuffle · opencti</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val sep"><span>wazuh</span><span>suricata</span><span>shuffle</span><span>opencti</span></div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val">napalm · containerlab · batfish · netbox</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val sep"><span>napalm</span><span>containerlab</span><span>batfish</span><span>netbox</span></div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val">react · antd · vite</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val sep"><span>react</span><span>antd</span><span>vite</span></div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val">python · fastapi</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val sep"><span>python</span><span>fastapi</span></div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val">postgres · redis · lancedb</div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val sep"><span>postgres</span><span>redis</span><span>lancedb</span></div></div>
 
     </div>
 
@@ -496,17 +495,17 @@
 
 <script defer src="/assets/js/motion.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/console.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/console.js"></script>
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div class="sep"><span>Built and maintained by echocc00</span><span>Shanghai</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -529,7 +528,7 @@
 
 </footer>
 
-<script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
+<script src="/assets/js/count-up.js" defer></script>
 
 </body>
 

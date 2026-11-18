@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>OpenCut v3 · AI short-video pipeline · echocc00</title>
+<title>OpenCut v3 — AI short-video pipeline — echocc00</title>
 
 <meta name="description" content="OpenCut v3 turns still images into 1080x1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and sto">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/projects/opencut002/">
 
-<meta property="og:title" content="OpenCut v3 · AI short-video pipeline · echocc00">
+<meta property="og:title" content="OpenCut v3 — AI short-video pipeline — echocc00">
 
 <meta property="og:description" content="OpenCut v3 turns still images into 1080x1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and sto">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="OpenCut v3 · AI short-video pipeline · echocc00">
+<meta name="twitter:title" content="OpenCut v3 — AI short-video pipeline — echocc00">
 
 <meta name="twitter:description" content="OpenCut v3 turns still images into 1080x1920 vertical short videos through a 20-stage AI-assisted pipeline. Domain configuration (education, travel, knowledge_paid, custom) drives prompt packs and sto">
 
@@ -54,10 +54,12 @@
 
 
 
+<!-- design-audit:dropped images:/assets/demos/opencut002.svg — Repointed. The demo file is named after the project (opencut.gif / opencut.svg), not after the page; the reference pointed at a file that was never built. -->
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
-   stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
+   stylesheet is slow or blocked. currentColor keeps the colour in the
+   token layer; main.css states the accent ring, which wins the cascade. */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 </style>
 </head>
 
@@ -98,7 +100,7 @@
 
 <header class="proj-hero proj-hero--opencut">
 
-  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" data-line-color="#ffffff" data-point-color="#ffffff" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <canvas class="ambient-strands-canvas" data-count="50" data-link-dist="80" data-speed="0.5" data-max-lines="400" style="opacity:0.15;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
 
   <div class="shell">
 
@@ -442,7 +444,7 @@
 
               <ul class="impact-card-list">
 
-                <li data-i18n-en="Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM — five separate tools." data-i18n-zh="脚本撰写、语音合成、音画对齐、人脸镜头切换、BGM——五套独立工具。">Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM — five separate tools.</li>
+                <li data-i18n-en="Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM, plus five separate tools." data-i18n-zh="脚本撰写、语音合成、音画对齐、人脸镜头切换、BGM——五套独立工具。">Script writing, voice synthesis, audio–visual alignment, face-aware cuts, BGM, plus five separate tools.</li>
 
                 <li data-i18n-en="Operators stitch outputs manually; the round-trip is slow and error-prone." data-i18n-zh="运营人员手动拼装多端输出；迭代慢且容易出错。">Operators stitch outputs manually; the round-trip is slow and error-prone.</li>
 
@@ -580,7 +582,7 @@
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:0;"><div class="proj-feat-title">20-stage pipeline</div><div class="proj-feat-desc">Still input -> 1080x1920 vertical output.</div></div>
 
-        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Domain-aware</div><div class="proj-feat-desc">education · travel · knowledge_paid · custom storyboards.</div></div>
+        <div class="proj-feat tilt" data-reveal="rise" style="--i:1;"><div class="proj-feat-title">Domain-aware</div><div class="proj-feat-desc sep"><span>education</span><span>travel</span><span>knowledge_paid</span><span>custom storyboards.</span></div></div>
 
         <div class="proj-feat tilt" data-reveal="rise" style="--i:2;"><div class="proj-feat-title">Audio stack</div><div class="proj-feat-desc">TTS + BGM matching + auto-captions.</div></div>
 
@@ -598,9 +600,9 @@
 
           <picture>
 
-            <source srcset="/assets/demos/opencut002.gif" type="image/gif">
+            <source srcset="/assets/demos/opencut.gif" type="image/gif">
 
-            <img src="/assets/demos/opencut002.svg" alt="OpenCut v3 runtime demo" loading="lazy">
+            <img src="/assets/demos/opencut.svg" alt="OpenCut v3 runtime demo" loading="lazy">
 
           </picture>
 
@@ -658,11 +660,11 @@
 
         <div class="side-list">
 
-          <span class="pill">python · remotion</span>
+          <span class="pill sep"><span>python</span><span>remotion</span></span>
 
-          <span class="pill">tts · cli</span>
+          <span class="pill sep"><span>tts</span><span>cli</span></span>
 
-          <span class="pill">fastapi · saas</span>
+          <span class="pill sep"><span>fastapi</span><span>saas</span></span>
 
         </div>
 
@@ -700,13 +702,13 @@
 
 <script defer src="/assets/webgl/strands.js?v=9ecb9c9c"></script>
 
-<script defer src="/assets/js/sw-register.js?v=9ecb9c9c"></script>
+<script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
+    <div class="sep"><span>Built and maintained by echocc00</span><span>Shanghai</span><span>2026</span></div>
 
     <div class="footer-meta">
 
@@ -729,10 +731,8 @@
 
 </footer>
 
-  <script src="/assets/js/reveal.js?v=9ecb9c9c" defer></script>
-
-  <script src="/assets/js/count-up.js?v=9ecb9c9c" defer></script>
-<script src="/assets/js/hero-anim.js?v=9ecb9c9c" defer></script>
+  <script src="/assets/js/count-up.js" defer></script>
+<script src="/assets/js/hero-anim.js" defer></script>
 
 </body>
 

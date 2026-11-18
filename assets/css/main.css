@@ -91,6 +91,15 @@
   --accent-amber: var(--p-warn);
   --accent-red: var(--p-danger);
 
+  /* Text that sits on a project's own hero wash. One token, because
+     the wash is a gradient and the text has to clear it at both ends. */
+  --on-hero: #ffffff;
+
+  /* The WebGL strands read these, so the canvas never needs a
+     hardcoded hex in the markup. */
+  --strand-line: #ffffff;
+  --strand-point: #ffffff;
+
   /* legacy aliases still referenced by impact + inline styles */
   --line: var(--p-border);
   --bg-alt: var(--p-bg-800);
@@ -189,7 +198,21 @@ body {
   overflow-x: hidden;
 }
 a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+/* Hover — two signals, not twenty-six.
+   One rule for links, one for buttons and chips. The surfaces that need a
+   second cue read a custom property set here instead of owning a rule:
+   --nav-bar draws the nav underline, --btn-hover lifts the primary action,
+   --row-hover reveals the project row. Links are already accent-coloured,
+   so the hover is a shift, not an underline. */
+a:not(.btn):not(.cta-btn):not(.btn-primary):not(.primary):not(.proj-row):hover {
+  color: var(--accent-hover);
+  --nav-bar: 1;
+}
+:is(button, .btn, .btn-primary, .cta-btn, .filter-chip):hover {
+  color: var(--btn-hover-ink, var(--accent-hover));
+  border-color: var(--accent-hover);
+  --btn-hover: 1;
+}
 img, svg, canvas { max-width: 100%; height: auto; display: block; }
 ul, ol { list-style: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
@@ -198,6 +221,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
+
+/* Headings that wrap should not leave a ragged last line. */
+h1, h2, h3 { text-wrap: balance; }
+
+/* The browser default selection is a saturated blue that does not
+   survive this ground. */
+::selection { background: color-mix(in oklch, var(--accent) 35%, transparent); color: var(--ink); }
 
 /* ---------- Skip link ----------
    The first focusable element on every page. It stays off-screen until
@@ -255,7 +285,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   /* 24px minimum pointer target — the brand is a link, not a label. */
   min-height: 24px; padding: var(--space-1) 0;
 }
-.nav-brand:hover { color: var(--accent); text-decoration: none; }
 .nav-brand .prompt { color: var(--accent); }
 .nav-brand .cursor { color: var(--accent-green); animation: blink 1s steps(1) infinite; margin-left: 1px; }
 .nav-menu { display: none; gap: var(--space-6); align-items: center; }
@@ -265,22 +294,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-decoration: none; padding: var(--space-2) 0;
   position: relative;
 }
-.nav-link:hover { color: var(--ink); text-decoration: none; }
-.nav-link.active { color: var(--ink); }
+.nav-link.active { color: var(--ink); --nav-bar: 1; }
 .nav-cta {
   font-size: var(--text-sm); color: var(--ink);
   text-decoration: none; padding: var(--space-2) var(--space-4);
   border: 1px solid var(--border-strong); border-radius: var(--radius-md);
   transition: border-color 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.nav-cta:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .lang-switch { display: flex; gap: var(--space-1); align-items: center; font-size: var(--text-xs); }
 .lang-switch a {
   color: var(--ink-3); padding: var(--space-1) var(--space-2);
   border: 1px solid var(--border); border-radius: var(--radius-sm);
   text-decoration: none; line-height: var(--leading-xs);
 }
-.lang-switch a:hover { color: var(--ink); border-color: var(--border-strong); text-decoration: none; }
 .lang-switch a.active { color: var(--accent); border-color: var(--accent); }
 .lang-toggle { display: none; }
 
@@ -381,6 +407,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .hero-bio strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- A run of meta items --------------------------------------
+   Separated by layout, not by a typographic character: each item is a
+   real element and a hairline rule stands between them. */
+.sep {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+.sep > * + * {
+  border-left: 1px solid var(--border-strong);
+  padding-left: var(--space-3);
+}
+.stack-val.sep { display: flex; }
+
 /* Status row — chips, but separated by layout not by a middot */
 .status-row {
   display: flex; flex-wrap: wrap; gap: var(--space-2);
@@ -460,8 +499,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   vertical-align: middle;
 }
 .proj-table tbody tr:last-child td { border-bottom: 0; }
-.proj-table tbody tr { transition: background 200ms cubic-bezier(0.2, 0, 0, 1); }
-.proj-table tbody tr:hover td { background: var(--bg-2); }
 .proj-name {
   color: var(--ink); font-weight: 600; font-size: var(--text-base);
   /* Inline link in a table cell — give it a 24px pointer target without
@@ -485,7 +522,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-width: 32px; min-height: 32px; border-radius: var(--radius-sm);
   transition: color 200ms cubic-bezier(0.2, 0, 0, 1), background 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.proj-link:hover { color: var(--accent); background: var(--surface); text-decoration: none; }
 
 /* Below the breakpoint a 5-column table cannot stay a table — each row
    becomes a stacked card, with the arrow pinned to the corner. The header
@@ -536,7 +572,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: var(--radius-full); color: var(--ink-3); cursor: pointer;
   transition: color 200ms cubic-bezier(0.2, 0, 0, 1), border-color 200ms cubic-bezier(0.2, 0, 0, 1), background 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.filter-chip:hover { color: var(--ink); border-color: var(--border-strong); background: var(--bg-2); }
 .filter-chip.active { color: var(--accent); border-color: var(--accent); background: var(--surface); }
 
 /* ---------- Stack grid ---------- */
@@ -564,21 +599,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Per-project hero washes. Each product keeps its own colour identity, but
    the gradient lives in the stylesheet rather than an inline style, and the
    deep end is dark enough to carry body copy at full contrast. */
-.proj-hero--secsight  { background: linear-gradient(135deg, #1e3a8a 0%, #060b1c 100%); color: #fff; }
-.proj-hero--secopent  { background: linear-gradient(135deg, #7c2d12 0%, #150d08 100%); color: #fff; }
-.proj-hero--secagent  { background: linear-gradient(135deg, #3b2f8f 0%, #0b0920 100%); color: #fff; }
-.proj-hero--netsage   { background: linear-gradient(135deg, #065f46 0%, #04150f 100%); color: #fff; }
-.proj-hero--vidslice  { background: linear-gradient(135deg, #5b21b6 0%, #100a24 100%); color: #fff; }
-.proj-hero--opencut   { background: linear-gradient(135deg, #9a3412 0%, #1a0f07 100%); color: #fff; }
-.proj-hero--strixoc   { background: linear-gradient(135deg, #991b1b 0%, #1a0808 100%); color: #fff; }
-.proj-hero--hydrofork { background: linear-gradient(135deg, #1d4ed8 0%, #050c22 100%); color: #fff; }
+.proj-hero--secsight  { background: linear-gradient(135deg, #1e3a8a 0%, #060b1c 100%); color: var(--on-hero); }
+.proj-hero--secopent  { background: linear-gradient(135deg, #7c2d12 0%, #150d08 100%); color: var(--on-hero); }
+.proj-hero--secagent  { background: linear-gradient(135deg, #3b2f8f 0%, #0b0920 100%); color: var(--on-hero); }
+.proj-hero--netsage   { background: linear-gradient(135deg, #065f46 0%, #04150f 100%); color: var(--on-hero); }
+.proj-hero--vidslice  { background: linear-gradient(135deg, #5b21b6 0%, #100a24 100%); color: var(--on-hero); }
+.proj-hero--opencut   { background: linear-gradient(135deg, #9a3412 0%, #1a0f07 100%); color: var(--on-hero); }
+.proj-hero--strixoc   { background: linear-gradient(135deg, #991b1b 0%, #1a0808 100%); color: var(--on-hero); }
+.proj-hero--hydrofork { background: linear-gradient(135deg, #1d4ed8 0%, #050c22 100%); color: var(--on-hero); }
 .proj-prompt {
   font-family: var(--font-mono); font-size: var(--text-xs);
   color: var(--ink-3); margin-bottom: var(--space-4);
 }
 .proj-prompt .path { color: var(--accent); }
 .proj-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
   font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
   margin-bottom: var(--space-2); line-height: var(--leading-xl);
 }
@@ -595,7 +630,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   /* 24px pointer target for the meta-bar links. */
   display: inline-flex; align-items: center; min-height: 24px;
 }
-.proj-meta-bar a:hover { color: var(--accent); }
 
 .proj-body { padding: var(--space-7) 0; }
 .proj-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
@@ -684,7 +718,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--ink);
   display: inline-flex; align-items: center; min-height: 24px;
 }
-.side-block dd a:hover { color: var(--accent); }
 .side-list { display: flex; flex-wrap: wrap; gap: var(--space-1); }
 .side-list .pill {
   font-family: var(--font-mono); font-size: var(--text-xs);
@@ -694,7 +727,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .side-more { list-style: none; padding: 0; font-size: var(--text-sm); }
 .side-more li { padding: var(--space-1) 0; }
 .side-more a { color: var(--ink-2); }
-.side-more a:hover { color: var(--accent); }
 
 /* ---------- Timeline / now / quote ---------- */
 
@@ -722,15 +754,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid var(--border-strong); border-radius: var(--radius-md);
   color: var(--ink); text-decoration: none; background: var(--bg-2);
   font-size: var(--text-sm); font-weight: 500;
-  transition: border-color 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1), background 200ms cubic-bezier(0.2, 0, 0, 1);
+  transition: border-color 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1), background 200ms cubic-bezier(0.2, 0, 0, 1), transform 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.cta-btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; background: var(--surface); }
 .cta-btn.primary {
   background: var(--accent); color: oklch(0.145 0.014 264); border-color: var(--accent);
   font-weight: 600;
-}
-.cta-btn.primary:hover {
-  background: var(--accent-hover); border-color: var(--accent-hover); color: oklch(0.145 0.014 264);
+  --btn-hover-ink: oklch(0.145 0.014 264);
 }
 
 /* ---------- About ---------- */
@@ -739,7 +768,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .about-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
 @media (min-width: 900px) { .about-hero-grid { grid-template-columns: minmax(0, 1fr) 280px; gap: var(--space-7); } }
 .about-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600;
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl)); font-weight: 600;
   color: var(--ink); line-height: var(--leading-xl); margin-bottom: var(--space-4);
   letter-spacing: -0.02em;
 }
@@ -778,7 +807,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 24px; min-height: 24px;
 }
-.footer a:hover { color: var(--accent); }
 .footer-brand { color: var(--ink-2); font-family: var(--font-mono); }
 .footer-meta { display: inline-flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
 
@@ -866,9 +894,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid var(--border-strong); color: var(--ink); text-decoration: none;
   transition: border-color 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1), background 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
-.btn-primary { background: var(--accent); color: oklch(0.145 0.014 264); border-color: var(--accent); font-weight: 600; }
-.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: oklch(0.145 0.014 264); }
+.btn-primary {
+  background: var(--accent); color: oklch(0.145 0.014 264);
+  border-color: var(--accent); font-weight: 600;
+  /* The shared hover rule would otherwise put accent ink on an
+     accent ground. This is the ink the primary buttons keep. */
+  --btn-hover-ink: oklch(0.145 0.014 264);
+}
 .btn-outline { background: transparent; }
 
 /* ---------- Misc ---------- */
@@ -877,7 +909,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .brand-handle { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-xs); }
 .proj-cat { color: var(--ink-3); font-size: var(--text-xs); }
 .proj-back { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--ink-3); }
-.proj-back:hover { color: var(--accent); }
 .proj-hero-content { max-width: var(--measure); }
 .pill {
   font-family: var(--font-mono); font-size: var(--text-xs);
@@ -948,7 +979,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: var(--space-4) var(--space-5);
   border-bottom: 1px solid var(--line);
   align-items: center;
-  transition: background 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 .impact-row:last-child { border-bottom: 0; }
 @media (min-width: 900px) {
@@ -957,7 +987,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: var(--space-5); padding: var(--space-4) var(--space-6);
   }
 }
-.impact-row:hover { background: var(--bg-alt); }
 
 .impact-cell { display: flex; align-items: flex-start; gap: var(--space-3); min-width: 0; }
 .impact-cell-icon {
@@ -1039,9 +1068,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg); border-radius: 0; border: 0;
   padding: var(--space-5) var(--space-5) var(--space-4);
   display: flex; flex-direction: column; gap: var(--space-4);
-  transition: background 200ms cubic-bezier(0.2, 0, 0, 1);
 }
-.impact-card:hover { background: var(--bg-alt); }
 
 .impact-card-art {
   width: 36px; height: 36px; border-radius: var(--radius-md);
@@ -1090,7 +1117,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .impact-tag {
   font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  letter-spacing: 0.08em;
   padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
   border: 1px solid var(--line); color: var(--ink-3);
 }

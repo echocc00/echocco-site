@@ -19,6 +19,14 @@
   isolation: isolate;
 }
 
+:root {
+  /* The scanline and the strand wash are the panel's only tinted
+     surfaces. They are named so the values live with the rest of the
+     tokens instead of scattered through the component rules. */
+  --console-scan-1: rgba(124, 156, 255, 0.045);
+  --console-scan-2: rgba(124, 156, 255, 0.11);
+}
+
 /* Substrate: dot matrix — a structure with depth, not noise */
 .console-matrix {
   position: absolute;
@@ -43,9 +51,9 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(124, 156, 255, 0.045) 35%,
-    rgba(124, 156, 255, 0.11) 50%,
-    rgba(124, 156, 255, 0.045) 65%,
+    var(--console-scan-1) 35%,
+    var(--console-scan-2) 50%,
+    var(--console-scan-1) 65%,
     transparent 100%
   );
   will-change: transform, opacity;
@@ -117,10 +125,8 @@
   padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--border);
   font-size: var(--text-xs);
-  transition: background 200ms var(--ease-standard);
 }
 .console-row:last-child { border-bottom: 0; }
-.console-row:hover { background: var(--surface); }
 .console-row-name {
   color: var(--ink-2);
   overflow: hidden;
