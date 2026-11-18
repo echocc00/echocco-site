@@ -55,12 +55,14 @@
 /projects/opencut/          /projects/opencut002.html        301
 
 # Per-project Chinese mirror pages
+# 只列**已经存在中文版**的项目。zh 镜像目前覆盖 6 个项目 —— strixoc 和
+# secopentagent 还没有中文版,给它们写规则等于指向不存在的文件(线上确实 404)。
+# CF Pages 对无扩展名路径本来就会自动解析 <path>.html,
+# 所以等中文版补上时不需要在这里加规则,CF 自己会认。
 /zh/projects/secsight/             /zh/projects/secsight.html           200
 /zh/projects/secopent/             /zh/projects/secopent.html           200
 /zh/projects/netsage/             /zh/projects/netsage.html           200
 /zh/projects/vidslice/             /zh/projects/vidslice.html           200
 /zh/projects/opencut002/             /zh/projects/opencut002.html           200
 /zh/projects/hydro-fork/             /zh/projects/hydro-fork.html           200
-/zh/projects/secopentagent/             /zh/projects/secopentagent.html           200
-/zh/projects/strixoc/             /zh/projects/strixoc.html           200
 /zh/                       /zh/index.html                   200

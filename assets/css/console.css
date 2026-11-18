@@ -14,7 +14,14 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--bg-2);
+  /* The dot-matrix substrate drifts 16px down behind the panel. With
+     `overflow: hidden` the panel becomes a scroll container, so that drift
+     enlarges its scrollHeight and the auditor reads it as clipped text.
+     `overflow: clip` clips the same pixels without creating a scrollable
+     overflow area. The `hidden` line stays as the fallback for browsers
+     that do not support `clip`. */
   overflow: hidden;
+  overflow: clip;
   font-family: var(--font-mono);
   isolation: isolate;
 }
@@ -30,7 +37,13 @@
 /* Substrate: dot matrix — a structure with depth, not noise */
 .console-matrix {
   position: absolute;
-  inset: 0;
+  /* One tile of headroom at the bottom. The drift moves the matrix down by
+     exactly one tile (--space-4), so with `inset: 0` the layer poked 16px
+     below the panel and the panel's scrollHeight grew with it — which the
+     auditor reads as clipped text. The band this gives up sits in the
+     vignette's fade-out, so it is not visible; the drift itself is
+     unchanged (same direction, same distance, same 9s cycle). */
+  inset: 0 0 var(--space-4) 0;
   z-index: 0;
   pointer-events: none;
   opacity: 0.5;
