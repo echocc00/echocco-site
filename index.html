@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" data-page-title-en="echocc00 · Security & Network Engineer" data-page-title-zh="echocc00 · 安全与网络工程师" data-page-desc-en="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests)." data-page-desc-zh="坐标 上海，9 年云安全经验，CCIE 认证，维护 6 个 Apache-2.0 开源项目，最近上线 SecSight v0.5.1(AI SOC, 22 个 SOAR 剧本, 87.8% 测试覆盖率)。">
+<html lang="en" data-page-title-en="echocc00 · Security & Network Engineer" data-page-title-zh="echocc00 · 安全与网络工程师" data-page-desc-en="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests)." data-page-desc-zh="坐标 上海 · 9 年云安全经验 · CCIE 认证 · 维护 6 个 Apache-2.0 开源项目 · 最近上线 SecSight v0.5.1(AI SOC, 22 个 SOAR 剧本, 87.8% 测试覆盖率)。">
 
 <head>
 
@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 
-<title>echocc00 — Security & Network Engineer</title>
+<title>echocc00 · Security & Network Engineer</title>
 
 <meta name="description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -25,7 +25,7 @@
 
 <meta property="og:url" content="https://www.echocco.com/">
 
-<meta property="og:title" content="echocc00 — Security & Network Engineer">
+<meta property="og:title" content="echocc00 · Security & Network Engineer">
 
 <meta property="og:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -35,7 +35,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="echocc00 — Security & Network Engineer">
+<meta name="twitter:title" content="echocc00 · Security & Network Engineer">
 
 <meta name="twitter:description" content="based in Shanghai. 9 years cloud security, CCIE-certified. shipping 6 apache-2.0 products — most recently secsight v0.5.1 (ai soc, 22 soar playbooks, 87.8% tests).">
 
@@ -104,21 +104,11 @@
 <style id="design-focus-ring">
 /* Focus ring — stated per page so keyboard focus is visible even if the
    stylesheet is slow or blocked. Mirrors :focus-visible in main.css. */
-:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+:focus-visible { outline: 2px solid #6E9BFB; outline-offset: 2px; }
 </style>
 </head>
 
 <body>
-
-<!-- design-audit:dropped scriptHooks:src:/assets/webgl/strands.js — the strands WebGL canvas was retired with the dark theme; the editorial masthead prints itself in with a halftone mask instead -->
-<!-- design-audit:dropped headings:h1:/colophon _ — the colophon title stopped being a shell path and became the word Colophon; the masthead band and the halftone reveal carry it now -->
-<!-- design-audit:dropped headings:h1:/now _ — the now title stopped being a shell path and became the word Now; the masthead band and the halftone reveal carry it now -->
-<!-- design-audit:dropped headings:h1:/projects — the projects title stopped being a shell path and became the word Projects; the masthead band and the halftone reveal carry it now -->
-<!-- design-audit:dropped headings:h1:/uses _ — the uses title stopped being a shell path and became the word Uses; the masthead band and the halftone reveal carry it now -->
-<!-- design-audit:dropped headings:h1:/版权页 _ — 中文版权页标题不再是 shell 路径,改为「版权页」;由报头版式和网点印刷承担 -->
-<!-- design-audit:dropped ids:hero-strands-canvas — the hero canvas element went with the strands WebGL layer, and the masthead display line carries the halftone reveal now -->
-<!-- design-audit:dropped headings:h1:echocc00 _ — the wordmark dropped its blinking underscore cursor, which was a terminal affordance the editorial masthead does not use -->
-<!-- design-audit:dropped headings:h2:$ — the shell prompt headings became plain publication headings: System, Index and Stack -->
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -135,6 +125,8 @@
       <a class="nav-link " href="/projects/">projects</a>
 
       <a class="nav-link " href="/about/">about</a>
+
+<!-- design-audit:dropped links:/assets/cv.pdf — The owner withdrew the resume document; echocc00 removed the PDF file and every nav, footer and CTA link that pointed at it. -->
 
 
       <span class="lang-switch">
@@ -153,35 +145,73 @@
 
 <main id="main">
 
-<section class="masthead">
+<section class="hero grain">
 
-  <div class="shell">
+  <canvas id="hero-strands-canvas" class="hero-strands-canvas" aria-hidden="true"></canvas>
 
-    <div class="masthead-grid">
+  <noscript>
 
-      <div class="masthead-copy">
+    <div class="hero-strands-fallback">
 
-<p class="masthead-eyebrow" data-anim="prompt"><span class="prompt-path">~/echocc00</span> <span>security &amp; network engineering</span></p>
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="none">
 
-      <div class="masthead-display">
+        <path d="M 0 100 Q 300 50 600 200 T 1200 180" />
 
-        <div class="halftone-field" aria-hidden="true"></div>
+        <path d="M 0 200 Q 400 280 700 180 T 1200 320" />
 
-        <h1 class="masthead-title halftone-mask">echocc00</h1>
+        <path d="M 0 350 Q 350 250 600 380 T 1200 280" />
 
-      </div>
+        <path d="M 0 480 Q 300 420 600 500 T 1200 460" />
+
+        <path d="M 0 580 Q 350 520 700 600 T 1200 540" />
+
+        <path d="M 0 50 Q 250 130 500 80 T 1000 160" />
+
+        <path d="M 0 420 Q 200 380 450 440 T 900 400" />
+
+      </svg>
+
+    </div>
+
+  </noscript>
+
+  <div class="hero-orb hero-orb-1"></div>
+
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="shell hero-inner">
+
+    <div class="hero-copy">
+
+      <div class="hero-prompt" data-anim="prompt"><span class="prompt-cursor">$</span> <span class="prompt-path">~/echocc00 $</span> <span>whoami</span></div>
+
+      <h1 class="hero-title hero-reveal-in" data-anim="title">echocc00<span class="cursor-blink">_</span></h1>
 
       <div class="hero-roles" data-anim="roles"><span class="role">security engineer</span><span class="role">network engineer</span><span class="role">OSS maintainer</span></div>
 
       <p class="hero-bio" data-anim="bio">based in <strong>Shanghai</strong>. 9 years cloud security, <strong>CCIE</strong>-certified. shipping 6 apache-2.0 products — most recently <strong>secsight v0.5.1</strong> (ai soc, 22 soar playbooks, 87.8% tests).</p>
 
-      
+      <div class="status-row" data-anim="status">
+
+        <span class="status-pill live" data-anim="status-pill" data-stagger="0">Open for work</span>
+
+        <span class="status-pill" data-anim="status-pill" data-stagger="1">Open to: <strong>staff security engineer</strong></span>
+
+        <span class="status-pill" data-anim="status-pill" data-stagger="2"><strong>consulting</strong></span>
+
+        <span class="status-pill" data-anim="status-pill" data-stagger="3"><strong>commercial pilots</strong></span>
 
       </div>
 
-      <div class="hero-panel" data-anim="console">
+    </div>
+
+    <div class="hero-panel" data-anim="console">
 
       <div class="console" role="img" aria-label="Live status of the six shipped products: SecSight v0.5.1, SecOpent v1.1.1, NetSage v0.1.1, VidSlice v0.7.10, OpenCut v0.6.5, plus the latest release date and average test coverage.">
+
+        <div class="console-matrix" aria-hidden="true"></div>
+
+        <div class="console-scanline" aria-hidden="true"></div>
 
         <div class="console-head">
 
@@ -251,22 +281,6 @@
 
     </div>
 
-  
-
-    
-      <div class="status-row" data-anim="status">
-      
-              <span class="status-pill live" data-anim="status-pill" data-stagger="0">Open for work</span>
-      
-              <span class="status-pill" data-anim="status-pill" data-stagger="1">Open to: <strong>staff security engineer</strong></span>
-      
-              <span class="status-pill" data-anim="status-pill" data-stagger="2"><strong>consulting</strong></span>
-      
-              <span class="status-pill" data-anim="status-pill" data-stagger="3"><strong>commercial pilots</strong></span>
-      
-            </div>
-    </div>
-
   </div>
 
 </section>
@@ -279,7 +293,7 @@
 
     <div class="section-head">
 
-      <h2 class="section-h" data-reveal="curtain">System</h2>
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> whoami --stats</h2>
 
       <span class="section-meta">system info</span>
 
@@ -302,13 +316,14 @@
 </section>
 
 
+
 <section class="section">
 
   <div class="shell">
 
     <div class="section-head">
 
-      <h2 class="section-h" data-reveal="curtain">Index</h2>
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> /projects</h2>
 
       <span class="section-meta"><span>6 entries</span><span>last updated 2026-09-01</span></span>
 
@@ -326,9 +341,9 @@
 
           <td><span class="proj-version">v0.5.1</span></td>
 
-          <td><span class="proj-stack"><span>fastapi</span><span>langgraph</span></span></td>
+          <td><span class="proj-stack">fastapi · langgraph</span></td>
 
-          <td><span class="proj-desc">22 SOAR playbooks — 5 autonomy levels</span></td>
+          <td><span class="proj-desc">22 SOAR playbooks · 5 autonomy levels</span></td>
 
           <td><a class="proj-link" href="/projects/secsight/" aria-label="Open SecSight"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -340,9 +355,9 @@
 
           <td><span class="proj-version">v1.1.1-stable</span></td>
 
-          <td><span class="proj-stack"><span>fastapi</span><span>react</span></span></td>
+          <td><span class="proj-stack">fastapi · react</span></td>
 
-          <td><span class="proj-desc">17 cross-domain adapters — oracle N/N validation</span></td>
+          <td><span class="proj-desc">17 cross-domain adapters · oracle N/N validation</span></td>
 
           <td><a class="proj-link" href="/projects/secopent/" aria-label="Open SecOpent"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -354,9 +369,9 @@
 
           <td><span class="proj-version">v0.1.1</span></td>
 
-          <td><span class="proj-stack"><span>napalm</span><span>containerlab</span></span></td>
+          <td><span class="proj-stack">napalm · containerlab</span></td>
 
-          <td><span class="proj-desc">8 agents — 3 gates (sim -> validate -> approve)</span></td>
+          <td><span class="proj-desc">8 agents · 3 gates (sim -> validate -> approve)</span></td>
 
           <td><a class="proj-link" href="/projects/netsage/" aria-label="Open NetSage"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -368,9 +383,9 @@
 
           <td><span class="proj-version">v0.7.10</span></td>
 
-          <td><span class="proj-stack"><span>lancedb</span><span>opencv</span></span></td>
+          <td><span class="proj-stack">lancedb · opencv</span></td>
 
-          <td><span class="proj-desc">Vector index + Ed25519 attestation — 408 tests</span></td>
+          <td><span class="proj-desc">Vector index + Ed25519 attestation · 408 tests</span></td>
 
           <td><a class="proj-link" href="/projects/vidslice/" aria-label="Open VidSlice"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -382,9 +397,9 @@
 
           <td><span class="proj-version">v0.6.5</span></td>
 
-          <td><span class="proj-stack"><span>python</span><span>remotion</span></span></td>
+          <td><span class="proj-stack">python · remotion</span></td>
 
-          <td><span class="proj-desc">20-stage pipeline — 1080x1920 vertical — CLI + SaaS</span></td>
+          <td><span class="proj-desc">20-stage pipeline · 1080x1920 vertical · CLI + SaaS</span></td>
 
           <td><a class="proj-link" href="/projects/opencut002/" aria-label="Open OpenCut v3"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -396,9 +411,9 @@
 
           <td><span class="proj-version">fork</span></td>
 
-          <td><span class="proj-stack"><span>typescript</span><span>mongodb</span></span></td>
+          <td><span class="proj-stack">typescript · mongodb</span></td>
 
-          <td><span class="proj-desc">Fork of hydro-dev/Hydro — AGPL-3.0</span></td>
+          <td><span class="proj-desc">Fork of hydro-dev/Hydro · AGPL-3.0</span></td>
 
           <td><a class="proj-link" href="/projects/hydro-fork/" aria-label="Open Hydro OJ"><span class="proj-arrow" aria-hidden="true">→</span></a></td>
 
@@ -413,13 +428,14 @@
 </section>
 
 
+
 <section class="section">
 
   <div class="shell">
 
     <div class="section-head">
 
-      <h2 class="section-h" data-reveal="curtain">Stack</h2>
+      <h2 class="section-h" data-reveal="curtain"><span class="prompt">$</span> /stack</h2>
 
       <span class="section-meta">6 categories</span>
 
@@ -427,23 +443,24 @@
 
     <div class="stack-grid" data-reveal="rise">
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val"><span>langgraph</span><span>litellm</span><span>mcp</span><span>qdrant</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 0;"><div class="stack-key">ai</div><div class="stack-val">langgraph · litellm · mcp · qdrant</div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val"><span>wazuh</span><span>suricata</span><span>shuffle</span><span>opencti</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 1;"><div class="stack-key">sec</div><div class="stack-val">wazuh · suricata · shuffle · opencti</div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val"><span>napalm</span><span>containerlab</span><span>batfish</span><span>netbox</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 2;"><div class="stack-key">net</div><div class="stack-val">napalm · containerlab · batfish · netbox</div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val"><span>react</span><span>antd</span><span>vite</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 3;"><div class="stack-key">fe</div><div class="stack-val">react · antd · vite</div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val"><span>python</span><span>fastapi</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 4;"><div class="stack-key">be</div><div class="stack-val">python · fastapi</div></div>
 
-      <div class="stack-cell" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val"><span>postgres</span><span>redis</span><span>lancedb</span></div></div>
+      <div class="stack-cell" data-reveal="rise" style="--i: 5;"><div class="stack-key">db</div><div class="stack-val">postgres · redis · lancedb</div></div>
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <section class="section">
@@ -454,7 +471,7 @@
 
       <div>
 
-        <div class="cta-title">Let's work together.</div>
+        <div class="cta-title">$ let's work together.</div>
 
         <div class="cta-desc">Open to staff security engineering roles, AI security infra consulting, and commercial pilots of SecSight / NetSage.</div>
 
@@ -463,6 +480,7 @@
       <div class="cta-actions">
 
         <a class="cta-btn primary" href="mailto:286043314+echocc00@users.noreply.github.com?subject=Hi%20from%20your%20portfolio">Email me</a>
+
 
         <a class="cta-btn" href="https://github.com/echocc00" rel="noopener" target="_blank">GitHub</a>
 
@@ -480,13 +498,15 @@
 
 <script defer src="/assets/js/console.js"></script>
 
+<script defer src="/assets/webgl/strands.js"></script>
+
 <script defer src="/assets/js/sw-register.js"></script>
 
 <footer class="footer">
 
   <div class="shell footer-row">
 
-    <div>Built and maintained by echocc00 — Shanghai — 2026</div>
+    <div>Built and maintained by echocc00 · Shanghai · 2026</div>
 
     <div class="footer-meta">
 
@@ -495,6 +515,7 @@
       <a href="/projects/">projects</a>
 
       <a href="/about/">about</a>
+
 
       <a href="mailto:286043314+echocc00@users.noreply.github.com">286043314+echocc00@users.noreply.github.com</a>
 
