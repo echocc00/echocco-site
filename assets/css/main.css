@@ -528,6 +528,14 @@ h1, h2, h3 { text-wrap: balance; }
   padding: var(--space-4) var(--space-3);
   color: var(--ink-2); border-bottom: 1px solid var(--border);
   vertical-align: middle;
+  /* A table cell's min-content floor is its widest unbreakable run, and the
+     table is laid out by auto width — so one long word grows the whole table
+     past the viewport. "SecOpentAgent" in the name column did exactly that:
+     at 200% text the table was 876px wide in an 844px viewport (WCAG 1.4.10).
+     `anywhere` is the part that matters — `break-word` would not shrink the
+     min-content, so the table would still overflow. Same treatment as the
+     footer address and the CTA mailto link. */
+  overflow-wrap: anywhere;
 }
 .proj-table tbody tr:last-child td { border-bottom: 0; }
 .proj-name {
