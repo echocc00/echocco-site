@@ -2,7 +2,7 @@
    Console panel — the signature element
    ----------------------------------------------------------------------------
    A live instrument panel in the hero's right column. It carries the real
-   state of the six shipped products: versions, coverage, live/offline, and a
+   state of the eight products: versions, coverage, live/offline, and a
    running clock. Nothing here is decorative — every row is a fact.
 
    Signature moment: `scanline-sweep` — a scanline crosses the panel on a 6s
