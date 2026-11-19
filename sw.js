@@ -1,5 +1,5 @@
 // echocc00 service worker — cache strategy
-const VERSION = 'v9-2026-11-18';
+const VERSION = 'v10-2026-11-19';
 const CACHE_STATIC = `echocco-static-${VERSION}`;
 const CACHE_RUNTIME = `echocco-runtime-${VERSION}`;
 
